@@ -375,82 +375,47 @@
 
     {{-- Liens de navigation --}}
     <div class="nav-links">
-        {{-- Accueil --}}
-        <a href="{{ route('index') }}" @class(['active'=> request()->routeIs('index')])>Accueil</a>
 
-        {{-- Institutionnel (Dropdown) --}}
-        <div class="nav-dropdown-wrapper" id="navInstitutionnelDropdown">
+
+        {{-- Acceuil (Dropdown) --}}
+        <div class="nav-dropdown-wrapper" id="navAcceuilDropdown">
             <a href="#" class="nav-dropdown-toggle" onclick="toggleNavDropdown(event, 'navInstitutionnelMenu')">
-                Institutionnel
+                JEFIE 2026
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 3px;">
                     <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
             </a>
             <div class="nav-dropdown-menu" id="navInstitutionnelMenu">
-                <a href="{{ route('institutionnel') }}">Institutionnel</a>
-                <a href="{{ route('partenaires') }}">Nos Partenaires</a>
-                <a href="{{ route('partenaires.devenir') }}">Devenir partenaire</a>
-                <a href="{{ route('entrepreneurs.dashboard') }}">Entrepreneurs</a>
-                <a href="{{ route('cartographie') }}">cartographie</a>
+                <a href="{{ route('index') }}">Acceuil</a>
+                <a href="{{ route('Apropos') }}">Apropos</a>
+                <a href="{{ route('programme') }}">Nos Programmes</a>
+                <a href="{{ route('actualites') }}">Actualites et Medias</a>
+                <a href="{{ route('gouvernance') }}">Gouvernance</a>
+                <a href="{{ route('Faq') }}">FAQ</a>
             </div>
         </div>
 
-        {{-- Programme (Dropdown) --}}
-        <div class="nav-dropdown-wrapper" id="navProgrammeDropdown">
-            <a href="#" class="nav-dropdown-toggle" onclick="toggleNavDropdown(event, 'navProgrammeMenu')">
-                Programme
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 3px;">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-            </a>
-            <div class="nav-dropdown-menu" id="navProgrammeMenu">
-                <a href="{{ route('programme') }}">Programme</a>
-                <a href="{{ route('forum.index') }}">Forum de discussion</a>
-            </div>
-        </div>
 
-        {{-- Emploi et Recrutement (Dropdown) --}}
+        {{--Entreprises participantes (Dropdown) --}}
         <div class="nav-dropdown-wrapper" id="navEmploiDropdown">
             <a href="#" class="nav-dropdown-toggle" onclick="toggleNavDropdown(event, 'navEmploiMenu')">
-                Emploi & Recrutement
+                Entreprises participantes
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 3px;">
                     <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
             </a>
             <div class="nav-dropdown-menu" id="navEmploiMenu">
-                <a href="{{ route('emploi') }}">Offres disponibles</a>
+                <a href="{{ route('institutionnel') }}">Entreprise et partenaires</a>
             </div>
         </div>
 
-        {{-- Billetterie --}}
-        <a href="{{ route('inscription') }}" @class(['active'=> request()->routeIs('inscription')])>Billetterie</a>
 
-        {{-- À propos (Dropdown) --}}
-        <div class="nav-dropdown-wrapper" id="navAProposDropdown">
-            <a href="#" class="nav-dropdown-toggle" onclick="toggleNavDropdown(event, 'navAProposMenu')">
-                À propos
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 3px;">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-            </a>
-            <div class="nav-dropdown-menu" id="navAProposMenu">
-                <a href="{{ route('Apropos') }}">À propos</a>
-                <a href="{{ route('Faq') }}">FAQ</a>
-            </div>
-        </div>
 
-        {{-- Actualités (Dropdown) --}}
-        <div class="nav-dropdown-wrapper" id="navActualitesDropdown">
-            <a href="#" class="nav-dropdown-toggle" onclick="toggleNavDropdown(event, 'navActualitesMenu')">
-                Actualités
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 3px;">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
+        {{-- Mon espace (Bouton Simple) --}}
+        <div class="nav-dropdown-wrapper" id="navEmploiDropdown">
+            <a href="{{ route('mon-espace.dashboard') }}" class="nav-dropdown-toggle">
+                Mon espace
             </a>
-            <div class="nav-dropdown-menu" id="navActualitesMenu">
-                <a href="{{ route('galerie') }}">Galeries</a>
-                <a href="{{ route('actualites') }}">Annonces</a>
-            </div>
         </div>
 
         {{-- Contact --}}
@@ -460,40 +425,24 @@
     {{-- Zone droite : icônes + bouton + langue --}}
     <div class="nav-right">
 
-        {{-- Icônes d'action --}}
-        <div class="nav-right-actions">
-            {{-- Recherche --}}
-            <div class="search-container">
-                <form action="{{ route('actualites') }}" method="GET" id="searchForm">
-                    <input type="text" name="search" placeholder="Rechercher...">
-                </form>
-                <button type="button" class="nav-icon-btn" aria-label="Rechercher" onclick="toggleSearch()">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="11" cy="11" r="8" />
-                        <path d="M21 21l-4.35-4.35" />
-                    </svg>
-                </button>
-            </div>
-
-            {{-- Notifications --}}
-            <a href="{{ route('notifications') }}" class="nav-icon-btn" aria-label="Notifications" style="position: relative;">
+        {{-- Recherche --}}
+        <div class="search-container">
+            <form action="{{ route('actualites') }}" method="GET" id="searchForm">
+                <input type="text" name="search" placeholder="Rechercher...">
+            </form>
+            <button type="button" class="nav-icon-btn" aria-label="Rechercher" onclick="toggleSearch()">
                 <svg viewBox="0 0 24 24">
-                    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
                 </svg>
-                <span style="position: absolute; top: 2px; right: 2px; background: #ef4444; width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid #0d1b3e;"></span>
-            </a>
-
-            {{-- Messages --}}
-            <a href="{{ route('forum.index') }}" class="nav-icon-btn" aria-label="Messages">
-                <svg viewBox="0 0 24 24">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                </svg>
-            </a>
+            </button>
         </div>
 
+        {{-- Notifications --}}
+        <a href="
+
         {{-- Bouton S'inscrire --}}
-        <a href="{{ route('inscription') }}" class="nav-btn">
+        <a href=" {{ route('inscription') }}" class="nav-btn">
             S'inscrire
             <svg viewBox="0 0 24 24">
                 <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
@@ -501,96 +450,7 @@
             </svg>
         </a>
 
-        {{-- Sélecteur de langue --}}
-        <div class="lang-switcher" id="langSwitcher">
-            <button class="lang-btn" onclick="toggleLang()" aria-haspopup="true" aria-expanded="false" id="langBtn">
-                @if(app()->getLocale() === 'en') EN
-                @elseif(app()->getLocale() === 'ar') AR
-                @elseif(app()->getLocale() === 'pt') PT
-                @elseif(app()->getLocale() === 'de') DE
-                @elseif(app()->getLocale() === 'it') IT
-                @elseif(app()->getLocale() === 'zh') ZH
-                @else FR
-                @endif
-                <svg viewBox="0 0 24 24">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg>
-            </button>
 
-            <div class="lang-dropdown" id="langDropdown" role="menu">
-                {{-- Français --}}
-                <a href="{{ route('lang.switch', ['locale' => 'fr']) }}"
-                    class="lang-item {{ app()->getLocale() === 'fr' ? 'active' : '' }}" hreflang="fr">
-                    <span class="lang-item-name">Français</span>
-                    <span class="lang-item-code">fr</span>
-                    @if(app()->getLocale() === 'fr')
-                    <span class="lang-check"><svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg></span>
-                    @endif
-                </a>
-
-                {{-- English --}}
-                <a href="{{ route('lang.switch', ['locale' => 'en']) }}"
-                    class="lang-item {{ app()->getLocale() === 'en' ? 'active' : '' }}" hreflang="en">
-                    <span class="lang-item-name">English</span>
-                    <span class="lang-item-code">en</span>
-                    @if(app()->getLocale() === 'en')
-                    <span class="lang-check"><svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg></span>
-                    @endif
-                </a>
-
-                {{-- Português --}}
-                <a href="{{ route('lang.switch', ['locale' => 'pt']) }}"
-                    class="lang-item {{ app()->getLocale() === 'pt' ? 'active' : '' }}" hreflang="pt">
-                    <span class="lang-item-name">Português</span>
-                    <span class="lang-item-code">pt</span>
-                    @if(app()->getLocale() === 'pt')
-                    <span class="lang-check"><svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg></span>
-                    @endif
-                </a>
-
-                {{-- Italiano --}}
-                <a href="{{ route('lang.switch', ['locale' => 'it']) }}"
-                    class="lang-item {{ app()->getLocale() === 'it' ? 'active' : '' }}" hreflang="it">
-                    <span class="lang-item-name">Italiano</span>
-                    <span class="lang-item-code">it</span>
-                    @if(app()->getLocale() === 'it')
-                    <span class="lang-check"><svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg></span>
-                    @endif
-                </a>
-
-                {{-- Deutsch --}}
-                <a href="{{ route('lang.switch', ['locale' => 'de']) }}"
-                    class="lang-item {{ app()->getLocale() === 'de' ? 'active' : '' }}" hreflang="de">
-                    <span class="lang-item-name">Deutsch</span>
-                    <span class="lang-item-code">de</span>
-                    @if(app()->getLocale() === 'de')
-                    <span class="lang-check"><svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg></span>
-                    @endif
-                </a>
-
-                {{-- 中文 --}}
-                <a href="{{ route('lang.switch', ['locale' => 'zh']) }}"
-                    class="lang-item {{ app()->getLocale() === 'zh' ? 'active' : '' }}" hreflang="zh">
-                    <span class="lang-item-name">中文</span>
-                    <span class="lang-item-code">zh</span>
-                    @if(app()->getLocale() === 'zh')
-                    <span class="lang-check"><svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg></span>
-                    @endif
-                </a>
-            </div>
-        </div>
     </div>
 </nav>
 

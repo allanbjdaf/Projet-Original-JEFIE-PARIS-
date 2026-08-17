@@ -73,7 +73,7 @@ class InstitutionnelController extends Controller
         return [
             ['nom' => "Ministère de l'Économie et de la Planification", 'logo' => 'mec.png', 'initiale' => 'ME'],
             ['nom' => "Agence Nationale de l'Innovation",               'logo' => 'ctr.jpg', 'initiale' => 'ANI'],
-            ['nom' => "Comité des Ganonais de France",             'logo' => 'cgforga.png', 'initiale' => 'CGF'],
+            ['nom' => "Comité des Gabonais de France",             'logo' => 'cgforga.png', 'initiale' => 'CGF'],
         ];
     }
 

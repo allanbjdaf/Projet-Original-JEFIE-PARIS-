@@ -48,7 +48,21 @@ Route::get('/lang/{locale}', function ($locale) {
 })->name('lang.switch');
 
 
+// ══════════════════════════════════════════════════════════════
+// routes/web.php — MON ESPACE (à ajouter)
+// ══════════════════════════════════════════════════════════════
+use App\Http\Controllers\MonEspaceController;
 
+Route::middleware('auth')->prefix('mon-espace')->name('mon-espace.')->group(function () {
+    Route::get('/',              [MonEspaceController::class, 'dashboard'])->name('dashboard');
+    Route::get('/profil',        [MonEspaceController::class, 'profil'])->name('profil');
+    Route::put('/profil',        [MonEspaceController::class, 'updateProfil'])->name('profil.update');
+    Route::get('/billet',        [MonEspaceController::class, 'billet'])->name('billet');
+    Route::get('/candidatures',  [MonEspaceController::class, 'candidatures'])->name('candidatures');
+    Route::get('/preferences',   [MonEspaceController::class, 'preferences'])->name('preferences');
+    Route::put('/preferences',   [MonEspaceController::class, 'updatePreferences'])->name('preferences.update');
+    Route::put('/password',      [MonEspaceController::class, 'updatePassword'])->name('password.update');
+});
 
 
 // --- 1. INSCRIPTION CLASSIQUE ---
@@ -354,3 +368,8 @@ use App\Http\Controllers\Admin\NewsletterController;
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/newsletter', [NewsletterController::class, 'newsletter'])->name('admin.newsletter');
 });
+
+
+use App\Http\Controllers\GouvernanceController;
+// Route publique pour afficher la page de gouvernance
+Route::get('/gouvernance', [GouvernanceController::class, 'index'])->name('gouvernance');

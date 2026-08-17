@@ -20,11 +20,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // 🚀 PROTECTION ANTI-BOUCLE POUR LARAVEL RÉCENT
-        // On indique aux composants d'authentification de réorienter vers l'accueil public par défaut
+        // 🚀 PROTECTION ANTI-BOUCLE — REDIRECTION VERS MON ESPACE
+        // Indique à Laravel de réorienter les utilisateurs connectés vers leur espace unifié
         if (class_exists(\Illuminate\Auth\Middleware\RedirectIfAuthenticated::class)) {
             \Illuminate\Auth\Middleware\RedirectIfAuthenticated::redirectUsing(function () {
-                return route('index'); // Redirige vers la racine publique '/'
+                // Modification ici : on utilise le nom de votre route d'espace unifié
+                return route('mon-espace.dashboard');
             });
         }
     }

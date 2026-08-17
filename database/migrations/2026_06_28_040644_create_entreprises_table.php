@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('site_web')->nullable();
             $table->string('email')->nullable();
             $table->string('telephone')->nullable();
+            $table->string('stand')->nullable(); // <-- AJOUT DE LA COLONNE STAND
+            $table->string('type')->default('partenaire'); // <-- Pour différencier (organisateur, sponsor, etc.)
+            $table->string('niveau_sponsor')->nullable(); // <-- Pour stocker "Partenaire Or", "Argent", etc.
             $table->timestamps();
         });
     }

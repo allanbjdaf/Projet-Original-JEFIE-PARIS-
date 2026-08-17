@@ -1656,12 +1656,12 @@
                     <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
                     <circle cx="12" cy="10" r="3" />
                 </svg>
-                Palais des Congrès, Abidjan, Côte d'Ivoire
+                Palais des Congrès,Paris, France
             </div>
         </div>
         <div class="hero-actions">
             <a href="{{ route('inscription') }}" class="btn-hero-gold">
-                Je m'inscris
+                Rejoindre le forum
                 <svg viewBox="0 0 24 24">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />

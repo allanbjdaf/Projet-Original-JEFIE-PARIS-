@@ -8,6 +8,13 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+use Spatie\Permission\Models\Role;
+
+// À ajouter au tout début de la fonction run() :
+Role::findOrCreate('super-admin');
+Role::findOrCreate('admin-partenaires');
+Role::findOrCreate('admin-medias');
+
 class UserSeeder extends Seeder
 {
     /**

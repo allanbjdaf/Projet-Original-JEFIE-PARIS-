@@ -1392,12 +1392,12 @@
 
     <div class="accred-block">
 
-        <a href="{{ route('Faq') }}" class="accred-btn">
+        <a href="{{ route('inscription') }}" class="accred-btn">
             <svg width="13" height="13" viewBox="0 0 24 24" stroke="#0d1b3e" fill="none" stroke-width="2.5" aria-hidden="true">
                 <rect x="3" y="4" width="18" height="18" rx="2" />
                 <path d="M16 2v4M8 2v4M3 10h18" />
             </svg>
-            Besoin d'aide ?
+            Rejoindre le forum ?
         </a>
     </div>
 </div>

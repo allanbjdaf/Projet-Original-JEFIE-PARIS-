@@ -286,130 +286,12 @@
         /* Espace souhaité entre le sélecteur de langue et le bouton */
     }
 
-    /* ── LANGUAGE SWITCHER ── */
-    * Styles optionnels pour que le sélecteur de langue et le bouton s'alignent parfaitement en hauteur */
- .lang-switcher {
-        position: relative;
-        display: inline-block;
-    }
 
-    .lang-btn,
-    .nav-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
 
-    .lang-btn {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        background: rgba(255, 255, 255, .08);
-        border: 1px solid rgba(255, 255, 255, .2);
-        border-radius: 5px;
-        padding: 7px 12px;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: background .2s;
-        font-family: inherit;
-    }
 
-    .lang-btn:hover {
-        background: rgba(255, 255, 255, .14);
-    }
 
-    .lang-btn svg {
-        width: 14px;
-        height: 14px;
-        stroke: currentColor;
-        fill: none;
-        stroke-width: 2;
-    }
 
-    .lang-flag {
-        font-size: 14px;
-        line-height: 1;
-    }
 
-    .lang-dropdown {
-        display: none;
-        /* Caché par défaut */
-        position: absolute;
-        right: 0;
-        top: 100%;
-        margin-top: 0.5rem;
-        background: #ffffff;
-        /* Ou couleur sombre selon votre thème */
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        min-width: 150px;
-        z-index: 1000;
-    }
-
-    .lang-switcher:hover .lang-dropdown,
-    .lang-dropdown.open {
-        display: block;
-    }
-
-    .lang-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.5rem 1rem;
-        color: #333;
-        text-decoration: none;
-        transition: background 0.2s;
-    }
-
-    .lang-item:last-child {
-        border-bottom: none;
-    }
-
-    .lang-item:hover {
-        background: #f4f4f4;
-    }
-
-    .lang-item.active {
-        font-weight: bold;
-    }
-
-    .lang-item.active .lang-item-flag {
-        filter: brightness(1);
-    }
-
-    .lang-item-flag {
-        font-size: 16px;
-        flex-shrink: 0;
-    }
-
-    .lang-item-name {
-        font-weight: 400;
-    }
-
-    .lang-item-code {
-        color: #888888;
-        /* Remplacez par le code gris de votre choix, ex: #6b7280 */
-        font-size: 0.75rem;
-        font-weight: 500;
-    }
-
-    .lang-item.active .lang-item-code {
-        color: #888888;
-        ;
-    }
-
-    .lang-check {
-        margin-left: auto;
-    }
-
-    .lang-check svg {
-        width: 14px;
-        height: 14px;
-        fill: none;
-        stroke-width: 2.5;
-    }
 
 
     /* ══ HERO ══ */
@@ -459,7 +341,7 @@
 
     .hero-desc {
         color: rgba(255, 255, 255, .65);
-        font-size: .88rem;
+        font-size: 1rem;
         line-height: 1.65;
     }
 
@@ -508,7 +390,7 @@
 
     .hstat-lbl {
         color: rgba(255, 255, 255, .55);
-        font-size: 10px;
+        font-size: 15px;
         margin-top: 2px;
         white-space: pre-line;
     }
@@ -709,7 +591,7 @@
     }
 
     .pi-name {
-        font-size: 9px;
+        font-size: 11px;
         color: #4a5568;
         line-height: 1.3;
     }
@@ -769,8 +651,8 @@
     }
 
     .msg-avatar {
-        width: 55px;
-        height: 55px;
+        width: 90px;
+        height: 90px;
         border-radius: 8px;
         flex-shrink: 0;
         background: linear-gradient(135deg, #0d1b3e, #162552);
@@ -781,11 +663,11 @@
     }
 
     .msg-avatar img {
-        width: 55px;
-        height: 55px;
+        width: 90px;
+        height: 90px;
         object-fit: cover;
         display: block;
-        border-radius: 8px;
+        border-radius: 5px;
     }
 
     .msg-avatar-init {
@@ -796,25 +678,25 @@
 
     .msg-quote-mark {
         color: #f5a623;
-        font-size: 1.5rem;
-        line-height: 1;
+        font-size: 1.7rem;
+        line-height: 0.7;
     }
 
     .msg-text {
-        font-size: 11px;
+        font-size: 14px;
         color: #4a5568;
-        line-height: 1.7;
+        line-height: 1.5;
         font-style: italic;
     }
 
     .msg-name {
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 700;
         color: #162552;
     }
 
     .msg-role {
-        font-size: 10px;
+        font-size: 12px;
         color: #718096;
         line-height: 1.3;
     }
@@ -1037,6 +919,56 @@
         stroke-width: 2;
     }
 
+    /* Style de l'arrière-plan de la modale */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    /* Fenêtre blanche de la modale */
+    .modal-content {
+        background: #fff;
+        padding: 25px;
+        border-radius: 8px;
+        max-width: 500px;
+        width: 90%;
+        position: relative;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Bouton Fermer (X) */
+    .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #aaa;
+    }
+
+    .modal-close:hover {
+        color: #000;
+    }
+
+    /* Grid interne pour les infos contact/stand */
+    .modal-info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+    }
+
+
     /* Footer */
     .site-footer {
         background: #0d1b3e;
@@ -1202,7 +1134,7 @@
     {{-- ══ SIDEBAR ══ --}}
     <aside class="left-sidebar">
         <div class="ls-header">
-            <div class="ls-header-title">Espace<br>Institutionnel</div>
+            <div class="ls-header-title">Espace<br>Entreprise</div>
         </div>
         <a href="#contexte" class="ls-item active"><svg viewBox="0 0 24 24">
                 <rect x="3" y="3" width="7" height="7" rx="1" />
@@ -1238,7 +1170,7 @@
                 </svg></div>
             <div class="ls-partner-title">Devenez partenaire</div>
             <p class="ls-partner-desc">Associez votre image à un événement d'envergure internationale.</p>
-            <a href="{{ route('contact') }}" class="ls-partner-btn">Nous contacter</a>
+            <a href="{{ route('inscription') }}" class="ls-partner-btn">Rejoindre le forum</a>
         </div>
     </aside>
 
@@ -1248,7 +1180,7 @@
         {{-- HERO --}}
         <section class="hero" style="background-image:url('{{ asset('images/Institutionnel.jpg') }}')">
             <div class="hero-left">
-                <h1>Espace <span style="color: #f5a623;">Institutionnel</span></h1>
+                <h1>Entreprises <span style="color: #f5a623;">Participantes</span></h1>
                 <p class="hero-tagline">Innover ensemble pour un avenir africain prospère</p>
                 <p class="hero-desc">Découvrez le cadre stratégique, les acteurs institutionnels engagés et les documents officiels qui structurent le Forum International de l'Innovation — plateforme de référence pour les décideurs et entrepreneurs du continent.</p>
             </div>
@@ -1307,7 +1239,14 @@
                 <div class="ts-title">Organisateurs Officiels</div>
                 <div class="org-grid">
                     @foreach ($organisateurs as $org)
-                    <div class="org-card {{ $loop->last && count($organisateurs) % 2 !== 0 ? 'org-card-full' : '' }}">
+                    <!-- Ajout des attributs de données pour le clic -->
+                    <div class="org-card {{ $loop->last && count($organisateurs) % 2 !== 0 ? 'org-card-full' : '' }} company-logo-click"
+                        data-nom="{{ $org['nom'] }}"
+                        data-description="{{ $org['description'] ?? 'Aucune description disponible.' }}"
+                        data-email="{{ $org['email'] ?? 'Non renseigné' }}"
+                        data-stand="{{ $org['stand'] ?? 'Non attribué' }}"
+                        style="cursor: pointer;">
+
                         <div class="org-logo-box">
                             @if ($org['logo'])
                             <img src="{{ asset('images/'.$org['logo']) }}" alt="{{ $org['nom'] }}">
@@ -1319,12 +1258,8 @@
                     </div>
                     @endforeach
                 </div>
-                <a href="{{ route('partenaires') }}" class="ts-link">
-                    En savoir plus
-                    <svg viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
+
+                <a href="{{ route('partenaires') }}" class="ts-link">En savoir plus...</a>
             </div>
 
             {{-- Partenaires institutionnels --}}
@@ -1332,7 +1267,13 @@
                 <div class="ts-title">Partenaires & Institutions</div>
                 <div class="pi-grid">
                     @foreach ($partenairesInstitution as $pi)
-                    <div class="pi-card">
+                    <div class="pi-card company-logo-click"
+                        data-nom="{{ $pi['nom'] }}"
+                        data-description="{{ $pi['description'] ?? 'Aucune description disponible.' }}"
+                        data-email="{{ $pi['email'] ?? 'Non renseigné' }}"
+                        data-stand="{{ $pi['stand'] ?? 'Non attribué' }}"
+                        style="cursor: pointer;">
+
                         <div class="pi-logo">
                             @if ($pi['logo'])
                             <img src="{{ asset('images/'.$pi['logo']) }}" alt="{{ $pi['nom'] }}">
@@ -1344,134 +1285,155 @@
                     </div>
                     @endforeach
                 </div>
-                <a href="{{ route('partenaires') }}" class="ts-link">
-                    Voir tous les partenaires
-                    <svg viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
+                <a href="{{ route('partenaires') }}" class="ts-link">Voir tous les partenaires...</a>
             </div>
 
         </div>{{-- /.top-sections --}}
 
         {{-- BOTTOM 3 SECTIONS --}}
         <div class="bottom-sections">
-
             {{-- Sponsors --}}
             <div class="bottom-section" id="sponsors">
                 <div class="ts-title">Nos Sponsors & Soutiens</div>
                 <div class="sponsors-row">
                     @foreach ($sponsors as $sp)
-                    <div class="sponsor">
+                    <div class="sponsor company-logo-click"
+                        data-nom="{{ $sp['nom'] }}"
+                        data-description="{{ $sp['description'] ?? 'Aucune description disponible.' }}"
+                        data-email="{{ $sp['email'] ?? 'Non renseigné' }}"
+                        data-stand="{{ $sp['stand'] ?? 'Non attribué' }}"
+                        style="cursor: pointer;">
                         <span style="font-size:13px;font-weight:700;color:{{ $sp['color'] }}">{{ $sp['nom'] }}</span>
                         <div class="sponsor-niveau">{{ $sp['niveau'] }}</div>
                     </div>
                     @endforeach
-                </div>
-                <a href="{{ route('partenaires') }}" class="ts-link">
-                    Voir tous les sponsors
-                    <svg viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
-            </div>
 
-            {{-- ✅ FIX : Messages officiels — balises correctement imbriquées --}}
-            <div class="bottom-section" id="messages">
-                <div class="ts-title">Paroles de Leaders</div>
-                <div class="msg-grid">
-                    @forelse ($messagesOfficiels as $msg)
-                    <div class="msg-card">
-                        <div class="msg-avatar">
-                            @if ($msg['photo'])
-                            <img src="{{ asset('images/'.$msg['photo']) }}" alt="{{ $msg['nom'] }}">
-                            @else
-                            <span class="msg-avatar-init">{{ strtoupper(substr($msg['nom'],0,1)) }}</span>
-                            @endif
-                        </div>
-                        <div class="msg-quote-mark">&ldquo;</div>
-                        <p class="msg-text">{{ $msg['message'] }}</p>
-                        <div class="msg-name">{{ $msg['nom'] }}</div>
-                        <div class="msg-role">{{ $msg['poste'] }}</div>
-                    </div>
-                    @empty
-                    <p style="color:#a0aec0;font-size:13px">Aucun message disponible.</p>
-                    @endforelse
                 </div>
-            </div>{{-- /.bottom-section#messages --}}
-
-            {{-- ✅ FIX : Documents — section séparée et correctement fermée --}}
-            <div class="bottom-section" id="documents">
-                <div class="ts-title">Documents & Ressources</div>
-                @foreach ($documents as $doc)
-                <div class="doc-item">
-                    <div class="doc-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                        </svg>
-                    </div>
-                    <div style="flex:1;min-width:0">
-                        <div class="doc-name">{{ $doc['nom'] }}</div>
-                        <div class="doc-meta">{{ $doc['type'] }} &bull; {{ $doc['taille'] }}</div>
-                    </div>
-                    <a href="{{ $doc['url'] }}" class="doc-dl" download aria-label="Télécharger">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                        </svg>
-                    </a>
-                </div>
-                @endforeach
-                <a href="{{ route('rapports') }}" class="docs-see-all">
-                    Voir tous les documents
-                    <svg viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
-            </div>{{-- /.bottom-section#documents --}}
-
-        </div>{{-- /.bottom-sections --}}
-
-        {{-- CTA BANNER --}}
-        <div class="cta-banner">
-            <div class="cta-left">
-                <div class="cta-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                        <circle cx="9" cy="7" r="4" />
-                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
-                    </svg>
-                </div>
-                <div>
-                    <div class="cta-stars" aria-hidden="true">
-                        @for ($i = 0; $i < 3; $i++)
-                            <svg viewBox="0 0 24 24">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                            @endfor
-                    </div>
-                    <div class="cta-title">Rejoignez les acteurs du changement en 2026</div>
-                    <p class="cta-desc">Partenaire, sponsor ou institution — associez votre image à un événement international d'envergure et développez votre réseau d'influence en Afrique et dans la diaspora.</p>
-                </div>
-            </div>
-            <div class="cta-actions">
-                <a href="{{ route('partenaires.devenir') }}" class="cta-btn-primary">
-                    Devenir partenaire
-                    <svg viewBox="0 0 24 24">
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                </a>
-                <a href="{{ route('contact') }}" class="cta-btn-outline">
-                    Nous contacter
-                    <svg viewBox="0 0 24 24">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <path d="M2 7l10 7 10-7" />
-                    </svg>
-                </a>
+                <a href="{{ route('partenaires') }}" class="ts-link">Voir tous les sponsors...</a>
             </div>
         </div>
 
-    </main>
+        {{-- ── STRUCTURE DE LA FENÊTRE MODALE pour la description ───────────────────────────────── --}}
+        <div id="companyModal" class="modal-overlay" style="display:none;">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeCompanyModal()">&times;</span>
+                <h2 id="modalTitle">Nom de l'entreprise</h2>
+
+                <div class="modal-body">
+                    <h3>Description :</h3>
+                    <p id="modalDescription">Détails...</p>
+
+                    <div class="modal-info-grid">
+                        <div>
+                            <strong>📧 Courriel de contact :</strong>
+                            <p id="modalEmail">contact@adresse.com</p>
+                        </div>
+                        <div>
+                            <strong>🎪 Stand attribué :</strong>
+                            <p id="modalStand">Stand X</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{-- ✅ FIX : Messages officiels — balises correctement imbriquées --}}
+        <div class="bottom-section" id="messages">
+            <div class="ts-title">Paroles de Leaders</div>
+            <div class="msg-grid">
+                @forelse ($messagesOfficiels as $msg)
+                <div class="msg-card">
+                    <div class="msg-avatar">
+                        @if ($msg['photo'])
+                        <img src="{{ asset('images/'.$msg['photo']) }}" alt="{{ $msg['nom'] }}">
+                        @else
+                        <span class="msg-avatar-init">{{ strtoupper(substr($msg['nom'],0,1)) }}</span>
+                        @endif
+                    </div>
+                    <div class="msg-quote-mark">&ldquo;</div>
+                    <p class="msg-text">{{ $msg['message'] }}</p>
+                    <div class="msg-name">{{ $msg['nom'] }}</div>
+                    <div class="msg-role">{{ $msg['poste'] }}</div>
+                </div>
+                @empty
+                <p style="color:#a0aec0;font-size:13px">Aucun message disponible.</p>
+                @endforelse
+            </div>
+        </div>{{-- /.bottom-section#messages --}}
+
+        {{-- ✅ FIX : Documents — section séparée et correctement fermée --}}
+        <div class="bottom-section" id="documents">
+            <div class="ts-title">Documents & Ressources</div>
+            @foreach ($documents as $doc)
+            <div class="doc-item">
+                <div class="doc-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                    </svg>
+                </div>
+                <div style="flex:1;min-width:0">
+                    <div class="doc-name">{{ $doc['nom'] }}</div>
+                    <div class="doc-meta">{{ $doc['type'] }} &bull; {{ $doc['taille'] }}</div>
+                </div>
+                <a href="{{ $doc['url'] }}" class="doc-dl" download aria-label="Télécharger">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                    </svg>
+                </a>
+            </div>
+            @endforeach
+            <a href="{{ route('rapports') }}" class="docs-see-all">
+                Voir tous les documents
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>{{-- /.bottom-section#documents --}}
+
+</div>{{-- /.bottom-sections --}}
+
+{{-- CTA BANNER --}}
+<div class="cta-banner">
+    <div class="cta-left">
+        <div class="cta-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+            </svg>
+        </div>
+        <div>
+            <div class="cta-stars" aria-hidden="true">
+                @for ($i = 0; $i < 3; $i++)
+                    <svg viewBox="0 0 24 24">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                    @endfor
+            </div>
+            <div class="cta-title">Rejoignez les acteurs du changement en 2026</div>
+            <p class="cta-desc">Partenaire, sponsor ou institution — associez votre image à un événement international d'envergure et développez votre réseau d'influence en Afrique et dans la diaspora.</p>
+        </div>
+    </div>
+    <div class="cta-actions">
+        <a href="{{ route('partenaires.devenir') }}" class="cta-btn-primary">
+            Devenir partenaire
+            <svg viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+            </svg>
+        </a>
+        <a href="{{ route('contact') }}" class="cta-btn-outline">
+            Nous contacter
+            <svg viewBox="0 0 24 24">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="M2 7l10 7 10-7" />
+            </svg>
+        </a>
+    </div>
+</div>
+
+</main>
 </div>{{-- /.page-layout --}}
 
 
@@ -1615,5 +1577,41 @@
     });
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Écouter le clic sur tous les logos configurés
+        document.querySelectorAll('.company-logo-click').forEach(element => {
+            element.addEventListener('click', function() {
+                // Récupération des attributs de données
+                const nom = this.getAttribute('data-nom');
+                const description = this.getAttribute('data-description');
+                const email = this.getAttribute('data-email');
+                const stand = this.getAttribute('data-stand');
+
+                // Injection dans la modale
+                document.getElementById('modalTitle').innerText = nom;
+                document.getElementById('modalDescription').innerText = description;
+                document.getElementById('modalEmail').innerText = email;
+                document.getElementById('modalStand').innerText = stand;
+
+                // Affichage de la modale
+                document.getElementById('companyModal').style.display = 'flex';
+            });
+        });
+    });
+
+    // Fonction pour fermer la modale
+    function closeCompanyModal() {
+        document.getElementById('companyModal').style.display = 'none';
+    }
+
+    // Fermer au clic à l'extérieur de la fenêtre blanche
+    window.onclick = function(event) {
+        const modal = document.getElementById('companyModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
 
 @endsection

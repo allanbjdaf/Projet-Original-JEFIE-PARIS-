@@ -1133,16 +1133,16 @@
         <aside class="sb">
             {{-- Brand --}}
             <div class="sb-brand">
-                <div class="sb-brand-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                    </svg>
+                <div class="sb-brand-icon" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="{{ asset('images/264.png') }}" alt="Logo JEFIE" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <div>
-                    <div class="sb-brand-title">JEFIE Paris 2026</div>
+                    {{-- Application de la couleur orange sur Paris 2026 --}}
+                    <div class="sb-brand-title">JEFIE <span style="color: var(--jefie-orange, #f5a623); font-weight: 800;">Paris 2026</span></div>
                     <div class="sb-brand-sub">Administration</div>
                 </div>
             </div>
+
 
             {{-- User --}}
             <div class="sb-user">
@@ -1261,7 +1261,7 @@
                     <svg viewBox="0 0 24 24">
                         <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                     </svg>
-                    Retour au site public
+                    Retour
                 </a>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
@@ -1281,7 +1281,6 @@
             <div class="topbar">
                 <div class="topbar-left">
                     <div class="topbar-breadcrumb">
-                        <a href="{{ route('admin.dashboard') }}">Admin</a>
                         <span>›</span>
                         <span style="color:#0d1b3e;font-weight:700">@yield('page-title','Dashboard')</span>
                     </div>
@@ -1299,7 +1298,7 @@
                         <svg viewBox="0 0 24 24">
                             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                         </svg>
-                        Voir le site
+                        Retour
                     </a>
                     <a href="{{ route('admin.export') }}" class="btn-export-top">
                         <svg viewBox="0 0 24 24">

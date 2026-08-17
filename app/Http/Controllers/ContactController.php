@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact; // 🚀 Importation du modèle indispensable pour la production
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -41,6 +42,9 @@ class ContactController extends Controller
             'message.required'     => 'Le message est obligatoire.',
             'message.min'          => 'Le message doit contenir au moins 10 caractères.',
         ]);
+
+        // 🚀 SAUVEGARDE EN PRODUCTION : Enregistre le message dans la table "contacts"
+        Contact::create($validated);
 
         return redirect()
             ->route('contact')

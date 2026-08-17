@@ -16,20 +16,12 @@ use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class AdminController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            if (!in_array(auth()->user()->role ?? '', ['admin', 'super_admin'])) {
-                abort(403, 'Accès réservé aux administrateurs.');
-            }
-            return $next($request);
-        });
-    }
+
 
     // ── Helpers stats communes ─────────────────────────────────
     private function getCounts(): array
