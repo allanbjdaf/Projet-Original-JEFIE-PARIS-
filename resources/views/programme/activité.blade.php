@@ -873,27 +873,10 @@
 </style>
 @endsection
 
+@include('components.navbar')
+
 @section('content')
 
-{{-- NAV --}}
-<nav class="nav">
-    <a href="{{ route('index') }}" class="nav-logo">
-        <div class="nav-logo-icon"><svg viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg></div>
-        <div class="nav-logo-text"><span>JEFIE</span>Paris 2026</div>
-    </a>
-    <div class="nav-links">
-        <a href="{{ route('index') }}">Accueil</a>
-        <a href="{{ route('programme') }}" class="active">Programme</a>
-        <a href="{{ route('emploi') }}">Emploi & Recrutement</a>
-        <a href="{{ route('actualites') }}">Actualités</a>
-        <a href="{{ route('contact') }}">Contact</a>
-    </div>
-    <div class="nav-right">
-        <a href="{{ route('inscription') }}" class="btn-inscr">S'inscrire</a>
-    </div>
-</nav>
 
 {{-- HERO --}}
 <section class="hero" style="background:linear-gradient(108deg,{{ $typeInfo['color'] ?? '#0d1b3e' }}dd,#0d1b3e 100%)">
@@ -953,6 +936,12 @@
         ['pitch', 'Pitchs', '#c2185b','#fce4ec','
         <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />'],
         ] as [$t,$l,$c,$bg,$ic])
+        @php
+        // ✅ Rend compatible la variable $slugActif du contrôleur avec le $type attendu par la vue
+        if (!isset($type)) {
+        $type = $slugActif ?? request()->route('type') ?? request()->route('slug') ?? 'atelier';
+        }
+        @endphp
         <a href="{{ route('programme.activite', $t) }}"
             class="type-tab {{ $type === $t ? 'active' : '' }}"
             style="--tc:{{ $c }}">
@@ -993,6 +982,30 @@
             </form>
         </div>
 
+        {{-- À insérer juste au-dessus de la ligne 1003 --}}
+        @php
+        if (!isset($typeInfo)) {
+        // Détecte le type actuel (ex: 'atelier', 'conference')
+        $currentType = $type ?? $slugActif ?? request()->route('type') ?? request()->route('slug') ?? 'atelier';
+
+        // Dictionnaire des labels pour afficher le bon nom dans le titre
+        $labels = [
+        'conference' => 'Conférences',
+        'panel' => 'Panels',
+        'atelier' => 'Ateliers',
+        'networking' => 'Networking',
+        'pitch' => 'Pitchs partenaires',
+        'pitch' => 'Pitchs entrepreneuriaux'
+        ];
+
+        $typeInfo = [
+        'label' => $labels[$currentType] ?? ucfirst($currentType) . 's',
+        'desc' => 'Liste des sessions programmées.'
+        ];
+        }
+        @endphp
+
+
         {{-- Liste sessions --}}
         <div class="sessions-header">
             <div class="sessions-title">{{ $typeInfo['label'] }}</div>
@@ -1014,8 +1027,18 @@
             @php
             $couleur = $s['couleur'] ?? '#0d1b3e';
             $bg = $typeInfo['bg'] ?? '#eef2ff';
-            $pct = $s['places'] > 0 ? round($s['inscrits']/$s['places']*100) : 0;
+
+            // ✅ CORRECTION DU CALCUL : Utilisation de places_total et places_restantes
+            $placesTotal = $s['places_total'] ?? $s['places'] ?? 0;
+            $placesRestantes = $s['places_restantes'] ?? 0;
+            $inscrits = $s['inscrits'] ?? ($placesTotal - $placesRestantes);
+
+            // Calcul propre du pourcentage sans division par zéro
+            $pct = $placesTotal > 0 ? round(($inscrits / $placesTotal) * 100) : 0;
             $barColor = $pct >= 90 ? '#e53935' : ($pct >= 70 ? '#f5a623' : '#2e7d32');
+
+            // Sécurité pour la clé 'vedette'
+            $isVedette = $s['vedette'] ?? false;
             @endphp
             <div class="session-card {{ $s['vedette'] ? 'vedette' : '' }}">
                 <div class="session-couleur" style="background:{{ $couleur }}"></div>
@@ -1038,7 +1061,10 @@
                             </svg>
                             {{ $s['salle'] }}
                         </div>
-                        <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;background:#f0faf0;color:#2e7d32">Jour {{ $s['jour'] }}</span>
+                        {{-- À la ligne 1081 de votre fichier activité.blade.php --}}
+                        <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;background:#f0faf0;color:#2e7d32">
+                            Jour {{ $s['jour'] ?? $jourActif ?? 1 }}
+                        </span>
                         @if ($s['vedette'])
                         <div class="vedette-star">⭐ À ne pas manquer</div>
                         @endif
@@ -1049,9 +1075,15 @@
                     @if (!empty($s['intervenants']))
                     <div class="session-intervenants">
                         @foreach ($s['intervenants'] as $interv)
+                        @php
+                        // Si c'est un tableau, on récupère le premier élément, sinon on garde la chaîne
+                        $intervName = is_array($interv) ? reset($interv) : $interv;
+                        @endphp
                         <div class="interv-chip">
-                            <div class="interv-av">{{ strtoupper(substr($interv,0,1)) }}</div>
-                            {{ $interv }}
+                            {{-- ATTENTION : On utilise bien $intervName ici --}}
+                            <div class="interv-av">{{ strtoupper(substr($intervName, 0, 1)) }}</div>
+                            {{-- Et ici aussi --}}
+                            {{ $intervName }}
                         </div>
                         @endforeach
                     </div>
@@ -1133,7 +1165,6 @@
             ['panel','Panels','#6a1b9a'],
             ['atelier','Ateliers','#2e7d32'],
             ['networking','Networking','#e65100'],
-            ['b2b','Rendez-vous B2B','#b07d10'],
             ['pitch','Pitchs','#c2185b'],
             ] as [$t,$l,$c])
             @if ($t !== $type)
@@ -1163,31 +1194,88 @@
     </aside>
 </div>
 
-{{-- FOOTER --}}
+{{-- ══ FOOTER ══ --}}
 <footer class="site-footer">
     <div class="footer-grid">
         <div class="fb">
-            <a href="{{ route('home') }}" class="nav-logo" style="margin-bottom:.5rem">
-                <div class="nav-logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                    </svg></div>
-                <div class="nav-logo-text" style="color:#fff"><span>JEFIE</span>Paris 2026</div>
+            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.4rem">
+                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
+                    <img src="http://127.0.0.1:8000/images/264.png"
+                        alt="Logo JEFIE Paris 2026"
+                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
+                </div>
+                <div class="nav-logo-text" style="color:#fff"><span>Journées économiques et Forum international </span>de l'emploi de la diaspora Gabonaise<br><small>2026</small></div>
             </a>
-            <p>Ensemble, construisons l'avenir par l'innovation.</p>
+            <p>Le rendez-vous mondial des décideurs, innovateurs et entrepreneurs engagés pour un avenir durable.</p>
+            <nav class="socials" aria-label="Réseaux sociaux">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Twitter">&#120143;</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="YouTube">&#9654;</a>
+                <a href="#" aria-label="Instagram">&#9752;</a>
+            </nav>
         </div>
         <div class="fc">
-            <h4>Programme</h4><a href="{{ route('programme.activite','conference') }}">Conférences</a><a href="{{ route('programme.activite','panel') }}">Panels</a><a href="{{ route('programme.activite','atelier') }}">Ateliers</a><a href="{{ route('programme.activite','b2b') }}">Rendez-vous B2B</a><a href="{{ route('programme.activite','pitch') }}">Pitchs</a>
+            <h4>Liens Rapides</h4>
+            <a href="{{ route('index') }}">Accueil</a>
+            <a href="{{ route('programme') }}">Programme</a>
+            <a href="#">Intervenants</a>
+            <a href="{{ route('partenaires') }}">Partenaires</a>
+            <a href="{{ route('actualites') }}">Actualités</a>
         </div>
         <div class="fc">
-            <h4>Navigation</h4><a href="{{ route('home') }}">Accueil</a><a href="{{ route('emploi') }}">Emploi & Recrutement</a><a href="{{ route('partenaires') }}">Partenaires</a><a href="{{ route('actualites') }}">Actualités</a>
+            <h4>Participer</h4>
+            <a href="{{ route('inscription') }}">S'inscrire</a>
+            <a href="{{ route('partenaires.devenir') }}">Devenir partenaire</a>
+            <a href="#">Soumettre un pitch</a>
+            <a href="#">Planifier un RDV B2B</a>
+            <a href="#">Informations pratiques</a>
+            <a href="{{ route('Faq') }}">FAQ</a>
         </div>
         <div class="fc">
-            <h4>Contact</h4><a href="{{ route('contact') }}">Nous contacter</a><a href="{{ route('inscription') }}">S'inscrire</a><a href="{{ route('Faq') }}">FAQ</a>
+            <h4>Informations</h4>
+            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>15 – 18 Juin 2026</div>
+            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>Palais des Congrès<br>Abidjan, Côte d'Ivoire</div>
+            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="M2 7l10 7 10-7" />
+                </svg>contact@forum-innovation.org</div>
+            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12 12 0 00.74 2.9A2 2 0 017.21 7l-1.27 1.27a16 16 0 006.79 6.79L14 13.79a2 2 0 012.18-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z" />
+                </svg>+225 01 23 45 67 89</div>
+        </div>
+        <div class="fc">
+            <h4>Recevez nos Actualités</h4>
+            <form action="{{ route('newsletter.subscribe') }}" method="POST">
+                @csrf
+                <div class="footer-nl-form">
+                    <input type="email" name="email_newsletter" placeholder="Votre email" required>
+                    <button type="submit" aria-label="S'abonner">
+                        <svg viewBox="0 0 24 24">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" fill="#0d1b3e" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
     <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} JEFIE Paris 2026. Tous droits réservés.</span>
-        <div class="footer-legal"><a href="{{ route('mentions-legales') }}">Mentions légales</a><a href="{{ route('confidentialite') }}">Confidentialité</a></div>
+        <span class="footer-copy">&copy; {{ date('Y') }} CDC site. Tous droits réservés.</span>
+        <div class="footer-legal">
+            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
+            <a href="{{ route('confidentialite') }}">Confidentialité</a>
+            <a href="#">CGU</a>
+        </div>
     </div>
 </footer>
-@endsection
+
+</body>
+
+</html>

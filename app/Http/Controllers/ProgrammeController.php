@@ -24,7 +24,89 @@ class ProgrammeController extends Controller
         ]);
     }
 
+    /**
+     * Filtre et affiche les activités selon le type (slug) sélectionné
+     */
+    public function activite(Request $request, string $slug): View
+    {
+        // 1. On récupère le jour actif (par défaut jour 1)
+        $jourActif = $request->get('jour', 1);
 
+        // 2. On récupère TOUTES les activités du jour
+        $toutesLesActivites = $this->activitesParJour((int) $jourActif);
+
+        // 3. On FILTRE la liste pour ne garder que le type correspondant au slug
+        $activitesFiltrees = array_filter($toutesLesActivites, function ($activite) use ($slug) {
+            return isset($activite['type']) && $activite['type'] === $slug;
+        });
+
+
+        // Transformation obligatoire en collection pour le Blade
+
+
+        // ✅ CORRIGÉ : Ajout de "use ($jourActif)" pour transmettre la variable à la fonction interne
+        $sessionsCollection = collect($activitesFiltrees)->map(function ($item) use ($jourActif) {
+            // Extraction et normalisation des places pour la jauge Blade
+            $total = $item['places_total'] ?? 100; // 100 par défaut pour les sessions libres
+            $restantes = $item['places_restantes'] ?? 40;
+
+            $item['places'] = $total;
+            $item['places_total'] = $total;
+            $item['places_restantes'] = $restantes;
+
+
+            // ✅ CORRECTION : Ajout des clés exigées par le Blade pour éviter les erreurs "Clé non définie"
+            $item['jour'] = $item['jour'] ?? $jourActif; // Injecte le numéro du jour actuel (ex: 1)
+            $item['description'] = $item['description'] ?? 'Aucune description disponible pour cette session.';
+
+            // Calcul logique ou simulation des inscrits pour éviter la division par 0
+            $item['inscrits'] = $item['inscrits'] ?? ($total - $restantes);
+            $item['statut'] = $item['statut'] ?? 'confirme';
+            $item['vedette'] = $item['vedette'] ?? false;
+
+            return $item;
+        });
+
+        // 💡 Dictionnaire de traduction pour les en-têtes
+        $labels = [
+            'conference' => 'Conférences',
+            'panel' => 'Panels',
+            'atelier' => 'Ateliers',
+            'networking' => 'Networking',
+            'b2b' => 'Pitchs partenaires',
+            'pitch' => 'Pitchs entrepreneuriaux'
+        ];
+
+        // Définition de $typeInfo
+        $typeInfo = [
+            'label' => $labels[$slug] ?? ucfirst($slug) . 's',
+            'desc'  => 'Découvrez la liste complète pour le Jour ' . $jourActif,
+            'bg'    => '#eef2ff' // Couleur de fond par défaut pour les badges des onglets
+        ];
+
+
+        // 4. On renvoie la MÊME vue 'programme' mais avec la liste filtrée !
+        return view('programme.activité', [
+            'jours'           => $this->jours(),
+            'activites'       => $activitesFiltrees, // <-- Contient uniquement le type demandé !
+            'sessions'        => $sessionsCollection, // <-- Variable maîtresse
+            'typeInfo'        => $typeInfo, // <-- ✅ ASSURÉ : Envoi direct vers Blade
+            'jourActif'       => (int) $jourActif,
+            'slugActif'       => $slug,              // <-- Pratique pour savoir quel filtre est coché dans Blade
+            'aNesPasManquer'  => $this->aNesPasManquer(),
+            'accesRapides'    => $this->accesRapides(),
+            'thematiques'     => $this->thematiques(),
+            'intervenants'    => $this->intervenants(),
+            'formats'         => $this->formats(),
+        ]);
+    }
+    /**
+     * ✅ DOUBLE SÉCURITÉ : Gère l'appel persistant avec accent du routeur ou du cache
+     */
+    public function activité(Request $request, string $type): View
+    {
+        return $this->activite($request, $type);
+    }
     // ── Données ────────────────────────────────────────────────────
 
     private function jours(): array
@@ -122,24 +204,24 @@ class ProgrammeController extends Controller
                     'bg' => '#fff3e0',
                     'intervenant_nom' => null,
                     'intervenant_role' => null,
-                    'nb_intervenants' => 0,
+                    'nb_intervenants' => 700,
                     'icon' => '<path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>',
                 ],
                 [
                     'heure_debut' => '18:30',
                     'heure_fin' => '20:00',
                     'type' => 'b2b',
-                    'type_label' => 'Rendez-vous B2B',
+                    'type_label' => 'Pitchs  partenaires',
                     'titre' => 'Rencontrez des partenaires qualifiés',
-                    'salle' => 'Espace B2B',
+                    'salle' => 'Salle Pitch',
                     'places_total' => null,
                     'places_restantes' => null,
                     'couleur' => '#1565c0',
                     'bg' => '#e3f2fd',
                     'intervenant_nom' => null,
                     'intervenant_role' => null,
-                    'nb_intervenants' => 0,
-                    'icon' => '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>',
+                    'nb_intervenants' => 100,
+                    'icon' => '<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>',
                 ],
                 [
                     'heure_debut' => '20:30',
@@ -326,18 +408,36 @@ class ProgrammeController extends Controller
             ['date' => '17 JUIN · 16:30', 'titre' => 'Networking Cocktail',            'salle' => 'Espace Networking', 'color' => '#e65100', 'photo' => 'co.jpg'],
         ];
     }
-
     private function accesRapides(): array
     {
         return [
-            ['label' => 'Conférences', 'icon' => '<path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/>',    'color' => '#1565c0'],
-            ['label' => 'Panels',      'icon' => '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/>', 'color' => '#6a1b9a'],
-            ['label' => 'Ateliers',    'icon' => '<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>',                                                                 'color' => '#2e7d32'],
-            ['label' => 'Networking',  'icon' => '<path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23"/>',             'color' => '#e65100'],
-            ['label' => 'B2B',         'icon' => '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>',                 'color' => '#00838f'],
-            ['label' => 'Pitchs',      'icon' => '<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>',                             'color' => '#c62828'],
+            [
+                'label' => 'Conférences',
+                'slug'  => 'conference', // <-- AJOUTER LE SLUG ICI
+                'color' => '#1565c0',
+                'icon'  => '<path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/>...'
+            ],
+            [
+                'label' => 'Panels',
+                'slug'  => 'panel',      // <-- AJOUTER LE SLUG ICI
+                'color' => '#6a1b9a',
+                'icon'  => '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>...'
+            ],
+            [
+                'label' => 'Ateliers',
+                'slug'  => 'atelier',    // <-- AJOUTER LE SLUG ICI
+                'color' => '#2e7d32',
+                'icon'  => '<circle cx="12" cy="12" r="3"/>...'
+            ],
+            [
+                'label' => 'Networking',
+                'slug'  => 'networking', // <-- AJOUTER LE SLUG ICI
+                'color' => '#e65100',
+                'icon'  => '<path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>...'
+            ],
         ];
     }
+
 
     private function thematiques(): array
     {
@@ -364,6 +464,6 @@ class ProgrammeController extends Controller
 
     private function formats(): array
     {
-        return ['Conférence', 'Panel', 'Atelier', 'Networking', 'B2B', 'Pitch'];
+        return ['Conférence', 'Panel', 'Atelier', 'Networking', 'Pitch'];
     }
 }

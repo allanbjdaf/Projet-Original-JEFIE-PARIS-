@@ -373,3 +373,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 use App\Http\Controllers\GouvernanceController;
 // Route publique pour afficher la page de gouvernance
 Route::get('/gouvernance', [GouvernanceController::class, 'index'])->name('gouvernance');
+
+/// Page Mon Agenda (accessible à tous — visiteurs et connectés)
+Route::get('/programme/mon-agenda', function () {
+    return view('programme.mon-agenda');
+})->name('programme.mon-agenda');

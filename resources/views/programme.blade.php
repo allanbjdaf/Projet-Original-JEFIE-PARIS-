@@ -121,130 +121,10 @@
         stroke-width: 2;
     }
 
-    /* ── LANGUAGE SWITCHER ── */
-    * Styles optionnels pour que le sélecteur de langue et le bouton s'alignent parfaitement en hauteur */
- .lang-switcher {
-        position: relative;
-        display: inline-block;
-    }
 
-    .lang-btn,
-    .nav-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
 
-    .lang-btn {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        background: rgba(255, 255, 255, .08);
-        border: 1px solid rgba(255, 255, 255, .2);
-        border-radius: 5px;
-        padding: 7px 12px;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: background .2s;
-        font-family: inherit;
-    }
 
-    .lang-btn:hover {
-        background: rgba(255, 255, 255, .14);
-    }
 
-    .lang-btn svg {
-        width: 14px;
-        height: 14px;
-        stroke: currentColor;
-        fill: none;
-        stroke-width: 2;
-    }
-
-    .lang-flag {
-        font-size: 14px;
-        line-height: 1;
-    }
-
-    .lang-dropdown {
-        display: none;
-        /* Caché par défaut */
-        position: absolute;
-        right: 0;
-        top: 100%;
-        margin-top: 0.5rem;
-        background: #ffffff;
-        /* Ou couleur sombre selon votre thème */
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        min-width: 150px;
-        z-index: 1000;
-    }
-
-    .lang-switcher:hover .lang-dropdown,
-    .lang-dropdown.open {
-        display: block;
-    }
-
-    .lang-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.5rem 1rem;
-        color: #333;
-        text-decoration: none;
-        transition: background 0.2s;
-    }
-
-    .lang-item:last-child {
-        border-bottom: none;
-    }
-
-    .lang-item:hover {
-        background: #f4f4f4;
-    }
-
-    .lang-item.active {
-        font-weight: bold;
-    }
-
-    .lang-item.active .lang-item-flag {
-        filter: brightness(1);
-    }
-
-    .lang-item-flag {
-        font-size: 16px;
-        flex-shrink: 0;
-    }
-
-    .lang-item-name {
-        font-weight: 400;
-    }
-
-    .lang-item-code {
-        color: #888888;
-        /* Remplacez par le code gris de votre choix, ex: #6b7280 */
-        font-size: 0.75rem;
-        font-weight: 500;
-    }
-
-    .lang-item.active .lang-item-code {
-        color: #888888;
-        ;
-    }
-
-    .lang-check {
-        margin-left: auto;
-    }
-
-    .lang-check svg {
-        width: 14px;
-        height: 14px;
-        fill: none;
-        stroke-width: 2.5;
-    }
 
 
     /* ── HERO ── */
@@ -1600,7 +1480,7 @@
         }
     }
 </style>
-@endsection
+@endsection {{-- AJOUTÉ : Ferme proprement les styles --}}
 
 @section('content')
 
@@ -1624,7 +1504,7 @@
             construisons ensemble l'avenir.
         </p>
         <div class="hero-actions">
-            <a href="#programme-section" class="btn-gold">
+            <a href="{{ route('programme.mon-agenda') }}" class="btn-gold">
                 <svg viewBox="0 0 24 24">
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <path d="M16 2v4M8 2v4M3 10h18" />
@@ -1669,23 +1549,29 @@
         </div>
     </div>
     @php
-    // Sécurité : Si le cache bloque ou si la variable est absente, on va chercher directement la méthode du contrôleur
+    // Sécurité : Si le cache bloque ou si la variable est absente
     if (!isset($accesRapides)) {
-    $accesRapides = (new \App\Http\Controllers\ProgrammeController())->index(request())->getData()['accesRapides']
-    ?? (new \App\Http\Controllers\ProgrammeController())->index(request())->getData()['acceesRapides']
-    ?? [];
+    $accesRapides = (new \App\Http\Controllers\ProgrammeController())->index(request())->getData()['accesRapides'] ?? [];
     }
     @endphp
+
+    {{-- NETTOYÉ : Un seul bloc d'accès rapides avec une seule boucle propre --}}
     <div class="accès-rapides-block">
         <div class="ar-label">Accès Rapides</div>
         <div class="ar-list">
             @foreach ($accesRapides as $ar)
-            @php $arIconBg = $ar['color'] . '18'; $arColor = $ar['color']; @endphp
-            <a href="#" class="ar-item" aria-label="{{ $ar['label'] }}">
-                <div class="ar-icon" style="background:<?php echo $arIconBg; ?>">
-                    <svg viewBox="0 0 24 24" style="stroke:<?php echo $arColor; ?>" aria-hidden="true">{!! $ar['icon'] !!}</svg>
+            @php
+            $arIconBg = ($ar['color'] ?? '#0d1b3e') . '18';
+            $arColor = $ar['color'] ?? '#0d1b3e';
+            $slugActivite = $ar['slug'] ?? $ar['type'] ?? strtolower($ar['label'] ?? 'activite');
+            @endphp
+
+            {{-- ✅ Le href utilise désormais la variable correctement initialisée --}}
+            <a href="{{ route('programme.activite', $slugActivite) }}" class="ar-item" aria-label="{{ $ar['label'] ?? '' }}">
+                <div class="ar-icon" style="background: {{ $arIconBg }}; color: {{ $arColor }};">
+                    <svg viewBox="0 0 24 24" style="stroke: currentColor;" aria-hidden="true">{!! $ar['icon'] ?? '' !!}</svg>
                 </div>
-                <span class="ar-lbl">{{ $ar['label'] }}</span>
+                <span class="ar-lbl">{{ $ar['label'] ?? '' }}</span>
             </a>
             @endforeach
         </div>
@@ -1817,10 +1703,10 @@
                             </svg>
                             {{ $act['salle'] }}
                         </div>
+
                         <div class="activity-meta">
                             <div class="intervenant-row">
-
-                                {{-- CAS 1 : Si un intervenant principal est défini (ex: Pr. Amadou KONÉ) --}}
+                                {{-- Intervenant principal ou secondaire --}}
                                 @if (!empty($act['intervenant_nom']))
                                 @if(!empty($act['photo']))
                                 <img class="interv-avatar main-avatar" src="{{ asset('images/' . $act['photo']) }}" alt="{{ $act['intervenant_nom'] }}">
@@ -1831,23 +1717,19 @@
                                 <img class="interv-avatar" src="{{ asset('images/' . $interv['photo']) }}" alt="{{ $interv['nom'] }}">
                                 @endforeach
                                 @endif
-
-                                {{-- CAS 2 : Si c'est un Panel (Pas de leader, on liste les photos du tableau directement) --}}
                                 @elseif(!empty($act['intervenants']))
                                 @foreach(array_slice($act['intervenants'], 0, 3) as $interv)
                                 <img class="interv-avatar" src="{{ asset('images/' . $interv['photo']) }}" alt="{{ $interv['nom'] }}" title="{{ $interv['nom'] }}">
                                 @endforeach
                                 @endif
 
-                                {{-- COMPTEUR DE BULLES (+X) --}}
-                                {{-- Calcule le reste par rapport au nombre total déclaré ou au tableau --}}
+                                {{-- Compteur de bulles --}}
                                 @if(isset($act['nb_intervenants']) && $act['nb_intervenants'] > 3)
                                 <div class="interv-plus">+{{ $act['nb_intervenants'] - 3 }}</div>
                                 @elseif(!empty($act['intervenants']) && count($act['intervenants']) > 3)
                                 <div class="interv-plus">+{{ count($act['intervenants']) - 3 }}</div>
                                 @endif
 
-                                {{-- LIBELLÉ GLOBAL DU PANEL (Affiche le texte à droite des bulles) --}}
                                 <div class="interv-text-group">
                                     @if (!empty($act['intervenant_nom']))
                                     <div class="interv-info-name">{{ $act['intervenant_nom'] }}</div>
@@ -1856,32 +1738,31 @@
                                     <div class="interv-info-name">{{ count($act['intervenants']) }} intervenants</div>
                                     @endif
                                 </div>
-
                             </div>
 
-                            {{-- Badge des places limitées --}}
                             @if ($act['places_restantes'] !== null)
                             <div class="places-badge">
                                 Places limitées · {{ $act['places_restantes'] }}/{{ $act['places_total'] }} places
                             </div>
                             @endif
                         </div>
-
                     </div>
+
                     <div class="activity-actions">
-                        <button class="act-btn agenda" type="button">
+                        <a href="{{ route('programme.mon-agenda') }}" class="btn-gold">
                             <svg viewBox="0 0 24 24">
                                 <rect x="3" y="4" width="18" height="18" rx="2" />
                                 <path d="M16 2v4M8 2v4M3 10h18" />
                             </svg>
                             Ajouter à mon agenda
-                        </button>
-                        @if ($act['type'] === 'b2b' || $act['type'] === 'networking')
+                        </a>
+                        @if ($act['type'] === 'b2b' )
                         <button class="act-btn rdv" type="button">
                             <svg viewBox="0 0 24 24">
-                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                                <polygon points="23 7 16 12 23 17 23 7" />
+                                <rect x="1" y="5" width="15" height="14" rx="2" />
                             </svg>
-                            Planifier un RDV
+                            Soumettre mon pitch
                         </button>
                         @endif
                         @if ($act['type'] === 'pitch')
@@ -1910,34 +1791,111 @@
             </button>
         </div>
     </div>
+</div>
 
-    {{-- Sidebar droite : À ne pas manquer --}}
-    <aside class="right-sidebar" aria-label="À ne pas manquer">
-        <div class="rs-title">À Ne Pas Manquer</div>
-        @foreach ($aNesPasManquer as $item)
-        @php $aneColor = $item['color']; @endphp
-        <div class="ane-card">
-            <div class="ane-photo">
-                @if ($item['photo'])
-                <img src="{{ asset('images/'.$item['photo']) }}" alt="{{ $item['titre'] }}">
-                @else
-                <div class="ane-photo-placeholder">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                        <circle cx="12" cy="7" r="4" />
-                    </svg>
-                </div>
-                @endif
+
+{{-- Sidebar droite : À ne pas manquer --}}
+<aside class="right-sidebar" aria-label="À ne pas manquer">
+    <div class="rs-title">À Ne Pas Manquer</div>
+    @foreach ($aNesPasManquer as $item)
+    @php $aneColor = $item['color']; @endphp
+    <div class="ane-card">
+        <div class="ane-photo">
+            @if ($item['photo'])
+            <img src="{{ asset('images/'.$item['photo']) }}" alt="{{ $item['titre'] }}">
+            @else
+            <div class="ane-photo-placeholder">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
             </div>
-            <div class="ane-info">
-                <div class="ane-date" style="color:<?php echo $aneColor; ?>">{{ $item['date'] }}</div>
-                <div class="ane-title">{{ $item['titre'] }}</div>
-                <div class="ane-salle">{{ $item['salle'] }}</div>
-                <button class="ane-detail-btn" type="button">Détails</button>
+            @endif
+        </div>
+        <div class="ane-info">
+            <div class="ane-date" style="color:<?php echo $aneColor; ?>">{{ $item['date'] }}</div>
+            <div class="ane-title">{{ $item['titre'] }}</div>
+            <div class="ane-salle">{{ $item['salle'] }}</div>
+            {{-- ✅ Bouton modifié avec les attributs data pour JavaScript --}}
+            <button class="ane-detail-btn" type="button"
+                data-titre="{{ $item['titre'] }}"
+                data-description="{{ $item['description'] ?? 'Aucune description disponible.' }}"
+                data-date="{{ $item['date'] }}"
+                data-salle="{{ $item['salle'] }}">
+                Détails
+            </button>
+        </div>
+    </div>
+
+    @endforeach
+</aside>
+
+
+{{-- ✅ Structure HTML de la Modale (Masquée par défaut) --}}
+<div id="customSidebarModal" class="sb-modal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center;">
+    <div class="sb-modal-content" style="background-color: #fff; padding: 25px; border-radius: 8px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-family: sans-serif;">
+        <span class="sb-modal-close" style="position: absolute; right: 15px; top: 10px; font-size: 24px; cursor: pointer; color: #aaa;">&times;</span>
+
+        <h2 id="modalTitre" style="margin-top: 0; color: #0d1b3e; font-size: 20px; font-weight: 700;"></h2>
+
+        <div style="margin: 15px 0;">
+            <strong style="color: #555;">Description :</strong>
+            <p id="modalDescription" style="color: #666; margin-top: 5px; font-size: 14px; line-height: 1.5;"></p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px; font-size: 13px;">
+            <div>
+                <span style="color: #555;">📅 <strong>Date / Heure :</strong></span>
+                <div id="modalDate" style="color: #666; margin-top: 3px;"></div>
+            </div>
+            <div>
+                <span style="color: #555;">📍 <strong>Stand / Salle :</strong></span>
+                <div id="modalSalle" style="color: #666; margin-top: 3px;"></div>
             </div>
         </div>
-        @endforeach
-    </aside>
+    </div>
+</div>
+
+
+{{-- ✅ Script JavaScript pour gérer l'ouverture et la fermeture --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('customSidebarModal');
+        const closeBtn = document.querySelector('.sb-modal-close');
+
+        // Écoute les clics sur tous les boutons "Détails"
+        document.querySelectorAll('.ane-detail-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Récupération des données depuis le bouton
+                const titre = this.getAttribute('data-titre');
+                const description = this.getAttribute('data-description');
+                const date = this.getAttribute('data-date');
+                const salle = this.getAttribute('data-salle');
+
+                // Injection dans la modale
+                document.getElementById('modalTitre').innerText = titre;
+                document.getElementById('modalDescription').innerText = description;
+                document.getElementById('modalDate').innerText = date;
+                document.getElementById('modalSalle').innerText = salle;
+
+                // Affichage de la modale avec Flexbox pour le centrage
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Fermeture avec la croix
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Fermeture en cliquant à l'extérieur de la modale
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+</script>
 
 </div>{{-- /.programme-layout --}}
 
@@ -2069,7 +2027,8 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> {{-- Fermeture de la div globale interne du footer --}}
+
     <div class="footer-bottom">
         <span class="footer-copy">&copy; {{ date('Y') }} CDC site. Tous droits réservés.</span>
         <div class="footer-legal">
@@ -2080,32 +2039,7 @@
     </div>
 </footer>
 
-@push('scripts')
-<script>
-    // Compte à rebours vers le 15 juin 2026
-    (function() {
-        const target = new Date('2026-06-15T09:00:00').getTime();
-
-        function update() {
-            const now = Date.now();
-            const diff = Math.max(0, target - now);
-            const days = Math.floor(diff / 86400000);
-            const hours = Math.floor((diff % 86400000) / 3600000);
-            const mins = Math.floor((diff % 3600000) / 60000);
-            const secs = Math.floor((diff % 60000) / 1000);
-            const pad = n => String(n).padStart(2, '0');
-            const el = id => document.getElementById(id);
-            if (el('cd-days')) el('cd-days').textContent = pad(days);
-            if (el('cd-hours')) el('cd-hours').textContent = pad(hours);
-            if (el('cd-mins')) el('cd-mins').textContent = pad(mins);
-            if (el('cd-secs')) el('cd-secs').textContent = pad(secs);
-        }
-        update();
-        setInterval(update, 1000);
-    })();
-</script>
-@endpush
-
+{{-- UN SEUL ET UNIQUE SCRIPT NETTOYÉ POUR ÉVITER LES ERREURS BLADE --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Définition de la date cible : 15 Septembre 2026 à 09:00:00
@@ -2152,6 +2086,5 @@
         setInterval(updateCountdown, 1000);
     });
 </script>
-
 
 @endsection

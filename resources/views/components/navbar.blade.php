@@ -438,8 +438,31 @@
             </button>
         </div>
 
-        {{-- Notifications --}}
-        <a href="
+        {{-- ✅ Bouton Mon Agenda avec bulle de notification --}}
+        <a href="{{ route('programme.mon-agenda') }}" id="agendaNavBtn" title="Mon agenda" style="position: relative; display: inline-flex; align-items: center; margin-right: 15px; text-decoration: none;">
+            <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: none; stroke: #fff; stroke-width: 1.8;">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>
+            <span id="agendaNavCount" style="
+            display: none;
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            width: 16px;
+            height: 16px;
+            background: #e53935;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 9px;
+            font-weight: 800;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        ">0</span>
+        </a>
+
+
 
         {{-- Bouton S'inscrire --}}
         <a href=" {{ route('inscription') }}" class="nav-btn">
@@ -515,6 +538,24 @@
             if (dropdown) dropdown.classList.remove('open');
             const btn = document.getElementById('langBtn');
             if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>
+{{-- À placer tout en bas de votre fichier avant @endsection --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Lecture des données stockées dans le navigateur
+        const monAgenda = JSON.parse(localStorage.getItem('jefie_agenda')) || [];
+        const badgeCount = document.getElementById('agendaNavCount');
+
+        // Mise à jour instantanée du compteur rouge de la Navbar
+        if (badgeCount) {
+            if (monAgenda.length > 0) {
+                badgeCount.innerText = monAgenda.length;
+                badgeCount.style.display = 'flex'; // Affiche la bulle
+            } else {
+                badgeCount.style.display = 'none'; // Masque la bulle si l'agenda est vide
+            }
         }
     });
 </script>
