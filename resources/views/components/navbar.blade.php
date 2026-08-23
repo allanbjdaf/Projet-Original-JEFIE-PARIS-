@@ -17,22 +17,22 @@
     .nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 
     .nav-logo{
-    display:flex;align-items:center;gap:10px;
-    text-decoration:none;flex-shrink:0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none
     }
 
     .nav-logo-icon {
-        width: auto;
-        height: 46px;
-        border: 2px solid #f5a623;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        background: #0d1b3e;
-        display:block;
-        object-fit:contain;
-    }
+            width: 44px;
+            height: 44px;
+            border: 2px solid #f5a623;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0
+        }
 
     .nav-logo-text {
         color: #fff;
@@ -780,16 +780,8 @@
 
         {{-- Liens directs --}}
         <div class="mob-section-title">Navigation</div>
-        <a href="{{ route('emploi') }}" class="mob-link">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>
-            Offres d'emploi
-            <span class="mob-link-arrow">›</span>
-        </a>
-        <a href="{{ route('programme') }}" class="mob-link">
-            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Programme
-            <span class="mob-link-arrow">›</span>
-        </a>
+       
+       
         <a href="{{ route('partenaires') }}" class="mob-link">
             <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
             Partenaires
