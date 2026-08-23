@@ -54,21 +54,21 @@
         .nav-logo-icon {
             width: 44px;
             height: 44px;
-            border: 2px solid #f5a623;
-            border-radius: 50%;
+            
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0
         }
+        
 
-        .nav-logo-icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: #f5a623;
-            fill: none;
-            stroke-width: 1.8
-        }
+        /* Remplacement de la règle svg par celle-ci pour l'image */
+.nav-logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
 
         .nav-logo-text {
             color: #fff;
@@ -150,7 +150,94 @@
             stroke: currentColor;
             fill: none;
             stroke-width: 2
-        }
+        }/* --- RESPONSIVE NAVIGATION --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    margin-left: 2rem;
+}
+
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: flex; /* Affiche le bouton hamburger sur mobile/tablette */
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 68px; /* Hauteur exacte de votre navbar */
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 68px);
+        background: #0d1b3e;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2.5rem;
+        padding: 3rem 1.5rem;
+        transition: left 0.4s ease;
+        margin-left: 0;
+        z-index: 1000;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .nav-menu.active {
+        left: 0; /* Fait glisser le menu depuis la gauche */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 18px !important;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .btn-login, .btn-rejoindre {
+        width: 100%;
+        justify-content: center;
+        padding: 12px !important;
+    }
+
+    /* Animation du bouton hamburger en croix X quand actif */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
 
         /* ── HERO ── */
         .hero {
@@ -1887,14 +1974,22 @@
 
     <!-- ══ NAV ══ -->
     <nav class="nav" id="mainNav">
-        <a href="#" class="nav-logo">
-            <!-- ../../ permet de sortir de views et resources, puis on entre dans public/images -->
-            <img src="images/264.png" alt="Logo JEFIE"
-                style="height: 44px; width: auto; object-fit: contain;">
+    <a href="#" class="nav-logo" style="display: flex !important; align-items: center !important; gap: 12px !important; text-decoration: none !important;">
+        <div style="width: 44px !important; height: 44px !important; border: none !important; border-radius: 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; background: transparent !important; box-shadow: none !important; padding: 0 !important;">
+            <img src="images/264.png" alt="Logo JEFIE" style="height: 100% !important; width: 100% !important; object-fit: contain !important; display: block !important; border: none !important;">
+        </div>
+        <div class="nav-logo-text"><span>JEFIE</span>Paris 2026</div>
+    </a>
 
-            <div class="nav-logo-text"><span>JEFIE</span>Paris 2026</div>
-        </a>
+    <!-- Bouton Hamburger visible uniquement sur Mobile -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
 
+    <!-- Conteneur global des liens et boutons -->
+    <div class="nav-menu" id="navMenu">
         <div class="nav-links">
             <a href="#">Accueil</a>
             <a href="#pourquoi">Pourquoi nous rejoindre</a>
@@ -1904,9 +1999,7 @@
             <a href="#newsletter">Newsletter</a>
         </div>
         <div class="nav-right">
-            <!-- Remplacement du @auth par le bouton par défaut -->
             <a href="#" class="btn-login">Se connecter</a>
-
             <a href="#" class="btn-rejoindre">
                 <svg viewBox="0 0 24 24">
                     <path d="M16 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
@@ -1917,7 +2010,9 @@
                 Rejoindre la plateforme
             </a>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- ══ HERO ══ -->
     <!-- ══ HERO AVEC TAILLE RÉDUITE ET PROTECTION DES TEXTES ══ -->
@@ -2094,18 +2189,12 @@
                             </svg>
                             Recevoir les alertes du Forum
                         </div>
-  <form class="hc-nl-row" action="https://formsubmit.co" method="POST">
-            <!-- Redirection automatique après l'inscription (optionnel) -->
-         
-        <!-- Redirige l'utilisateur vers votre site après son inscription -->
-        <input type="hidden" name="_next" value="https://jefieparis2026.net">
-        
-        <!-- Enlève le test robot pour une inscription instantanée -->
-        <input type="hidden" name="_captcha" value="false">
-        
-        <input type="email" class="hc-nl-input" name="email" placeholder="votre@email.com" id="heroEmail" required>
-        <button type="submit" class="hc-nl-btn">S'alerter</button>
-    </form>
+                        <form class="hc-nl-row" onsubmit="subscribeMini(event)">
+                            <!-- @csrf retiré pour le HTML pur -->
+                            <input type="email" class="hc-nl-input" placeholder="votre@email.com" id="heroEmail"
+                                required>
+                            <button type="submit" class="hc-nl-btn">S'alerter</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -2958,6 +3047,24 @@
         }, 1000);
 
     </script>
+    <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Ferme automatiquement le menu au clic sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
+
 </body>
 
 </html>
