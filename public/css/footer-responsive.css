@@ -1,0 +1,313 @@
+/* ══════════════════════════════════════════════════════════
+   FOOTER RESPONSIVE — Global
+   Appliqué à toutes les vues du projet JEFIE Paris 2026
+   Ce fichier gère uniquement le comportement responsive
+   des footers sans impacter le contenu des pages.
+   Chargé après @yield('styles') pour garantir la priorité.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── BASE : réinitialisation box-sizing pour le footer ── */
+.site-footer *,
+.site-footer *::before,
+.site-footer *::after {
+    box-sizing: border-box;
+}
+
+/* ── FOOTER PRINCIPAL : base commune ── */
+.site-footer {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ── NEWSLETTER FORM : flexible par défaut ── */
+.footer-nl,
+.footer-nl-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.footer-nl input,
+.footer-nl-form input {
+    flex: 1 1 180px;
+    min-width: 0;
+}
+
+.footer-nl button,
+.footer-nl-form button {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* ── FOOTER BOTTOM : flex wrap par défaut ── */
+.footer-bottom {
+    flex-wrap: wrap;
+}
+
+.footer-legal,
+.footer-legal-links,
+.footer-links {
+    flex-wrap: wrap;
+}
+
+/* ── SOCIALS : flex wrap ── */
+.socials {
+    flex-wrap: wrap;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BREAKPOINT TABLETTE LARGE : ≤ 1100px
+   Utilisation de !important pour surcharger les styles inline
+   ══════════════════════════════════════════════════════════ */
+@media screen and (max-width: 1100px) {
+
+    /* Grilles à 2 colonnes */
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.75rem !important;
+    }
+
+    /* footer-main spécifique au forum.blade.php */
+    .site-footer .footer-main {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.75rem !important;
+    }
+
+    /* Padding latéral du footer */
+    .site-footer {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BREAKPOINT TABLETTE : ≤ 900px
+   ══════════════════════════════════════════════════════════ */
+@media screen and (max-width: 900px) {
+
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .site-footer .footer-main {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .site-footer {
+        padding-left: 1.75rem !important;
+        padding-right: 1.75rem !important;
+    }
+
+    /* Barre du bas en colonne centrée */
+    .site-footer .footer-bottom {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 0.75rem !important;
+    }
+
+    .site-footer .footer-legal,
+    .site-footer .footer-legal-links,
+    .site-footer .footer-links {
+        justify-content: center !important;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BREAKPOINT MOBILE LARGE : ≤ 768px
+   ══════════════════════════════════════════════════════════ */
+@media screen and (max-width: 768px) {
+
+    .site-footer {
+        padding: 2rem 1.25rem 0 !important;
+    }
+
+    /* 2 colonnes compactes */
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .site-footer .footer-main {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    /* Newsletter form en colonne */
+    .site-footer .footer-nl,
+    .site-footer .footer-nl-form {
+        flex-direction: column !important;
+    }
+
+    .site-footer .footer-nl input,
+    .site-footer .footer-nl-form input {
+        width: 100% !important;
+    }
+
+    .site-footer .footer-nl button,
+    .site-footer .footer-nl-form button {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    /* Taille police réseaux liens footer */
+    .site-footer .fc h4,
+    .site-footer .footer-brand h4,
+    .site-footer .footer-col h4 {
+        font-size: 10px !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .site-footer .fc a,
+    .site-footer .footer-col a {
+        font-size: 12px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .site-footer .fci {
+        font-size: 12px !important;
+    }
+
+    /* Footer bottom centré */
+    .site-footer .footer-bottom {
+        padding: 1rem 0 !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
+    }
+
+    .site-footer .footer-legal,
+    .site-footer .footer-legal-links,
+    .site-footer .footer-links {
+        justify-content: center !important;
+        gap: 0.75rem !important;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BREAKPOINT MOBILE STANDARD : ≤ 480px
+   ══════════════════════════════════════════════════════════ */
+@media screen and (max-width: 480px) {
+
+    .site-footer {
+        padding: 1.75rem 1rem 0 !important;
+    }
+
+    /* 1 colonne sur mobile */
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .site-footer .footer-main {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    /* Logo footer centré sur mobile */
+    .site-footer .fb-brand,
+    .site-footer .fb,
+    .site-footer .footer-brand {
+        text-align: center !important;
+    }
+
+    .site-footer .fb-brand .nav-logo,
+    .site-footer .fb .nav-logo,
+    .site-footer .footer-brand .nav-logo {
+        justify-content: center !important;
+    }
+
+    .site-footer .socials {
+        justify-content: center !important;
+    }
+
+    /* Taille logo footer réduite */
+    .site-footer .fb-brand .nav-logo img,
+    .site-footer .fb .nav-logo img,
+    .site-footer .footer-brand .nav-logo img {
+        height: 45px !important;
+        width: auto !important;
+        max-width: 150px !important;
+    }
+
+    .site-footer .fb-brand p,
+    .site-footer .fb p,
+    .site-footer .footer-brand p {
+        font-size: 12px !important;
+        line-height: 1.55 !important;
+    }
+
+    /* Newsletter form en colonne */
+    .site-footer .footer-nl,
+    .site-footer .footer-nl-form {
+        flex-direction: column !important;
+    }
+
+    .site-footer .footer-nl input,
+    .site-footer .footer-nl-form input {
+        width: 100% !important;
+    }
+
+    .site-footer .footer-nl button,
+    .site-footer .footer-nl-form button {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    /* Footer bottom centré */
+    .site-footer .footer-bottom {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
+        padding: 1rem 0 !important;
+    }
+
+    .site-footer .footer-copy {
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .site-footer .footer-legal,
+    .site-footer .footer-legal-links,
+    .site-footer .footer-links {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+    }
+
+    .site-footer .footer-legal a,
+    .site-footer .footer-legal-links a,
+    .site-footer .footer-links a {
+        font-size: 11px !important;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BREAKPOINT TRÈS PETIT MOBILE : ≤ 360px
+   ══════════════════════════════════════════════════════════ */
+@media screen and (max-width: 360px) {
+
+    .site-footer {
+        padding: 1.5rem 0.85rem 0 !important;
+    }
+
+    .site-footer .fc h4,
+    .site-footer .footer-col h4 {
+        font-size: 10px !important;
+    }
+
+    .site-footer .footer-legal a,
+    .site-footer .footer-legal-links a,
+    .site-footer .footer-links a {
+        font-size: 10px !important;
+    }
+
+    .site-footer .footer-copy {
+        font-size: 10px !important;
+    }
+}

@@ -15,8 +15,11 @@
     {{-- ✅ PAS de @vite ici — évite que Tailwind Breeze écrase votre CSS --}}
     {{-- ✅ PAS de @stack('styles') Breeze --}}
 
-    {{-- Vos styles inline de chaque page --}}
+    {{-- Vos styles inline de chaque page (chargés en premier) --}}
     @yield('styles')
+
+    {{-- CSS global responsive pour les footers (chargé EN DERNIER pour surcharger les styles inline) --}}
+    <link rel="stylesheet" href="{{ asset('css/footer-responsive.css') }}">
 </head>
 
 <body>

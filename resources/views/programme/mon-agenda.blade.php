@@ -1243,6 +1243,8 @@
             }
         }
     </style>
+    {{-- CSS global responsive pour les footers --}}
+    <link rel="stylesheet" href="{{ asset('css/footer-responsive.css') }}">
 </head>
 
 <body>
