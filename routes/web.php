@@ -47,24 +47,6 @@ Route::get('/lang/{locale}', function ($locale) {
     return redirect()->back();
 })->name('lang.switch');
 
-
-// ══════════════════════════════════════════════════════════════
-// routes/web.php — MON ESPACE (à ajouter)
-// ══════════════════════════════════════════════════════════════
-use App\Http\Controllers\MonEspaceController;
-
-Route::middleware('auth')->prefix('mon-espace')->name('mon-espace.')->group(function () {
-    Route::get('/',              [MonEspaceController::class, 'dashboard'])->name('dashboard');
-    Route::get('/profil',        [MonEspaceController::class, 'profil'])->name('profil');
-    Route::put('/profil',        [MonEspaceController::class, 'updateProfil'])->name('profil.update');
-    Route::get('/billet',        [MonEspaceController::class, 'billet'])->name('billet');
-    Route::get('/candidatures',  [MonEspaceController::class, 'candidatures'])->name('candidatures');
-    Route::get('/preferences',   [MonEspaceController::class, 'preferences'])->name('preferences');
-    Route::put('/preferences',   [MonEspaceController::class, 'updatePreferences'])->name('preferences.update');
-    Route::put('/password',      [MonEspaceController::class, 'updatePassword'])->name('password.update');
-});
-
-
 // --- 1. INSCRIPTION CLASSIQUE ---
 Route::get('/inscription', [InscriptionController::class, 'index'])->name('inscription');
 // Cette route utilise 'inscription.store'
@@ -378,3 +360,44 @@ Route::get('/gouvernance', [GouvernanceController::class, 'index'])->name('gouve
 Route::get('/programme/mon-agenda', function () {
     return view('programme.mon-agenda');
 })->name('programme.mon-agenda');
+
+
+// ══════════════════════════════════════════════════════════════
+// FICHIER 1 — Route à ajouter dans routes/web.php
+// ══════════════════════════════════════════════════════════════
+use App\Http\Controllers\PourquoiController;
+
+// Configuré avec un tiret pour correspondre exactement à votre navbar
+Route::get('/pourquoi-participer', [PourquoiController::class, 'index'])
+    ->name('pourquoi-participer');
+
+// Alias de sécurité
+Route::get('/participer', fn() => redirect()->route('pourquoi-participer'));
+
+
+// FICHIER choix auth login/web.php
+// ═══════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════
+// ROUTES PUBLIQUES (Accessibles à tous)
+// ══════════════════════════════════════════════════════════════
+Route::get('/espace-client', function () {
+    return view('auth.choice');
+})->name('auth.choice');
+
+
+// ══════════════════════════════════════════════════════════════
+// ROUTES PRIVÉES (Nécessitent une connexion)
+// ══════════════════════════════════════════════════════════════
+use App\Http\Controllers\MonEspaceController;
+
+
+Route::middleware('auth')->prefix('mon-espace')->name('mon-espace.')->group(function () {
+    Route::get('/',              [MonEspaceController::class, 'dashboard'])->name('dashboard');
+    Route::get('/profil',        [MonEspaceController::class, 'profil'])->name('profil');
+    Route::put('/profil',        [MonEspaceController::class, 'updateProfil'])->name('profil.update');
+    Route::get('/billet',        [MonEspaceController::class, 'billet'])->name('billet');
+    Route::get('/candidatures',  [MonEspaceController::class, 'candidatures'])->name('candidatures');
+    Route::get('/preferences',   [MonEspaceController::class, 'preferences'])->name('preferences');
+    Route::put('/preferences',   [MonEspaceController::class, 'updatePreferences'])->name('preferences.update');
+    Route::put('/password',      [MonEspaceController::class, 'updatePassword'])->name('password.update');
+});

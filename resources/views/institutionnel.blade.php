@@ -1170,7 +1170,7 @@
                 </svg></div>
             <div class="ls-partner-title">Devenez partenaire</div>
             <p class="ls-partner-desc">Associez votre image à un événement d'envergure internationale.</p>
-            <a href="{{ route('inscription') }}" class="ls-partner-btn">Rejoindre le forum</a>
+            <a href="{{ route('inscription') }}" class="ls-partner-btn">Participer au forum</a>
         </div>
     </aside>
 

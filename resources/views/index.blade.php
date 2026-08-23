@@ -1661,7 +1661,7 @@
         </div>
         <div class="hero-actions">
             <a href="{{ route('inscription') }}" class="btn-hero-gold">
-                Rejoindre le forum
+                Participer au forum
                 <svg viewBox="0 0 24 24">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />

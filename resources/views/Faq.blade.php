@@ -1619,7 +1619,7 @@
 {{-- ══ CTA BOTTOM ══ --}}
 <div class="cta-section">
     <div class="cta-eyebrow">Passez à l'action</div>
-    <h2 class="cta-title">Prêt à rejoindre le Forum 2026 ?</h2>
+    <h2 class="cta-title">Prêt à participer au Forum 2026 ?</h2>
     <p class="cta-desc">Inscrivez-vous maintenant et rejoignez 5 000+ décideurs, entrepreneurs et innovateurs du monde entier.</p>
     <div class="cta-btns">
         <a href="{{ route('inscription') }}" class="btn-gold">
