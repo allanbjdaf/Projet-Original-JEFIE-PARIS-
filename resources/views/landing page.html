@@ -1967,6 +1967,103 @@
                 padding: 2rem 1.5rem
             }
         }
+
+        /* --- COMPTE À REBOURS RESPONSIVE --- */
+.countdown-container {
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    max-width: 500px;
+}
+
+.countdown-title {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.countdown-box {
+    background: rgba(13, 27, 62, 0.8);
+    border: 1px solid rgba(245, 166, 35, 0.2);
+    padding: 10px 5px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.countdown-num {
+    display: block;
+    color: #f5a623;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.countdown-lbl {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+/* --- MEDIA QUERIES HERO --- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 1.5rem 3rem !important; /* Réduit les marges sur les côtés */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left {
+        max-width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-eyebrow {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem !important; /* Réduit la taille du titre sur mobile */
+        line-height: 1.2;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .countdown-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .countdown-num {
+        font-size: 22px; /* Chiffres légèrement plus petits pour éviter les débordements */
+    }
+
+    .countdown-lbl {
+        font-size: 9px;
+    }
+}
+
     </style>
 </head>
 
