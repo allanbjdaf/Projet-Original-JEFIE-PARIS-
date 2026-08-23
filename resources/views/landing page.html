@@ -1889,7 +1889,7 @@
     <nav class="nav" id="mainNav">
         <a href="#" class="nav-logo">
             <!-- ../../ permet de sortir de views et resources, puis on entre dans public/images -->
-            <img src="../../public/images/264.png" alt="Logo JEFIE"
+            <img src="images/264.png" alt="Logo JEFIE"
                 style="height: 44px; width: auto; object-fit: contain;">
 
             <div class="nav-logo-text"><span>JEFIE</span>Paris 2026</div>
@@ -2094,12 +2094,18 @@
                             </svg>
                             Recevoir les alertes du Forum
                         </div>
-                        <form class="hc-nl-row" onsubmit="subscribeMini(event)">
-                            <!-- @csrf retiré pour le HTML pur -->
-                            <input type="email" class="hc-nl-input" placeholder="votre@email.com" id="heroEmail"
-                                required>
-                            <button type="submit" class="hc-nl-btn">S'alerter</button>
-                        </form>
+  <form class="hc-nl-row" action="https://formsubmit.co" method="POST">
+            <!-- Redirection automatique après l'inscription (optionnel) -->
+         
+        <!-- Redirige l'utilisateur vers votre site après son inscription -->
+        <input type="hidden" name="_next" value="https://jefieparis2026.net">
+        
+        <!-- Enlève le test robot pour une inscription instantanée -->
+        <input type="hidden" name="_captcha" value="false">
+        
+        <input type="email" class="hc-nl-input" name="email" placeholder="votre@email.com" id="heroEmail" required>
+        <button type="submit" class="hc-nl-btn">S'alerter</button>
+    </form>
                     </div>
                 </div>
             </div>
