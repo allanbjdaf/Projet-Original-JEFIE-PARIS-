@@ -34,6 +34,13 @@
             flex-shrink: 0
         }
 
+          /* Remplacement de la règle svg par celle-ci pour l'image */
+.nav-logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
     .nav-logo-text {
         color: #fff;
         font-size: 10px;
@@ -55,13 +62,12 @@
     }
 
     /* ── Liens de navigation ── */
-    .nav-links {
-        display: flex;
-        gap: 1.4rem;
-        align-items: center;
-        flex: 1;
-        justify-content: center;
-    }
+     .nav-links {
+            display: flex;
+            gap: 1.75rem;
+            align-items: center
+        }
+
 
     .nav-links a {
         color: rgba(255, 255, 255, .85);

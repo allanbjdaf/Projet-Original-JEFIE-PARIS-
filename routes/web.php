@@ -142,6 +142,15 @@ Route::post('/inscription', [InscriptionController::class, 'store'])->name('insc
 Route::get('/inscription/paiement', [InscriptionController::class, 'paiement'])->name('inscription.paiement');
 Route::get('/inscription/confirmation', [InscriptionController::class, 'confirmation'])->name('inscription.confirmation');
 
+// Badge QR — accès au badge via QR Code
+Route::get('/badge/{numero}/{token}', function ($numero, $token) {
+    $inscription = \App\Models\Inscription::where('numero_badge', $numero)
+                   ->where('qr_token', $token)
+                   ->firstOrFail();
+    return view('badge', compact('inscription'));
+})->name('inscription.badge');
+
+
 // ── Newsletter ────────────────────────────────────────────────
 Route::post('/newsletter/subscribe', function (Request $r) {
     $r->validate(['email_newsletter' => ['required', 'email']]);
