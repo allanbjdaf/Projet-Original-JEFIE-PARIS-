@@ -146,7 +146,7 @@
             /* Occupe un peu plus de la moitié droite de l'écran */
 
             /* Chemin relatif statique depuis resources/views/ */
-            background-image: url('../../public/images/tour.jpg');
+            background-image: url('../../public/images/TOURE.png');
             background-size: cover;
             background-position: center right;
             background-repeat: no-repeat;
@@ -168,7 +168,7 @@
             pointer-events: none;
         }
 
-        * ══ CONTENU PRINCIPAL (IMPORTANT POUR RESTER AU-DESSUS) ══ */ .hero-content {
+        .hero-content {
             position: relative;
             z-index: 2;
             /* Reste au premier plan */
@@ -177,14 +177,41 @@
             padding-left: 5%;
         }
 
+        /* Le conteneur parent (ex: .hero ou .hero-bg-container) doit impérativement avoir : position: relative; */
+
         .hero-badge {
             position: absolute;
-            right: 10%;
-            /* Place le macaron jaune sur la Tour Eiffel comme la maquette */
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 2;
+            top: 15%;
+            /* Ajustez selon la hauteur désirée sur votre page */
+            right: 8%;
+            /* Décale le macaron vers la droite comme sur la maquette */
+
+            /* Création du cercle */
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+
+            /* Style visuel */
+            background-color: rgba(5, 27, 44, 0.4);
+            /* Fond sombre semi-transparent */
+            border: 2px solid #00d2ff;
+            /* Bordure fine turquoise/bleue */
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+            /* Léger effet de lueur */
+
+            /* Alignement du contenu au centre */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+            color: #ffffff;
+            font-family: sans-serif;
+            z-index: 10;
         }
+
 
 
 
@@ -204,11 +231,11 @@
         /* Cercle déco inscription (coin droit) */
         .hero-badge {
             position: absolute;
-            right: 8%;
-            top: 50%;
+            right: 1%;
+            top: 30%;
             transform: translateY(-50%);
-            width: 200px;
-            height: 200px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             background: rgba(10, 22, 40, .75);
             border: 3px solid var(--gold);
@@ -236,24 +263,14 @@
             color: var(--gold)
         }
 
+        /* Style de l'icône SVG de calendrier */
         .hb-icon svg {
-            width: 38px;
-            height: 38px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 1.4
+            width: 28px;
+            height: 28px;
+            stroke: #86efac;
+            /* Couleur verte/turquoise claire de l'icône */
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 4rem 3rem 3rem;
-            max-width: 700px;
-        }
 
         .hero-eyebrow {
             display: inline-flex;
@@ -273,6 +290,7 @@
             height: 2px;
             background: var(--gold)
         }
+
 
         .hero h1 {
             font-family: 'Montserrat', sans-serif;
@@ -993,7 +1011,7 @@
     <!-- ══ HERO ══ -->
     <section class="hero">
         <!-- Le conteneur de fond avec le bon chemin relatif de fichier -->
-        <div class="hero-bg" style="background-image: url('../../public/images/tour.jpg');"></div>
+        <div class="hero-bg" style="background-image: url('../../public/images/TOURE.png');"></div>
         <div class="hero-circle-bl"></div>
 
 
