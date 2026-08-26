@@ -79,7 +79,7 @@
         .nav-logo-txt strong {
             color: #f5c518;
             font-size: 1.15rem;
-            font-weight: 900;
+            font-weight: 800;
             letter-spacing: .04em;
             font-family: 'Montserrat', sans-serif
         }
@@ -123,6 +123,7 @@
 
 
         /* ══ HERO ══ */
+        /* ══ HERO ══ */
         .hero {
             min-height: 90vh;
             position: relative;
@@ -130,31 +131,62 @@
             flex-direction: column;
             overflow: hidden;
             padding-top: 72px;
+            background-color: #050e1e;
+            /* Fond de secours bleu nuit */
         }
 
         /* FOND : tour.jpg avec overlay dégradé comme la maquette */
         .hero::before {
             content: '';
             position: absolute;
-            inset: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 55%;
+            /* Occupe un peu plus de la moitié droite de l'écran */
 
-            /* L'image tour.jpg depuis le dossier public (chemin relatif statique) */
-            background-image: url('images/tour.jpg');
+            /* Chemin relatif statique depuis resources/views/ */
+            background-image: url('../../public/images/tour.jpg');
             background-size: cover;
             background-position: center right;
             background-repeat: no-repeat;
             z-index: 0;
+
+            /* MASQUE DÉGRADÉ (Magique) : Fait disparaître l'image en douceur vers la gauche */
+            mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+            -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
         }
 
-        .hero-bg::after {
+        /* OVERLAY SOMBRE SUPPLÉMENTAIRE : Harmonise les couleurs et adoucit l'image */
+        .hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(105deg,
-                    rgba(10, 22, 40, .92) 0%,
-                    rgba(10, 22, 40, .80) 45%,
-                    rgba(10, 22, 40, .35) 100%);
+            /* Un léger voile bleu nuit pour intégrer l'image au fond */
+            background: linear-gradient(to right, #030b16 40%, rgba(3, 11, 22, 0.4) 70%, rgba(3, 11, 22, 0) 100%);
+            z-index: 1;
+            pointer-events: none;
         }
+
+        * ══ CONTENU PRINCIPAL (IMPORTANT POUR RESTER AU-DESSUS) ══ */ .hero-content {
+            position: relative;
+            z-index: 2;
+            /* Reste au premier plan */
+            max-width: 55%;
+            /* S'arrête avant de chevaucher la Tour Eiffel */
+            padding-left: 5%;
+        }
+
+        .hero-badge {
+            position: absolute;
+            right: 10%;
+            /* Place le macaron jaune sur la Tour Eiffel comme la maquette */
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+
 
         /* Cercle déco bleu (coin gauche haut) */
         .hero-circle-bl {
@@ -940,24 +972,30 @@
 <body>
 
     <!-- ══ NAV ══ -->
+    <!-- ══ NAV ══ -->
     <nav class="nav" id="mainNav">
         <!-- LOGO : image brute, sans cercle ni border -->
         <a href="index.html" class="nav-logo">
-            <!-- Chemin corrigé vers public/images/ -->
-            <img src="images/264.png" alt="JEFIE Paris 2026">
+            <!-- Chemin exact calculé depuis resources/views/ -->
+            <img src="../../public/images/264.png" alt="JEFIE Paris 2026">
+            <!-- Le bloc texte à côté du logo -->
+            <div class="nav-logo-txt">
+                <strong class="txt-jefie">JEFIE</strong>
+                <span class="txt-paris">PARIS 2026</span>
+            </div>
+
         </a>
         <div class="nav-right">
             <a href="#newsletter" class="btn-etre-informe">ÊTRE INFORMÉ</a>
         </div>
     </nav>
 
-
-
     <!-- ══ HERO ══ -->
     <section class="hero">
-        <!-- Image de fond corrigée (Tour Eiffel) - Chemin relatif depuis le dossier public -->
-        <div class="hero-bg" style="background-image: url('images/tour.jpg');"></div>
+        <!-- Le conteneur de fond avec le bon chemin relatif de fichier -->
+        <div class="hero-bg" style="background-image: url('../../public/images/tour.jpg');"></div>
         <div class="hero-circle-bl"></div>
+
 
 
         <!-- Badge inscription circulaire (Macaron de droite) -->
