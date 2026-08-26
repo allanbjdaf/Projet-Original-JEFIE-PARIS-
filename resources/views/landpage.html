@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>JEFIE Paris 2026 — Forum Économique & de l'Emploi</title>
+    <meta name="description"
+        content="Le rendez-vous qui connecte talents, opportunités et croissance. Forum Économique & de l'Emploi de la Diaspora Gabonaise — Paris 2026.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: #fff;
+            background: #0a1628;
+            overflow-x: hidden
+        }
+
+        /* ══ VARIABLES ══ */
+        :root {
+            --gold: #f5c518;
+            --green: #4caf50;
+            --dark: #0a1628;
+            --dark2: #0d1e38;
+            --dark3: #112040;
+            --border: rgba(255, 255, 255, .12);
+        }
+
+        /* ══ NAV ══ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 3rem;
+            height: 72px;
+            background: rgba(10, 22, 40, .92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: background .3s;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none
+        }
+
+        .nav-logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            display: block
+        }
+
+        .nav-logo-txt {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15
+        }
+
+        .nav-logo-txt strong {
+            color: #f5c518;
+            font-size: 1.15rem;
+            font-weight: 900;
+            letter-spacing: .04em;
+            font-family: 'Montserrat', sans-serif
+        }
+
+        .nav-logo-txt span {
+            color: rgba(255, 255, 255, .7);
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+
+
+        .btn-etre-informe {
+            background: var(--gold);
+            color: var(--dark);
+            font-size: .8rem;
+            font-weight: 800;
+            padding: 9px 22px;
+            border-radius: 0;
+            text-decoration: none;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            transition: all .2s;
+            font-family: 'Montserrat', sans-serif;
+            border: 1.5px solid var(--gold);
+        }
+
+        .btn-etre-informe:hover {
+            opacity: .9;
+            transform: translateY(-1px)
+        }
+
+
+
+        /* ══ HERO ══ */
+        .hero {
+            min-height: 90vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding-top: 72px;
+        }
+
+        /* FOND : tour.jpg avec overlay dégradé comme la maquette */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+
+            /* L'image tour.jpg depuis le dossier public (chemin relatif statique) */
+            background-image: url('images/tour.jpg');
+            background-size: cover;
+            background-position: center right;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg,
+                    rgba(10, 22, 40, .92) 0%,
+                    rgba(10, 22, 40, .80) 45%,
+                    rgba(10, 22, 40, .35) 100%);
+        }
+
+        /* Cercle déco bleu (coin gauche haut) */
+        .hero-circle-bl {
+            position: absolute;
+            left: -120px;
+            top: 80px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(30, 80, 180, .35), transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Cercle déco inscription (coin droit) */
+        .hero-badge {
+            position: absolute;
+            right: 8%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(10, 22, 40, .75);
+            border: 3px solid var(--gold);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 3;
+            gap: 10px;
+            box-shadow: 0 0 60px rgba(245, 197, 24, .15);
+        }
+
+        .hb-txt {
+            font-family: 'Montserrat', sans-serif;
+            font-size: .65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .hb-icon {
+            color: var(--gold)
+        }
+
+        .hb-icon svg {
+            width: 38px;
+            height: 38px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.4
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 3rem 3rem;
+            max-width: 700px;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .65);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--gold)
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.05;
+            letter-spacing: -.01em;
+            margin-bottom: .25rem;
+            color: #fff;
+        }
+
+        .hero h1 .accent-gold {
+            color: var(--gold)
+        }
+
+        .hero h1 .accent-green {
+            color: var(--green)
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, .7);
+            margin-bottom: 1.1rem;
+            font-weight: 400;
+        }
+
+        .hero-desc {
+            font-size: .88rem;
+            color: rgba(255, 255, 255, .72);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+            max-width: 520px;
+        }
+
+        /* Date & lieu */
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hm-item {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .hm-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .hm-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2
+        }
+
+        .hm-text {
+            font-family: 'Montserrat', sans-serif
+        }
+
+        .hm-main {
+            font-size: .9rem;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: .06em
+        }
+
+        .hm-sub {
+            font-size: .75rem;
+            color: rgba(255, 255, 255, .6);
+            font-weight: 600;
+            letter-spacing: .08em
+        }
+
+        .hm-sep {
+            width: 1px;
+            height: 32px;
+            background: rgba(255, 255, 255, .15)
+        }
+
+        /* CTA hero */
+        .hero-ctas {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 0
+        }
+
+        .btn-hero-gold {
+            background: var(--gold);
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            font-size: .78rem;
+            font-weight: 800;
+            padding: 14px 26px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all .2s;
+            border: none;
+            cursor: pointer;
+            font-style: normal;
+        }
+
+        .btn-hero-gold:hover {
+            opacity: .9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 197, 24, .3)
+        }
+
+        .btn-hero-outline {
+            background: transparent;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: .78rem;
+            font-weight: 700;
+            padding: 13px 24px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1.5px solid rgba(255, 255, 255, .5);
+            transition: all .2s;
+        }
+
+        .btn-hero-outline:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, .08)
+        }
+
+        .btn-hero-outline svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8
+        }
+
+        /* ══ STATS BAR ══ */
+        .stats-bar {
+            position: relative;
+            z-index: 3;
+            background: rgba(13, 28, 56, .85);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border);
+            padding: 1.75rem 3rem;
+        }
+
+        .stats-inner {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 0 2rem;
+            position: relative;
+            justify-content: center;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10%;
+            height: 80%;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .stat-icon {
+            color: var(--gold);
+            flex-shrink: 0
+        }
+
+        .stat-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.6
+        }
+
+        .stat-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .stat-lbl {
+            font-size: .65rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .55);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            margin-top: 3px;
+            line-height: 1.3;
+        }
+
+        /* ══ SECTION NEWSLETTER (ÊTRE INFORMÉ) ══ */
+        .nl-section {
+            background: var(--dark2);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 2.5rem 3rem;
+        }
+
+        .nl-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nl-left {
+            flex-shrink: 0
+        }
+
+        .nl-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: #fff;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nl-title::before {
+            content: '';
+            width: 28px;
+            height: 3px;
+            background: var(--gold);
+            flex-shrink: 0
+        }
+
+        .nl-subtitle {
+            font-size: .8rem;
+            color: rgba(255, 255, 255, .6);
+            line-height: 1.5;
+        }
+
+        .nl-form {
+            flex: 1;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            min-width: 0;
+        }
+
+        .nl-input {
+            flex: 1;
+            min-width: 130px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .2);
+            color: #fff;
+            font-size: .82rem;
+            padding: 12px 16px;
+            outline: none;
+            font-family: 'Open Sans', sans-serif;
+            transition: border-color .2s;
+        }
+
+        .nl-input:focus {
+            border-color: var(--gold)
+        }
+
+        .nl-input::placeholder {
+            color: rgba(255, 255, 255, .4)
+        }
+
+        .nl-select {
+            min-width: 150px;
+            flex: 1;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .2);
+            color: #fff;
+            font-size: .82rem;
+            padding: 12px 30px 12px 12px;
+            outline: none;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 8l5 5 5-5' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 13px;
+        }
+
+        .nl-select option {
+            background: #0d1e38;
+            color: #fff
+        }
+
+        .btn-nl {
+            background: var(--green);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: .75rem;
+            font-weight: 800;
+            padding: 12px 20px;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all .2s;
+        }
+
+        .btn-nl:hover {
+            opacity: .9;
+            transform: translateY(-1px)
+        }
+
+        .nl-success {
+            display: none;
+            background: rgba(76, 175, 80, .15);
+            border: 1px solid rgba(76, 175, 80, .4);
+            color: #81c784;
+            padding: 11px 18px;
+            font-size: .82rem;
+            font-weight: 600;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nl-success svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.5;
+            flex-shrink: 0
+        }
+
+        /* ══ CHIFFRES CLÉS ══ */
+        .chiffres {
+            background: var(--dark3);
+            padding: 3rem 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .chiffres-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+        }
+
+        .chiffre-item {
+            text-align: center;
+            padding: 1.25rem 1rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .75rem;
+        }
+
+        .chiffre-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 15%;
+            height: 70%;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .ci-icon {
+            color: var(--gold)
+        }
+
+        .ci-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5
+        }
+
+        .ci-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .ci-num strong {
+            display: block;
+            font-size: .9rem;
+            font-weight: 900;
+            color: var(--gold)
+        }
+
+        .ci-label {
+            font-size: .65rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .45);
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* ══ COUNTDOWN BAR ══ */
+        .countdown-bar {
+            background: var(--dark2);
+            border-top: 1px solid var(--border);
+            padding: 1.1rem 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cb-left {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .cb-icon {
+            color: var(--gold)
+        }
+
+        .cb-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8
+        }
+
+        .cb-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: .7rem;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .cd-units {
+            display: flex;
+            align-items: center;
+            gap: .5rem
+        }
+
+        .cd-unit {}
+
+        .cd-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--green);
+            display: block;
+            line-height: 1;
+            min-width: 52px;
+            text-align: center;
+        }
+
+        .cd-lbl {
+            font-size: .6rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .45);
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            text-align: center;
+            display: block;
+        }
+
+        .cd-sep {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, .25);
+            margin-bottom: .6rem;
+        }
+
+        .cb-socials {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .cb-socials-lbl {
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .5)
+        }
+
+        .social-btn {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #fff;
+            font-size: .75rem;
+            font-weight: 700;
+            transition: all .2s;
+        }
+
+        .social-btn:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--dark)
+        }
+
+        /* ══ MOBILE MENU ══ */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            inset: 72px 0 0;
+            background: rgba(10, 22, 40, .97);
+            z-index: 400;
+            flex-direction: column;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-overlay.open {
+            display: flex
+        }
+
+        .mob-link {
+            color: rgba(255, 255, 255, .85);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            transition: color .2s;
+        }
+
+        .mob-link:hover {
+            color: var(--gold)
+        }
+
+        .mob-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 1.5rem
+        }
+
+        /* ══ RESPONSIVE ══ */
+        @media(max-width:1100px) {
+            .hero-badge {
+                display: none
+            }
+
+            .chiffres-inner {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .chiffre-item:nth-child(3)::after {
+                display: none
+            }
+        }
+
+        @media(max-width:900px) {
+            .nav {
+                padding: 0 1.5rem
+            }
+
+            .btn-partenaires,
+            .btn-etre-informe {
+                display: none
+            }
+
+            .stats-inner {
+                flex-wrap: wrap
+            }
+
+            .stat-item {
+                flex: 1 1 45%;
+                padding: 1rem
+            }
+
+            .stat-item::after {
+                display: none
+            }
+
+            .chiffres-inner {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .chiffre-item:nth-child(2)::after,
+            .chiffre-item:nth-child(4)::after {
+                display: none
+            }
+
+            .nl-inner {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .countdown-bar {
+                justify-content: center
+            }
+        }
+
+        @media(max-width:600px) {
+            .hero-content {
+                padding: 2rem 1.25rem 1.5rem
+            }
+
+            .hero h1 {
+                font-size: 2rem
+            }
+
+            .stats-bar {
+                padding: 1.25rem 1rem
+            }
+
+            .stat-item {
+                flex: 1 1 100%;
+                padding: .75rem 0
+            }
+
+            .chiffres {
+                padding: 2rem 1.25rem
+            }
+
+            .chiffres-inner {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .nl-section {
+                padding: 1.75rem 1.25rem
+            }
+
+            .countdown-bar {
+                padding: 1rem 1.25rem
+            }
+
+            .cd-num {
+                font-size: 1.4rem;
+                min-width: 38px
+            }
+
+            .hero-meta {
+                gap: 1rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══ NAV ══ -->
+    <nav class="nav" id="mainNav">
+        <!-- LOGO : image brute, sans cercle ni border -->
+        <a href="index.html" class="nav-logo">
+            <!-- Chemin corrigé vers public/images/ -->
+            <img src="images/264.png" alt="JEFIE Paris 2026">
+        </a>
+        <div class="nav-right">
+            <a href="#newsletter" class="btn-etre-informe">ÊTRE INFORMÉ</a>
+        </div>
+    </nav>
+
+
+
+    <!-- ══ HERO ══ -->
+    <section class="hero">
+        <!-- Image de fond corrigée (Tour Eiffel) - Chemin relatif depuis le dossier public -->
+        <div class="hero-bg" style="background-image: url('images/tour.jpg');"></div>
+        <div class="hero-circle-bl"></div>
+
+
+        <!-- Badge inscription circulaire (Macaron de droite) -->
+        <div class="hero-badge">
+            <div class="hb-txt">OUVERTURE<br>PROCHAINE DES<br>INSCRIPTIONS</div>
+            <div class="hb-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <path d="M16 2v4M8 2v4M3 10h18" />
+                    <line x1="8" y1="14" x2="16" y2="14" />
+                    <line x1="8" y1="17" x2="12" y2="17" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Contenu Principal -->
+        <div class="hero-content">
+            <div class="hero-eyebrow">FORUM ÉCONOMIQUE & DE L'EMPLOI — DIASPORA GABONAISE</div>
+            <h1>
+                LE RENDEZ-VOUS<br>
+                QUI CONNECTE TALENTS,<br>
+                <span class="accent-gold">OPPORTUNITÉS</span> &<br>
+                <span class="accent-green">CROISSANCE</span>
+            </h1>
+            <p class="hero-tagline">2 jours d'échanges, de rencontres et d'opportunités<br>entre le Gabon, sa diaspora
+                et ses partenaires.</p>
+
+
+            <div class="hero-meta">
+                <!-- Date -->
+                <div class="hm-item">
+                    <div class="hm-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <path d="M16 2v4M8 2v4M3 10h18" />
+                        </svg>
+                    </div>
+                    <div class="hm-text">
+                        <div class="hm-main">28 & 29<br>NOVEMBRE 2026</div>
+                    </div>
+                </div>
+
+                <div class="hm-sep"></div>
+
+                <!-- Lieu -->
+                <div class="hm-item">
+                    <div class="hm-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <div class="hm-text">
+                        <div class="hm-main">PARIS<br>FRANCE</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons d'actions (CTAs) -->
+            <div class="hero-ctas">
+                <!-- Bouton Inscription Jaune -->
+                <a href="#newsletter" class="btn-hero-gold">
+                    ÊTRE INFORMÉ DE L'OUVERTURE<br>DES INSCRIPTIONS
+                </a>
+
+            </div>
+        </div>
+
+
+        <!-- ══ STATS BAR (CHIFFRES CLÉS) ══ -->
+        <div class="stats-bar">
+            <div class="stats-inner">
+
+                <!-- Item 1: 2 Jours (Ajusté selon la maquette) -->
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <path d="M16 2v4M8 2v4M3 10h18" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="stat-num">2 JOURS</div>
+                        <div class="stat-lbl">DE CONFÉRENCES<br>& RENCONTRES</div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Des centaines -->
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="stat-num">DES CENTAINES</div>
+                        <div class="stat-lbl">DE RENCONTRES<br>B2B</div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Des milliers -->
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="stat-num">DES MILLIERS</div>
+                        <div class="stat-lbl">D'OPPORTUNITÉS<br>D'EMPLOI</div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Des investisseurs -->
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="stat-num">DES INVESTISSEURS</div>
+                        <div class="stat-lbl">& ENTREPRISES<br>ENGAGÉES</div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Un réseau unique -->
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M2 12h20M12 2a15.3 15.3 0 010 20" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="stat-num">UN RÉSEAU UNIQUE</div>
+                        <div class="stat-lbl">GABON – DIASPORA –<br>PARTENAIRES</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- ══ SECTION NEWSLETTER ══ -->
+    <section class="nl-section" id="newsletter">
+        <div class="nl-inner">
+
+            <!-- Partie Gauche : Textes -->
+            <div class="nl-left">
+                <div class="nl-title">SOYEZ PARMI LES PREMIERS INFORMÉS !</div>
+                <div class="nl-subtitle">Les inscriptions ouvriront bientôt.<br>Laissez-nous vos coordonnées pour ne
+                    rien manquer.</div>
+            </div>
+
+            <!-- Formulaire avec les 4 champs alignés -->
+            <form class="nl-form" id="nlForm" onsubmit="submitNL(event)">
+
+                <input type="email" name="email" class="nl-input" placeholder="E-mail" required>
+
+                <select name="profil" class="nl-select" required>
+                    <option value="">Vous êtes...</option>
+                    <option value="participant">Participant</option>
+                    <option value="entrepreneur">Entrepreneur</option>
+                    <option value="recruteur">Recruteur</option>
+                    <option value="investisseur">Investisseur</option>
+                    <option value="institutionnel">Institutionnel</option>
+                    <option value="journaliste">Journaliste / Média</option>
+                </select>
+
+                <button type="submit" class="btn-nl">PRÉVENEZ-MOI À L'OUVERTURE</button>
+            </form>
+
+            <!-- Message de succès caché par défaut -->
+            <div class="nl-success" id="nlSuccess" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" width="24" height="24">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Merci ! Vous serez parmi les premiers informés.</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══ COUNTDOWN BAR ══ -->
+    <div class="countdown-bar">
+
+        <!-- Partie Gauche : Icône et Texte -->
+        <div class="cb-left">
+            <div class="cb-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <path d="M16 2v4M8 2v4M3 10h18" />
+                    <line x1="8" y1="14" x2="16" y2="14" />
+                    <line x1="8" y1="17" x2="12" y2="17" />
+                </svg>
+            </div>
+            <div class="cb-label">OUVERTURE PROCHAINE DES INSCRIPTIONS</div>
+        </div>
+
+        <!-- Partie Droite : Les Chiffres -->
+        <div class="cd-units">
+            <div class="cd-unit">
+                <span class="cd-num" id="cdJ">35</span>
+                <span class="cd-lbl">JOURS</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit">
+                <span class="cd-num" id="cdH">12</span>
+                <span class="cd-lbl">HEURES</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit">
+                <span class="cd-num" id="cdM">37</span>
+                <span class="cd-lbl">MINUTES</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit">
+                <span class="cd-num" id="cdS">58</span>
+                <span class="cd-lbl">SECONDES</span>
+            </div>
+        </div>
+
+        <!-- Réseaux Sociaux -->
+        <div class="cb-socials">
+            <span class="cb-socials-lbl">SUIVEZ-NOUS</span>
+            <a href="#" class="social-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+            </a>
+            <a href="#" class="social-btn" title="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+            </a>
+            <a href="#" class="social-btn" title="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <a href="#" class="social-btn" title="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // ── Countdown ──────────────────────────────────────────────
+        function countdown() {
+            // Date cible configurée pour dans exactement 35 jours (30 Septembre 2026)
+            const target = new Date('2026-09-30T00:00:00').getTime();
+            const diff = Math.max(0, target - Date.now());
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            const p = n => String(n).padStart(2, '0');
+
+            // Sécurité pour éviter les erreurs si les éléments n'existent pas sur la page
+            if (document.getElementById('cdJ')) document.getElementById('cdJ').textContent = p(d);
+            if (document.getElementById('cdH')) document.getElementById('cdH').textContent = p(h);
+            if (document.getElementById('cdM')) document.getElementById('cdM').textContent = p(m);
+            if (document.getElementById('cdS')) document.getElementById('cdS').textContent = p(s);
+        }
+        countdown();
+        setInterval(countdown, 1000);
+
+
+        // ── Menu mobile ───────────────────────────────────────────
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const ham = document.getElementById('hamburger');
+            if (!menu || !ham) return;
+
+            const open = menu.classList.toggle('open');
+            ham.classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+            const spans = ham.querySelectorAll('span');
+            if (open) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+            } else {
+                spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+            }
+        }
+        window.addEventListener('resize', () => {
+            const menu = document.getElementById('mobileMenu');
+            if (menu && window.innerWidth > 900) {
+                menu.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ── Navbar scroll ─────────────────────────────────────────
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (nav) {
+                nav.style.background = window.scrollY > 10 ? 'rgba(10,22,40,.97)' : 'rgba(10,22,40,.92)';
+            }
+        }, { passive: true });
+
+        // ── Newsletter ────────────────────────────────────────────
+        function submitNL(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('.btn-nl');
+            if (!btn) return;
+
+            btn.textContent = '...';
+            btn.disabled = true;
+
+            // URL relative pour le HTML pur (remplace la route Laravel)
+            fetch('/newsletter/subscribe', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            }).then(() => {
+                form.style.display = 'none';
+                const success = document.getElementById('nlSuccess');
+                if (success) success.style.display = 'flex';
+            }).catch(() => {
+                form.style.display = 'none';
+                const success = document.getElementById('nlSuccess');
+                if (success) success.style.display = 'flex';
+            });
+        }
+    </script>
