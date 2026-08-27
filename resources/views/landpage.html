@@ -103,10 +103,13 @@
         .btn-etre-informe {
             background: var(--gold);
             color: var(--dark);
-            font-size: .8rem;
+            font-size: .72rem;
+            /* 📏 Taille du texte réduite */
             font-weight: 800;
-            padding: 9px 22px;
-            border-radius: 0;
+            padding: 6px 14px;
+            /* 📏 Marges internes réduites pour rétrécir le bouton */
+            border-radius: 20px;
+            /* 🌟 Bordures arrondies (style pilule) */
             text-decoration: none;
             letter-spacing: .06em;
             text-transform: uppercase;
@@ -117,7 +120,7 @@
 
         .btn-etre-informe:hover {
             opacity: .9;
-            transform: translateY(-1px)
+            transform: translateY(-1px);
         }
 
 
@@ -131,42 +134,50 @@
             flex-direction: column;
             overflow: hidden;
             padding-top: 72px;
+            /* On garde le fond de secours au cas où */
             background-color: #050e1e;
-            /* Fond de secours bleu nuit */
         }
 
         /* FOND : tour.jpg avec overlay dégradé comme la maquette */
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 55%;
-            /* Occupe un peu plus de la moitié droite de l'écran */
-
-            /* Chemin relatif statique depuis resources/views/ */
+            inset: 0;
             background-image: url('public/images/TOURE.png');
             background-size: cover;
-            background-position: center right;
+            background-position: center;
+            /* Parfait pour l'ordinateur */
             background-repeat: no-repeat;
             z-index: 0;
-
-            /* MASQUE DÉGRADÉ (Magique) : Fait disparaître l'image en douceur vers la gauche */
-            mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
-            -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+            mask-image: none;
+            -webkit-mask-image: none;
         }
 
-        /* OVERLAY SOMBRE SUPPLÉMENTAIRE : Harmonise les couleurs et adoucit l'image */
+        /* OVERLAY SOMBRE SUPPLÉMENTAIRE */
         .hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            /* Un léger voile bleu nuit pour intégrer l'image au fond */
-            background: linear-gradient(to right, #030b16 40%, rgba(3, 11, 22, 0.4) 70%, rgba(3, 11, 22, 0) 100%);
+            background: linear-gradient(135deg, rgba(3, 11, 22, 0.55) 0%, rgba(3, 11, 22, 0.2) 100%);
             z-index: 1;
             pointer-events: none;
         }
+
+        /* 📱 AJUSTEMENTS SPÉCIFIQUES POUR MOBILE */
+        @media (max-width: 767px) {
+            .hero::before {
+                /* 🌟 FORCE l'affichage du côté droit ou gauche où se trouve la tour */
+                /* Changez 'right center' par 'left center' si la tour est à gauche sur la photo */
+                background-position: right center;
+            }
+
+            .hero::after {
+                /* On opacifie un tout petit peu plus le dégradé sur mobile */
+                /* Cela permet à vos textes blancs de rester lisibles même si la tour passe derrière */
+                background: linear-gradient(180deg, rgba(3, 11, 22, 0.7) 0%, rgba(3, 11, 22, 0.4) 100%);
+            }
+        }
+
 
         .hero-content {
             position: relative;
@@ -411,29 +422,36 @@
         }
 
         .btn-hero-gold {
+            display: inline-block;
+            /* Assure le bon comportement des marges et de l'alignement */
+            text-align: center;
+            /* Centre les deux lignes de texte */
             background: var(--gold);
             color: var(--dark);
-            font-family: 'Montserrat', sans-serif;
-            font-size: .78rem;
+            font-size: .72rem;
+            /* 📏 Taille du texte réduite */
             font-weight: 800;
-            padding: 14px 26px;
+            padding: 8px 20px;
+            /* 📏 Marges réduites (légèrement plus large que le menu pour le texte double ligne) */
+            line-height: 1.3;
+            /* ↕️ Rapproche les deux lignes de texte pour rester compact */
+            border-radius: 24px;
+            /* 🌟 Bordures arrondies (style pilule) */
+            text-decoration: none;
             letter-spacing: .06em;
             text-transform: uppercase;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
             transition: all .2s;
-            border: none;
-            cursor: pointer;
-            font-style: normal;
+            font-family: 'Montserrat', sans-serif;
+            border: 1.5px solid var(--gold);
+            /* ↕️ Nouvel espace créé en dessous du bouton */
+            margin-bottom: 25px;
         }
 
         .btn-hero-gold:hover {
             opacity: .9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(245, 197, 24, .3)
+            transform: translateY(-1px);
         }
+
 
         .btn-hero-outline {
             background: transparent;
@@ -474,10 +492,10 @@
             background-image: url('public/images/TOURE.png');
             /* À ajuster selon l'emplacement du CSS */
             background-size: cover;
-            background-position: center right;
+            background-position: center center;
             /* Garde la Tour Eiffel visible à droite sur PC */
             background-repeat: no-repeat;
-            z-index: 1;
+            min-height: 400px;
         }
 
         /* Forçage de l'affichage sur téléphone */
@@ -494,44 +512,66 @@
         .stats-bar {
             position: relative;
             z-index: 3;
-            background: rgba(13, 28, 56, .85);
+            background: rgba(62, 87, 135, 0.85);
             backdrop-filter: blur(10px);
-            border-top: 1px solid var(--border);
-            padding: 1.75rem 3rem;
+            border: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            width: 100%;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
+
 
         .stats-inner {
             display: flex;
-            justify-content: center;
-            gap: 0;
-            max-width: 900px;
+            justify-content: space-between;
+            /* Espace uniformément les blocs */
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            /* 🔒 Force l'alignement horizontal sur PC/Tablette */
+            max-width: 1300px;
             margin: 0 auto;
+            width: 100%;
         }
 
+
+        /* Style de chaque élément statistique */
         .stat-item {
-            flex: 1;
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 0 2rem;
+            flex-direction: column;
+            /* 🌟 Aligne l'icône AU-DESSUS du texte pour un centrage parfait */
+            flex-direction: column;
+            /* 🌟 Aligne l'icône AU-DESSUS du texte pour un centrage parfait */
+            gap: 12px;
+            flex: 1;
+            min-width: 0;
+            /* Empêche le texte de casser la ligne Flexbox */
             position: relative;
-            justify-content: center;
         }
 
-        .stat-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 10%;
-            height: 80%;
-            width: 1px;
-            background: var(--border);
+        /* Séparateur vertical discret entre les éléments */
+        .stat-item:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            padding-right: 1rem;
         }
 
+        /* Conteneur d'icône arrondi */
         .stat-icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
             color: var(--gold);
-            flex-shrink: 0
         }
+
 
         .stat-icon svg {
             width: 28px;
@@ -541,22 +581,64 @@
             stroke-width: 1.6
         }
 
+        /* Texte : Chiffre/Mise en avant */
         .stat-num {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: #fff;
-            line-height: 1;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+            margin-bottom: 2px;
         }
 
+        /* Texte : Label/Description */
         .stat-lbl {
-            font-size: .65rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, .55);
-            text-transform: uppercase;
-            letter-spacing: .08em;
-            margin-top: 3px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.7);
             line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        /* 📱 Version Mobile et Tablette Responsive */
+        @media (max-width: 992px) {
+            .stat-item:not(:last-child)::after {
+                display: none;
+                /* Enlève les lignes verticales quand ça passe à la ligne */
+            }
+
+            .stats-inner {
+                justify-content: center;
+                gap: 2rem;
+            }
+        }
+
+        /* 📱 Version Mobile (Smartphone) */
+        @media (max-width: 768px) {
+            .stats-bar {
+                padding: 1.5rem;
+            }
+
+            .stats-inner {
+                flex-wrap: wrap;
+                /* 🔄 Passage à la verticale sur mobile */
+                gap: 1.5rem;
+            }
+
+            .stat-item {
+                min-width: 100%;
+            }
+
+            .stat-item:not(:last-child) {
+                border-right: none;
+                /* Enlève la séparation verticale */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                /* Ajoute la séparation horizontale */
+                padding-right: 0;
+                padding-bottom: 1rem;
+            }
         }
 
         /* ══ SECTION NEWSLETTER (ÊTRE INFORMÉ) ══ */
@@ -885,6 +967,95 @@
             color: var(--dark)
         }
 
+        /* Arrière-plan de la modale (couvre tout l'écran) */
+        .nl-modal-overlay {
+            display: none;
+            /* Caché par défaut */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 30, 56, 0.7);
+            /* Fond sombre transparent */
+            backdrop-filter: blur(8px);
+            /* Floute le site en arrière-plan */
+            z-index: 9999;
+            /* Reste au-dessus de tout le site */
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Boîte blanche/sombre contenant le formulaire */
+        .nl-modal-content {
+            background: var(--dark2, #12223d);
+            /* S'adapte à vos couleurs sombres */
+            border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+            padding: 2.5rem;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 450px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            animation: fadeInModal 0.3s ease-out;
+            /* Animation d'apparition */
+        }
+
+        /* Titres de la modale */
+        .nl-modal-title {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .nl-modal-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        /* Bouton Fermer (X) */
+        .nl-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 28px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .nl-modal-close:hover {
+            color: var(--gold, #d4af37);
+        }
+
+        /* Force les éléments du formulaire à s'empiler joliment dans la petite boîte */
+        .nl-modal-content .nl-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        /* Animation CSS */
+        @keyframes fadeInModal {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
         /* ══ MOBILE MENU ══ */
         .mobile-overlay {
             display: none;
@@ -1063,8 +1234,33 @@
             }
 
             .btn-partenaires,
-            .btn-etre-informe {
-                display: none
+            .btn-etre-informe .btn-etre-informe {
+                display: inline-block;
+                text-decoration: none;
+                background: var(--gold);
+                /* Remplacez par votre variable de couleur si nécessaire */
+                color: #fff;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: .05em;
+                transition: all .2s ease;
+
+                /* 📏 Dimensions réduites */
+                font-size: 0.7rem;
+                /* Texte plus petit (ex-valeur souvent à 0.8rem ou plus) */
+                padding: 8px 16px;
+                /* Espacement interne réduit (hauteur / largeur) */
+
+                /* 🌟 Bordures arrondies */
+                border-radius: 20px;
+                /* Effet pilule parfaitement arrondi */
+            }
+
+            /* Effet au survol (optionnel mais recommandé) */
+            .btn-etre-informe:hover {
+                opacity: 0.9;
+                transform: translateY(-1px);
             }
 
             .stats-inner {
@@ -1153,16 +1349,18 @@
         <!-- LOGO : image brute, sans cercle ni border -->
         <a href="index.html" class="nav-logo">
             <!-- Chemin exact calculé depuis resources/views/ -->
-            <img src="public/images/264.png" alt="JEFIE Paris 2026">
+            <img src="public/images/264.png"
+                alt="Journées Economique et du Forum International de l'Emploi de la Diaspora Gabonaise">
             <!-- Le bloc texte à côté du logo -->
             <div class="nav-logo-txt">
-                <strong class="txt-jefie">JEFIE</strong>
-                <span class="txt-paris">PARIS 2026</span>
+                <strong class="txt-jefie">Journées Ecomomiques</strong>
+                <span class="txt-paris">Forum International de l'Emploi de la Diaspora Gabonaise</span>
             </div>
 
         </a>
         <div class="nav-right">
-            <a href="#newsletter" class="btn-etre-informe">ÊTRE INFORMÉ</a>
+            <!-- Le bouton appelle désormais la fonction openNLModal() au clic -->
+            <a href="javascript:void(0)" class="btn-etre-informe" onclick="openNLModal()">ÊTRE INFORMÉ</a>
         </div>
     </nav>
 
@@ -1236,96 +1434,121 @@
             <!-- Boutons d'actions (CTAs) -->
             <div class="hero-ctas">
                 <!-- Bouton Inscription Jaune -->
-                <a href="#newsletter" class="btn-hero-gold">
+                <a href="javascript:void(0)" class="btn-hero-gold" onclick="openNLModal()">
                     ÊTRE INFORMÉ DE L'OUVERTURE<br>DES INSCRIPTIONS
                 </a>
+                <!-- Fenêtre surgissante (Modale) masquée par défaut -->
+                <div id="nlModal" class="nl-modal-overlay" onclick="closeNLModal(event)">
+                    <div class="nl-modal-content">
+                        <!-- Bouton pour fermer la modale -->
+                        <button class="nl-modal-close" onclick="closeNLModal(event)">&times;</button>
 
+                        <!-- Titre à l'intérieur de la modale -->
+                        <h3 class="nl-modal-title">Inscriptions</h3>
+                        <p class="nl-modal-subtitle">Recevez une alerte dès l'ouverture.</p>
+
+                        <!-- Votre formulaire avec ses 4 champs -->
+                        <form class="nl-form" id="nlForm" onsubmit="submitNL(event)">
+                            <input type="email" name="email" class="nl-input" placeholder="E-mail" required>
+                            <button type="submit" class="btn-nl">PRÉVENEZ-MOI À L'OUVERTURE</button>
+                        </form>
+
+                        <!-- Votre message de succès -->
+                        <div class="nl-success" id="nlSuccess" style="display: none;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Merci ! Vous serez parmi les premiers informés.</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
 
 
-        <!-- ══ STATS BAR (CHIFFRES CLÉS) ══ -->
-        <div class="stats-bar">
-            <div class="stats-inner">
+            <!-- ══ STATS BAR (CHIFFRES CLÉS) ══ -->
+            <div class="stats-bar">
+                <div class="stats-inner">
 
-                <!-- Item 1: 2 Jours (Ajusté selon la maquette) -->
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" />
-                            <path d="M16 2v4M8 2v4M3 10h18" />
-                        </svg>
+                    <!-- Item 1: 2 Jours (Ajusté selon la maquette) -->
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <path d="M16 2v4M8 2v4M3 10h18" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="stat-num">2 JOURS</div>
+                            <div class="stat-lbl">DE CONFÉRENCES<br>& RENCONTRES</div>
+                        </div>
                     </div>
-                    <div>
-                        <div class="stat-num">2 JOURS</div>
-                        <div class="stat-lbl">DE CONFÉRENCES<br>& RENCONTRES</div>
+
+                    <!-- Item 2: Des centaines -->
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="stat-num">DES CENTAINES</div>
+                            <div class="stat-lbl">DE RENCONTRES<br>B2B</div>
+                        </div>
                     </div>
+
+                    <!-- Item 3: Des milliers -->
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="stat-num">DES MILLIERS</div>
+                            <div class="stat-lbl">D'OPPORTUNITÉS<br>D'EMPLOI</div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Des investisseurs -->
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                <polyline points="17 6 23 6 23 12" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="stat-num">DES INVESTISSEURS</div>
+                            <div class="stat-lbl">& ENTREPRISES<br>ENGAGÉES</div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Un réseau unique -->
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M2 12h20M12 2a15.3 15.3 0 010 20" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="stat-num">UN RÉSEAU UNIQUE</div>
+                            <div class="stat-lbl">GABON – DIASPORA –<br>PARTENAIRES</div>
+                        </div>
+                    </div>
+
                 </div>
-
-                <!-- Item 2: Des centaines -->
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="stat-num">DES CENTAINES</div>
-                        <div class="stat-lbl">DE RENCONTRES<br>B2B</div>
-                    </div>
-                </div>
-
-                <!-- Item 3: Des milliers -->
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="stat-num">DES MILLIERS</div>
-                        <div class="stat-lbl">D'OPPORTUNITÉS<br>D'EMPLOI</div>
-                    </div>
-                </div>
-
-                <!-- Item 4: Des investisseurs -->
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                            <polyline points="17 6 23 6 23 12" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="stat-num">DES INVESTISSEURS</div>
-                        <div class="stat-lbl">& ENTREPRISES<br>ENGAGÉES</div>
-                    </div>
-                </div>
-
-                <!-- Item 5: Un réseau unique -->
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M2 12h20M12 2a15.3 15.3 0 010 20" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="stat-num">UN RÉSEAU UNIQUE</div>
-                        <div class="stat-lbl">GABON – DIASPORA –<br>PARTENAIRES</div>
-                    </div>
-                </div>
-
             </div>
-        </div>
 
 
     </section>
@@ -1345,16 +1568,6 @@
             <form class="nl-form" id="nlForm" onsubmit="submitNL(event)">
 
                 <input type="email" name="email" class="nl-input" placeholder="E-mail" required>
-
-                <select name="profil" class="nl-select" required>
-                    <option value="">Vous êtes...</option>
-                    <option value="participant">Participant</option>
-                    <option value="entrepreneur">Entrepreneur</option>
-                    <option value="recruteur">Recruteur</option>
-                    <option value="investisseur">Investisseur</option>
-                    <option value="institutionnel">Institutionnel</option>
-                    <option value="journaliste">Journaliste / Média</option>
-                </select>
 
                 <button type="submit" class="btn-nl">PRÉVENEZ-MOI À L'OUVERTURE</button>
             </form>
@@ -1434,12 +1647,13 @@
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
             </a>
-            <a href="#" class="social-btn" title="YouTube">
+            <a href="https://wa.me" class="social-btn" title="WhatsApp" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path
-                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.966 0c3.184.001 6.177 1.242 8.426 3.496 2.249 2.254 3.487 5.252 3.486 8.438-.004 6.557-5.342 11.907-11.91 11.907-2.013-.001-3.989-.51-5.742-1.479L0 24zm6.59-4.846c1.66.983 3.308 1.493 4.79 1.494 5.376 0 9.75-4.382 9.753-9.764.002-2.608-1.012-5.06-2.857-6.907C16.428 2.13 13.985 1.114 11.379 1.114c-5.38 0-9.754 4.384-9.757 9.766-.001 1.638.433 3.238 1.256 4.65l-.396 1.444.407.417 1.54-.407.218.12zm11.385-4.664c-.302-.152-1.792-.883-2.069-.983-.277-.101-.48-.152-.68.152-.2.302-.777.983-.952 1.185-.175.202-.35.226-.652.075-1.714-.855-2.81-1.516-3.926-3.428-.293-.503.293-.467.842-1.564.09-.182.046-.342-.023-.493-.068-.152-.58-1.397-.795-1.914-.209-.504-.419-.434-.58-.442l-.496-.007c-.171 0-.448.064-.682.316-.234.253-.893.874-.893 2.132 0 1.258.914 2.472 1.042 2.64 1.196 1.577 2.6 2.502 4.673 3.313 1.348.528 2.065.513 2.827.4 1.111-.166 1.792-.733 1.792-1.365s.001-1.06-.09-1.211c-.091-.151-.301-.226-.603-.377z" />
                 </svg>
             </a>
+
         </div>
     </div>
 
@@ -1524,4 +1738,68 @@
                 if (success) success.style.display = 'flex';
             });
         }
+
+        // Ouvre la modale
+        function openNLModal() {
+            const modal = document.getElementById('nlModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Empêche le site de défiler en arrière-plan
+        }
+
+        // Ferme la modale
+        function closeNLModal(event) {
+            const modal = document.getElementById('nlModal');
+
+            // Ferme si on clique sur la croix OU en dehors de la boîte blanche
+            if (event.target === modal || event.target.classList.contains('nl-modal-close')) {
+                modal.style.display = 'none';
+                document.body.style.overflow = ''; // Réactive le défilement du site
+
+                // Optionnel : réinitialise le formulaire et le message de succès à la fermeture
+                setTimeout(() => {
+                    document.getElementById('nlForm').style.display = 'flex';
+                    document.getElementById('nlSuccess').style.display = 'none';
+                }, 300);
+            }
+        }
+
+        // Exemple pour votre fonction d'envoi existante submitNL
+        function submitNL(event) {
+            event.preventDefault();
+
+            // Simule la réussite (remplacez par votre logique Fetch/Ajax si nécessaire)
+            document.getElementById('nlForm').style.display = 'none';
+            document.getElementById('nlSuccess').style.display = 'flex';
+        }
+
+        function submitNL(event) {
+            event.preventDefault(); // Empêche la page de se recharger
+
+            const form = document.getElementById('nlForm');
+            const emailInput = form.querySelector('input[name="email"]').value;
+            const successMessage = document.getElementById('nlSuccess');
+
+            // Envoie l'e-mail au fichier PHP présent dans le même dossier
+            fetch('save_email.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: emailInput })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // Masque le formulaire et affiche le message de validation
+                        form.style.display = 'none';
+                        successMessage.style.display = 'flex';
+                    } else {
+                        alert(data.message); // Affiche l'erreur renvoyée par le PHP
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    alert("Erreur réseau : impossible de joindre le serveur.");
+                });
+        }
+
+
     </script>
