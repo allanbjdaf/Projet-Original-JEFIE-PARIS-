@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>JEFIE Paris 2026 — Forum Économique & de l'Emploi</title>
     <meta name="description"
         content="Le rendez-vous qui connecte talents, opportunités et croissance. Forum Économique & de l'Emploi de la Diaspora Gabonaise — Paris 2026.">
@@ -50,7 +49,7 @@
             justify-content: space-between;
             padding: 0 3rem;
             height: 72px;
-            background: rgba(10, 22, 40, .92);
+            background: rgba(42, 90, 162, 0.92);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             transition: background .3s;
@@ -60,7 +59,8 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            text-decoration: none
+            text-decoration: none;
+            max-width: 75%;
         }
 
         .nav-logo img {
@@ -73,12 +73,14 @@
         .nav-logo-txt {
             display: flex;
             flex-direction: column;
-            line-height: 1.15
+            line-height: 1.2;
+            /* Augmenté un peu pour aérer le grand texte */
+            justify-content: center;
         }
 
         .nav-logo-txt strong {
             color: #f5c518;
-            font-size: 1.15rem;
+            font-size: 1.8rem;
             font-weight: 800;
             letter-spacing: .04em;
             font-family: 'Montserrat', sans-serif
@@ -87,18 +89,67 @@
         .nav-logo-txt span {
             color: rgba(255, 255, 255, .7);
             font-size: .7rem;
-            font-weight: 600;
-            letter-spacing: .12em;
+            font-weight: 500;
+            letter-spacing: .10em;
             text-transform: uppercase
         }
 
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 12px
+            gap: 8px
         }
 
+        /* --- AJOUT RESPONSIVE POUR MOBILE --- */
+        @media (max-width: 768px) {
+            .nav-logo-txt strong {
+                font-size: 1.1rem;
+                /* Réduit le titre principal sur mobile */
+                letter-spacing: .02em;
+            }
 
+            .nav-logo-txt span {
+                font-size: 0.62rem;
+                /* Réduit le long sous-titre sur mobile */
+                letter-spacing: .05em;
+                /* Resserre un peu les lettres */
+                line-height: 1.3;
+                /* Donne de l'espace si le texte passe sur 2 lignes */
+            }
+
+            .nav-right {
+                gap: 8px;
+                /* Resserre les éléments de droite sur mobile */
+            }
+        }
+
+        /* ══ AJOUT DU RESPONSIVE POUR MOBILE ══ */
+        @media (max-width: 768px) {
+            .nav {
+                height: auto;
+                /* Supprime les 72px fixes pour s'adapter au grand texte */
+                padding: 10px 1rem;
+                /* Réduit les marges à gauche et à droite pour gagner de la place */
+            }
+
+            .nav-logo img {
+                height: 42px;
+                /* Réduit légèrement l'image sur mobile pour faire de la place au texte */
+            }
+
+            .nav-logo-txt strong {
+                font-size: 1.1rem;
+                /* Taille de titre adaptée au mobile */
+            }
+
+            .nav-logo-txt span {
+                font-size: 0.62rem;
+                /* Taille du sous-titre adaptée au mobile */
+                white-space: normal;
+                /* Force le long texte à aller à la ligne plutôt que de déborder */
+                line-height: 1.2;
+            }
+        }
 
         .btn-etre-informe {
             background: var(--gold);
@@ -123,58 +174,84 @@
             transform: translateY(-1px);
         }
 
-
-
-        /* ══ HERO ══ */
-        /* ══ HERO ══ */
+        /* ══ HERO (CONTENEUR PRINCIPAL) ══ */
         .hero {
             min-height: 90vh;
-            position: relative;
+            padding-top: 72px;
             display: flex;
             flex-direction: column;
+            background-image: url('/images/TOURE.png');
+
+            /* Indispensable pour bloquer le fond absolu à l'intérieur */
+            position: relative;
             overflow: hidden;
-            padding-top: 72px;
-            /* On garde le fond de secours au cas où */
-            background-color: #050e1e;
-        }
-
-        /* FOND : tour.jpg avec overlay dégradé comme la maquette */
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url('public/images/TOURE.png');
+            /* Assure-toi que l'image couvre toute la surface du hero */
             background-size: cover;
+
+            /* Centre l'image dans le conteneur */
             background-position: center;
-            /* Parfait pour l'ordinateur */
+
+            /* Empêche l'image de se répéter en tuiles */
             background-repeat: no-repeat;
-            z-index: 0;
-            mask-image: none;
-            -webkit-mask-image: none;
+
+
+
         }
 
-        /* OVERLAY SOMBRE SUPPLÉMENTAIRE */
-        .hero::after {
+
+        /* --- OVERLAY ASSOMBREUR (Pour que le texte reste lisible) --- */
+        .hero-bg::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(3, 11, 22, 0.55) 0%, rgba(3, 11, 22, 0.2) 100%);
+
+            /* 📱 SUR MOBILE (Par défaut) : Aucun filtre bleu, l'image est 100% visible */
+            background: none;
             z-index: 1;
-            pointer-events: none;
+        }
+
+        /* 💻 SUR TABLETTES ET ORDINATEURS (Écrans supérieurs à 768px) */
+        @media (min-width: 769px) {
+            .hero-bg::before {
+                /* Le filtre bleu opaque s'active uniquement sur grand écran */
+                background: linear-gradient(to bottom, rgba(10, 22, 40, 0.6), rgba(10, 22, 40, 0.92));
+            }
         }
 
         /* 📱 AJUSTEMENTS SPÉCIFIQUES POUR MOBILE */
         @media (max-width: 767px) {
-            .hero::before {
-                /* 🌟 FORCE l'affichage du côté droit ou gauche où se trouve la tour */
-                /* Changez 'right center' par 'left center' si la tour est à gauche sur la photo */
-                background-position: right center;
+
+            /* --- 1. Ajustement du conteneur de texte --- */
+            .hero {
+                min-height: 85vh;
+                height: auto;
+                padding: 80px 20px 40px 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                /* 💡 CORRECTION : On retire la couleur et les styles d'images ici */
+                background-color: transparent;
             }
 
+            /* --- 2. Ajustement de l'image de fond (La Tour Eiffel) --- */
+            .hero-bg {
+                /* Force le déblocage du défilement sur les téléphones */
+                background-attachment: scroll !important;
+
+                /* Ajuste la position pour que le haut de la tour soit visible sous le texte */
+                background-position: center top !important;
+
+                /* Force l'image à occuper tout l'espace proprement */
+                background-size: cover !important;
+            }
+
+            /* --- 3. Désactivation des anciens rideaux sombres (vu à l'étape d'avant) --- */
+            .hero::before,
             .hero::after {
-                /* On opacifie un tout petit peu plus le dégradé sur mobile */
-                /* Cela permet à vos textes blancs de rester lisibles même si la tour passe derrière */
-                background: linear-gradient(180deg, rgba(3, 11, 22, 0.7) 0%, rgba(3, 11, 22, 0.4) 100%);
+                display: none !important;
+                background: transparent !important;
             }
         }
 
@@ -222,9 +299,6 @@
             font-family: sans-serif;
             z-index: 10;
         }
-
-
-
 
         /* Cercle déco bleu (coin gauche haut) */
         .hero-circle-bl {
@@ -287,13 +361,35 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: .7rem;
+            font-size: 0.95rem;
+            /* AGRANDI : Passé de .7rem à 0.95rem pour une meilleure lisibilité */
             font-weight: 700;
-            letter-spacing: .15em;
+            letter-spacing: .12em;
+            /* Légèrement resserré pour éviter que le long texte ne déborde */
             text-transform: uppercase;
-            color: rgba(255, 255, 255, .65);
+            color: rgba(255, 255, 255, .85);
+            /* Plus blanc (de .65 à .85) pour augmenter le contraste */
             margin-bottom: 1.25rem;
+            text-align: center;
+            /* Assure un bon alignement si le texte passe sur deux lignes */
         }
+
+        /* ══ AJOUT RESPONSIVE POUR LE MOBILE ══ */
+        @media (max-width: 768px) {
+            .hero-eyebrow {
+                font-size: 0.8rem;
+                /* Taille idéale sur mobile : reste grand sans déborder */
+                letter-spacing: .08em;
+                /* Resserre un peu plus les lettres sur petit écran */
+                flex-wrap: wrap;
+                /* Permet aux éléments du flex (comme un éventuel badge/icône) de revenir à la ligne */
+                justify-content: center;
+                /* Centre le contenu sur mobile */
+                padding: 0 10px;
+                /* Sécurité pour ne pas coller aux bords du téléphone */
+            }
+        }
+
 
         .hero-eyebrow::before {
             content: '';
@@ -483,30 +579,108 @@
             stroke-width: 1.8
         }
 
+        /* --- LE FOND AVEC LA TOUR EIFFEL --- */
         .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/TOURE.png');
-            /* À ajuster selon l'emplacement du CSS */
+            background-image: url('public/images/TOURE.PNG');
             background-size: cover;
+            /* center center permet de garder la tour au milieu sur grand écran */
             background-position: center center;
-            /* Garde la Tour Eiffel visible à droite sur PC */
             background-repeat: no-repeat;
-            min-height: 400px;
+            z-index: 0;
         }
 
-        /* Forçage de l'affichage sur téléphone */
-        @media (max-width: 576px) {
+        /* --- LE FOND DE PAGE (TOUR EIFFEL) SUR MOBILE --- */
+        @media (max-width: 768px) {
+            .hero {
+                position: relative;
+                /* Indispensable pour verrouiller le fond à l'intérieur */
+                z-index: 1;
+                background-color: transparent !important;
+                /* Supprime le bloc de couleur opaque */
+                background: none !important;
+
+            }
+
             .hero-bg {
-                display: block !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
                 height: 100% !important;
-                /* Recentre l'image pour éviter que la Tour Eiffel glisse hors de l'écran du téléphone */
-                background-position: center center !important;
+
+                /* Force l'image brute sans aucun filtre assombrisseur */
+                background-image: url('/images/TOURE.png') !important;
+                background-size: cover !important;
+                /* 🚨 LE FIX : On force le comportement standard (scroll) pour mobile */
+                background-attachment: scroll !important;
+
+                /* 💡 AJUSTEMENT : On cale l'image vers le bas et la droite pour faire apparaître la Tour Eiffel */
+                background-position: right bottom !important;
+                background-repeat: no-repeat !important;
+
+                /* 🚨 TRÈS IMPORTANT : z-index négatif pour passer STRICTEMENT sous le texte et les boutons */
+                z-index: -1 !important;
+            }
+
+            /* Désactivation complète de l'overlay avant qui créait le rectangle bleu */
+            .hero-bg::before,
+            .hero::before,
+            .hero::after {
+                display: none !important;
+                content: none !important;
+                background: transparent !important;
             }
         }
+
+        @media screen and (max-width: 768px) {
+
+            /* 1. On remet le body et les conteneurs globaux transparents ou neutres */
+            html,
+            body,
+            #root,
+            #__next,
+            main {
+                background-color: #0b1a30 !important;
+                /* Votre bleu sombre par défaut pour le reste du site */
+                background-image: none !important;
+            }
+
+            /* 2. On applique l'image de fond UNIQUEMENT sur le Hero sur mobile */
+            div[class*="hero"],
+            section:first-of-type,
+            .hero-section {
+                background-color: transparent !important;
+                background-image: url('/images/TOURE.png') !important;
+                /* Votre image pour le Hero */
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+            }
+
+            /* 3. On force les autres sections (comme la newsletter) à garder leur fond */
+            section:not(:first-of-type) {
+                background-color: #0b1a30 !important;
+                /* Assure le fond bleu sombre ailleurs */
+            }
+
+
+
+            /* 2. On force les sections à devenir transparentes SAUF la newsletter */
+            section:not([class*="newsletter"]):not([id*="newsletter"]),
+            div[class*="hero"],
+            div[class*="bg-"]:not([class*="newsletter"]),
+            div[class*="wrapper"]:not([class*="newsletter"]) {
+                background-color: transparent !important;
+                background-image: none !important;
+            }
+        }
+
+
 
         /* ══ STATS BAR ══ */
         .stats-bar {
@@ -699,12 +873,14 @@
 
         .nl-input {
             flex: 1;
+            width: 200px;
+            /* Force une largeur fixe plus petite (à ajuster selon vos goûts) */
             min-width: 130px;
             background: rgba(255, 255, 255, .06);
             border: 1px solid rgba(255, 255, 255, .2);
             color: #fff;
             font-size: .82rem;
-            padding: 12px 16px;
+            padding: 8px 16px;
             outline: none;
             font-family: 'Open Sans', sans-serif;
             transition: border-color .2s;
@@ -1113,6 +1289,13 @@
                 flex-direction: column !important;
                 justify-content: center !important;
                 align-items: center !important;
+                /* =══ CORRECTION IMAGE DE FOND (TOUR EIFFEL) ══= */
+                background-attachment: scroll !important;
+                /* Débloque l'image sur les téléphones */
+                background-position: center center !important;
+                /* Centre la Tour Eiffel au milieu */
+                background-size: cover !important;
+                /* Force l'image à occuper tout l'espace disponible */
             }
 
             /* --- Ajustement parfait de l'image de fond --- */
@@ -1126,7 +1309,7 @@
                 /* 'center center' force la Tour Eiffel à rester au milieu de l'écran du téléphone */
                 background-position: center center !important;
                 background-size: cover !important;
-                z-index: 1 !important;
+                z-index: 0 !important;
             }
 
             /* --- Assombrissement pour la lisibilité du texte --- */
@@ -1343,7 +1526,7 @@
 
 <body>
 
-    <!-- ══ NAV ══ -->
+
     <!-- ══ NAV ══ -->
     <nav class="nav" id="mainNav">
         <!-- LOGO : image brute, sans cercle ni border -->
@@ -1352,10 +1535,7 @@
             <img src="public/images/264.png"
                 alt="Journées Economique et du Forum International de l'Emploi de la Diaspora Gabonaise">
             <!-- Le bloc texte à côté du logo -->
-            <div class="nav-logo-txt">
-                <strong class="txt-jefie">Journées Ecomomiques</strong>
-                <span class="txt-paris">Forum International de l'Emploi de la Diaspora Gabonaise</span>
-            </div>
+
 
         </a>
         <div class="nav-right">
@@ -1368,7 +1548,10 @@
     <section class="hero">
         <!-- Le conteneur de fond avec le bon chemin relatif de fichier -->
         <!-- En partant directement du dossier racine (Root) -->
-        <div class="hero-bg" style="background-image: url('public/images/TOURE.png');"></div>
+        <div class="hero-bg">
+            <img src="images/TOURE.png" alt="Tour Eiffel">
+        </div>
+
         <div class="hero-circle-bl"></div>
 
 
@@ -1388,7 +1571,9 @@
 
         <!-- Contenu Principal -->
         <div class="hero-content">
-            <div class="hero-eyebrow">FORUM ÉCONOMIQUE & DE L'EMPLOI — DIASPORA GABONAISE</div>
+            <div class="hero-eyebrow">Journées Économiques
+                & Forum International
+                de l'Emploi de la Diaspora GABONAISE</div>
             <h1>
                 LE RENDEZ-VOUS<br>
                 QUI CONNECTE TALENTS,<br>
@@ -1714,92 +1899,84 @@
         }, { passive: true });
 
         // ── Newsletter ────────────────────────────────────────────
-        function submitNL(e) {
-            e.preventDefault();
-            const form = e.target;
-            const btn = form.querySelector('.btn-nl');
-            if (!btn) return;
+        function submitNL(event) {
+            event.preventDefault(); // Bloque le rechargement de la page
 
-            btn.textContent = '...';
-            btn.disabled = true;
+            const form = document.getElementById('nlForm');
+            if (!form) return;
 
-            // URL relative pour le HTML pur (remplace la route Laravel)
-            fetch('/newsletter/subscribe', {
+            const emailInput = form.querySelector('input[name="email"]').value.trim();
+            const successMessage = document.getElementById('nlSuccess');
+            const btn = form.querySelector('.btn-nl') || form.querySelector('button[type="submit"]');
+
+            if (!emailInput) {
+                alert("Veuillez renseigner votre adresse e-mail.");
+                return;
+            }
+
+            if (btn) {
+                btn.textContent = '...';
+                btn.disabled = true;
+            }
+
+            // Exécution propre et envoi direct vers le fichier de votre hébergeur
+            fetch('saveEmail.php', {
                 method: 'POST',
-                body: new FormData(form),
-                headers: { 'X-Requested-With': 'XMLHttpRequest' }
-            }).then(() => {
-                form.style.display = 'none';
-                const success = document.getElementById('nlSuccess');
-                if (success) success.style.display = 'flex';
-            }).catch(() => {
-                form.style.display = 'none';
-                const success = document.getElementById('nlSuccess');
-                if (success) success.style.display = 'flex';
-            });
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ email: emailInput })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Réponse réseau incorrecte.");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.status === 'success' || data.message === 'Déjà inscrit') {
+                        form.style.display = 'none';
+                        if (successMessage) successMessage.style.display = 'flex';
+                    } else {
+                        alert(data.message || "Erreur lors du traitement.");
+                        if (btn) { btn.textContent = 'PRÉVENEZ-MOI À L\'OUVERTURE'; btn.disabled = false; }
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur technique:', error);
+                    alert("Une erreur technique est survenue. Veuillez réessayer ultérieurement.");
+                    if (btn) { btn.textContent = 'PRÉVENEZ-MOI À L\'OUVERTURE'; btn.disabled = false; }
+                });
         }
 
-        // Ouvre la modale
         function openNLModal() {
             const modal = document.getElementById('nlModal');
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Empêche le site de défiler en arrière-plan
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
         }
 
-        // Ferme la modale
         function closeNLModal(event) {
             const modal = document.getElementById('nlModal');
+            if (!modal) return;
 
-            // Ferme si on clique sur la croix OU en dehors de la boîte blanche
             if (event.target === modal || event.target.classList.contains('nl-modal-close')) {
                 modal.style.display = 'none';
-                document.body.style.overflow = ''; // Réactive le défilement du site
+                document.body.style.overflow = '';
 
-                // Optionnel : réinitialise le formulaire et le message de succès à la fermeture
                 setTimeout(() => {
-                    document.getElementById('nlForm').style.display = 'flex';
-                    document.getElementById('nlSuccess').style.display = 'none';
+                    const form = document.getElementById('nlForm');
+                    const successMessage = document.getElementById('nlSuccess');
+                    if (form) form.style.display = 'flex';
+                    if (successMessage) successMessage.style.display = 'none';
                 }, 300);
             }
         }
 
-        // Exemple pour votre fonction d'envoi existante submitNL
-        function submitNL(event) {
-            event.preventDefault();
-
-            // Simule la réussite (remplacez par votre logique Fetch/Ajax si nécessaire)
-            document.getElementById('nlForm').style.display = 'none';
-            document.getElementById('nlSuccess').style.display = 'flex';
-        }
-
-        function submitNL(event) {
-            event.preventDefault(); // Empêche la page de se recharger
-
-            const form = document.getElementById('nlForm');
-            const emailInput = form.querySelector('input[name="email"]').value;
-            const successMessage = document.getElementById('nlSuccess');
-
-            // Envoie l'e-mail au fichier PHP présent dans le même dossier
-            fetch('save_email.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: emailInput })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        // Masque le formulaire et affiche le message de validation
-                        form.style.display = 'none';
-                        successMessage.style.display = 'flex';
-                    } else {
-                        alert(data.message); // Affiche l'erreur renvoyée par le PHP
-                    }
-                })
-                .catch(error => {
-                    console.error('Erreur:', error);
-                    alert("Erreur réseau : impossible de joindre le serveur.");
-                });
-        }
-
 
     </script>
+</body>
+
+</html>
