@@ -1633,13 +1633,12 @@
                         <p class="nl-modal-subtitle">Recevez une alerte dès l'ouverture.</p>
 
                         <!-- Votre formulaire avec ses 4 champs -->
-                        <form class="nl-form" id="nlForm" onsubmit="submitNL(event)">
+                        <form class="nl-form" id="nlFormSection" onsubmit="submitNL(event)">
                             <input type="email" name="email" class="nl-input" placeholder="E-mail" required>
                             <button type="submit" class="btn-nl">PRÉVENEZ-MOI À L'OUVERTURE</button>
                         </form>
 
-                        <!-- Votre message de succès -->
-                        <div class="nl-success" id="nlSuccess" style="display: none;">
+                        <div class="nl-success" id="nlSuccessSection" style="display: none;">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
                                 <polyline points="20 6 9 17 4 12" />
@@ -1750,22 +1749,18 @@
             </div>
 
             <!-- Formulaire avec les 4 champs alignés -->
-            <form class="nl-form" id="nlForm" onsubmit="submitNL(event)">
-
+            <form class="nl-form" id="nlFormSection" onsubmit="submitNL(event)">
                 <input type="email" name="email" class="nl-input" placeholder="E-mail" required>
-
                 <button type="submit" class="btn-nl">PRÉVENEZ-MOI À L'OUVERTURE</button>
             </form>
 
-            <!-- Message de succès caché par défaut -->
-            <div class="nl-success" id="nlSuccess" style="display: none;">
+            <div class="nl-success" id="nlSuccessSection" style="display: none;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" width="24" height="24">
                     <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span>Merci ! Vous serez parmi les premiers informés.</span>
             </div>
-
         </div>
     </section>
 
@@ -1900,53 +1895,55 @@
 
         // ── Newsletter ────────────────────────────────────────────
         function submitNL(event) {
-            event.preventDefault(); // Bloque le rechargement de la page
+            event.preventDefault();
 
-            const form = document.getElementById('nlForm');
-            if (!form) return;
-
-            const emailInput = form.querySelector('input[name="email"]').value.trim();
-            const successMessage = document.getElementById('nlSuccess');
+            const form = event.target; // le formulaire réellement soumis (modal OU section)
+            const emailInput = form.querySelector('input[name="email"]');
+            const successMessage = form.parentElement.querySelector('.nl-success'); // voisin direct du form
             const btn = form.querySelector('.btn-nl') || form.querySelector('button[type="submit"]');
 
-            if (!emailInput) {
+            if (!emailInput || !emailInput.value.trim()) {
                 alert("Veuillez renseigner votre adresse e-mail.");
                 return;
             }
+
+            const emailValue = emailInput.value.trim();
 
             if (btn) {
                 btn.textContent = '...';
                 btn.disabled = true;
             }
 
-            // Exécution propre et envoi direct vers le fichier de votre hébergeur
-            fetch('saveEmail.php', {
+            // ⚠️ Vérifie que ce nom correspond EXACTEMENT (casse comprise) au
+            // fichier PHP réellement présent à la racine du site.
+            fetch('savemail.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify({ email: emailInput })
+                body: JSON.stringify({ email: emailValue })
             })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Réponse réseau incorrecte.");
+                .then(async (response) => {
+                    const data = await response.json().catch(() => null);
+                    if (!data) {
+                        throw new Error('Réponse invalide du serveur.');
                     }
-                    return response.json();
+                    return data;
                 })
                 .then(data => {
-                    if (data.status === 'success' || data.message === 'Déjà inscrit') {
+                    if (data.status === 'success') {
                         form.style.display = 'none';
                         if (successMessage) successMessage.style.display = 'flex';
                     } else {
                         alert(data.message || "Erreur lors du traitement.");
-                        if (btn) { btn.textContent = 'PRÉVENEZ-MOI À L\'OUVERTURE'; btn.disabled = false; }
+                        if (btn) { btn.textContent = "PRÉVENEZ-MOI À L'OUVERTURE"; btn.disabled = false; }
                     }
                 })
                 .catch(error => {
                     console.error('Erreur technique:', error);
                     alert("Une erreur technique est survenue. Veuillez réessayer ultérieurement.");
-                    if (btn) { btn.textContent = 'PRÉVENEZ-MOI À L\'OUVERTURE'; btn.disabled = false; }
+                    if (btn) { btn.textContent = "PRÉVENEZ-MOI À L'OUVERTURE"; btn.disabled = false; }
                 });
         }
 
@@ -1967,15 +1964,13 @@
                 document.body.style.overflow = '';
 
                 setTimeout(() => {
-                    const form = document.getElementById('nlForm');
-                    const successMessage = document.getElementById('nlSuccess');
+                    const form = document.getElementById('nlFormModal');
+                    const successMessage = document.getElementById('nlSuccessModal');
                     if (form) form.style.display = 'flex';
                     if (successMessage) successMessage.style.display = 'none';
                 }, 300);
             }
         }
-
-
     </script>
 </body>
 
