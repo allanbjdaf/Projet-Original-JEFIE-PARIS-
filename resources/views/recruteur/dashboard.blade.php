@@ -1,4 +1,4 @@
-{{-- resources/views/recruteur/dashboard.blade.php --}}
+﻿{{-- resources/views/recruteur/dashboard.blade.php --}}
 @extends('layouts.app')
 @section('title', 'Espace Recruteur — JEFIE Paris 2026')
 @section('styles')
@@ -16,7 +16,7 @@
     }
 
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -37,7 +37,7 @@
     .nav-logo-icon {
         width: 44px;
         height: 44px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -54,7 +54,7 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
@@ -78,8 +78,8 @@
     }
 
     .nav-links a.active {
-        color: #f5a623;
-        border-bottom: 2px solid #f5a623;
+        color: #f5c518;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 700;
     }
@@ -109,8 +109,8 @@
     }
 
     .btn-sinscrire {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 20px;
@@ -135,7 +135,7 @@
 
     /* ── SIDEBAR ── */
     .rec-sidebar {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         flex-direction: column;
         padding: 1.5rem 0;
@@ -157,7 +157,7 @@
     }
 
     .rs-brand-title svg {
-        stroke: #f5a623;
+        stroke: #f5c518;
     }
 
     .rs-brand-sub {
@@ -180,7 +180,7 @@
         height: 36px;
         border-radius: 50%;
         background: rgba(245, 166, 35, .2);
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -196,7 +196,7 @@
     }
 
     .rs-avatar-init {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 14px;
         font-weight: 700;
     }
@@ -233,8 +233,8 @@
 
     .rs-item.active {
         background: rgba(245, 166, 35, .12);
-        color: #f5a623;
-        border-left-color: #f5a623;
+        color: #f5c518;
+        border-left-color: #f5c518;
         font-weight: 700;
     }
 
@@ -312,7 +312,7 @@
     .page-title {
         font-size: 1.3rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .page-subtitle {
@@ -322,7 +322,7 @@
     }
 
     .btn-primary {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 13px;
@@ -339,7 +339,7 @@
     }
 
     .btn-primary:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .btn-primary svg {
@@ -351,8 +351,8 @@
     }
 
     .btn-or {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 10px 20px;
@@ -421,7 +421,7 @@
     }
 
     .stat-card:hover {
-        box-shadow: 0 4px 14px rgba(13, 27, 62, .08);
+        box-shadow: 0 4px 14px rgba(15, 40, 78, .08);
     }
 
     .stat-icon {
@@ -445,7 +445,7 @@
     .stat-num {
         font-size: 1.5rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
         line-height: 1;
     }
@@ -491,17 +491,17 @@
     .card-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 8px;
     }
 
     .card-link {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -551,7 +551,7 @@
     .offre-logo-init {
         font-size: 14px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .offre-info {
@@ -562,7 +562,7 @@
     .offre-titre {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -599,7 +599,7 @@
     .offre-stat-num {
         font-size: 13px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
     }
 
@@ -630,7 +630,7 @@
 
     .s-pourvue {
         background: #e3f2fd;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .s-attente {
@@ -640,7 +640,7 @@
 
     .s-cours {
         background: #e3f2fd;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .s-accept {
@@ -655,12 +655,12 @@
 
     .s-nouveau {
         background: #e3f2fd;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .s-vedette {
         background: #fff3e0;
-        color: #e65100;
+        color: #f5c518;
     }
 
     /* Candidature item */
@@ -680,7 +680,7 @@
         width: 36px;
         height: 36px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -696,7 +696,7 @@
     }
 
     .cand-avatar-init {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 14px;
         font-weight: 700;
     }
@@ -709,7 +709,7 @@
     .cand-name {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .cand-meta {
@@ -748,7 +748,7 @@
 
     td {
         font-size: 13px;
-        color: #162552;
+        color: #0a1e38;
         padding: 14px;
         border-bottom: 1px solid #f0f4f8;
         vertical-align: middle;
@@ -793,7 +793,7 @@
 
     .btn-sm-view {
         border-color: #d1d9e6;
-        color: #162552;
+        color: #0a1e38;
         background: #fff;
     }
 
@@ -803,7 +803,7 @@
 
     .btn-sm-edit {
         border-color: #bfdbfe;
-        color: #1565c0;
+        color: #0f284e;
         background: #fff;
     }
 
@@ -843,10 +843,10 @@
     .form-section-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 8px;
         margin-bottom: 1.1rem;
     }
@@ -864,7 +864,7 @@
     .form-label {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         display: block;
         margin-bottom: 5px;
     }
@@ -887,8 +887,8 @@
     }
 
     .form-control:focus {
-        border-color: #0d1b3e;
-        box-shadow: 0 0 0 3px rgba(13, 27, 62, .06);
+        border-color: #0f284e;
+        box-shadow: 0 0 0 3px rgba(15, 40, 78, .06);
     }
 
     .form-control::placeholder {
@@ -929,7 +929,7 @@
     .nl-stat-num {
         font-size: 1.4rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
     }
 
@@ -972,7 +972,7 @@
 
     /* Footer */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
     }
@@ -1118,7 +1118,7 @@
 {{-- NAV --}}
 <nav class="nav">
     <a href="{{ route('index') }}" class="nav-logo">
-        <div class="nav-logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
+        <div class="nav-logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="1.8">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg></div>
         <div class="nav-logo-text"><span>JEFIE</span>Paris 2026</div>
@@ -1145,7 +1145,7 @@
     <aside class="rec-sidebar">
         <div class="rs-brand">
             <div class="rs-brand-title">
-                <svg width="16" height="16" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="2">
+                <svg width="16" height="16" viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="2">
                     <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                     <polyline points="9 22 9 12 15 12 15 22" />
                 </svg>
@@ -1266,7 +1266,7 @@
             [($stats['offres_actives']??0), 'Offres actives', '#2e7d32','#e8f5e9','
             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
             <polyline points="14 2 14 8 20 8" />'],
-            [($stats['candidatures_total']??0), 'Candidatures reçues', '#1565c0','#e3f2fd','
+            [($stats['candidatures_total']??0), 'Candidatures reçues', '#0f284e','#e3f2fd','
             <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
             <circle cx="9" cy="7" r="4" />'],
             [($stats['candidatures_new']??0), 'Nouvelles aujourd\'hui','#b07d10','#fff8e6','
@@ -1386,38 +1386,6 @@
 </div>
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.5rem">
-                <div class="nav-logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                    </svg></div>
-                <div class="nav-logo-text" style="color:#fff"><span>JEFIE</span>Paris 2026</div>
-            </a>
-            <p>Plateforme de recrutement officielle du Forum International de l'Emploi de la Diaspora Gabonaise.</p>
-            <nav class="socials"><a href="#" aria-label="f">f</a><a href="#" aria-label="in">in</a><a href="#" aria-label="tw">&#120143;</a></nav>
-        </div>
-        <div class="fc">
-            <h4>Recruteurs</h4><a href="{{ route('recruteur.dashboard') }}">Mon tableau de bord</a><a href="{{ route('recruteur.offre.creer') }}">Publier une offre</a><a href="{{ route('recruteur.candidatures') }}">Candidatures reçues</a><a href="{{ route('recruteur.newsletter') }}">Newsletter</a>
-        </div>
-        <div class="fc">
-            <h4>Candidats</h4><a href="{{ route('emploi') }}">Offres d'emploi</a><a href="{{ route('emploi.candidatures') }}">Mes candidatures</a><a href="{{ route('emploi.alertes') }}">Mes alertes</a><a href="{{ route('emploi.profil') }}">Mon profil</a>
-        </div>
-        <div class="fc">
-            <h4>Contact</h4>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>recrutement@jefie-paris.org</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81" />
-                </svg>+33 1 45 67 89 10</div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} JEFIE Paris 2026. Tous droits réservés.</span>
-        <div class="footer-legal"><a href="{{ route('mentions-legales') }}">Mentions légales</a><a href="{{ route('confidentialite') }}">Confidentialité</a></div>
-    </div>
-</footer>
+
+@include('components.footer')
 @endsection

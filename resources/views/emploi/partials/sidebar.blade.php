@@ -1,8 +1,8 @@
-{{-- resources/views/emploi/partials/sidebar.blade.php --}}
+﻿{{-- resources/views/emploi/partials/sidebar.blade.php --}}
 <aside class="emploi-sidebar">
     <div class="es-header">
         <div class="es-logo">
-            <svg width="16" height="16" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="2">
                 <rect x="2" y="7" width="20" height="14" rx="2" />
                 <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
             </svg>

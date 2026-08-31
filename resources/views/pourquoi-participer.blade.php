@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -27,7 +27,7 @@
 
         /* NAV */
         .nav {
-            background: #0d1b3e;
+            background: #0f284e;
             height: 64px;
             display: flex;
             align-items: center;
@@ -48,7 +48,7 @@
         .nav-logo-icon {
             width: 42px;
             height: 42px;
-            border: 2px solid #f5a623;
+            border: 2px solid #f5c518;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -58,7 +58,7 @@
         .nav-logo-icon svg {
             width: 20px;
             height: 20px;
-            stroke: #f5a623;
+            stroke: #f5c518;
             fill: none;
             stroke-width: 1.8
         }
@@ -72,7 +72,7 @@
         }
 
         .nav-logo-text span {
-            color: #f5a623;
+            color: #f5c518;
             display: block;
             font-size: 11px;
             font-weight: 800
@@ -94,7 +94,7 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #f5a623
+            color: #f5c518
         }
 
         .nav-right {
@@ -130,8 +130,8 @@
         }
 
         .btn-inscr {
-            background: #f5a623;
-            color: #0d1b3e;
+            background: #f5c518;
+            color: #0f284e;
             font-weight: 700;
             font-size: 13px;
             padding: 9px 20px;
@@ -157,7 +157,7 @@
 
         /* HERO */
         .hero {
-            background: linear-gradient(108deg, #030812, #0d1b3e 50%, #0a2356);
+            background: linear-gradient(108deg, #030812, #0f284e 50%, #0a2356);
             padding: 5rem 5rem 0;
             position: relative;
             overflow: hidden
@@ -224,7 +224,7 @@
         }
 
         .hero h1 em {
-            color: #f5a623;
+            color: #f5c518;
             font-style: normal;
             display: block
         }
@@ -246,8 +246,8 @@
         }
 
         .btn-cta {
-            background: #f5a623;
-            color: #0d1b3e;
+            background: #f5c518;
+            color: #0f284e;
             font-weight: 700;
             font-size: 14px;
             padding: 14px 30px;
@@ -430,7 +430,7 @@
         .stat-num {
             font-size: 2.4rem;
             font-weight: 900;
-            color: #0d1b3e;
+            color: #0f284e;
             display: block;
             line-height: 1
         }
@@ -473,18 +473,18 @@
         }
 
         .section-dark {
-            background: #0d1b3e
+            background: #0f284e
         }
 
         .section-gold {
-            background: #f5a623
+            background: #f5c518
         }
 
         .section-eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            color: #f5a623;
+            color: #f5c518;
             font-size: 10px;
             font-weight: 800;
             letter-spacing: .12em;
@@ -503,7 +503,7 @@
         .section-title {
             font-size: 2.2rem;
             font-weight: 900;
-            color: #0d1b3e;
+            color: #0f284e;
             line-height: 1.1;
             margin-bottom: .85rem;
             text-transform: uppercase
@@ -514,7 +514,7 @@
         }
 
         .section-title-dark {
-            color: #0d1b3e
+            color: #0f284e
         }
 
         .section-desc {
@@ -573,7 +573,7 @@
             line-height: 1;
             margin-bottom: .5rem;
             opacity: .08;
-            color: #0d1b3e
+            color: #0f284e
         }
 
         .raison-eyebrow {
@@ -601,7 +601,7 @@
         .raison-title {
             font-size: 1.6rem;
             font-weight: 900;
-            color: #0d1b3e;
+            color: #0f284e;
             line-height: 1.2;
             margin-bottom: .75rem;
             text-transform: uppercase
@@ -626,7 +626,7 @@
             align-items: center;
             gap: 9px;
             font-size: 13px;
-            color: #162552;
+            color: #0a1e38;
             font-weight: 600
         }
 
@@ -772,7 +772,7 @@
         .rv-stat-num {
             font-size: 13px;
             font-weight: 800;
-            color: #0d1b3e
+            color: #0f284e
         }
 
         .rv-stat-lbl {
@@ -807,7 +807,7 @@
         }
 
         .profil-card:hover {
-            box-shadow: 0 12px 40px rgba(13, 27, 62, .1);
+            box-shadow: 0 12px 40px rgba(15, 40, 78, .1);
             transform: translateY(-4px)
         }
 
@@ -832,7 +832,7 @@
         .pc-title {
             font-size: 1.05rem;
             font-weight: 800;
-            color: #0d1b3e;
+            color: #0f284e;
             margin-bottom: .5rem
         }
 
@@ -896,8 +896,8 @@
         }
 
         .palmares-card.edition-2026 {
-            background: linear-gradient(135deg, #0d1b3e, #162552);
-            border: 2px solid #f5a623
+            background: linear-gradient(135deg, #0f284e, #0a1e38);
+            border: 2px solid #f5c518
         }
 
         .palmares-card:not(.edition-2026) {
@@ -969,7 +969,7 @@
         }
 
         .edition-2026 .pc-annee {
-            color: #f5a623
+            color: #f5c518
         }
 
         .edition-2026 .pc-lieu {
@@ -985,15 +985,15 @@
         }
 
         .edition-2026 .pc-ch-val {
-            color: #f5a623
+            color: #f5c518
         }
 
         .edition-en-cours {
             position: absolute;
             top: 12px;
             right: 12px;
-            background: #f5a623;
-            color: #0d1b3e;
+            background: #f5c518;
+            color: #0f284e;
             font-size: 9px;
             font-weight: 800;
             padding: 3px 10px;
@@ -1025,7 +1025,7 @@
         }
 
         .tc-star {
-            color: #f5a623;
+            color: #f5c518;
             font-size: 14px
         }
 
@@ -1069,7 +1069,7 @@
         }
 
         .tc-pays {
-            color: #f5a623;
+            color: #f5c518;
             font-size: 10px;
             font-weight: 700;
             margin-top: 2px
@@ -1093,8 +1093,8 @@
         }
 
         .faq-item.open {
-            box-shadow: 0 4px 16px rgba(13, 27, 62, .08);
-            border-color: #f5a623
+            box-shadow: 0 4px 16px rgba(15, 40, 78, .08);
+            border-color: #f5c518
         }
 
         .faq-q {
@@ -1105,7 +1105,7 @@
             cursor: pointer;
             font-size: 14px;
             font-weight: 700;
-            color: #0d1b3e;
+            color: #0f284e;
             gap: 1rem;
             user-select: none
         }
@@ -1113,7 +1113,7 @@
         .faq-q svg {
             width: 18px;
             height: 18px;
-            stroke: #f5a623;
+            stroke: #f5c518;
             fill: none;
             stroke-width: 2;
             flex-shrink: 0;
@@ -1143,7 +1143,7 @@
 
         /* CTA FINAL */
         .cta-final {
-            background: linear-gradient(108deg, #0d1b3e, #162552);
+            background: linear-gradient(108deg, #0f284e, #0a1e38);
             padding: 6rem 5rem;
             text-align: center;
             position: relative;
@@ -1201,7 +1201,7 @@
         }
 
         .cc-num {
-            color: #f5a623;
+            color: #f5c518;
             font-size: 2rem;
             font-weight: 900;
             display: block;
@@ -1233,7 +1233,7 @@
         }
 
         .cta-h span {
-            color: #f5a623
+            color: #f5c518
         }
 
         .cta-p {
@@ -1252,8 +1252,8 @@
         }
 
         .btn-final-gold {
-            background: #f5a623;
-            color: #0d1b3e;
+            background: #f5c518;
+            color: #0f284e;
             font-weight: 700;
             font-size: 15px;
             padding: 16px 34px;
@@ -1327,7 +1327,7 @@
         .cta-g-item svg {
             width: 13px;
             height: 13px;
-            stroke: #f5a623;
+            stroke: #f5c518;
             fill: none;
             stroke-width: 2
         }
@@ -1385,7 +1385,7 @@
         }
 
         .footer-logo-text span {
-            color: #f5a623;
+            color: #f5c518;
             display: block;
             font-size: 11px;
             font-weight: 800
@@ -1424,7 +1424,7 @@
             position: fixed;
             bottom: 24px;
             right: 24px;
-            background: #0d1b3e;
+            background: #0f284e;
             color: #fff;
             font-size: 13px;
             font-weight: 600;
@@ -1451,7 +1451,7 @@
         .toast svg {
             width: 16px;
             height: 16px;
-            stroke: #f5a623;
+            stroke: #f5c518;
             fill: none;
             stroke-width: 2.5;
             flex-shrink: 0
@@ -1556,7 +1556,7 @@
 
         /* ── FOOTER ── copier*/
         .site-footer {
-            background: #0d1b3e;
+            background: #0f284e;
             color: rgba(255, 255, 255, .7);
             padding: 2.5rem 2.5rem 0;
         }
@@ -1791,7 +1791,7 @@
                 À ne pas manquer — 15-18 Septembre 2026 · Paris
             </div>
             <h1>Pourquoi participer<br><em>au Forum JEFIE 2026 ?</em></h1>
-            <p class="hero-desc">Le Forum International de l'Emploi de la Diaspora Gabonaise est <strong style="color:#f5a623">l'événement le plus important de l'année</strong> pour tous les entrepreneurs, talents et décideurs de la diaspora. Voici pourquoi vous ne pouvez pas vous permettre de le manquer.</p>
+            <p class="hero-desc">Le Forum International de l'Emploi de la Diaspora Gabonaise est <strong style="color:#f5c518">l'événement le plus important de l'année</strong> pour tous les entrepreneurs, talents et décideurs de la diaspora. Voici pourquoi vous ne pouvez pas vous permettre de le manquer.</p>
             <div class="hero-actions">
                 <a href="{{ route('inscription') }}" class="btn-cta">
                     <svg viewBox="0 0 24 24">
@@ -1906,7 +1906,7 @@
         <div class="profils-grid">
             @foreach($profils as $i => $profil)
             @php
-            $colors = ['#f5a623','#1565c0','#2e7d32','#6a1b9a','#e65100','#c2185b'];
+            $colors = ['#f5c518','#0f284e','#2e7d32','#6a1b9a','#f5c518','#c2185b'];
             $c = $colors[$i % count($colors)];
             @endphp
             <div class="profil-card" style="border-top:4px solid {{ $c }}">
@@ -1947,10 +1947,10 @@
                 @if($ed['annee'] === '2026')
                 <div class="edition-en-cours">En cours</div>
                 @endif
-                <div class="pc-annee" style="color:{{ $ed['annee'] === '2026' ? '#f5a623' : '#0d1b3e' }}">
+                <div class="pc-annee" style="color:{{ $ed['annee'] === '2026' ? '#f5c518' : '#0f284e' }}">
                     {{ $ed['annee'] }}
                     @if($ed['annee'] === '2026')
-                    <span class="pc-annee-badge" style="background:rgba(245,166,35,.2);color:#f5a623">Édition actuelle</span>
+                    <span class="pc-annee-badge" style="background:rgba(245,166,35,.2);color:#f5c518">Édition actuelle</span>
                     @endif
                 </div>
                 <div class="pc-lieu" style="color:{{ $ed['annee'] === '2026' ? 'rgba(255,255,255,.6)' : '#718096' }}">
@@ -1964,7 +1964,7 @@
                     @foreach([['Inscrits',$ed['inscrits']],['Pays',$ed['pays']],['Partenariats',$ed['partenariats']],['Investissements',$ed['investissements']]] as [$l,$v])
                     <div class="pc-chiffre" style="border-bottom-color:{{ $ed['annee']==='2026' ? 'rgba(255,255,255,.08)' : '#f0f4f8' }}">
                         <span class="pc-ch-label" style="color:{{ $ed['annee']==='2026' ? 'rgba(255,255,255,.55)' : '#718096' }}">{{ $l }}</span>
-                        <span class="pc-ch-val" style="color:{{ $ed['annee']==='2026' ? '#f5a623' : '#0d1b3e' }}">{{ $v }}</span>
+                        <span class="pc-ch-val" style="color:{{ $ed['annee']==='2026' ? '#f5c518' : '#0f284e' }}">{{ $v }}</span>
                     </div>
                     @endforeach
                 </div>
@@ -2088,77 +2088,7 @@
         </div>
     </section>
 
-
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="fb">
-                <a href="http://127.0.0.1:8000" class="nav-logo" style="margin-bottom:.4rem">
-                    <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                        <img src="http://127.0.0.1:8000/images/264.png"
-                            alt="Logo JEFIE Paris 2026"
-                            style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                    </div>
-                    <div class="nav-logo-text" style="color:#fff"><span>Forum International</span>de l'Innovation<br><small>2026</small></div>
-                </a>
-                <p>Le rendez-vous mondial des décideurs, innovateurs et entrepreneurs engagés pour un avenir durable.</p>
-                <nav class="socials">
-                    <a href="#" aria-label="Facebook">f</a>
-                    <a href="#" aria-label="LinkedIn">in</a>
-                    <a href="#" aria-label="Twitter">&#120143;</a>
-                    <a href="#" aria-label="YouTube">&#9654;</a>
-                    <a href="#" aria-label="Instagram">&#9752;</a>
-                </nav>
-            </div>
-            <div class="fc">
-                <h4>Navigation</h4>
-                <a href="http://127.0.0.1:8000">Accueil</a>
-                <a href="http://127.0.0.1:8000/programme">Programme</a>
-                <a href="http://127.0.0.1:8000/institutionnel">Institutionnel</a>
-                <a href="http://127.0.0.1:8000/partenaires">Partenaires</a>
-                <a href="http://127.0.0.1:8000/actualites">Actualités</a>
-                <a href="http://127.0.0.1:8000/a-propos">À propos</a>
-            </div>
-            <div class="fc">
-                <h4>Participer</h4>
-                <a href="http://127.0.0.1:8000/inscription">S'inscrire</a>
-                <a href="http://127.0.0.1:8000/partenaires/devenir">Devenir partenaire</a>
-                <a href="http://127.0.0.1:8000/emploi">Emploi &amp; Recrutement</a>
-                <a href="http://127.0.0.1:8000/cartographie">Cartographie Diaspora</a>
-                <a href="http://127.0.0.1:8000/faq">FAQ</a>
-            </div>
-            <div class="fc">
-                <h4>Contact</h4>
-                <div class="fci">
-                    <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <path d="M2 7l10 7 10-7" />
-                    </svg>
-                    contact@forum-innovation.org
-                </div>
-                <div class="fci">
-                    <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81" />
-                    </svg>
-                    +221 33 123 45 67
-                </div>
-                <div class="fci">
-                    <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                        <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    Paris, France &amp; Dakar, Sénégal
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span class="footer-copy">&copy; 2026 Forum International de l'Innovation. Tous droits réservés.</span>
-            <div class="footer-legal">
-                <a href="http://127.0.0.1:8000/mentions-legales">Mentions légales</a>
-                <a href="http://127.0.0.1:8000/confidentialite">Confidentialité</a>
-                <a href="http://127.0.0.1:8000/conditions">CGU</a>
-            </div>
-        </div>
-    </footer>
+@include('components.footer')
 
 
 

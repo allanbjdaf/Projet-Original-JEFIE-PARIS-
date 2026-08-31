@@ -1,4 +1,4 @@
-{{-- resources/views/partenaires/devenir.blade.php --}}
+﻿{{-- resources/views/partenaires/devenir.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'Devenir Partenaire — Forum International de l\'Innovation 2026')
@@ -19,7 +19,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -40,7 +40,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -57,13 +57,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -88,7 +88,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -117,8 +117,8 @@
     }
 
     .btn-inscr {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 22px;
@@ -269,12 +269,12 @@
 
     /* ── HERO ── */
     .hero {
-        background: linear-gradient(105deg, #060e20 0%, #0d1b3e 55%, #0f2a5e 100%);
+        background: linear-gradient(105deg, #060e20 0%, #0f284e 55%, #0f2a5e 100%);
         padding: 4rem 2.5rem 3.5rem;
         position: relative;
         overflow: hidden;
         background-image:
-            linear-gradient(108deg, #060e20 0%, #0d1b3e 45%, rgba(13, 27, 62, 0.75) 75%, rgba(15, 42, 94, 0.4) 100%),
+            linear-gradient(108deg, #060e20 0%, #0f284e 45%, rgba(15, 40, 78, 0.75) 75%, rgba(15, 42, 94, 0.4) 100%),
             url('/images/dev.png');
     }
 
@@ -301,7 +301,7 @@
         gap: 7px;
         background: rgba(245, 166, 35, .12);
         border: 1px solid rgba(245, 166, 35, .3);
-        color: #f5a623;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 700;
         letter-spacing: .1em;
@@ -330,11 +330,11 @@
     }
 
     .hero h1 span {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .hero-tagline {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 1.1rem;
         font-weight: 700;
         margin-bottom: .75rem;
@@ -355,8 +355,8 @@
     }
 
     .btn-gold {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 13px 26px;
@@ -426,7 +426,7 @@
     .stat-icon {
         width: 44px;
         height: 44px;
-        background: rgba(13, 27, 62, .07);
+        background: rgba(15, 40, 78, .07);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -437,7 +437,7 @@
     .stat-icon svg {
         width: 22px;
         height: 22px;
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         fill: none;
         stroke-width: 1.8;
     }
@@ -445,7 +445,7 @@
     .stat-num {
         font-size: 1.6rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
         line-height: 1;
     }
@@ -472,7 +472,7 @@
     .section-eyebrow {
         font-size: 11px;
         font-weight: 800;
-        color: #f5a623;
+        color: #f5c518;
         letter-spacing: .12em;
         text-transform: uppercase;
         margin-bottom: 8px;
@@ -481,7 +481,7 @@
     .section-title {
         font-size: 1.9rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: .75rem;
     }
 
@@ -508,13 +508,13 @@
     }
 
     .avantage-card:hover {
-        box-shadow: 0 4px 16px rgba(13, 27, 62, .1);
+        box-shadow: 0 4px 16px rgba(15, 40, 78, .1);
     }
 
     .av-icon {
         width: 48px;
         height: 48px;
-        background: rgba(13, 27, 62, .07);
+        background: rgba(15, 40, 78, .07);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -525,7 +525,7 @@
     .av-icon svg {
         width: 24px;
         height: 24px;
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         fill: none;
         stroke-width: 1.8;
     }
@@ -533,7 +533,7 @@
     .av-title {
         font-size: 14px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 6px;
     }
 
@@ -568,7 +568,7 @@
     }
 
     .niveau-card:hover {
-        box-shadow: 0 6px 20px rgba(13, 27, 62, .1);
+        box-shadow: 0 6px 20px rgba(15, 40, 78, .1);
         transform: translateY(-2px);
     }
 
@@ -618,7 +618,7 @@
     .niveau-prix {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .niveau-avantages {
@@ -662,7 +662,7 @@
     /* ── TEMOIGNAGES ── */
     .temoignages-section {
         padding: 4rem 2.5rem;
-        background: #0d1b3e;
+        background: #0f284e;
     }
 
     .section-title-w {
@@ -694,7 +694,7 @@
     }
 
     .temo-quote {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 2rem;
         line-height: 1;
         margin-bottom: .75rem;
@@ -718,7 +718,7 @@
         width: 44px;
         height: 44px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #162552, #0d1b3e);
+        background: linear-gradient(135deg, #0a1e38, #0f284e);
         border: 2px solid rgba(245, 166, 35, .4);
         display: flex;
         align-items: center;
@@ -735,7 +735,7 @@
     }
 
     .temo-avatar-init {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 16px;
         font-weight: 700;
     }
@@ -774,7 +774,7 @@
     .form-title {
         font-size: 16px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: 4px;
     }
 
@@ -803,12 +803,12 @@
         display: block;
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 4px;
     }
 
     .req {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .form-control {
@@ -824,8 +824,8 @@
     }
 
     .form-control:focus {
-        border-color: #0d1b3e;
-        box-shadow: 0 0 0 3px rgba(13, 27, 62, .06);
+        border-color: #0f284e;
+        box-shadow: 0 0 0 3px rgba(15, 40, 78, .06);
     }
 
     .form-control::placeholder {
@@ -863,7 +863,7 @@
     .form-section-label {
         font-size: 11px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .08em;
         text-transform: uppercase;
         margin-bottom: 1rem;
@@ -888,21 +888,21 @@
     }
 
     .niveau-radio-item:hover {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .niveau-radio-item input {
         width: 15px;
         height: 15px;
         flex-shrink: 0;
-        accent-color: #0d1b3e;
+        accent-color: #0f284e;
         cursor: pointer;
     }
 
     .niveau-radio-label {
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .niveau-radio-prix {
@@ -923,7 +923,7 @@
         height: 15px;
         margin-top: 2px;
         flex-shrink: 0;
-        accent-color: #0d1b3e;
+        accent-color: #0f284e;
         cursor: pointer;
     }
 
@@ -935,7 +935,7 @@
     }
 
     .btn-submit {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         width: 100%;
         padding: 14px;
@@ -952,7 +952,7 @@
     }
 
     .btn-submit:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .btn-submit svg {
@@ -1012,7 +1012,7 @@
     .fsi-title {
         font-size: 12px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
         margin-bottom: 1rem;
@@ -1033,7 +1033,7 @@
     .fsi-icon {
         width: 32px;
         height: 32px;
-        background: rgba(13, 27, 62, .07);
+        background: rgba(15, 40, 78, .07);
         border-radius: 8px;
         display: flex;
         align-items: center;
@@ -1044,7 +1044,7 @@
     .fsi-icon svg {
         width: 15px;
         height: 15px;
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         fill: none;
         stroke-width: 1.8;
     }
@@ -1052,7 +1052,7 @@
     .fsi-text strong {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         display: block;
     }
 
@@ -1062,7 +1062,7 @@
     }
 
     .fsi-contact {
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 12px;
         padding: 1.25rem;
     }
@@ -1086,15 +1086,15 @@
     .fsi-contact-line svg {
         width: 14px;
         height: 14px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
         flex-shrink: 0;
     }
 
     .fsi-contact-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 12px;
         padding: 10px;
@@ -1126,7 +1126,7 @@
     .deadline-box svg {
         width: 22px;
         height: 22px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
         flex-shrink: 0;
@@ -1135,7 +1135,7 @@
     .deadline-box strong {
         font-size: 12px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
     }
 
@@ -1146,7 +1146,7 @@
 
     /* ── CTA BOTTOM ── */
     .cta-bottom {
-        background: #0d1b3e;
+        background: #0f284e;
         padding: 3rem 2.5rem;
         text-align: center;
     }
@@ -1173,7 +1173,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
     }
@@ -1467,7 +1467,7 @@
 {{-- ══ TEMOIGNAGES ══ --}}
 <section class="temoignages-section">
     <div class="section-header">
-        <div class="section-eyebrow" style="color:#f5a623">Ils nous font confiance</div>
+        <div class="section-eyebrow" style="color:#f5c518">Ils nous font confiance</div>
         <h2 class="section-title-w">Ce que disent nos partenaires</h2>
         <p class="section-desc-w">Des organisations leaders qui ont choisi le Forum pour développer leur rayonnement international.</p>
     </div>
@@ -1482,7 +1482,7 @@
                     {{-- ✅ Chargement direct de vos images depuis public/images/ --}}
                     <img src="{{ asset('images/' . $t['photo']) }}" alt="{{ $t['nom'] }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     @else
-                    <span class="temo-avatar-init" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0d1b3e; color: #fff; font-size: 14px; font-weight: 700;">
+                    <span class="temo-avatar-init" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0f284e; color: #fff; font-size: 14px; font-weight: 700;">
                         {{ strtoupper(substr($t['nom'], 0, 1)) }}
                     </span>
                     @endif
@@ -1647,8 +1647,8 @@
                     <input type="checkbox" id="accepte_conditions" name="accepte_conditions" value="1"
                         {{ old('accepte_conditions') ? 'checked' : '' }} required>
                     <label for="accepte_conditions">
-                        J'accepte les <a href="{{ route('conditions') }}" target="_blank" style="color:#0d1b3e;font-weight:700">conditions générales</a>
-                        et la <a href="{{ route('confidentialite') }}" target="_blank" style="color:#0d1b3e;font-weight:700">politique de confidentialité</a>
+                        J'accepte les <a href="{{ route('conditions') }}" target="_blank" style="color:#0f284e;font-weight:700">conditions générales</a>
+                        et la <a href="{{ route('confidentialite') }}" target="_blank" style="color:#0f284e;font-weight:700">politique de confidentialité</a>
                         <span class="req">*</span>
                     </label>
                 </div>
@@ -1696,8 +1696,8 @@
                 <polyline points="20 6 9 17 4 12" />'],
                 ] as $i => [$titre, $desc, $ic])
                 <div class="fsi-item">
-                    <div class="fsi-icon" style="background:{{ ['rgba(245,166,35,.12)','rgba(13,27,62,.07)','rgba(13,27,62,.07)','rgba(46,125,50,.1)'][$i] }}">
-                        <svg viewBox="0 0 24 24" style="stroke:{{ ['#f5a623','#0d1b3e','#0d1b3e','#2e7d32'][$i] }}" aria-hidden="true">{!! $ic !!}</svg>
+                    <div class="fsi-icon" style="background:{{ ['rgba(245,166,35,.12)','rgba(15, 40, 78,.07)','rgba(15, 40, 78,.07)','rgba(46,125,50,.1)'][$i] }}">
+                        <svg viewBox="0 0 24 24" style="stroke:{{ ['#f5c518','#0f284e','#0f284e','#2e7d32'][$i] }}" aria-hidden="true">{!! $ic !!}</svg>
                     </div>
                     <div class="fsi-text">
                         <strong>{{ ($i+1) }}. {{ $titre }}</strong>
@@ -1728,7 +1728,7 @@
             <div class="fsi-card">
                 <div class="fsi-title">Ils nous font déjà confiance</div>
                 @foreach (['Orange', 'Ecobank', 'Sonatel', 'Société Générale', 'BAD', 'Union Africaine'] as $brand)
-                <div style="display:inline-block;background:#f4f6fa;border:1px solid #e2e8f0;border-radius:5px;padding:5px 12px;font-size:11px;font-weight:700;color:#162552;margin:3px">
+                <div style="display:inline-block;background:#f4f6fa;border:1px solid #e2e8f0;border-radius:5px;padding:5px 12px;font-size:11px;font-weight:700;color:#0a1e38;margin:3px">
                     {{ $brand }}
                 </div>
                 @endforeach
@@ -1756,62 +1756,7 @@
 </div>
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.4rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff"><span>Forum International</span>de l'Innovation<br><small>2026</small></div>
-            </a>
-            <p>Ensemble, construisons l'avenir par l'innovation et le partenariat.</p>
-            <nav class="socials">
-                <a href="#" aria-label="Facebook">f</a><a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="Twitter">&#120143;</a><a href="#" aria-label="YouTube">&#9654;</a>
-            </nav>
-        </div>
-        <div class="fc">
-            <h4>Liens Utiles</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="{{ route('partenaires') }}">Nos partenaires</a>
-            <a href="{{ route('inscription') }}">S'inscrire</a>
-            <a href="{{ route('contact') }}">Contact</a>
-        </div>
-        <div class="fc">
-            <h4>Partenariats</h4>
-            <a href="{{ route('partenaires.devenir') }}">Devenir partenaire</a>
-            <a href="{{ route('partenaires') }}">Voir les partenaires</a>
-            <a href="{{ route('institutionnel') }}">Espace institutionnel</a>
-            <a href="{{ route('rapports') }}">Rapports & études</a>
-            <a href="{{ route('Faq') }}">FAQ</a>
-        </div>
-        <div class="fc">
-            <h4>Contact Partenariats</h4>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>partenariats@forum-innovation.org</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81" />
-                </svg>+221 33 123 45 67</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>Paris / Dakar / Libreville</div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} Forum International de l'Innovation. Tous droits réservés.</span>
-        <div class="footer-legal">
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Confidentialité</a>
-            <a href="{{ route('conditions') }}">CGU</a>
-        </div>
-    </div>
-</footer>
+
+@include('components.footer')
 
 @endsection

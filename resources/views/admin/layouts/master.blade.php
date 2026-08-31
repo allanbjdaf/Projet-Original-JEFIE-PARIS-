@@ -1,4 +1,4 @@
-{{-- resources/views/admin/layouts/master.blade.php --}}
+﻿{{-- resources/views/admin/layouts/master.blade.php --}}
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -29,7 +29,7 @@
 
         /* ══ SIDEBAR ══ */
         .sb {
-            background: #0d1b3e;
+            background: #0f284e;
             display: flex;
             flex-direction: column;
             position: sticky;
@@ -73,7 +73,7 @@
         .sb-brand-icon svg {
             width: 20px;
             height: 20px;
-            stroke: #f5a623;
+            stroke: #f5c518;
             fill: none;
             stroke-width: 1.8;
         }
@@ -109,7 +109,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #f5a623;
+            color: #f5c518;
             font-size: 13px;
             font-weight: 700;
             flex-shrink: 0;
@@ -168,8 +168,8 @@
 
         .sb-item.active {
             background: rgba(245, 166, 35, .1);
-            color: #f5a623;
-            border-left-color: #f5a623;
+            color: #f5c518;
+            border-left-color: #f5c518;
             font-weight: 700;
         }
 
@@ -203,7 +203,7 @@
         }
 
         .sb-num.blue {
-            background: #1565c0;
+            background: #0f284e;
             color: #fff;
         }
 
@@ -290,7 +290,7 @@
         }
 
         .topbar-breadcrumb a:hover {
-            color: #0d1b3e;
+            color: #0f284e;
         }
 
         .topbar-breadcrumb span {
@@ -300,7 +300,7 @@
         .topbar-title {
             font-size: 15px;
             font-weight: 800;
-            color: #0d1b3e;
+            color: #0f284e;
         }
 
         .topbar-right {
@@ -352,7 +352,7 @@
             gap: 6px;
             background: #f4f6fa;
             border: 1px solid #e2e8f0;
-            color: #162552;
+            color: #0a1e38;
             font-size: 12px;
             font-weight: 700;
             padding: 8px 14px;
@@ -362,9 +362,9 @@
         }
 
         .btn-site:hover {
-            background: #0d1b3e;
+            background: #0f284e;
             color: #fff;
-            border-color: #0d1b3e;
+            border-color: #0f284e;
         }
 
         .btn-site svg {
@@ -379,7 +379,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: #0d1b3e;
+            background: #0f284e;
             color: #fff;
             font-size: 12px;
             font-weight: 700;
@@ -393,7 +393,7 @@
         }
 
         .btn-export-top:hover {
-            background: #162552;
+            background: #0a1e38;
         }
 
         .btn-export-top svg {
@@ -444,7 +444,7 @@
         }
 
         .stat-card:hover {
-            box-shadow: 0 4px 16px rgba(13, 27, 62, .08);
+            box-shadow: 0 4px 16px rgba(15, 40, 78, .08);
         }
 
         .stat-icon {
@@ -468,7 +468,7 @@
         .stat-num {
             font-size: 1.45rem;
             font-weight: 900;
-            color: #0d1b3e;
+            color: #0f284e;
             display: block;
             line-height: 1;
         }
@@ -531,7 +531,7 @@
         .card-title {
             font-size: 12px;
             font-weight: 900;
-            color: #0d1b3e;
+            color: #0f284e;
             text-transform: uppercase;
             letter-spacing: .08em;
             display: flex;
@@ -543,7 +543,7 @@
             content: '';
             width: 3px;
             height: 16px;
-            background: #f5a623;
+            background: #f5c518;
             border-radius: 2px;
             display: block;
         }
@@ -579,7 +579,7 @@
         }
 
         .fi:focus {
-            border-color: #0d1b3e;
+            border-color: #0f284e;
         }
 
         .fi-search {
@@ -621,7 +621,7 @@
         }
 
         .btn-filter {
-            background: #0d1b3e;
+            background: #0f284e;
             color: #fff;
             font-weight: 700;
             font-size: 12px;
@@ -635,7 +635,7 @@
         }
 
         .btn-filter:hover {
-            background: #162552;
+            background: #0a1e38;
         }
 
         .btn-reset {
@@ -656,8 +656,8 @@
         }
 
         .btn-reset:hover {
-            color: #0d1b3e;
-            border-color: #0d1b3e;
+            color: #0f284e;
+            border-color: #0f284e;
         }
 
         /* Table */
@@ -692,7 +692,7 @@
 
         td {
             font-size: 12px;
-            color: #162552;
+            color: #0a1e38;
             padding: 12px 14px;
             border-bottom: 1px solid #f0f4f8;
             vertical-align: middle;
@@ -712,7 +712,7 @@
 
         .td-name {
             font-weight: 700;
-            color: #0d1b3e;
+            color: #0f284e;
         }
 
         .td-email {
@@ -755,7 +755,7 @@
 
         .b-en_cours {
             background: #e3f2fd;
-            color: #1565c0;
+            color: #0f284e;
         }
 
         .b-accepte {
@@ -791,7 +791,7 @@
 
         .b-standard {
             background: #e3f2fd;
-            color: #1565c0;
+            color: #0f284e;
             border: 1px solid #bbdefb;
         }
 
@@ -803,7 +803,7 @@
 
         .b-non-lu {
             background: #e3f2fd;
-            color: #1565c0;
+            color: #0f284e;
             font-weight: 800;
         }
 
@@ -845,13 +845,13 @@
 
         .bsv {
             border-color: #d1d9e6;
-            color: #162552;
+            color: #0a1e38;
             background: #fff;
         }
 
         .bsv:hover {
             background: #f4f6fa;
-            border-color: #0d1b3e;
+            border-color: #0f284e;
         }
 
         .bsok {
@@ -876,7 +876,7 @@
 
         .bsedit {
             border-color: #bfdbfe;
-            color: #1565c0;
+            color: #0f284e;
             background: #fff;
         }
 
@@ -1015,7 +1015,7 @@
         .tl-label {
             font-size: 12px;
             font-weight: 600;
-            color: #162552;
+            color: #0a1e38;
         }
 
         .tl-sub {
@@ -1084,7 +1084,7 @@
             background-size: 11px;
             cursor: pointer;
             font-family: inherit;
-            color: #162552;
+            color: #0a1e38;
             background-color: #fff;
         }
 
@@ -1138,7 +1138,7 @@
                 </div>
                 <div>
                     {{-- Application de la couleur orange sur Paris 2026 --}}
-                    <div class="sb-brand-title">JEFIE <span style="color: var(--jefie-orange, #f5a623); font-weight: 800;">Paris 2026</span></div>
+                    <div class="sb-brand-title">JEFIE <span style="color: var(--jefie-orange, #f5c518); font-weight: 800;">Paris 2026</span></div>
                     <div class="sb-brand-sub">Administration</div>
                 </div>
             </div>
@@ -1282,7 +1282,7 @@
                 <div class="topbar-left">
                     <div class="topbar-breadcrumb">
                         <span>›</span>
-                        <span style="color:#0d1b3e;font-weight:700">@yield('page-title','Dashboard')</span>
+                        <span style="color:#0f284e;font-weight:700">@yield('page-title','Dashboard')</span>
                     </div>
                 </div>
                 <div class="topbar-right">

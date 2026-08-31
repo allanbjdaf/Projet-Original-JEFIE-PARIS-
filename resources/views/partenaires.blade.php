@@ -1,4 +1,4 @@
-{{-- resources/views/partenaires/index.blade.php --}}
+﻿{{-- resources/views/partenaires/index.blade.php --}}
 
 @extends('layouts.app')
 
@@ -20,7 +20,7 @@
 
     /* NAV  */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -41,7 +41,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -59,13 +59,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 700;
     }
@@ -89,7 +89,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -111,8 +111,8 @@
     }
 
     .nav-cta {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 20px;
@@ -268,7 +268,7 @@
     .left-sidebar {
         width: 215px;
         flex-shrink: 0;
-        background: #0d1b3e;
+        background: #0f284e;
         border-right: 1px solid rgba(255, 255, 255, 0.1);
         display: flex;
         flex-direction: column;
@@ -285,7 +285,7 @@
     .ls-section-title {
         font-size: 10px;
         font-weight: 800;
-        color: #f5a623;
+        color: #f5c518;
         letter-spacing: .12em;
         text-transform: uppercase;
         margin-bottom: .6rem;
@@ -313,7 +313,7 @@
 
     .ls-item.active {
         background: rgba(245, 166, 35, .15);
-        color: #f5a623;
+        color: #f5c518;
         font-weight: 700;
     }
 
@@ -327,7 +327,7 @@
     }
 
     .ls-item.active svg {
-        stroke: #f5a623;
+        stroke: #f5c518;
     }
 
     .ls-divider {
@@ -360,7 +360,7 @@
     }
 
     .ls-help-icon {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 16px;
     }
 
@@ -372,8 +372,8 @@
     }
 
     .ls-help-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-size: 11px;
         font-weight: 700;
         padding: 7px 12px;
@@ -403,7 +403,7 @@
 
     /* HERO */
     .hero {
-        background: linear-gradient(108deg, #060e20 0%, #0d1b3e 45%, rgba(13, 27, 62, 0.75) 75%, rgba(15, 42, 94, 0.4) 100%),
+        background: linear-gradient(108deg, #060e20 0%, #0f284e 45%, rgba(15, 40, 78, 0.75) 75%, rgba(15, 42, 94, 0.4) 100%),
             url('/images/pc.jpg');
         padding: 2.5rem 2.5rem 2rem;
         position: relative;
@@ -470,8 +470,8 @@
     }
 
     .btn-gold {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-size: 13px;
         font-weight: 700;
         padding: 10px 20px;
@@ -577,17 +577,17 @@
     .sh-title {
         font-size: 13px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 10px;
     }
 
     .sh-link {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -596,7 +596,7 @@
     }
 
     .sh-link:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .sh-link svg {
@@ -622,13 +622,13 @@
     }
 
     .part-card.platinum {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
         border-width: 2px;
-        background: #0d1b3e;
+        background: #0f284e;
     }
 
     .part-card.gold {
-        border-color: #f5a623;
+        border-color: #f5c518;
         border-width: 2px;
     }
 
@@ -648,7 +648,7 @@
     }
 
     .part-level.gold-lv {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .part-level.silver-lv {
@@ -656,7 +656,7 @@
     }
 
     .part-level.bronze-lv {
-        color: #e65100;
+        color: #f5c518;
     }
 
     .part-logo-zone {
@@ -674,7 +674,7 @@
 
     /* Couleur du placeholder pour les niveaux non-platinum */
     .part-logo-placeholder.part-logo-dark {
-        color: #162552;
+        color: #0a1e38;
     }
 
     .part-sub {
@@ -690,7 +690,7 @@
     .part-link {
         font-size: 12px;
         font-weight: 700;
-        color: #f5a623;
+        color: #f5c518;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -698,7 +698,7 @@
     }
 
     .part-link.dark-link {
-        color: #162552;
+        color: #0a1e38;
     }
 
     .part-link svg {
@@ -776,7 +776,7 @@
     .opp-title {
         font-size: 13px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.4;
         margin-bottom: 2px;
     }
@@ -809,7 +809,7 @@
     }
 
     .stand-img {
-        background: linear-gradient(135deg, #1a2744 0%, #0d1b3e 100%);
+        background: linear-gradient(135deg, #1a2744 0%, #0f284e 100%);
         min-height: 180px;
         display: flex;
         align-items: center;
@@ -850,14 +850,14 @@
     .stand-feature svg {
         width: 14px;
         height: 14px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 2;
         flex-shrink: 0;
     }
 
     .btn-navy {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-size: 13px;
         font-weight: 700;
@@ -876,7 +876,7 @@
     }
 
     .btn-navy:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     /* PACKS */
@@ -895,7 +895,7 @@
     }
 
     .pack-card.featured {
-        border-color: #f5a623;
+        border-color: #f5c518;
         border-width: 2px;
     }
 
@@ -904,8 +904,8 @@
         top: -10px;
         left: 50%;
         transform: translateX(-50%);
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-size: 10px;
         font-weight: 800;
         padding: 3px 12px;
@@ -922,7 +922,7 @@
     }
 
     .pack-level.bronze-c {
-        color: #e65100;
+        color: #f5c518;
     }
 
     .pack-level.silver-c {
@@ -930,11 +930,11 @@
     }
 
     .pack-level.gold-c {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .pack-level.plat-c {
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .pack-price {
@@ -962,7 +962,7 @@
     }
 
     .pack-btn {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-size: 12px;
         font-weight: 700;
@@ -979,12 +979,12 @@
     }
 
     .pack-btn:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .pack-card.featured .pack-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
     }
 
     .pack-card.featured .pack-btn:hover {
@@ -995,7 +995,7 @@
     .rs-title {
         font-size: 12px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
         margin-bottom: 1rem;
@@ -1013,14 +1013,14 @@
     .benefit-item svg {
         width: 16px;
         height: 16px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 2.5;
         flex-shrink: 0;
     }
 
     .btn-full-navy {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-size: 13px;
         font-weight: 700;
@@ -1039,7 +1039,7 @@
     }
 
     .btn-full-navy:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     /* Visibilité */
@@ -1092,7 +1092,7 @@
     .vis-num {
         font-size: 1.1rem;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
         line-height: 1.2;
     }
@@ -1104,7 +1104,7 @@
 
     /* Niveau partenariat */
     .level-card {
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 8px;
         padding: 1rem 1.25rem;
         display: flex;
@@ -1113,8 +1113,8 @@
     }
 
     .level-badge {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-size: 13px;
         font-weight: 900;
         padding: 4px 12px;
@@ -1158,7 +1158,7 @@
     .star-icon {
         width: 36px;
         height: 36px;
-        background: #f5a623;
+        background: #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -1168,7 +1168,7 @@
 
     /* Question bloc */
     .question-card {
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 8px;
         overflow: hidden;
     }
@@ -1209,8 +1209,8 @@
     }
 
     .q-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-size: 12px;
         font-weight: 700;
         padding: 8px 14px;
@@ -1232,7 +1232,7 @@
     .question-photo {
         width: 90px;
         flex-shrink: 0;
-        background: linear-gradient(135deg, #162552 0%, #1a3060 100%);
+        background: linear-gradient(135deg, #0a1e38 0%, #1a3060 100%);
         position: relative;
         overflow: hidden;
     }
@@ -1245,7 +1245,7 @@
 
     /* FOOTER */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
     }
@@ -1650,7 +1650,7 @@
                             <div class="opp-item">
                                 <div class="opp-icon {{ strtolower($opp->type_class) }}">
                                     @if (strtolower($opp->type) === 'partenariat commercial')
-                                    <svg viewBox="0 0 24 24" stroke="#1565c0" fill="none" stroke-width="2" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" stroke="#0f284e" fill="none" stroke-width="2" aria-hidden="true">
                                         <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
                                         <circle cx="9" cy="7" r="4" />
                                         <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
@@ -1661,7 +1661,7 @@
                                         <polyline points="17 6 23 6 23 12" />
                                     </svg>
                                     @else
-                                    <svg viewBox="0 0 24 24" stroke="#e65100" fill="none" stroke-width="2" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="2" aria-hidden="true">
                                         <circle cx="12" cy="12" r="10" />
                                         <path d="M12 8v4l3 3" />
                                     </svg>
@@ -1826,7 +1826,7 @@
                                 </svg>
                             </a>
                             <div class="star-icon" aria-hidden="true">
-                                <svg width="18" height="18" viewBox="0 0 24 24" stroke="#0d1b3e" fill="#0d1b3e" stroke-width="1">
+                                <svg width="18" height="18" viewBox="0 0 24 24" stroke="#0f284e" fill="#0f284e" stroke-width="1">
                                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                                 </svg>
                             </div>
@@ -1875,70 +1875,7 @@
 </div>{{-- /.page-wrapper --}}
 
 {{-- FOOTER  --}}
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.5rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 80px; width: 250px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text"><span>Journées économiques et Forum international
-                    </span>de l'emploi de la diaspora Gabonaise<br><small>2026</small></div>
-            </a>
-            <p>Ensemble, construisons l'avenir par l'innovation.</p>
-            <nav class="socials" aria-label="Réseaux sociaux">
-                <a href="#" aria-label="Facebook">f</a><a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="Twitter">&#120143;</a><a href="#" aria-label="YouTube">&#9654;</a>
-            </nav>
-        </div>
-        <div class="fc">
-            <h4>Liens Utiles</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="{{ route('institutionnel') }}">Institutions</a>
-            <a href="{{ route('entrepreneurs.index') }}">Entrepreneurs Diaspora</a>
-        </div>
-        <div class="fc">
-            <h4>Ressources</h4>
-            <a href="{{ route('dossiers') }}">Dossiers presse</a>
-            <a href="{{ route('actualites') }}">Communiqués</a>
-            <a href="{{ route('galerie') }}">Galerie média</a>
-            <a href="{{ route('rapports') }}">Rapports &amp; Études</a>
-            <a href="{{ route('Faq') }}">FAQ</a>
-        </div>
-        <div class="fc">
-            <h4>Informations</h4>
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Politique de confidentialité</a>
-            <a href="{{ route('conditions') }}">Conditions d'utilisation</a>
-        </div>
-        <div class="fc">
-            <h4>Contact</h4>
-            <div class="fci">
-                <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07" />
-                </svg>
-                +33 1 45 67 89 10
-            </div>
-            <div class="fci">
-                <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>
-                partenaires@forum-innovation.org
-            </div>
-            <div class="fci">
-                <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>
-                Libreville, Gabon
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">&copy; {{ date('Y') }} CDC site. Tous droits réservés.</div>
-</footer>
+
+@include('components.footer')
 
 @endsection

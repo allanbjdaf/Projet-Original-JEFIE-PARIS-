@@ -1,4 +1,4 @@
-{{-- resources/views/institutionnel/index.blade.php --}}
+﻿{{-- resources/views/institutionnel/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'Espace Institutionnel — JEFIE PARIS 2026')
@@ -19,7 +19,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -40,7 +40,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -57,13 +57,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -88,7 +88,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -117,8 +117,8 @@
     }
 
     .btn-inscr {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 22px;
@@ -154,7 +154,7 @@
     /* ══ SIDEBAR ══ */
     .left-sidebar {
         width: 260px;
-        background: #0d1b3e;
+        background: #0f284e;
         border-right: 1px solid #e2e8f0;
         padding: 1.5rem 0;
         display: flex;
@@ -174,7 +174,7 @@
     .ls-header-title {
         font-size: 11px;
         font-weight: 900;
-        color: #f5a623;
+        color: #f5c518;
         text-transform: uppercase;
         letter-spacing: .07em;
         line-height: 1.35;
@@ -194,13 +194,13 @@
 
     .ls-item:hover {
         background: #f4f6fa;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .ls-item.active {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-left-color: #f5a623;
+        border-left-color: #f5c518;
         font-weight: 700;
     }
 
@@ -214,7 +214,7 @@
     }
 
     .ls-item.active svg {
-        stroke: #f5a623;
+        stroke: #f5c518;
     }
 
     .ls-partner-box {
@@ -239,7 +239,7 @@
     .ls-partner-icon svg {
         width: 22px;
         height: 22px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.6;
     }
@@ -259,8 +259,8 @@
     }
 
     .ls-partner-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 12px;
         padding: 9px;
@@ -332,7 +332,7 @@
     }
 
     .hero-tagline {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 1rem;
         font-weight: 700;
         font-style: italic;
@@ -375,7 +375,7 @@
     .hstat-icon svg {
         width: 20px;
         height: 20px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
     }
@@ -416,10 +416,10 @@
     .ts-title {
         font-size: 13px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 6px;
         margin-bottom: 1rem;
         display: inline-block;
@@ -438,13 +438,13 @@
         gap: 5px;
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         transition: color .2s;
     }
 
     .ts-link:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .ts-link svg {
@@ -483,7 +483,7 @@
     .obj-icon svg {
         width: 14px;
         height: 14px;
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         fill: none;
         stroke-width: 1.8;
     }
@@ -534,7 +534,7 @@
     .org-logo-init {
         font-size: 12px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .org-name {
@@ -587,7 +587,7 @@
     .pi-logo-init {
         font-size: 10px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .pi-name {
@@ -655,7 +655,7 @@
         height: 90px;
         border-radius: 8px;
         flex-shrink: 0;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -677,7 +677,7 @@
     }
 
     .msg-quote-mark {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 1.7rem;
         line-height: 0.7;
     }
@@ -692,7 +692,7 @@
     .msg-name {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .msg-role {
@@ -736,7 +736,7 @@
     .doc-name {
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         flex: 1;
     }
 
@@ -765,7 +765,7 @@
     .doc-dl svg {
         width: 14px;
         height: 14px;
-        stroke: #162552;
+        stroke: #0a1e38;
         fill: none;
         stroke-width: 1.8;
     }
@@ -773,7 +773,7 @@
     .docs-see-all {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -783,7 +783,7 @@
     }
 
     .docs-see-all:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .docs-see-all svg {
@@ -796,7 +796,7 @@
 
     /* CTA Banner */
     .cta-banner {
-        background: #0d1b3e;
+        background: #0f284e;
         padding: 2rem 2.5rem;
         display: flex;
         align-items: center;
@@ -825,7 +825,7 @@
     .cta-icon svg {
         width: 24px;
         height: 24px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.6;
     }
@@ -839,8 +839,8 @@
     .cta-stars svg {
         width: 16px;
         height: 16px;
-        stroke: #f5a623;
-        fill: #f5a623;
+        stroke: #f5c518;
+        fill: #f5c518;
     }
 
     .cta-title {
@@ -864,8 +864,8 @@
     }
 
     .cta-btn-primary {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 12px 24px;
@@ -971,7 +971,7 @@
 
     /* Footer */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
     }
@@ -1180,7 +1180,7 @@
         {{-- HERO --}}
         <section class="hero" style="background-image:url('{{ asset('images/Institutionnel.jpg') }}')">
             <div class="hero-left">
-                <h1>Entreprises <span style="color: #f5a623;">Participantes</span></h1>
+                <h1>Entreprises <span style="color: #f5c518;">Participantes</span></h1>
                 <p class="hero-tagline">Innover ensemble pour un avenir africain prospère</p>
                 <p class="hero-desc">Découvrez le cadre stratégique, les acteurs institutionnels engagés et les documents officiels qui structurent le Forum International de l'Innovation — plateforme de référence pour les décideurs et entrepreneurs du continent.</p>
             </div>
@@ -1438,71 +1438,8 @@
 
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.4rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff"><span>Journées économiques et Forum international </span>de l'emploi de la diaspora Gabonaise<br><small>2026</small></div>
-            </a>
-            <p>Le rendez-vous mondial des décideurs, innovateurs et entrepreneurs engagés pour un avenir durable.</p>
-            <nav class="socials" aria-label="Réseaux sociaux">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Twitter">&#120143;</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-                <a href="#" aria-label="Instagram">&#9752;</a>
-            </nav>
-        </div>
-        <div class="fc">
-            <h4>Liens Rapides</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="#">Intervenants</a>
-            <a href="{{ route('partenaires') }}">Partenaires</a>
-            <a href="{{ route('actualites') }}">Actualités</a>
-        </div>
-        <div class="fc">
-            <h4>Participer</h4>
-            <a href="{{ route('inscription') }}">S'inscrire</a>
-            <a href="{{ route('partenaires.devenir') }}">Devenir partenaire</a>
-            <a href="#">Soumettre un pitch</a>
-            <a href="#">Planifier un RDV B2B</a>
-            <a href="#">Informations pratiques</a>
-            <a href="{{ route('Faq') }}">FAQ</a>
-        </div>
-        <div class="fc">
-            <h4>Informations</h4>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                </svg>15 – 18 Juin 2026</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>Palais des Congrès<br>Abidjan, Côte d'Ivoire</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>contact@forum-innovation.org</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12 12 0 00.74 2.9A2 2 0 017.21 7l-1.27 1.27a16 16 0 006.79 6.79L14 13.79a2 2 0 012.18-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z" />
-                </svg>+225 01 23 45 67 89</div>
-        </div>
 
-        <div class="footer-bottom">
-            <span class="footer-copy">&copy; {{ date('Y') }} CDC site. Tous droits réservés.</span>
-            <div class="footer-legal">
-                <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-                <a href="{{ route('confidentialite') }}">Confidentialité</a>
-                <a href="#">CGU</a>
-            </div>
-        </div>
-</footer>
+@include('components.footer')
 
 @push('scripts')
 <script>

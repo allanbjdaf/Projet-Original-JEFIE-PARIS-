@@ -1,4 +1,4 @@
-{{-- resources/views/emploi/index.blade.php --}}
+﻿{{-- resources/views/emploi/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'JEFIE PARIS 2026')
@@ -32,7 +32,7 @@
     .es-title {
         font-size: 10px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
     }
@@ -51,13 +51,13 @@
 
     .es-item:hover {
         background: #f4f6fa;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .es-item.active {
         background: #fff8e6;
-        color: #0d1b3e;
-        border-left-color: #f5a623;
+        color: #0f284e;
+        border-left-color: #f5c518;
         font-weight: 700;
     }
 
@@ -95,7 +95,7 @@
     .page-title {
         font-size: 1.1rem;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .page-subtitle {
@@ -105,7 +105,7 @@
     }
 
     .btn-primary {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 13px;
@@ -122,7 +122,7 @@
     }
 
     .btn-primary:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .btn-primary svg {
@@ -134,8 +134,8 @@
     }
 
     .btn-or {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 10px 20px;
@@ -194,7 +194,7 @@
     .stat-mini-num {
         font-size: 1.4rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
     }
 
@@ -214,10 +214,10 @@
     .card-title {
         font-size: 12px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 8px;
         margin-bottom: 1rem;
     }
@@ -245,7 +245,7 @@
 
     td {
         font-size: 13px;
-        color: #162552;
+        color: #0a1e38;
         padding: 12px;
         border-bottom: 1px solid #f0f4f8;
         vertical-align: middle;
@@ -276,7 +276,7 @@
 
     .s-cours {
         background: #e3f2fd;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .s-accept {
@@ -319,7 +319,7 @@
 
     .btn-sm-view {
         border-color: #d1d9e6;
-        color: #162552;
+        color: #0a1e38;
         background: #fff;
     }
 
@@ -377,7 +377,7 @@
     .form-label {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         display: block;
         margin-bottom: 4px;
     }
@@ -399,8 +399,8 @@
     }
 
     .form-control:focus {
-        border-color: #0d1b3e;
-        box-shadow: 0 0 0 3px rgba(13, 27, 62, .06);
+        border-color: #0f284e;
+        box-shadow: 0 0 0 3px rgba(15, 40, 78, .06);
     }
 
     .form-control::placeholder {
@@ -427,7 +427,7 @@
     }
 
     .file-zone:hover {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
         background: #f8fafc;
     }
 
@@ -451,7 +451,7 @@
     }
 
     .file-zone p strong {
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .rdv-card {
@@ -468,7 +468,7 @@
     .rdv-date {
         width: 50px;
         height: 50px;
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
@@ -478,7 +478,7 @@
     }
 
     .rdv-day {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 1.1rem;
         font-weight: 900;
         line-height: 1;
@@ -497,7 +497,7 @@
     .rdv-title {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 3px;
     }
 
@@ -525,13 +525,13 @@
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         overflow: hidden;
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 3px solid #f5a623;
+        border: 3px solid #f5c518;
     }
 
     .profil-avatar img {
@@ -541,7 +541,7 @@
     }
 
     .profil-avatar-init {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 28px;
         font-weight: 700;
     }
@@ -579,7 +579,7 @@
     .doc-name {
         font-size: 13px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         flex: 1;
     }
 
@@ -648,7 +648,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -669,7 +669,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -686,13 +686,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -717,7 +717,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -757,8 +757,8 @@
     }
 
     .btn-inscr {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 22px;
@@ -911,7 +911,7 @@
         min-height: auto;
 
         background:
-            linear-gradient(rgba(13, 27, 62, .75), rgba(13, 27, 62, .75)),
+            linear-gradient(rgba(15, 40, 78, .75), rgba(15, 40, 78, .75)),
             url('/images/pcc.png');
 
         background-size: cover;
@@ -941,7 +941,7 @@
     }
 
     .hero-title span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
     }
 
@@ -953,7 +953,7 @@
     }
 
     .hero-tagline {
-        color: #f5a623;
+        color: #f5c518;
         font-size: .95rem;
         font-weight: 700;
         margin-bottom: .5rem;
@@ -1018,7 +1018,7 @@
     .hstat-icon {
         width: 45px;
         height: 45px;
-        background: rgba(13, 27, 62, 0.06);
+        background: rgba(15, 40, 78, 0.06);
         /* Teinte discrète pour faire ressortir l'icône */
         border-radius: 8px;
         display: flex;
@@ -1033,7 +1033,7 @@
         height: 30px;
 
 
-        stroke: #f5a623;
+        stroke: #f5c518;
         /* Garde la couleur or d'origine */
         fill: none;
         stroke-width: 2;
@@ -1069,7 +1069,7 @@
     .search-label {
         font-size: 12px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .08em;
         text-transform: uppercase;
         margin-bottom: .9rem;
@@ -1095,7 +1095,7 @@
     }
 
     .search-field:focus-within {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .search-field svg {
@@ -1132,7 +1132,7 @@
     }
 
     .search-btn {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 13px;
@@ -1145,7 +1145,7 @@
     }
 
     .search-btn:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .search-populaire {
@@ -1167,23 +1167,23 @@
         border-radius: 4px;
         padding: 3px 10px;
         font-size: 12px;
-        color: #162552;
+        color: #0a1e38;
         cursor: pointer;
         text-decoration: none;
         transition: all .2s;
     }
 
     .pop-tag:hover {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .search-avancee {
         margin-left: auto;
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -1231,13 +1231,13 @@
 
     .ls-item:hover {
         background: #f4f6fa;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .ls-item.active {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-left-color: #f5a623;
+        border-left-color: #f5c518;
         font-weight: 700;
     }
 
@@ -1251,7 +1251,7 @@
     }
 
     .ls-item.active svg {
-        stroke: #f5a623;
+        stroke: #f5c518;
     }
 
     .ls-sep {
@@ -1270,7 +1270,7 @@
     .ls-recruteur p {
         font-size: 12px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: 4px;
     }
 
@@ -1283,8 +1283,8 @@
     }
 
     .ls-recruteur-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 11px;
         padding: 8px 12px;
@@ -1330,12 +1330,12 @@
     }
 
     .onglet:hover {
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .onglet.active {
-        color: #0d1b3e;
-        border-bottom-color: #f5a623;
+        color: #0f284e;
+        border-bottom-color: #f5c518;
         font-weight: 700;
     }
 
@@ -1370,7 +1370,7 @@
     .logo-fallback-avatar {
         width: 100%;
         height: 100%;
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         display: flex;
         align-items: center;
@@ -1437,7 +1437,7 @@
     .offre-titre {
         font-size: 14px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 3px;
     }
 
@@ -1466,7 +1466,7 @@
 
     .offre-contrat {
         background: #f0f4f8;
-        color: #162552;
+        color: #0a1e38;
         font-size: 10px;
         font-weight: 700;
         padding: 2px 8px;
@@ -1492,7 +1492,7 @@
 
     .badge-vedette {
         background: #fff3e0;
-        color: #e65100;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 700;
         padding: 3px 10px;
@@ -1519,7 +1519,7 @@
     }
 
     .offre-save:hover {
-        border-color: #f5a623;
+        border-color: #f5c518;
     }
 
     .offre-save svg {
@@ -1541,7 +1541,7 @@
         border-radius: 6px;
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         cursor: pointer;
         transition: background .2s;
@@ -1557,20 +1557,20 @@
     }
 
     .fonc-item:hover {
-        box-shadow: 0 4px 16px rgba(13, 27, 62, .12);
+        box-shadow: 0 4px 16px rgba(15, 40, 78, .12);
         transform: translateY(-3px);
     }
 
     .fonc-item:hover .fonc-icon {
-        background: #0d1b3e;
+        background: #0f284e;
     }
 
     .fonc-item:hover .fonc-icon svg {
-        stroke: #f5a623;
+        stroke: #f5c518;
     }
 
     .fonc-item:hover .fonc-titre {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     /* Fonctionnalités */
@@ -1594,7 +1594,7 @@
     .fonc-icon {
         width: 44px;
         height: 44px;
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -1604,7 +1604,7 @@
     .fonc-icon svg {
         width: 22px;
         height: 22px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
     }
@@ -1612,7 +1612,7 @@
     .fonc-titre {
         font-size: 13px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .fonc-desc {
@@ -1648,7 +1648,7 @@
         height: 48px;
         border-radius: 50%;
         flex-shrink: 0;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         overflow: hidden;
         /* Empêche l'image de dépasser du cercle */
         display: flex;
@@ -1685,7 +1685,7 @@
     .rs-candidat-name {
         font-size: 14px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .rs-candidat-email {
@@ -1696,7 +1696,7 @@
     .rs-candidat-link {
         font-size: 12px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -1721,7 +1721,7 @@
     .rs-cand-title {
         font-size: 11px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
     }
@@ -1729,7 +1729,7 @@
     .rs-cand-link {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
     }
 
@@ -1761,7 +1761,7 @@
     .cand-stat-count {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .rs-rdv-card {
@@ -1792,7 +1792,7 @@
     .rs-rdv-icon svg {
         width: 20px;
         height: 20px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
     }
@@ -1800,7 +1800,7 @@
     .rs-rdv-title {
         font-size: 13px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: 3px;
     }
 
@@ -1811,8 +1811,8 @@
     }
 
     .rs-rdv-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 12px;
         padding: 9px 14px;
@@ -1860,14 +1860,14 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: rgba(13, 27, 62, .03);
+        background: rgba(15, 40, 78, .03);
         opacity: 0;
         transition: opacity .2s;
     }
 
     .fonc-item:hover {
-        border-color: #0d1b3e;
-        box-shadow: 0 6px 20px rgba(13, 27, 62, .12);
+        border-color: #0f284e;
+        box-shadow: 0 6px 20px rgba(15, 40, 78, .12);
         transform: translateY(-3px);
     }
 
@@ -1876,15 +1876,15 @@
     }
 
     .fonc-item:hover .fonc-icon {
-        background: #0d1b3e;
+        background: #0f284e;
     }
 
     .fonc-item:hover .fonc-icon svg {
-        stroke: #f5a623;
+        stroke: #f5c518;
     }
 
     .fonc-item:hover .fonc-titre {
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .fonc-item:active {
@@ -1906,7 +1906,7 @@
     .fonc-icon svg {
         width: 24px;
         height: 24px;
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         fill: none;
         stroke-width: 1.7;
         transition: stroke .2s;
@@ -1915,7 +1915,7 @@
     .fonc-titre {
         font-size: 14px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.3;
     }
 
@@ -1928,7 +1928,7 @@
     .fonc-item .fonc-arrow {
         font-size: 11px;
         font-weight: 700;
-        color: #f5a623;
+        color: #f5c518;
         margin-top: 4px;
         opacity: 0;
         transition: opacity .2s;
@@ -1978,7 +1978,7 @@
     }
 
     .side-panel-header {
-        background: #0d1b3e;
+        background: #0f284e;
         padding: 1.25rem 1.5rem;
         display: flex;
         align-items: center;
@@ -1998,7 +1998,7 @@
     .side-panel-title svg {
         width: 20px;
         height: 20px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 2;
     }
@@ -2049,7 +2049,7 @@
     .sp-label {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .sp-label span {
@@ -2069,8 +2069,8 @@
     }
 
     .sp-input:focus {
-        border-color: #0d1b3e;
-        box-shadow: 0 0 0 3px rgba(13, 27, 62, .07);
+        border-color: #0f284e;
+        box-shadow: 0 0 0 3px rgba(15, 40, 78, .07);
     }
 
     .sp-input::placeholder {
@@ -2096,7 +2096,7 @@
     }
 
     .sp-select:focus {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .sp-textarea {
@@ -2114,7 +2114,7 @@
     }
 
     .sp-textarea:focus {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .sp-file-wrap {
@@ -2127,7 +2127,7 @@
     }
 
     .sp-file-wrap:hover {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
         background: #f4f6fa;
     }
 
@@ -2153,7 +2153,7 @@
     }
 
     .sp-file-label strong {
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .sp-file-name {
@@ -2174,7 +2174,7 @@
     }
 
     .sp-btn-submit {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 14px;
@@ -2193,7 +2193,7 @@
     }
 
     .sp-btn-submit:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .sp-btn-submit svg {
@@ -2205,8 +2205,8 @@
     }
 
     .sp-btn-submit.gold {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
     }
 
     .sp-btn-submit.gold:hover {
@@ -2276,7 +2276,7 @@
 
     /* ── CTA RECRUTEUR ── */
     .cta-recruteur {
-        background: #0d1b3e;
+        background: #0f284e;
         padding: 1.75rem 2.5rem;
         display: flex;
         align-items: center;
@@ -2305,7 +2305,7 @@
     .cta-rec-icon svg {
         width: 26px;
         height: 26px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.6;
     }
@@ -2330,8 +2330,8 @@
     }
 
     .cta-btn-gold {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 12px 24px;
@@ -2379,7 +2379,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
     }
@@ -3431,61 +3431,7 @@
 </div>
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.4rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff"><span>Journées économiques et Forum international de</span>l’Emploi de la diaspora gabonaise<br><small>2026</small></div>
-            </a>
-            <p>Plateforme de référence pour l'emploi et le recrutement au Forum International de l'Innovation 2026.</p>
-            <nav class="socials" aria-label="Réseaux sociaux">
-                <a href="#" aria-label="Facebook">f</a><a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="Twitter">&#120143;</a><a href="#" aria-label="YouTube">&#9654;</a>
-            </nav>
-        </div>
-        <div class="fc">
-            <h4>Navigation</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="{{ route('institutionnel') }}">Institutionnel</a>
-            <a href="{{ route('partenaires') }}">Partenaires</a>
-            <a href="{{ route('actualites') }}">Actualités</a>
-        </div>
-        <div class="fc">
-            <h4>Espace Emploi</h4>
-            <a href="{{ route('emploi') }}">Offres d'emploi</a>
-            <a href="#">Déposer une candidature</a>
-            <a href="#">Espace recruteur</a>
-            <a href="#">Rendez-vous B2B</a>
-            <a href="{{ route('Faq') }}">FAQ</a>
-        </div>
-        <div class="fc">
-            <h4>Contact</h4>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>contact@forum-innovation.org</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12 12 0 00.74 2.9A2 2 0 017.21 7l-1.27 1.27a16 16 0 006.79 6.79L14 13.79a2 2 0 012.18-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z" />
-                </svg>+221 33 123 45 67</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>Dakar, Sénégal</div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} CDC site. Tous droits réservés.</span>
-        <div class="footer-legal">
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Politique de confidentialité</a>
-        </div>
-    </div>
-</footer>
+
+@include('components.footer')
 
 @endsection

@@ -1,4 +1,4 @@
-{{-- resources/views/apropos/index.blade.php --}}
+﻿{{-- resources/views/apropos/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'À propos — Forum International de l\'Innovation 2026')
@@ -19,7 +19,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -40,7 +40,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -57,13 +57,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -88,7 +88,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -116,8 +116,8 @@
     }
 
     .btn-inscr {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 22px;
@@ -269,7 +269,7 @@
     .hero {
         /* Superposition : Le dégradé officiel passe au premier plan avec une opacité réduite à droite, suivi de votre image */
         background-image:
-            linear-gradient(108deg, #060e20 0%, #0d1b3e 45%, rgba(13, 27, 62, 0.75) 75%, rgba(15, 42, 94, 0.4) 100%),
+            linear-gradient(108deg, #060e20 0%, #0f284e 45%, rgba(15, 40, 78, 0.75) 75%, rgba(15, 42, 94, 0.4) 100%),
             url('/images/dav.jpg');
         /* <-- Déposez votre image sous ce nom dans public/images/ */
 
@@ -305,7 +305,7 @@
         gap: 7px;
         background: rgba(245, 166, 35, .12);
         border: 1px solid rgba(245, 166, 35, .3);
-        color: #f5a623;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 700;
         letter-spacing: .1em;
@@ -328,11 +328,11 @@
     }
 
     .hero h1 span {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .hero-tagline {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 1.1rem;
         font-weight: 700;
         margin-bottom: 1rem;
@@ -354,8 +354,8 @@
     }
 
     .btn-gold {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 13px 28px;
@@ -427,7 +427,7 @@
     .stat-icon-wrap {
         width: 40px;
         height: 40px;
-        background: rgba(13, 27, 62, .06);
+        background: rgba(15, 40, 78, .06);
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -437,7 +437,7 @@
     .stat-icon-wrap svg {
         width: 20px;
         height: 20px;
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         fill: none;
         stroke-width: 1.8;
     }
@@ -445,7 +445,7 @@
     .stat-num {
         font-size: 1.5rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
         line-height: 1;
     }
@@ -466,7 +466,7 @@
     }
 
     .mission-left {
-        background: #0d1b3e;
+        background: #0f284e;
         padding: 4rem 3rem;
         display: flex;
         flex-direction: column;
@@ -476,7 +476,7 @@
     .mission-eyebrow {
         font-size: 10px;
         font-weight: 800;
-        color: #f5a623;
+        color: #f5c518;
         letter-spacing: .12em;
         text-transform: uppercase;
         margin-bottom: 1rem;
@@ -491,7 +491,7 @@
     }
 
     .mission-title span {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .mission-text {
@@ -502,7 +502,7 @@
     }
 
     .mission-quote {
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 1.25rem;
         color: rgba(255, 255, 255, .85);
         font-size: .95rem;
@@ -551,7 +551,7 @@
     .vision-title {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 4px;
     }
 
@@ -575,7 +575,7 @@
     .section-eyebrow {
         font-size: 10px;
         font-weight: 800;
-        color: #f5a623;
+        color: #f5c518;
         letter-spacing: .12em;
         text-transform: uppercase;
         margin-bottom: 8px;
@@ -584,7 +584,7 @@
     .section-title {
         font-size: 2rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: .75rem;
     }
 
@@ -611,7 +611,7 @@
 
     .valeur-card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(13, 27, 62, .1);
+        box-shadow: 0 8px 24px rgba(15, 40, 78, .1);
     }
 
     .valeur-icon {
@@ -635,7 +635,7 @@
     .valeur-title {
         font-size: 15px;
         font-weight: 800;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 8px;
     }
 
@@ -698,7 +698,7 @@
     .tl-titre {
         font-size: 15px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 5px;
     }
 
@@ -752,7 +752,7 @@
     }
 
     .equipe-card:hover {
-        box-shadow: 0 4px 16px rgba(13, 27, 62, .08);
+        box-shadow: 0 4px 16px rgba(15, 40, 78, .08);
     }
 
     .eq-avatar {
@@ -760,8 +760,8 @@
         height: 72px;
         border-radius: 50%;
         margin: 0 auto 1rem;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
-        border: 3px solid #f5a623;
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
+        border: 3px solid #f5c518;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -776,7 +776,7 @@
     }
 
     .eq-init {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 22px;
         font-weight: 700;
     }
@@ -784,7 +784,7 @@
     .eq-name {
         font-size: 14px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 4px;
     }
 
@@ -801,7 +801,7 @@
         gap: 5px;
         font-size: 11px;
         font-weight: 700;
-        color: #1565c0;
+        color: #0f284e;
         text-decoration: none;
         background: #e3f2fd;
         padding: 5px 12px;
@@ -846,7 +846,7 @@
     }
 
     .partenaire-item:hover {
-        box-shadow: 0 2px 10px rgba(13, 27, 62, .07);
+        box-shadow: 0 2px 10px rgba(15, 40, 78, .07);
     }
 
     .partenaire-logo {
@@ -868,7 +868,7 @@
     .partenaire-init {
         font-size: 11px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .partenaire-nom {
@@ -881,7 +881,7 @@
     /* ── FAQ ── */
     .faq-section {
         padding: 5rem 2.5rem;
-        background: #0d1b3e;
+        background: #0f284e;
     }
 
     .faq-section .section-title {
@@ -941,7 +941,7 @@
     .faq-toggle svg {
         width: 14px;
         height: 14px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 2.5;
         transition: transform .2s;
@@ -960,18 +960,18 @@
     }
 
     .faq-item.open .faq-toggle {
-        background: #f5a623;
+        background: #f5c518;
     }
 
     .faq-item.open .faq-toggle svg {
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         transform: rotate(45deg);
     }
 
     /* ── CTA ── */
     .cta-section {
         padding: 5rem 2.5rem;
-        background: linear-gradient(108deg, #0d1b3e, #162552);
+        background: linear-gradient(108deg, #0f284e, #0a1e38);
         text-align: center;
         position: relative;
         overflow: hidden;
@@ -993,7 +993,7 @@
     .cta-eyebrow {
         font-size: 10px;
         font-weight: 800;
-        color: #f5a623;
+        color: #f5c518;
         letter-spacing: .12em;
         text-transform: uppercase;
         margin-bottom: .75rem;
@@ -1031,7 +1031,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
     }
@@ -1292,7 +1292,7 @@
     </div>
     <div class="mission-right">
         <div class="vision-card">
-            <div class="vision-icon" style="background:#fff8e6;color:#f5a623">
+            <div class="vision-icon" style="background:#fff8e6;color:#f5c518">
                 <svg viewBox="0 0 24 24">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
@@ -1303,7 +1303,7 @@
             </div>
         </div>
         <div class="vision-card">
-            <div class="vision-icon" style="background:#e3f2fd;color:#1565c0">
+            <div class="vision-icon" style="background:#e3f2fd;color:#0f284e">
                 <svg viewBox="0 0 24 24">
                     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                     <polyline points="17 6 23 6 23 12" />
@@ -1423,7 +1423,7 @@
 {{-- ══ GRILLE DES LOGOS PARTENAIRES (SÉCURISÉE) ══ --}}
 <section class="partenaires-logos-section" style="max-width: 1280px; margin: 3rem auto; padding: 0 2rem;">
     <div style="text-align: center; margin-bottom: 2rem;">
-        <h2 style="font-size: 13px; font-weight: 900; color: #0d1b3e; letter-spacing: .1em; text-transform: uppercase;">
+        <h2 style="font-size: 13px; font-weight: 900; color: #0f284e; letter-spacing: .1em; text-transform: uppercase;">
             Ils soutiennent le Forum
         </h2>
     </div>
@@ -1431,7 +1431,7 @@
     {{-- Grille fluide s'adaptant à tous les écrans --}}
     <div class="partenaires-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; align-items: center;">
         @foreach ($partenaires as $p)
-        <div class="partenaire-logo-box" title="{{ $p['nom'] }}" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; height: 75px; display: flex; align-items: center; justify-content: center; padding: 12px; box-shadow: 0 2px 8px rgba(13,27,62,0.01); transition: all 0.2s; flex-shrink: 0;">
+        <div class="partenaire-logo-box" title="{{ $p['nom'] }}" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; height: 75px; display: flex; align-items: center; justify-content: center; padding: 12px; box-shadow: 0 2px 8px rgba(15, 40, 78,0.01); transition: all 0.2s; flex-shrink: 0;">
 
             @if ($p['logo'])
             {{-- ✅ Le secret anti-écrasement : object-fit: contain --}}
@@ -1453,8 +1453,8 @@
 {{-- ══ FAQ ══ --}}
 <section class="faq-section" style="background: #ffffff; padding: 4rem 2.5rem; width: 100%;">
     <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-        <div class="section-eyebrow" style="color: #f5a623; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 6px;">Questions fréquentes</div>
-        <h2 class="section-title" style="font-size: 1.8rem; font-weight: 800; color: #0d1b3e; text-transform: uppercase; margin-top: 5px;">Tout ce que vous devez savoir</h2>
+        <div class="section-eyebrow" style="color: #f5c518; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 6px;">Questions fréquentes</div>
+        <h2 class="section-title" style="font-size: 1.8rem; font-weight: 800; color: #0f284e; text-transform: uppercase; margin-top: 5px;">Tout ce que vous devez savoir</h2>
         <p class="section-desc" style="color: #718096; font-size: 0.95rem; max-width: 600px; margin: 8px auto 0 auto;">Les réponses aux questions les plus posées sur le Forum International de l'Innovation.</p>
     </div>
 
@@ -1462,8 +1462,8 @@
         @foreach ($faq as $i => $item)
         <div class="faq-item" role="listitem" id="faq-{{ $i }}" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; transition: all 0.2s ease;">
             <div class="faq-question" onclick="toggleFaq({{ $i }})" style="display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 1.25rem; cursor: pointer; user-select: none; gap: 15px;">
-                <span class="faq-q-text" style="font-size: 13px; font-weight: 700; color: #0d1b3e; line-height: 1.4;">{{ $item['q'] }}</span>
-                <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-ans-{{ $i }}" style="background: transparent; border: none; color: #0d1b3e; cursor: pointer; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.2s ease;">
+                <span class="faq-q-text" style="font-size: 13px; font-weight: 700; color: #0f284e; line-height: 1.4;">{{ $item['q'] }}</span>
+                <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-ans-{{ $i }}" style="background: transparent; border: none; color: #0f284e; cursor: pointer; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.2s ease;">
                     <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round;">
                         <line x1="12" y1="5" x2="12" y2="19" class="plus-v-line" />
                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -1478,7 +1478,7 @@
     </div>
 
     <div style="text-align:center;margin-top:2.5rem">
-        <a href="{{ route('Faq') }}" style="font-size:13px;font-weight:700;color:#f5a623;text-decoration:none;display:inline-flex;align-items:center;gap:5px; transition: color 0.2s;">
+        <a href="{{ route('Faq') }}" style="font-size:13px;font-weight:700;color:#f5c518;text-decoration:none;display:inline-flex;align-items:center;gap:5px; transition: color 0.2s;">
             Voir toutes les questions
             <svg width="13" height="13" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -1511,76 +1511,8 @@
 </section>
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.4rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff"><span>Forum International</span>de l'Innovation<br><small>2026</small></div>
-            </a>
-            <p>Le rendez-vous mondial des décideurs, innovateurs et entrepreneurs engagés pour un avenir durable.</p>
-            <nav class="socials">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="Twitter">&#120143;</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-                <a href="#" aria-label="Instagram">&#9752;</a>
-            </nav>
-        </div>
-        <div class="fc">
-            <h4>Navigation</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="{{ route('institutionnel') }}">Institutionnel</a>
-            <a href="{{ route('partenaires') }}">Partenaires</a>
-            <a href="{{ route('actualites') }}">Actualités</a>
-            <a href="{{ route('Apropos') }}">À propos</a>
-        </div>
-        <div class="fc">
-            <h4>Participer</h4>
-            <a href="{{ route('inscription') }}">S'inscrire</a>
-            <a href="{{ route('partenaires.devenir') }}">Devenir partenaire</a>
-            <a href="{{ route('emploi') }}">Emploi &amp; Recrutement</a>
-            <a href="{{ route('cartographie') }}">Cartographie Diaspora</a>
-            <a href="{{ route('Faq') }}">FAQ</a>
-        </div>
-        <div class="fc">
-            <h4>Contact</h4>
-            <div class="fci">
-                <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>
-                contact@forum-innovation.org
-            </div>
-            <div class="fci">
-                <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81" />
-                </svg>
-                +221 33 123 45 67
-            </div>
-            <div class="fci">
-                <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>
-                Paris, France &amp; Dakar, Sénégal
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} Forum International de l'Innovation. Tous droits réservés.</span>
-        <div class="footer-legal">
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Confidentialité</a>
-            <a href="{{ route('conditions') }}">CGU</a>
-        </div>
-    </div>
-</footer>
+
+@include('components.footer')
 
 @push('scripts')
 <script>

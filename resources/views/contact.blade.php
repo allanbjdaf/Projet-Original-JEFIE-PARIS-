@@ -1,4 +1,4 @@
-{{-- resources/views/contact/index.blade.php --}}
+﻿{{-- resources/views/contact/index.blade.php --}}
 
 @extends('layouts.app')
 
@@ -20,7 +20,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -41,7 +41,7 @@
     .nav-logo-icon {
         width: 44px;
         height: 44px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -59,13 +59,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 700;
     }
@@ -89,7 +89,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -111,8 +111,8 @@
     }
 
     .nav-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 22px;
@@ -258,7 +258,7 @@
 
     /* ── HERO ── */
     .hero {
-        background: linear-gradient(100deg, #0a1628 0%, #0d1b3e 55%, #162552 100%);
+        background: linear-gradient(100deg, #0a1628 0%, #0f284e 55%, #0a1e38 100%);
         padding: 2.5rem 2.5rem 2.5rem;
         position: relative;
         overflow: hidden;
@@ -277,8 +277,8 @@
         display: inline-flex;
         align-items: center;
         gap: 7px;
-        border: 1px solid #f5a623;
-        color: #f5a623;
+        border: 1px solid #f5c518;
+        color: #f5c518;
         font-size: 11px;
         font-weight: 700;
         letter-spacing: .07em;
@@ -318,7 +318,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(to right, #0d1b3e 0%, transparent 50%);
+        background: linear-gradient(to right, #0f284e 0%, transparent 50%);
         z-index: 2;
     }
 
@@ -338,7 +338,7 @@
         border-bottom: 1px solid #e2e8f0;
         display: flex;
         align-items: stretch;
-        box-shadow: 0 2px 12px rgba(13, 27, 62, .06);
+        box-shadow: 0 2px 12px rgba(15, 40, 78, .06);
     }
 
     .ci {
@@ -383,7 +383,7 @@
     }
 
     .accred-block {
-        background: #0d1b3e;
+        background: #0f284e;
         padding: 1.25rem 1.6rem;
         display: flex;
         flex-direction: column;
@@ -399,8 +399,8 @@
     }
 
     .accred-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 12px;
         padding: 9px 16px;
@@ -432,7 +432,7 @@
     .sec-title {
         font-size: 14px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .08em;
         text-transform: uppercase;
         position: relative;
@@ -447,7 +447,7 @@
         bottom: 0;
         width: 38px;
         height: 3px;
-        background: #f5a623;
+        background: #f5c518;
         border-radius: 2px;
     }
 
@@ -473,12 +473,12 @@
         display: block;
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 5px;
     }
 
     .req-star {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .form-control {
@@ -494,7 +494,7 @@
     }
 
     .form-control:focus {
-        border-color: #162552;
+        border-color: #0a1e38;
         box-shadow: 0 0 0 3px rgba(22, 37, 82, .08);
     }
 
@@ -518,7 +518,7 @@
     }
 
     .submit-btn {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         width: 100%;
         padding: 13px;
@@ -536,7 +536,7 @@
     }
 
     .submit-btn:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .form-note {
@@ -623,7 +623,7 @@
     .dossier-name {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 2px;
     }
 
@@ -653,7 +653,7 @@
     .dossier-dl svg {
         width: 16px;
         height: 16px;
-        stroke: #162552;
+        stroke: #0a1e38;
         fill: none;
         stroke-width: 1.8;
     }
@@ -694,7 +694,7 @@
     .nl-press-content p {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 3px;
     }
 
@@ -720,7 +720,7 @@
     }
 
     .nl-form button {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-size: 12px;
         font-weight: 700;
@@ -733,7 +733,7 @@
     }
 
     .nl-form button:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     /* ── COL 3 : COMMUNIQUÉS ── */
@@ -774,12 +774,12 @@
 
     .b-ann {
         background: #e3f2fd;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .b-par {
         background: #fff3e0;
-        color: #e65100;
+        color: #f5c518;
     }
 
     .b-prog {
@@ -795,7 +795,7 @@
     .ci-title {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.4;
     }
 
@@ -823,7 +823,7 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        color: #162552;
+        color: #0a1e38;
         font-size: 13px;
         font-weight: 700;
         text-decoration: none;
@@ -832,7 +832,7 @@
     }
 
     .see-all-link:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .see-all-link svg {
@@ -901,7 +901,7 @@
     .dossier-name {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 2px;
     }
 
@@ -924,26 +924,26 @@
     }
 
     .dossier-dl:hover {
-        background: #0d1b3e;
+        background: #0f284e;
         transform: translateY(-1px);
     }
 
     .dossier-dl svg {
         width: 16px;
         height: 16px;
-        stroke: #162552;
+        stroke: #0a1e38;
         fill: none;
         stroke-width: 1.8;
         transition: stroke .2s;
     }
 
     .dossier-dl:hover svg {
-        stroke: #f5a623;
+        stroke: #f5c518;
     }
 
     /* Newsletter presse */
     .nl-press {
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 10px;
         padding: 1.1rem;
         margin-top: 1.25rem;
@@ -966,7 +966,7 @@
     .nl-press-icon svg {
         width: 20px;
         height: 20px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
     }
@@ -1016,8 +1016,8 @@
     }
 
     .nl-form button {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 12px;
         padding: 9px 16px;
@@ -1081,12 +1081,12 @@
 
     .b-ann {
         background: #e3f2fd;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .b-par {
         background: #fff3e0;
-        color: #e65100;
+        color: #f5c518;
     }
 
     .b-prog {
@@ -1102,13 +1102,13 @@
     .ci-title {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.4;
         transition: color .2s;
     }
 
     .communique-item:hover .ci-title {
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .ci-chev {
@@ -1125,8 +1125,8 @@
     }
 
     .communique-item:hover .ci-chev {
-        background: #0d1b3e;
-        border-color: #0d1b3e;
+        background: #0f284e;
+        border-color: #0f284e;
     }
 
     .ci-chev svg {
@@ -1146,7 +1146,7 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        color: #162552;
+        color: #0a1e38;
         font-size: 13px;
         font-weight: 700;
         text-decoration: none;
@@ -1155,7 +1155,7 @@
     }
 
     .see-all-link:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .see-all-link svg {
@@ -1168,7 +1168,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 3rem 2.5rem 0;
     }
@@ -1309,7 +1309,7 @@
             </svg>
             Espace Presse
         </div>
-        <h1>Contact &amp; <span style="color: #f5a623;">Presse</span></h1>
+        <h1>Contact &amp; <span style="color: #f5c518;">Presse</span></h1>
         <p class="hero-desc">
             Contactez l'équipe du Forum International de l'Innovation<br>
             et accédez aux ressources presse officielles.
@@ -1393,7 +1393,7 @@
     <div class="accred-block">
 
         <a href="{{ route('inscription') }}" class="accred-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" stroke="#0d1b3e" fill="none" stroke-width="2.5" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" stroke="#0f284e" fill="none" stroke-width="2.5" aria-hidden="true">
                 <rect x="3" y="4" width="18" height="18" rx="2" />
                 <path d="M16 2v4M8 2v4M3 10h18" />
             </svg>
@@ -1512,12 +1512,12 @@
         ['pdf', '#c2185b', '
         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
         <polyline points="14 2 14 8 20 8" />', 'Dossier de presse 2026', 'PDF', '4.2 Mo', '#'],
-        ['pptx', '#e65100', '
+        ['pptx', '#f5c518', '
         <rect x="2" y="3" width="20" height="14" rx="2" />
         <path d="M8 21h8M12 17v4" />', 'Présentation officielle', 'PPTX', '8.7 Mo', '#'],
         ['zip', '#2e7d32', '
         <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />', 'Kit média (Logos & Photos)', 'ZIP', '15.3 Mo', '#'],
-        ['pdf', '#1565c0', '
+        ['pdf', '#0f284e', '
         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
         <polyline points="14 2 14 8 20 8" />', "Rapport d'impact 2025", 'PDF', '6.1 Mo', '#'],
         ] as [$type, $color, $ic, $nom, $fmt, $taille, $url])
@@ -1601,84 +1601,7 @@
 {{-- ══════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
 
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.5rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text">
-                    <span>Forum International</span>de l'Innovation<br><small>2026</small>
-                </div>
-            </a>
-            <p>Ensemble, construisons l'avenir par l'innovation.</p>
-            <nav class="socials" aria-label="Réseaux sociaux">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="Twitter / X">&#120143;</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-            </nav>
-        </div>
-
-        <div class="fc">
-            <h4>Liens Utiles</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="{{ route('institutionnel') }}">Institutionnel</a>
-            <a href="{{ route('emploi') }}">Emploi &amp; Recrutement</a>
-            <a href="{{ route('cartographie') }}">Cartographie Diaspora</a>
-        </div>
-
-        <div class="fc">
-            <h4>Ressources</h4>
-            <a href="{{ route('dossiers') }}">Dossiers presse</a>
-            <a href="{{ route('actualites') }}">Communiqués</a>
-            <a href="{{ route('galerie') }}">Galerie média</a>
-            <a href="{{ route('branding') }}">Branding &amp; Logos</a>
-            <a href="{{ route('rapports') }}">Rapports &amp; Études</a>
-        </div>
-
-        <div class="fc">
-            <h4>Informations</h4>
-            <a href="{{ route('contact') }}">Contact</a>
-            <a href="{{ route('Faq') }}">FAQ</a>
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Politique de confidentialité</a>
-        </div>
-
-        <div class="fc">
-            <h4>Contact Rapide</h4>
-            <div class="fci">
-                <svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>
-                contact@forum-innovation.org
-            </div>
-            <div class="fci">
-                <svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12 12 0 00.74 2.9A2 2 0 017.21 7l-1.27 1.27a16 16 0 006.79 6.79L14 13.79a2 2 0 012.18-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z" />
-                </svg>
-                +221 33 123 45 67
-            </div>
-            <div class="fci">
-                <svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>
-                Cité de l'innovation, Dakar, Sénégal
-            </div>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        &copy; {{ date('Y') }} Forum International de l'Innovation &ndash; Tous droits réservés.
-    </div>
-</footer>
+@include('components.footer')
 
 @endsection

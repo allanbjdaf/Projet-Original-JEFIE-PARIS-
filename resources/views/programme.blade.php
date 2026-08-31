@@ -1,4 +1,4 @@
-{{-- resources/views/programme/index.blade.php --}}
+﻿{{-- resources/views/programme/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'JEFIE PARIS 2026')
@@ -19,7 +19,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -40,7 +40,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -57,13 +57,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -88,14 +88,14 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
 
     .nav-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 22px;
@@ -129,7 +129,7 @@
 
     /* ── HERO ── */
     .hero {
-        background: linear-gradient(105deg, #060e20 0%, #0d1b3e 50%, #0f2a5e 100%);
+        background: linear-gradient(105deg, #060e20 0%, #0f284e 50%, #0f2a5e 100%);
         padding: 2.5rem 2rem !important;
         position: relative;
         overflow: hidden;
@@ -166,7 +166,7 @@
         gap: 7px;
         background: rgba(245, 166, 35, .12);
         border: 1px solid rgba(245, 166, 35, .3);
-        color: #f5a623;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 700;
         letter-spacing: .1em;
@@ -188,7 +188,7 @@
     }
 
     .hero-tagline {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 1.1rem;
         font-weight: 700;
         margin-bottom: .75rem;
@@ -208,8 +208,8 @@
     }
 
     .btn-gold {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 12px 22px;
@@ -276,7 +276,7 @@
     }
 
     .hero-dot.active {
-        background: #f5a623;
+        background: #f5c518;
     }
 
     /* ── COUNTDOWN + ACCÈS RAPIDES ── */
@@ -295,7 +295,7 @@
     .countdown-label {
         font-size: 11px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
         margin-bottom: 1rem;
@@ -314,7 +314,7 @@
     .cu-num {
         font-size: 2.4rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
         line-height: 1;
     }
@@ -343,7 +343,7 @@
     .ar-label {
         font-size: 11px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
         margin-bottom: 1rem;
@@ -404,7 +404,7 @@
     .filters-title {
         font-size: 12px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .08em;
         text-transform: uppercase;
         margin-bottom: .9rem;
@@ -446,7 +446,7 @@
     }
 
     .filter-search-btn {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 13px;
@@ -462,7 +462,7 @@
     }
 
     .filter-search-btn:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .filter-search-btn svg {
@@ -515,9 +515,9 @@
     }
 
     .jour-tab.active {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .jour-tab .jour-label {
@@ -551,13 +551,13 @@
         text-decoration: none;
         border: 1px solid #e2e8f0;
         background: #fff;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .vue-btn.active {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .vue-btn svg {
@@ -593,7 +593,7 @@
     .timeline-time .t-start {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .timeline-time .t-end {
@@ -645,7 +645,7 @@
     }
 
     .activity-card:hover {
-        box-shadow: 0 2px 12px rgba(13, 27, 62, .08);
+        box-shadow: 0 2px 12px rgba(15, 40, 78, .08);
     }
 
     .activity-icon-wrap {
@@ -682,7 +682,7 @@
     .activity-title {
         font-size: 14px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 5px;
         line-height: 1.3;
     }
@@ -722,7 +722,7 @@
         width: 28px;
         height: 28px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -752,13 +752,13 @@
         justify-content: center;
         font-size: 10px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .interv-info-name {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .interv-info-role {
@@ -769,7 +769,7 @@
     .places-badge {
         font-size: 11px;
         font-weight: 700;
-        color: #e65100;
+        color: #f5c518;
         background: #fff3e0;
         padding: 3px 10px;
         border-radius: 4px;
@@ -798,12 +798,12 @@
         transition: all .2s;
         border: 1px solid #e2e8f0;
         background: #fff;
-        color: #162552;
+        color: #0a1e38;
         white-space: nowrap;
     }
 
     .act-btn:hover {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .act-btn svg {
@@ -815,8 +815,8 @@
     }
 
     .act-btn.agenda {
-        border-color: #f5a623;
-        color: #0d1b3e;
+        border-color: #f5c518;
+        color: #0f284e;
     }
 
     .act-btn.rdv {
@@ -840,7 +840,7 @@
     .load-more-btn {
         background: #fff;
         border: 1px solid #d1d9e6;
-        color: #162552;
+        color: #0a1e38;
         font-size: 13px;
         font-weight: 700;
         padding: 10px 24px;
@@ -876,7 +876,7 @@
     .rs-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
         margin-bottom: 1rem;
@@ -894,7 +894,7 @@
     }
 
     .ane-card:hover {
-        box-shadow: 0 2px 10px rgba(13, 27, 62, .07);
+        box-shadow: 0 2px 10px rgba(15, 40, 78, .07);
     }
 
     .ane-photo {
@@ -902,7 +902,7 @@
         height: 52px;
         border-radius: 6px;
         flex-shrink: 0;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -938,7 +938,7 @@
     .ane-title {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.35;
         margin-bottom: 5px;
     }
@@ -952,7 +952,7 @@
     .ane-detail-btn {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         background: #f4f6fa;
         border: none;
         border-radius: 4px;
@@ -999,7 +999,7 @@
     .cta-icon svg {
         width: 24px;
         height: 24px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.6;
     }
@@ -1007,7 +1007,7 @@
     .cta-title {
         font-size: 14px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: 3px;
     }
 
@@ -1024,8 +1024,8 @@
     }
 
     .cta-btn-primary {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 12px 22px;
@@ -1053,7 +1053,7 @@
 
     .cta-btn-outline {
         background: transparent;
-        color: #0d1b3e;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 11px 20px;
@@ -1068,7 +1068,7 @@
     }
 
     .cta-btn-outline:hover {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .cta-btn-outline svg {
@@ -1105,7 +1105,7 @@
     .nl-icon svg {
         width: 22px;
         height: 22px;
-        stroke: #162552;
+        stroke: #0a1e38;
         fill: none;
         stroke-width: 1.8;
     }
@@ -1113,7 +1113,7 @@
     .nl-text p {
         font-size: 14px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: 2px;
     }
 
@@ -1143,7 +1143,7 @@
     }
 
     .nl-form button {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 13px;
@@ -1159,7 +1159,7 @@
     }
 
     .nl-form button:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .nl-form button svg {
@@ -1259,7 +1259,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
     }
@@ -1359,7 +1359,7 @@
     }
 
     .footer-nl-form button {
-        background: #f5a623;
+        background: #f5c518;
         border: none;
         border-radius: 5px;
         width: 38px;
@@ -1379,7 +1379,7 @@
     .footer-nl-form button svg {
         width: 15px;
         height: 15px;
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         fill: none;
         stroke-width: 2;
     }
@@ -1561,8 +1561,8 @@
         <div class="ar-list">
             @foreach ($accesRapides as $ar)
             @php
-            $arIconBg = ($ar['color'] ?? '#0d1b3e') . '18';
-            $arColor = $ar['color'] ?? '#0d1b3e';
+            $arIconBg = ($ar['color'] ?? '#0f284e') . '18';
+            $arColor = $ar['color'] ?? '#0f284e';
             $slugActivite = $ar['slug'] ?? $ar['type'] ?? strtolower($ar['label'] ?? 'activite');
             @endphp
 
@@ -1836,7 +1836,7 @@
     <div class="sb-modal-content" style="background-color: #fff; padding: 25px; border-radius: 8px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-family: sans-serif;">
         <span class="sb-modal-close" style="position: absolute; right: 15px; top: 10px; font-size: 24px; cursor: pointer; color: #aaa;">&times;</span>
 
-        <h2 id="modalTitre" style="margin-top: 0; color: #0d1b3e; font-size: 20px; font-weight: 700;"></h2>
+        <h2 id="modalTitre" style="margin-top: 0; color: #0f284e; font-size: 20px; font-weight: 700;"></h2>
 
         <div style="margin: 15px 0;">
             <strong style="color: #555;">Description :</strong>
@@ -1957,87 +1957,8 @@
 </div>
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.4rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff"><span>Journées économiques et Forum international </span>de l'emploi de la diaspora Gabonaise<br><small>2026</small></div>
-            </a>
-            <p>Le rendez-vous mondial des décideurs, innovateurs et entrepreneurs engagés pour un avenir durable.</p>
-            <nav class="socials" aria-label="Réseaux sociaux">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Twitter">&#120143;</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-                <a href="#" aria-label="Instagram">&#9752;</a>
-            </nav>
-        </div>
-        <div class="fc">
-            <h4>Liens Rapides</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="#">Intervenants</a>
-            <a href="{{ route('partenaires') }}">Partenaires</a>
-            <a href="{{ route('actualites') }}">Actualités</a>
-        </div>
-        <div class="fc">
-            <h4>Participer</h4>
-            <a href="{{ route('inscription') }}">S'inscrire</a>
-            <a href="{{ route('partenaires.devenir') }}">Devenir partenaire</a>
-            <a href="#">Soumettre un pitch</a>
-            <a href="#">Planifier un RDV B2B</a>
-            <a href="#">Informations pratiques</a>
-            <a href="{{ route('Faq') }}">FAQ</a>
-        </div>
-        <div class="fc">
-            <h4>Informations</h4>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                </svg>15 – 18 Juin 2026</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>Palais des Congrès<br>Abidjan, Côte d'Ivoire</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>contact@forum-innovation.org</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12 12 0 00.74 2.9A2 2 0 017.21 7l-1.27 1.27a16 16 0 006.79 6.79L14 13.79a2 2 0 012.18-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z" />
-                </svg>+225 01 23 45 67 89</div>
-        </div>
-        <div class="fc">
-            <h4>Recevez nos Actualités</h4>
-            <form action="{{ route('newsletter.subscribe') }}" method="POST">
-                @csrf
-                <div class="footer-nl-form">
-                    <input type="email" name="email_newsletter" placeholder="Votre email" required>
-                    <button type="submit" aria-label="S'abonner">
-                        <svg viewBox="0 0 24 24">
-                            <line x1="22" y1="2" x2="11" y2="13" />
-                            <polygon points="22 2 15 22 11 13 2 9 22 2" fill="#0d1b3e" />
-                        </svg>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div> {{-- Fermeture de la div globale interne du footer --}}
 
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} CDC site. Tous droits réservés.</span>
-        <div class="footer-legal">
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Confidentialité</a>
-            <a href="#">CGU</a>
-        </div>
-    </div>
-</footer>
+@include('components.footer')
 
 {{-- UN SEUL ET UNIQUE SCRIPT NETTOYÉ POUR ÉVITER LES ERREURS BLADE --}}
 <script>

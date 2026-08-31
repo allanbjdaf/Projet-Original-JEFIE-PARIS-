@@ -1,4 +1,4 @@
-{{-- resources/views/entrepreneurs/profil.blade.php --}}
+﻿{{-- resources/views/entrepreneurs/profil.blade.php --}}
 @extends('layouts.app')
 
 @section('title', ($profil->nom_complet ?? 'Profil') . ' — Espace Entrepreneurs Diaspora')
@@ -19,7 +19,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -40,7 +40,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -57,13 +57,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -88,7 +88,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -118,8 +118,8 @@
     }
 
     .nav-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 12px;
         padding: 9px 16px;
@@ -163,7 +163,7 @@
     }
 
     .breadcrumb a:hover {
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .breadcrumb-sep {
@@ -171,7 +171,7 @@
     }
 
     .breadcrumb-current {
-        color: #162552;
+        color: #0a1e38;
         font-weight: 600;
     }
 
@@ -331,7 +331,7 @@
 
     .id-card-cover {
         height: 80px;
-        background: linear-gradient(108deg, #0d1b3e, #162552, #1e3472);
+        background: linear-gradient(108deg, #0f284e, #0a1e38, #1e3472);
         position: relative;
     }
 
@@ -361,7 +361,7 @@
         height: 72px;
         border-radius: 50%;
         border: 3px solid #fff;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -378,7 +378,7 @@
     }
 
     .id-avatar-init {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 24px;
         font-weight: 700;
     }
@@ -390,7 +390,7 @@
         padding: 5px 10px;
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         cursor: pointer;
         text-decoration: none;
         display: inline-flex;
@@ -400,9 +400,9 @@
     }
 
     .id-edit-btn:hover {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .id-edit-btn svg {
@@ -416,7 +416,7 @@
     .id-name {
         font-size: 16px;
         font-weight: 800;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 2px;
     }
 
@@ -429,7 +429,7 @@
     .id-company {
         font-size: 13px;
         font-weight: 600;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: 8px;
     }
 
@@ -465,7 +465,7 @@
 
     .sector-tech {
         background: #e3f2fd;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .sector-agri {
@@ -480,7 +480,7 @@
 
     .sector-commerce {
         background: #fff3e0;
-        color: #e65100;
+        color: #f5c518;
     }
 
     .sector-sante {
@@ -503,7 +503,7 @@
     }
 
     .progress-label strong {
-        color: #0d1b3e;
+        color: #0f284e;
         font-weight: 700;
     }
 
@@ -517,7 +517,7 @@
 
     .progress-fill {
         height: 100%;
-        background: linear-gradient(90deg, #f5a623, #e09010);
+        background: linear-gradient(90deg, #f5c518, #e09010);
         border-radius: 4px;
         transition: width .5s ease;
     }
@@ -573,22 +573,22 @@
     }
 
     .id-action-primary {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
     }
 
     .id-action-primary:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .id-action-outline {
         background: #fff;
-        color: #162552;
+        color: #0a1e38;
         border: 1px solid #e2e8f0;
     }
 
     .id-action-outline:hover {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     /* Sidebar widget commun */
@@ -602,7 +602,7 @@
     .sw-title {
         font-size: 11px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .08em;
         text-transform: uppercase;
         margin-bottom: .9rem;
@@ -614,7 +614,7 @@
     .sw-title a {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         text-transform: none;
         letter-spacing: 0;
@@ -644,7 +644,7 @@
     }
 
     .sw-row strong {
-        color: #162552;
+        color: #0a1e38;
         font-weight: 600;
     }
 
@@ -666,7 +666,7 @@
     .sw-stat-num {
         font-size: 1.2rem;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
     }
 
@@ -720,14 +720,14 @@
     }
 
     .tab-btn.active {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
     }
 
     .tab-btn:hover:not(.active) {
         background: #f4f6fa;
-        color: #162552;
+        color: #0a1e38;
     }
 
     /* Section card générique */
@@ -748,7 +748,7 @@
     .cc-title {
         font-size: 13px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
     }
@@ -756,7 +756,7 @@
     .cc-edit {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -768,9 +768,9 @@
     }
 
     .cc-edit:hover {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .cc-edit svg {
@@ -805,7 +805,7 @@
     .info-value {
         font-size: 13px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .info-value.empty {
@@ -829,7 +829,7 @@
         padding: 4px 12px;
         font-size: 11px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
     }
 
     /* Projets */
@@ -846,7 +846,7 @@
     }
 
     .projet-item:hover {
-        box-shadow: 0 2px 10px rgba(13, 27, 62, .07);
+        box-shadow: 0 2px 10px rgba(15, 40, 78, .07);
     }
 
     .projet-header {
@@ -860,7 +860,7 @@
     .projet-titre {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .projet-status {
@@ -917,7 +917,7 @@
     .kpi-num {
         font-size: 1.3rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
     }
 
@@ -937,7 +937,7 @@
 
     /* Participation forum */
     .forum-status-card {
-        background: linear-gradient(108deg, #0d1b3e, #162552);
+        background: linear-gradient(108deg, #0f284e, #0a1e38);
         border-radius: 10px;
         padding: 1.5rem;
         display: flex;
@@ -959,7 +959,7 @@
     .fsc-icon svg {
         width: 26px;
         height: 26px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.6;
     }
@@ -982,7 +982,7 @@
 
     .fsc-badge {
         background: rgba(245, 166, 35, .2);
-        color: #f5a623;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 800;
         padding: 4px 12px;
@@ -1006,7 +1006,7 @@
     .completion-tips svg {
         width: 18px;
         height: 18px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 2;
         flex-shrink: 0;
@@ -1020,7 +1020,7 @@
     }
 
     .completion-tips a {
-        color: #0d1b3e;
+        color: #0f284e;
         font-weight: 700;
         text-decoration: none;
     }
@@ -1052,7 +1052,7 @@
 
     .competence-name {
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .competence-pct {
@@ -1089,11 +1089,11 @@
         transition: all .2s;
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .social-link:hover {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
         background: #f8fafc;
     }
 
@@ -1127,7 +1127,7 @@
 
     /* RDV widget */
     .rdv-widget {
-        background: #f5a623;
+        background: #f5c518;
         border-radius: 10px;
         padding: 1.25rem;
     }
@@ -1135,19 +1135,19 @@
     .rdv-widget-title {
         font-size: 13px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: 4px;
     }
 
     .rdv-widget-desc {
         font-size: 11px;
-        color: rgba(13, 27, 62, .7);
+        color: rgba(15, 40, 78, .7);
         margin-bottom: 12px;
         line-height: 1.45;
     }
 
     .rdv-widget-btn {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-size: 12px;
         font-weight: 700;
@@ -1165,7 +1165,7 @@
     }
 
     .rdv-widget-btn:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .rdv-widget-btn svg {
@@ -1193,7 +1193,7 @@
         width: 38px;
         height: 38px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1206,7 +1206,7 @@
     .sug-name {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .sug-co {
@@ -1218,7 +1218,7 @@
         margin-left: auto;
         font-size: 10px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         background: #f4f6fa;
         border: 1px solid #e2e8f0;
         border-radius: 4px;
@@ -1230,14 +1230,14 @@
     }
 
     .sug-follow:hover {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2rem 2rem 0;
         margin-top: 2rem;
@@ -1684,7 +1684,7 @@
             </svg>
             <p style="color:#a0aec0;font-size:13px">Aucun projet renseigné pour le moment.</p>
             @auth @if(auth()->id() === $profil->user_id)
-            <a href="{{ route('entrepreneurs.profil.edit') }}" style="font-size:12px;font-weight:700;color:#0d1b3e;text-decoration:none;margin-top:8px;display:inline-block">
+            <a href="{{ route('entrepreneurs.profil.edit') }}" style="font-size:12px;font-weight:700;color:#0f284e;text-decoration:none;margin-top:8px;display:inline-block">
                 + Ajouter mes projets
             </a>
             @endif @endauth
@@ -1834,7 +1834,7 @@
                     <span class="competence-pct">{{ $pct }}%</span>
                 </div>
                 <div class="comp-bar-bg">
-                    <div class="comp-bar-fill" style="width:<?php echo $pct; ?>%;background:#0d1b3e"></div>
+                    <div class="comp-bar-fill" style="width:<?php echo $pct; ?>%;background:#0f284e"></div>
                 </div>
             </div>
             @endforeach
@@ -1846,7 +1846,7 @@
             <div class="sw-title">Réseaux & Contacts</div>
             <div class="social-links">
                 <a href="#" class="social-link">
-                    <div class="social-icon" style="background:#e3f2fd;color:#1565c0">
+                    <div class="social-icon" style="background:#e3f2fd;color:#0f284e">
                         <svg viewBox="0 0 24 24">
                             <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
                             <rect x="2" y="9" width="4" height="12" />
@@ -1857,7 +1857,7 @@
                     <span class="social-add">Voir →</span>
                 </a>
                 <a href="#" class="social-link">
-                    <div class="social-icon" style="background:#e3f2fd;color:#1565c0">
+                    <div class="social-icon" style="background:#e3f2fd;color:#0f284e">
                         <svg viewBox="0 0 24 24">
                             <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
                         </svg>
@@ -1904,16 +1904,8 @@
 </div>{{-- /.page-layout --}}
 
 {{-- ── FOOTER MINIMAL ── --}}
-<footer class="site-footer">
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} Forum International de l'Innovation. Tous droits réservés.</span>
-        <div class="footer-links">
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Confidentialité</a>
-            <a href="{{ route('contact') }}">Contact</a>
-        </div>
-    </div>
-</footer>
+
+@include('components.footer')
 
 @push('scripts')
 <script>

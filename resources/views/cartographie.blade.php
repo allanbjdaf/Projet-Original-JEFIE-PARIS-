@@ -1,4 +1,4 @@
-{{-- resources/views/cartographie/index.blade.php --}}
+﻿{{-- resources/views/cartographie/index.blade.php --}}
 @extends('layouts.app')
 @section('title', 'Cartographie Diaspora — JEFIE PARIS 2026')
 @section('styles')
@@ -42,7 +42,7 @@
 
     .leaflet-control-zoom a {
         background: #fff !important;
-        color: #0d1b3e !important;
+        color: #0f284e !important;
         font-weight: 700 !important;
         font-size: 18px !important;
         width: 32px !important;
@@ -67,7 +67,7 @@
 
     .leaflet-popup-content-wrapper {
         border-radius: 10px !important;
-        box-shadow: 0 4px 16px rgba(13, 27, 62, .18) !important;
+        box-shadow: 0 4px 16px rgba(15, 40, 78, .18) !important;
         border: 1px solid #e2e8f0 !important;
         padding: 0 !important;
     }
@@ -110,7 +110,7 @@
     .map-popup-pays {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 3px;
     }
 
@@ -148,12 +148,12 @@
     }
 
     .map-popup-row strong {
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -174,7 +174,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -191,13 +191,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -222,7 +222,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -268,7 +268,7 @@
         width: 28px;
         height: 28px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #f5a623, #e09010);
+        background: linear-gradient(135deg, #f5c518, #e09010);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -444,14 +444,14 @@
     .filters-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
     }
 
     .filters-reset {
         font-size: 12px;
-        color: #f5a623;
+        color: #f5c518;
         font-weight: 700;
         text-decoration: none;
         cursor: pointer;
@@ -466,7 +466,7 @@
     .filter-group-label {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-transform: uppercase;
         letter-spacing: .07em;
     }
@@ -482,7 +482,7 @@
     }
 
     .filter-input:focus-within {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .filter-input input {
@@ -551,7 +551,7 @@
     .cb-left input[type="checkbox"] {
         width: 14px;
         height: 14px;
-        accent-color: #0d1b3e;
+        accent-color: #0f284e;
         cursor: pointer;
         flex-shrink: 0;
     }
@@ -565,7 +565,7 @@
     .cb-count {
         font-size: 11px;
         font-weight: 700;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .range-wrap {
@@ -583,7 +583,7 @@
 
     .range-slider {
         width: 100%;
-        accent-color: #0d1b3e;
+        accent-color: #0f284e;
         cursor: pointer;
     }
 
@@ -597,11 +597,11 @@
 
     .year-val {
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .apply-btn {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 13px;
@@ -619,7 +619,7 @@
     }
 
     .apply-btn:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .apply-btn svg {
@@ -656,7 +656,7 @@
     }
 
     .stat-box.dark {
-        background: #0d1b3e;
+        background: #0f284e;
     }
 
     .stat-info {
@@ -677,7 +677,7 @@
     .stat-num {
         font-size: 1.4rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         line-height: 1;
     }
 
@@ -740,7 +740,7 @@
     .map-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
     }
@@ -823,7 +823,7 @@
     }
 
     .map-tab.active {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
     }
 
@@ -875,7 +875,7 @@
         cursor: pointer;
         font-size: 16px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         line-height: 1;
     }
 
@@ -989,7 +989,7 @@
     .une-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
     }
@@ -997,7 +997,7 @@
     .une-see-all {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -1039,7 +1039,7 @@
     .une-arrow svg {
         width: 13px;
         height: 13px;
-        stroke: #162552;
+        stroke: #0a1e38;
         fill: none;
         stroke-width: 2;
     }
@@ -1072,7 +1072,7 @@
     }
 
     .une-card:hover {
-        box-shadow: 0 2px 10px rgba(13, 27, 62, .08);
+        box-shadow: 0 2px 10px rgba(15, 40, 78, .08);
     }
 
     .une-card-top {
@@ -1086,7 +1086,7 @@
         height: 42px;
         border-radius: 50%;
         flex-shrink: 0;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -1110,7 +1110,7 @@
     .une-name {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.25;
     }
 
@@ -1130,7 +1130,7 @@
 
     .sector-tech {
         background: #e3f2fd;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .sector-agri {
@@ -1150,7 +1150,7 @@
 
     .sector-industrie {
         background: #fff3e0;
-        color: #e65100;
+        color: #f5c518;
     }
 
     .une-meta {
@@ -1179,7 +1179,7 @@
     .une-ca {
         font-size: 12px;
         font-weight: 800;
-        color: #f5a623;
+        color: #f5c518;
         margin-top: 2px;
     }
 
@@ -1205,7 +1205,7 @@
     .rs-title {
         font-size: 11px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
         margin-bottom: .85rem;
@@ -1266,7 +1266,7 @@
     .donut-legend-pct {
         font-size: 10px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .secteur-item {
@@ -1286,7 +1286,7 @@
 
     .secteur-name {
         font-size: 12px;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .secteur-nums {
@@ -1308,7 +1308,7 @@
 
     /* ══ INDICATEURS BAS ══ */
     .indicators-bar {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: stretch;
     }
@@ -1391,7 +1391,7 @@
     }
 
     .dl-block {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         gap: 1.25rem;
@@ -1413,7 +1413,7 @@
     .dl-icon svg {
         width: 20px;
         height: 20px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
     }
@@ -1432,7 +1432,7 @@
 
     .dl-btn {
         background: #fff;
-        color: #0d1b3e;
+        color: #0f284e;
         font-weight: 700;
         font-size: 12px;
         padding: 9px 16px;
@@ -1452,7 +1452,7 @@
 
     /* Footer */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2rem 2rem 0;
     }
@@ -1816,7 +1816,7 @@
 
                 .leaflet-control-zoom a {
                     background: #fff !important;
-                    color: #0d1b3e !important;
+                    color: #0f284e !important;
                     font-weight: 700 !important;
                     font-size: 16px !important;
                     line-height: 28px !important;
@@ -1847,7 +1847,7 @@
                 .map-popup-name {
                     font-size: 13px;
                     font-weight: 700;
-                    color: #162552;
+                    color: #0a1e38;
                     margin-bottom: 2px;
                 }
 
@@ -1880,7 +1880,7 @@
 
                 .leaflet-popup-content-wrapper {
                     border-radius: 8px !important;
-                    box-shadow: 0 4px 16px rgba(13, 27, 62, .15) !important;
+                    box-shadow: 0 4px 16px rgba(15, 40, 78, .15) !important;
                     border: 1px solid #e2e8f0 !important;
                 }
 
@@ -2293,11 +2293,11 @@
         <div class="rs-block">
             <div class="rs-title">Répartition par Continent</div>
             <div class="donut-wrap">
-                <div class="donut" style="background:conic-gradient(#1565c0 0% 43.9%,#2e7d32 43.9% 64.5%,#f5a623 64.5% 82.5%,#8e24aa 82.5% 93.6%,#00897b 93.6% 100%)" role="img">
+                <div class="donut" style="background:conic-gradient(#0f284e 0% 43.9%,#2e7d32 43.9% 64.5%,#f5c518 64.5% 82.5%,#8e24aa 82.5% 93.6%,#00897b 93.6% 100%)" role="img">
                     <div class="donut-inner"></div>
                 </div>
                 <div class="donut-legend">
-                    @foreach ([['#1565c0','Europe','1,674 (43.9%)'],['#2e7d32','Afrique','786 (20.6%)'],['#f5a623','Amériques','687 (18%)'],['#8e24aa','Asie','425 (11.1%)'],['#00897b','Océanie','239 (6.3%)']] as [$c,$l,$p])
+                    @foreach ([['#0f284e','Europe','1,674 (43.9%)'],['#2e7d32','Afrique','786 (20.6%)'],['#f5c518','Amériques','687 (18%)'],['#8e24aa','Asie','425 (11.1%)'],['#00897b','Océanie','239 (6.3%)']] as [$c,$l,$p])
                     <div class="donut-legend-item">
                         <div class="donut-legend-left"><span class="donut-legend-dot" style="background:{{ $c }}"></span><span class="donut-legend-label">{{ $l }}</span></div>
                         <span class="donut-legend-pct">{{ $p }}</span>
@@ -2309,7 +2309,7 @@
 
         <div class="rs-block">
             <div class="rs-title">Top 5 des Secteurs</div>
-            @foreach ([['Services','1,156 (30.3%)','30.3','#1565c0'],['Technologies','964 (25.3%)','25.3','#2e7d32'],['Commerce','645 (16.9%)','16.9','#f5a623'],['Industrie','412 (10.8%)','10.8','#8e24aa'],['Agriculture','258 (6.7%)','6.7','#00897b']] as [$nom,$nums,$pct,$color])
+            @foreach ([['Services','1,156 (30.3%)','30.3','#0f284e'],['Technologies','964 (25.3%)','25.3','#2e7d32'],['Commerce','645 (16.9%)','16.9','#f5c518'],['Industrie','412 (10.8%)','10.8','#8e24aa'],['Agriculture','258 (6.7%)','6.7','#00897b']] as [$nom,$nums,$pct,$color])
             <div class="secteur-item">
                 <div class="secteur-header"><span class="secteur-name">{{ $nom }}</span><span class="secteur-nums">{{ $nums }}</span></div>
                 <div class="secteur-bar-bg">
@@ -2322,11 +2322,11 @@
         <div class="rs-block">
             <div class="rs-title">Répartition par Capacité Économique</div>
             <div class="donut-wrap">
-                <div class="donut" style="background:conic-gradient(#1565c0 0% 28.6%,#2e7d32 28.6% 61.6%,#f5a623 61.6% 88.7%,#8e24aa 88.7% 100%)" role="img">
+                <div class="donut" style="background:conic-gradient(#0f284e 0% 28.6%,#2e7d32 28.6% 61.6%,#f5c518 61.6% 88.7%,#8e24aa 88.7% 100%)" role="img">
                     <div class="donut-inner"></div>
                 </div>
                 <div class="donut-legend">
-                    @foreach ([['#1565c0','Émergente','1,089 (28.6%)'],['#2e7d32','En croissance','1,256 (33%)'],['#f5a623','Établie','1,034 (27.1%)'],['#8e24aa','Leader','432 (11.3%)']] as [$c,$l,$p])
+                    @foreach ([['#0f284e','Émergente','1,089 (28.6%)'],['#2e7d32','En croissance','1,256 (33%)'],['#f5c518','Établie','1,034 (27.1%)'],['#8e24aa','Leader','432 (11.3%)']] as [$c,$l,$p])
                     <div class="donut-legend-item">
                         <div class="donut-legend-left"><span class="donut-legend-dot" style="background:{{ $c }}"></span><span class="donut-legend-label">{{ $l }}</span></div>
                         <span class="donut-legend-pct">{{ $p }}</span>
@@ -2352,9 +2352,9 @@
     </div>
     <div class="indicators-list">
         @foreach ([
-        ['Entrepreneurs','3 811','▲ +12,5%','#1565c0'],
+        ['Entrepreneurs','3 811','▲ +12,5%','#0f284e'],
         ['Entreprises','2 945','▲ +10,2%','#2e7d32'],
-        ['Emplois créés','14 732','▲ +15,7%','#f5a623'],
+        ['Emplois créés','14 732','▲ +15,7%','#f5c518'],
         ["Chiffre d'aff.",'850 Mds FCFA','▲ +18,3%','#8e24aa'],
         ] as [$lbl,$num,$evol,$color])
         <div class="indicator-item">
@@ -2389,41 +2389,8 @@
 </div>
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.4rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff"><span>JEFIE</span>Paris 2026</div>
-            </a>
-            <p>Plateforme de référence pour la cartographie des entrepreneurs de la diaspora gabonaise dans le monde.</p>
-            <nav class="socials"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Twitter">&#120143;</a><a href="#" aria-label="YouTube">&#9654;</a></nav>
-        </div>
-        <div class="fc">
-            <h4>Liens Utiles</h4><a href="{{ route('index') }}">Accueil</a><a href="{{ route('programme') }}">Programme</a><a href="{{ route('emploi') }}">Emploi &amp; Recrutement</a><a href="{{ route('partenaires') }}">Partenaires</a><a href="{{ route('actualites') }}">Actualités</a>
-        </div>
 
-        <div class="fc">
-            <h4>Contact</h4>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>contact@forum-innovation.org</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81" />
-                </svg>+33 1 45 67 89 10</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>Paris, France</div>
-        </div>
-    </div>
-    <div class="footer-bottom">&copy; {{ date('Y') }} CDC site. Tous droits réservés.</div>
-</footer>
+@include('components.footer')
 
 @push('scripts')
 <script>

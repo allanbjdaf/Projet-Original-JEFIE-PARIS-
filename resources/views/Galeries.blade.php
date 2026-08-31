@@ -1,4 +1,4 @@
-{{-- resources/views/galerie/index.blade.php --}}
+﻿{{-- resources/views/galerie/index.blade.php --}}
 
 @extends('layouts.app')
 
@@ -42,7 +42,7 @@
     }
 
     .une-card:hover {
-        box-shadow: 0 4px 18px rgba(13, 27, 62, .11);
+        box-shadow: 0 4px 18px rgba(15, 40, 78, .11);
         transform: translateY(-2px);
     }
 
@@ -50,7 +50,7 @@
         position: relative;
         height: 180px;
         overflow: hidden;
-        background: #0d1b3e;
+        background: #0f284e;
         flex-shrink: 0;
     }
 
@@ -67,7 +67,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, #0d1b3e, #1e3472);
+        background: linear-gradient(135deg, #0f284e, #1e3472);
     }
 
     .une-badge {
@@ -85,7 +85,7 @@
     }
 
     .badge-communique {
-        background: #1565c0;
+        background: #0f284e;
     }
 
     .badge-interview {
@@ -93,12 +93,12 @@
     }
 
     .badge-video {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .badge-podcast {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
     }
 
     .badge-photo,
@@ -167,7 +167,7 @@
     .play-btn svg {
         width: 18px;
         height: 18px;
-        fill: #0d1b3e;
+        fill: #0f284e;
         margin-left: 3px;
     }
 
@@ -223,7 +223,7 @@
     .une-title {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.4;
         flex: 1;
     }
@@ -234,14 +234,14 @@
         gap: 5px;
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         margin-top: 6px;
         transition: color .2s;
     }
 
     .une-link:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .une-link svg {
@@ -256,10 +256,10 @@
     .section-heading {
         font-size: 13px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 10px;
     }
 
@@ -319,7 +319,7 @@
     .rs-title {
         font-size: 11px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
         margin-bottom: .9rem;
@@ -344,7 +344,7 @@
         border-radius: 6px;
         overflow: hidden;
         flex-shrink: 0;
-        background: #0d1b3e;
+        background: #0f284e;
     }
 
     .pop-thumb img {
@@ -362,14 +362,14 @@
     .pop-title {
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.35;
         margin-bottom: 3px;
         transition: color .2s;
     }
 
     .pop-item:hover .pop-title {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .pop-vues {
@@ -390,7 +390,7 @@
 
     /* Newsletter */
     .nl-block {
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 10px;
         padding: 1.1rem;
     }
@@ -431,7 +431,7 @@
     }
 
     .nl-btn {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 12px;
@@ -445,7 +445,7 @@
     }
 
     .nl-btn:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     /* Stats médias */
@@ -486,7 +486,7 @@
     .stat-media-num {
         font-size: 1.2rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         line-height: 1;
         display: block;
     }
@@ -521,7 +521,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -542,7 +542,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -560,7 +560,7 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 12px;
     }
@@ -584,7 +584,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
     }
 
@@ -610,8 +610,8 @@
     }
 
     .nav-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 22px;
@@ -758,7 +758,7 @@
 
     /* ── HERO ── */
     .hero {
-        background: linear-gradient(135deg, #0a1628 0%, #0d1b3e 50%, #1a3060 100%);
+        background: linear-gradient(135deg, #0a1628 0%, #0f284e 50%, #1a3060 100%);
         padding: 3rem 2.5rem 2.5rem;
         position: relative;
         overflow: hidden;
@@ -820,7 +820,7 @@
     }
 
     .hero-title .text-yellow {
-        color: #f5a623;
+        color: #f5c518;
         /* Le jaune/orange officiel de votre maquette */
     }
 
@@ -868,7 +868,7 @@
     }
 
     .hero-title .text-yellow {
-        color: #f5a623;
+        color: #f5c518;
         /* Applique le jaune sur "Actualités" */
     }
 
@@ -927,7 +927,7 @@
     .filter-btn.active {
         background: #e29513;
         border-color: #e29513;
-        color: #0d1b3e;
+        color: #0f284e;
         font-weight: 700;
     }
 
@@ -968,9 +968,9 @@
     }
 
     .tab.active {
-        background: #f5a623;
-        color: #0d1b3e;
-        border-color: #f5a623;
+        background: #f5c518;
+        color: #0f284e;
+        border-color: #f5c518;
     }
 
     .tab svg {
@@ -1002,14 +1002,14 @@
     .filter-title {
         font-size: 14px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
     }
 
     .filter-reset {
         font-size: 12px;
-        color: #f5a623;
+        color: #f5c518;
         font-weight: 600;
         text-decoration: none;
         cursor: pointer;
@@ -1022,7 +1022,7 @@
     .filter-label {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: .6rem;
         display: block;
     }
@@ -1073,7 +1073,7 @@
     .cb-item input[type="checkbox"] {
         width: 14px;
         height: 14px;
-        accent-color: #0d1b3e;
+        accent-color: #0f284e;
         cursor: pointer;
         flex-shrink: 0;
     }
@@ -1107,7 +1107,7 @@
     }
 
     .apply-btn {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         width: 100%;
         padding: 11px;
@@ -1121,7 +1121,7 @@
     }
 
     .apply-btn:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     /* ── MAIN CONTENT ── */
@@ -1140,10 +1140,10 @@
     .section-heading {
         font-size: 14px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .12em;
         text-transform: uppercase;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 10px;
     }
 
@@ -1187,7 +1187,7 @@
     .une-thumb {
         position: relative;
         height: 160px;
-        background: linear-gradient(135deg, #1a2744 0%, #162552 100%);
+        background: linear-gradient(135deg, #1a2744 0%, #0a1e38 100%);
     }
 
     .une-thumb img {
@@ -1218,7 +1218,7 @@
     }
 
     .badge-communique {
-        background: #1565c0;
+        background: #0f284e;
         color: #fff;
     }
 
@@ -1233,7 +1233,7 @@
     }
 
     .badge-podcast {
-        background: #e65100;
+        background: #f5c518;
         color: #fff;
     }
 
@@ -1268,7 +1268,7 @@
     .play-btn svg {
         width: 14px;
         height: 14px;
-        fill: #0d1b3e;
+        fill: #0f284e;
         margin-left: 2px;
     }
 
@@ -1345,7 +1345,7 @@
     .une-title {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.4;
         margin-bottom: 8px;
     }
@@ -1356,13 +1356,13 @@
         gap: 4px;
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         transition: color .2s;
     }
 
     .une-link:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .une-link svg {
@@ -1841,10 +1841,10 @@
     .rs-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 8px;
         margin-bottom: 1rem;
     }
@@ -1864,7 +1864,7 @@
         width: 52px;
         height: 40px;
         border-radius: 4px;
-        background: linear-gradient(135deg, #0d1b3e 0%, #162552 100%);
+        background: linear-gradient(135deg, #0f284e 0%, #0a1e38 100%);
         flex-shrink: 0;
         overflow: hidden;
     }
@@ -1879,7 +1879,7 @@
     .pop-info .pop-title {
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.35;
         margin-bottom: 4px;
     }
@@ -1908,7 +1908,7 @@
     .nl-rs p {
         font-size: 13px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: 5px;
     }
 
@@ -1936,7 +1936,7 @@
     }
 
     .nl-rs-form button {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-size: 12px;
         font-weight: 700;
@@ -1948,7 +1948,7 @@
     }
 
     .nl-rs-form button:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     /* Stats médias */
@@ -1968,7 +1968,7 @@
     .stat-card .snum {
         font-size: 1.4rem;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
     }
 
@@ -1984,7 +1984,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 3rem 2.5rem 0;
     }
@@ -2317,7 +2317,7 @@
             [
             'type' => 'communique',
             'badge_label' => 'COMMUNIQUÉ',
-            'badge_bg' => '#1565c0',
+            'badge_bg' => '#0f284e',
             'image' => 'Cooo.jpg',
             'duree' => null,
             'show_play' => false,
@@ -2341,7 +2341,7 @@
             [
             'type' => 'video',
             'badge_label' => 'VIDÉO',
-            'badge_bg' => '#162552',
+            'badge_bg' => '#0a1e38',
             'image' => 'Ctr.jpg',
             'duree' => '03:21',
             'show_play' => true,
@@ -2353,7 +2353,7 @@
             [
             'type' => 'podcast',
             'badge_label' => 'PODCAST',
-            'badge_bg' => '#f5a623',
+            'badge_bg' => '#f5c518',
             'image' => 'bo.jpg',
             'duree' => '22:18',
             'show_play' => true,
@@ -2380,7 +2380,7 @@
             $slug = is_array($item) ? $item['slug'] : ($item->slug ?? '#');
             $cta = is_array($item) ? $item['cta_label'] : ($item->cta_label ?? 'Voir le contenu');
             $date = is_array($item) ? $item['date'] : ($item->date ?? now());
-            $badgeBg = is_array($item) ? $item['badge_bg'] : ($item->badge_bg ?? '#162552');
+            $badgeBg = is_array($item) ? $item['badge_bg'] : ($item->badge_bg ?? '#0a1e38');
             $badgeLbl = is_array($item) ? $item['badge_label'] : ($item->badge_label ?? strtoupper($type));
             $showPlay = is_array($item) ? $item['show_play'] : in_array($type, ['video','interview','podcast','livestream']);
 
@@ -2403,7 +2403,7 @@
                     @endif
 
                     {{-- Badge type --}}
-                    <span class="une-badge" style="background:{{ $badgeBg }};{{ $badgeBg === '#f5a623' ? 'color:#0d1b3e' : 'color:#fff' }}">
+                    <span class="une-badge" style="background:{{ $badgeBg }};{{ $badgeBg === '#f5c518' ? 'color:#0f284e' : 'color:#fff' }}">
                         {{ $badgeLbl }}
                     </span>
 
@@ -2411,7 +2411,7 @@
                     @if ($showPlay)
                     <div class="play-overlay">
                         <div class="play-btn">
-                            <svg viewBox="0 0 24 24" fill="#0d1b3e" width="18" height="18">
+                            <svg viewBox="0 0 24 24" fill="#0f284e" width="18" height="18">
                                 <polygon points="5 3 19 12 5 21 5 3" />
                             </svg>
                         </div>
@@ -2598,7 +2598,7 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="sico">
-                        <svg width="20" height="20" viewBox="0 0 24 24" stroke="#162552" fill="none" stroke-width="1.8" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" stroke="#0a1e38" fill="none" stroke-width="1.8" aria-hidden="true">
                             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
                             <polyline points="14 2 14 8 20 8" />
                         </svg>
@@ -2608,7 +2608,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="sico">
-                        <svg width="20" height="20" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="1.8" aria-hidden="true">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                             <circle cx="12" cy="12" r="3" />
                         </svg>
@@ -2647,84 +2647,7 @@
 {{-- ══════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
 
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.5rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text">
-                    <span>Journées économiques et Forum international de</span>l’Emploi de la diaspora gabonaise<br>
-                    <small style="color:#f5a623;font-size:10px">2026</small>
-                </div>
-            </a>
-            <p>Ensemble, construisons l'avenir par l'innovation.</p>
-            <nav class="socials" aria-label="Réseaux sociaux">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="Twitter / X">&#120143;</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-            </nav>
-        </div>
-
-        <div class="fc">
-            <h4>Liens Utiles</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="{{ route('institutionnel') }}">Institutionnel</a>
-            <a href="{{ route('emploi') }}">Emploi &amp; Recrutement</a>
-            <a href="{{ route('cartographie') }}">Cartographie Diaspora</a>
-        </div>
-
-        <div class="fc">
-            <h4>Ressources</h4>
-            <a href="{{ route('actualites') }}">Communiqués</a>
-            <a href="{{ route('dossiers') }}">Dossiers de presse</a>
-            <a href="{{ route('galerie') }}">Galerie médias</a>
-            <a href="{{ route('rapports') }}">Rapports &amp; Études</a>
-            <a href="{{ route('Faq') }}">FAQ</a>
-        </div>
-
-        <div class="fc">
-            <h4>Informations</h4>
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Politique de confidentialité</a>
-            <a href="{{ route('conditions') }}">Conditions d'utilisation</a>
-        </div>
-
-        <div class="fc">
-            <h4>Contact</h4>
-            <div class="fci">
-                <svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12 12 0 00.74 2.9A2 2 0 017.21 7l-1.27 1.27a16 16 0 006.79 6.79L14 13.79a2 2 0 012.18-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z" />
-                </svg>
-                +241 11 22 33 44
-            </div>
-            <div class="fci">
-                <svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>
-                contact@forum-innovation.org
-            </div>
-            <div class="fci">
-                <svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>
-                Libreville, Gabon
-            </div>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        &copy; {{ date('Y') }} CDC site. Tous droits réservés.
-    </div>
-</footer>
+@include('components.footer')
 
 @endsection

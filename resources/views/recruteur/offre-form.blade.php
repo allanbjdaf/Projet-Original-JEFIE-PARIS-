@@ -1,4 +1,4 @@
-{{-- resources/views/recruteur/offre-form.blade.php --}}
+﻿{{-- resources/views/recruteur/offre-form.blade.php --}}
 @extends('layouts.app')
 @section('title', isset($offre) ? 'Modifier l\'offre — Recruteur' : 'Publier une offre — Recruteur')
 @section('styles')
@@ -16,7 +16,7 @@
     }
 
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -37,7 +37,7 @@
     .nav-logo-icon {
         width: 44px;
         height: 44px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -53,7 +53,7 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
@@ -76,8 +76,8 @@
     }
 
     .nav-links a.active {
-        color: #f5a623;
-        border-bottom: 2px solid #f5a623;
+        color: #f5c518;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 700;
     }
@@ -106,8 +106,8 @@
     }
 
     .btn-sinscrire {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 20px;
@@ -125,7 +125,7 @@
     }
 
     .rec-sidebar {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         flex-direction: column;
         padding: 1.5rem 0;
@@ -147,7 +147,7 @@
     }
 
     .rs-brand-title svg {
-        stroke: #f5a623;
+        stroke: #f5c518;
     }
 
     .rs-brand-sub {
@@ -175,8 +175,8 @@
 
     .rs-item.active {
         background: rgba(245, 166, 35, .12);
-        color: #f5a623;
-        border-left-color: #f5a623;
+        color: #f5c518;
+        border-left-color: #f5c518;
         font-weight: 700;
     }
 
@@ -255,7 +255,7 @@
     .page-title {
         font-size: 1.3rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .page-subtitle {
@@ -265,7 +265,7 @@
     }
 
     .btn-primary {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 13px;
@@ -282,7 +282,7 @@
     }
 
     .btn-primary:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .btn-primary svg {
@@ -294,8 +294,8 @@
     }
 
     .btn-or {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 11px 22px;
@@ -316,7 +316,7 @@
 
     .btn-outline {
         background: transparent;
-        color: #0d1b3e;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 10px 20px;
@@ -332,7 +332,7 @@
     }
 
     .btn-outline:hover {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .alert-success {
@@ -376,10 +376,10 @@
     .form-section-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 8px;
         margin-bottom: 1.25rem;
         display: block;
@@ -398,7 +398,7 @@
     .form-label {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         display: block;
         margin-bottom: 5px;
     }
@@ -421,8 +421,8 @@
     }
 
     .form-control:focus {
-        border-color: #0d1b3e;
-        box-shadow: 0 0 0 3px rgba(13, 27, 62, .06);
+        border-color: #0f284e;
+        box-shadow: 0 0 0 3px rgba(15, 40, 78, .06);
     }
 
     .form-control::placeholder {
@@ -463,7 +463,7 @@
     .check-row input {
         width: 16px;
         height: 16px;
-        accent-color: #f5a623;
+        accent-color: #f5c518;
         cursor: pointer;
     }
 
@@ -484,11 +484,11 @@
     .side-card-title {
         font-size: 11px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
         margin-bottom: .85rem;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 8px;
     }
 
@@ -536,7 +536,7 @@
     }
 
     .logo-upload:hover {
-        border-color: #0d1b3e;
+        border-color: #0f284e;
         background: #f8fafc;
     }
 
@@ -577,7 +577,7 @@
     }
 
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2rem 2.5rem 0;
     }
@@ -663,7 +663,7 @@
 @section('content')
 <nav class="nav">
     <a href="{{ route('index') }}" class="nav-logo">
-        <div class="nav-logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
+        <div class="nav-logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="1.8">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg></div>
         <div class="nav-logo-text"><span>JEFIE</span>Paris 2026</div>
@@ -683,7 +683,7 @@
 <div class="rec-layout">
     <aside class="rec-sidebar">
         <div class="rs-brand">
-            <div class="rs-brand-title"><svg width="16" height="16" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="2">
+            <div class="rs-brand-title"><svg width="16" height="16" viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="2">
                     <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                 </svg>Espace Recruteur</div>
             <div class="rs-brand-sub">Portail employeur JEFIE 2026</div>
@@ -889,10 +889,10 @@
                     <div class="side-card">
                         <div class="side-card-title">Aperçu de l'offre</div>
                         <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.85rem">
-                            <div style="font-size:13px;font-weight:700;color:#162552;margin-bottom:4px" id="prev-titre">Titre du poste</div>
+                            <div style="font-size:13px;font-weight:700;color:#0a1e38;margin-bottom:4px" id="prev-titre">Titre du poste</div>
                             <div style="font-size:11px;color:#718096;margin-bottom:6px" id="prev-meta">Entreprise — Lieu</div>
                             <div style="display:flex;gap:6px;flex-wrap:wrap">
-                                <span class="preview-badge" style="background:#e3f2fd;color:#1565c0" id="prev-contrat">CDI</span>
+                                <span class="preview-badge" style="background:#e3f2fd;color:#0f284e" id="prev-contrat">CDI</span>
                                 <span class="preview-badge" style="background:#e8f5e9;color:#2e7d32">Active</span>
                             </div>
                         </div>
@@ -916,26 +916,7 @@
     </main>
 </div>
 
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div>
-            <p style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.6">Plateforme de recrutement officielle JEFIE Paris 2026.</p>
-        </div>
-        <div class="fc">
-            <h4>Recruteurs</h4><a href="{{ route('recruteur.dashboard') }}">Tableau de bord</a><a href="{{ route('recruteur.offres') }}">Mes offres</a><a href="{{ route('recruteur.candidatures') }}">Candidatures</a>
-        </div>
-        <div class="fc">
-            <h4>Candidats</h4><a href="{{ route('emploi') }}">Offres d'emploi</a><a href="{{ route('emploi.candidatures') }}">Mes candidatures</a>
-        </div>
-        <div class="fc">
-            <h4>Contact</h4><a href="{{ route('contact') }}">Nous contacter</a><a href="{{ route('Faq') }}">FAQ</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} JEFIE Paris 2026. Tous droits réservés.</span>
-        <div class="footer-legal"><a href="{{ route('mentions-legales') }}">Mentions légales</a><a href="{{ route('confidentialite') }}">Confidentialité</a></div>
-    </div>
-</footer>
+@include('components.footer')
 
 @push('scripts')
 <script>

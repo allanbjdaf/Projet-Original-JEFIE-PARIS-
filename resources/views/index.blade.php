@@ -1,4 +1,4 @@
-{{-- resources/views/index.blade.php --}}
+﻿{{-- resources/views/index.blade.php --}}
 @extends('layouts.app')
 @section('title', 'JEFIE – PARIS 2026')
 @section('styles')
@@ -17,7 +17,7 @@
 
     /* ══ NAV ══ */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -38,13 +38,13 @@
     .nav-logo-icon {
         width: 46px;
         height: 46px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        background: #0d1b3e;
+        background: #0f284e;
     }
 
     .nav-logo-text {
@@ -59,7 +59,7 @@
         display: block;
         font-size: 12px;
         font-weight: 800;
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .nav-logo-text small {
@@ -85,18 +85,18 @@
     }
 
     .nav-links a:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .nav-links a.active {
-        color: #f5a623;
-        border-bottom: 2px solid #f5a623;
+        color: #f5c518;
+        border-bottom: 2px solid #f5c518;
         font-weight: 700;
     }
 
     .nav-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 11px 26px;
@@ -305,7 +305,7 @@
 
     .nav-dropdown-menu a:hover {
         background: #f4f4f4;
-        color: #f5a623 !important;
+        color: #f5c518 !important;
     }
 
 
@@ -392,7 +392,7 @@
     }
 
     .hero-left h1 .gold {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
     }
 
@@ -421,7 +421,7 @@
     .hero-meta-item svg {
         width: 16px;
         height: 16px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
         flex-shrink: 0;
@@ -434,8 +434,8 @@
     }
 
     .btn-hero-gold {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 14px;
         padding: 13px 26px;
@@ -537,7 +537,7 @@
     .play-circle svg {
         width: 22px;
         height: 22px;
-        fill: #0d1b3e;
+        fill: #0f284e;
         margin-left: 4px;
     }
 
@@ -556,7 +556,7 @@
     .video-caption svg {
         width: 13px;
         height: 13px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 2;
     }
@@ -586,10 +586,10 @@
     .card-title {
         font-size: 13px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .1em;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 10px;
         margin-bottom: .25rem;
     }
@@ -597,7 +597,7 @@
     .card-bar {
         width: 36px;
         height: 2px;
-        background: #f5a623;
+        background: #f5c518;
         margin-bottom: 1rem;
     }
 
@@ -624,7 +624,7 @@
 
     .btn-sm-dark {
         display: inline-block;
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 12px;
@@ -635,7 +635,7 @@
     }
 
     .btn-sm-dark:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .message-inner {
@@ -663,7 +663,7 @@
     .msg-author-name {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .msg-author-role {
@@ -673,7 +673,7 @@
 
     .quote-mark {
         float: right;
-        color: #f5a623;
+        color: #f5c518;
         font-size: 2.5rem;
         line-height: 1;
         margin-left: 6px;
@@ -683,7 +683,7 @@
     .sec-h {
         font-size: 14px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .12em;
         text-transform: uppercase;
         text-align: center;
@@ -693,7 +693,7 @@
     .sec-bar {
         width: 48px;
         height: 3px;
-        background: #f5a623;
+        background: #f5c518;
         border-radius: 2px;
         margin: 0 auto 2.5rem;
     }
@@ -714,13 +714,13 @@
     }
 
     .chiffre-card:hover {
-        box-shadow: 0 4px 16px rgba(13, 27, 62, .08);
+        box-shadow: 0 4px 16px rgba(15, 40, 78, .08);
     }
 
     .chiffre-card svg {
         width: 30px;
         height: 30px;
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         fill: none;
         stroke-width: 1.6;
         margin: 0 auto .85rem;
@@ -730,7 +730,7 @@
     .chiffre-num {
         font-size: 1.9rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
         line-height: 1;
     }
@@ -750,7 +750,7 @@
     }
 
     .appel-card {
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 12px;
         padding: 2rem;
         color: #fff;
@@ -793,7 +793,7 @@
     .role-icon svg {
         width: 22px;
         height: 22px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.7;
     }
@@ -805,8 +805,8 @@
     }
 
     .btn-appel {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 12px 22px;
@@ -886,7 +886,7 @@
     }
 
     .btn-inscr-form {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 13px;
@@ -903,7 +903,7 @@
     }
 
     .btn-inscr-form:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .btn-inscr-form svg {
@@ -961,7 +961,7 @@
     .sec-header-row a {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -971,7 +971,7 @@
     }
 
     .sec-header-row a:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .sec-header-row a svg {
@@ -1001,7 +1001,7 @@
     }
 
     .actu-card:hover {
-        box-shadow: 0 2px 12px rgba(13, 27, 62, .07);
+        box-shadow: 0 2px 12px rgba(15, 40, 78, .07);
     }
 
     .actu-thumb {
@@ -1023,8 +1023,8 @@
         position: absolute;
         top: 5px;
         left: 5px;
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-size: 9px;
         font-weight: 800;
         padding: 3px 7px;
@@ -1048,7 +1048,7 @@
     .actu-title {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.4;
         margin-bottom: 4px;
     }
@@ -1067,7 +1067,7 @@
     .actu-link {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -1076,7 +1076,7 @@
     }
 
     .actu-link:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .actu-link svg {
@@ -1099,7 +1099,7 @@
         overflow: hidden;
         position: relative;
         cursor: pointer;
-        background: #0d1b3e;
+        background: #0f284e;
         aspect-ratio: 16/9;
     }
 
@@ -1132,13 +1132,13 @@
 
     .video-item:hover .vid-play-btn {
         transform: scale(1.1);
-        background: #f5a623;
+        background: #f5c518;
     }
 
     .vid-play-btn svg {
         width: 14px;
         height: 14px;
-        fill: #0d1b3e;
+        fill: #0f284e;
         margin-left: 2px;
     }
 
@@ -1197,7 +1197,7 @@
     }
 
     .partner-logo-box:hover {
-        box-shadow: 0 2px 10px rgba(13, 27, 62, .08);
+        box-shadow: 0 2px 10px rgba(15, 40, 78, .08);
     }
 
     .partner-logo-box img {
@@ -1234,14 +1234,14 @@
     .scroll-btn svg {
         width: 18px;
         height: 18px;
-        stroke: #162552;
+        stroke: #0a1e38;
         fill: none;
         stroke-width: 2;
     }
 
     /* ══ FOOTER ══ */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 3rem 2.5rem 0;
     }
@@ -1341,13 +1341,13 @@
     }
 
     .footer-nl button {
-        background: #f5a623;
+        background: #f5c518;
         border: none;
         border-radius: 5px;
         padding: 10px 18px;
         font-size: 12px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         cursor: pointer;
         white-space: nowrap;
         transition: opacity .2s;
@@ -1688,7 +1688,7 @@
             {{-- ✅ Ajout de id="playBtn" --}}
             <div class="play-circle" id="playBtn">
                 <svg viewBox="0 0 24 24">
-                    <polygon points="5 3 19 12 5 21 5 3" fill="#0d1b3e" />
+                    <polygon points="5 3 19 12 5 21 5 3" fill="#0f284e" />
                 </svg>
             </div>
         </div>
@@ -1697,7 +1697,7 @@
         <div class="video-caption" id="captionBtn" style="cursor: pointer;">
             <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
-                <polygon points="10 8 16 12 10 16 10 8" fill="#f5a623" stroke="none" />
+                <polygon points="10 8 16 12 10 16 10 8" fill="#f5c518" stroke="none" />
             </svg>
             Voir la vidéo officielle
         </div>
@@ -1765,7 +1765,7 @@
                 @foreach ($appels as $a)
                 <div class="role-box">
                     <div class="role-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.7" aria-hidden="true">{!! $a['icon'] !!}</svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="1.7" aria-hidden="true">{!! $a['icon'] !!}</svg>
                     </div>
                     <div class="role-lbl">{{ $a['label'] }}</div>
                 </div>
@@ -1783,7 +1783,7 @@
 
         <div class="inscr-card">
             <div class="inscr-form">
-                <div class="card-title" style="color:#0d1b3e">Inscription</div>
+                <div class="card-title" style="color:#0f284e">Inscription</div>
                 <div class="card-bar"></div>
                 <p class="inscr-sub">Réservez votre place dès maintenant !</p>
                 @if (session('success'))
@@ -1969,71 +1969,7 @@
 
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb-brand">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.5rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff"><span>JEFIE</span><small>Paris 2026</small></div>
-            </a>
-            <p>Plateforme de référence pour promouvoir l'innovation, la collaboration et le développement durable en Afrique et dans le monde.</p>
-            <nav class="socials">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Twitter">&#120143;</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-            </nav>
-        </div>
-        <div class="fc">
-            <h4>Liens Rapides</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('Apropos') }}">À propos</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="{{ route('actualites') }}">Actualités</a>
-            <a href="#">Appels</a>
-            <a href="{{ route('contact') }}">Contact</a>
-        </div>
-        <div class="fc">
-            <h4>Informations</h4>
-            <div class="fci"><svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                </svg>15 - 17 Juin 2026</div>
-            <div class="fci"><svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>Palais des Congrès,<br>Abidjan, Côte d'Ivoire</div>
-            <div class="fci"><svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>contact@forum-innovation.org</div>
-            <div class="fci"><svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81" />
-                </svg>+225 01 23 45 67 89</div>
-        </div>
-        <div class="fc">
-            <h4>Newsletter</h4>
-            <p style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.55;margin-bottom:0">Inscrivez-vous pour recevoir nos actualités.</p>
-            <form action="{{ route('newsletter.subscribe') }}" method="POST">
-                @csrf
-                <div class="footer-nl">
-                    <input type="email" name="email_newsletter" placeholder="Votre email" required>
-                    <button type="submit">S'abonner</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} CDC site. Tous droits réservés.</span>
-        <div class="footer-legal-links">
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Politique de confidentialité</a>
-        </div>
-    </div>
-</footer>
+
+@include('components.footer')
 
 @endsection

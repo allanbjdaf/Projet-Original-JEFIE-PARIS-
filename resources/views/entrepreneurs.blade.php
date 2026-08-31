@@ -1,4 +1,4 @@
-{{-- resources/views/entrepreneurs/dashboard.blade.php --}}
+﻿{{-- resources/views/entrepreneurs/dashboard.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'JEFIE PARIS 2026')
@@ -19,7 +19,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -40,7 +40,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -57,13 +57,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -88,7 +88,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -118,8 +118,8 @@
     }
 
     .nav-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 12px;
         padding: 9px 16px;
@@ -274,7 +274,7 @@
    SIDEBAR GAUCHE
 ══════════════════════════════════ */
     .left-sidebar {
-        background: #0d1b3e;
+        background: #0f284e;
         border-right: 1px solid #fff;
         padding: 1.25rem 0;
         display: flex;
@@ -288,7 +288,7 @@
     .ls-header-title {
         font-size: 11px;
         font-weight: 900;
-        color: #f5a623;
+        color: #f5c518;
         text-transform: uppercase;
         letter-spacing: .06em;
     }
@@ -296,7 +296,7 @@
     .ls-header-sub {
         font-size: 12px;
         font-weight: 800;
-        color: #f5a623;
+        color: #f5c518;
         letter-spacing: .05em;
     }
 
@@ -315,7 +315,7 @@
 
     .ls-item:hover {
         background: #f4f6fa;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .ls-item.active {
@@ -323,7 +323,7 @@
         color: #fff;
 
         font-weight: 700;
-        border-left-color: #f5a623;
+        border-left-color: #f5c518;
     }
 
     .ls-item svg {
@@ -336,13 +336,13 @@
     }
 
     .ls-item.active svg {
-        stroke: #f5a623;
+        stroke: #f5c518;
     }
 
     .ls-badge-count {
         margin-left: auto;
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-size: 10px;
         font-weight: 800;
         min-width: 18px;
@@ -389,7 +389,7 @@
     .ls-community-icon svg {
         width: 32px;
         height: 32px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.5;
     }
@@ -409,8 +409,8 @@
     }
 
     .ls-community-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 11px;
         padding: 8px 12px;
@@ -440,7 +440,7 @@
 
     /* HERO BANNER */
     .hero-banner {
-        background: linear-gradient(108deg, #060e20 0%, #0d1b3e 45%, rgba(13, 27, 62, 0.75) 75%, rgba(15, 42, 94, 0.4) 100%),
+        background: linear-gradient(108deg, #060e20 0%, #0f284e 45%, rgba(15, 40, 78, 0.75) 75%, rgba(15, 42, 94, 0.4) 100%),
             url('/images/dov.png');
         padding: 4rem 2.5rem 3.5rem;
         overflow: hidden;
@@ -502,7 +502,7 @@
     }
 
     .hero-title span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
     }
 
@@ -521,8 +521,8 @@
     }
 
     .btn-gold {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 11px 22px;
@@ -604,7 +604,7 @@
     .hstat-icon svg {
         width: 16px;
         height: 16px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
     }
@@ -612,14 +612,14 @@
     .hstat-num {
         font-size: 1rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
         line-height: 1;
     }
 
     .hstat-lbl {
         font-size: 10px;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-top: 2px;
     }
 
@@ -652,7 +652,7 @@
     .hero-pin svg {
         width: 20px;
         height: 20px;
-        fill: #f5a623;
+        fill: #f5c518;
     }
 
     .hero-pin-pulse {
@@ -710,17 +710,17 @@
     .sec-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 10px;
     }
 
     .sec-link {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -730,7 +730,7 @@
     }
 
     .sec-link:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .sec-link svg {
@@ -753,7 +753,7 @@
     .search-bar-title {
         font-size: 13px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: .75rem;
     }
 
@@ -789,7 +789,7 @@
     }
 
     .search-btn {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 12px;
@@ -805,7 +805,7 @@
     }
 
     .search-btn:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .search-btn svg {
@@ -846,7 +846,7 @@
     }
 
     .ent-card:hover {
-        box-shadow: 0 2px 12px rgba(13, 27, 62, .08);
+        box-shadow: 0 2px 12px rgba(15, 40, 78, .08);
     }
 
     .ent-card-top {
@@ -860,7 +860,7 @@
         height: 44px;
         border-radius: 50%;
         object-fit: cover;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         flex-shrink: 0;
         overflow: hidden;
         display: flex;
@@ -885,7 +885,7 @@
     .ent-name {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.3;
     }
 
@@ -905,7 +905,7 @@
 
     .sector-tech {
         background: #e3f2fd;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .sector-agri {
@@ -920,7 +920,7 @@
 
     .sector-commerce {
         background: #fff3e0;
-        color: #e65100;
+        color: #f5c518;
     }
 
     .ent-meta {
@@ -956,7 +956,7 @@
     .ent-profile-btn {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -968,9 +968,9 @@
     }
 
     .ent-profile-btn:hover {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .ent-profile-btn svg {
@@ -996,7 +996,7 @@
     }
 
     .fav-btn:hover {
-        border-color: #f5a623;
+        border-color: #f5c518;
     }
 
     .fav-btn svg {
@@ -1043,7 +1043,7 @@
     }
 
     .opp-icon.part svg {
-        stroke: #1565c0;
+        stroke: #0f284e;
     }
 
     .opp-icon.inv {
@@ -1059,7 +1059,7 @@
     }
 
     .opp-icon.coop svg {
-        stroke: #e65100;
+        stroke: #f5c518;
     }
 
     .opp-icon svg {
@@ -1081,7 +1081,7 @@
     .opp-title {
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.35;
     }
 
@@ -1101,7 +1101,7 @@
 
     /* Forum card */
     .forum-card {
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 8px;
         padding: 1.25rem;
     }
@@ -1138,15 +1138,15 @@
     .forum-check svg {
         width: 13px;
         height: 13px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 2.5;
         flex-shrink: 0;
     }
 
     .forum-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 12px;
         padding: 10px;
@@ -1202,7 +1202,7 @@
     .rdv-day {
         font-size: 13px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         line-height: 1;
     }
 
@@ -1216,7 +1216,7 @@
     .rdv-title {
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 2px;
     }
 
@@ -1252,7 +1252,7 @@
     .rs-title {
         font-size: 11px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .08em;
         text-transform: uppercase;
         margin-bottom: .75rem;
@@ -1275,7 +1275,7 @@
     .rs-link {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -1303,7 +1303,7 @@
         height: 52px;
         border-radius: 50%;
         flex-shrink: 0;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -1321,7 +1321,7 @@
     .profil-name {
         font-size: 14px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .profil-role {
@@ -1374,7 +1374,7 @@
     }
 
     .progress-label strong {
-        color: #0d1b3e;
+        color: #0f284e;
         font-weight: 700;
     }
 
@@ -1387,7 +1387,7 @@
 
     .progress-fill {
         height: 100%;
-        background: linear-gradient(90deg, #f5a623, #e09010);
+        background: linear-gradient(90deg, #f5c518, #e09010);
         border-radius: 4px;
     }
 
@@ -1409,7 +1409,7 @@
     .info-row svg {
         width: 14px;
         height: 14px;
-        stroke: #162552;
+        stroke: #0a1e38;
         fill: none;
         stroke-width: 1.8;
         flex-shrink: 0;
@@ -1425,14 +1425,14 @@
 
     .info-val {
         font-size: 11px;
-        color: #162552;
+        color: #0a1e38;
         font-weight: 600;
         line-height: 1.35;
     }
 
     .edit-link {
         font-size: 11px;
-        color: #f5a623;
+        color: #f5c518;
         font-weight: 600;
         text-decoration: none;
         display: inline-flex;
@@ -1500,7 +1500,7 @@
     }
 
     .part-row-val {
-        color: #162552;
+        color: #0a1e38;
         font-weight: 600;
     }
 
@@ -1510,7 +1510,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
     }
@@ -1609,7 +1609,7 @@
     }
 
     .footer-nl-form button {
-        background: #f5a623;
+        background: #f5c518;
         border: none;
         border-radius: 4px;
         width: 36px;
@@ -1629,7 +1629,7 @@
     .footer-nl-form button svg {
         width: 14px;
         height: 14px;
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         fill: none;
         stroke-width: 2;
     }
@@ -2223,98 +2223,7 @@
 </div>{{-- /.page-layout --}}
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
 
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.4rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff">
-                    <span>Journées économiques et Forum international de</span>l’Emploi de la diaspora gabonaise<br><small>Paris 2026</small>
-                </div>
-            </a>
-            <p>L'annuaire de la diaspora. Un réseau d'entrepreneurs gabonais talentueux à travers le monde.</p>
-            <a href="{{ route('entrepreneurs.annuaire') }}" style="display:inline-block;background:rgba(255,255,255,.1);color:#fff;font-size:11px;font-weight:700;padding:7px 14px;border-radius:4px;text-decoration:none;margin-bottom:.75rem;border:1px solid rgba(255,255,255,.15)">
-                Découvrir l'annuaire
-            </a>
-            <nav class="socials" aria-label="Réseaux sociaux">
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Twitter">&#120143;</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-                <a href="#" aria-label="Instagram">&#9752;</a>
-            </nav>
-        </div>
-
-        <div class="fc">
-            <h4>Liens Utiles</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="{{ route('institutionnel') }}">Institutions</a>
-            <a href="{{ route('partenaires') }}">Entreprises &amp; Partenaires</a>
-            <a href="{{ route('actualites') }}">Actualités</a>
-        </div>
-
-        <div class="fc">
-            <h4>Ressources</h4>
-            <a href="{{ route('entrepreneurs.guides') }}">Guide de l'entrepreneur</a>
-            <a href="{{ route('entrepreneurs.financements') }}">Financements &amp; aides</a>
-            <a href="#">Outils pratiques</a>
-            <a href="#">Mentorat</a>
-            <a href="{{ route('Faq') }}">FAQ</a>
-        </div>
-
-        <div class="fc">
-            <h4>Contact</h4>
-            <div class="fci">
-                <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>
-                diaspora@forum-innovation.org
-            </div>
-            <div class="fci">
-                <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12 12 0 00.74 2.9A2 2 0 017.21 7l-1.27 1.27a16 16 0 006.79 6.79L14 13.79a2 2 0 012.18-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z" />
-                </svg>
-                +33 1 45 67 89 10
-            </div>
-            <div class="fci">
-                <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>
-                Paris, France
-            </div>
-        </div>
-
-        <div class="fc" style="grid-column: span 2">
-
-            <h4 style="margin-top:.5rem">Newsletter Diaspora</h4>
-            <p style="font-size:11px;color:rgba(255,255,255,.55);margin-bottom:0;line-height:1.5">Recevez nos actualités et opportunités</p>
-            <form action="{{ route('newsletter.subscribe') }}" method="POST">
-                @csrf
-                <div class="footer-nl-form">
-                    <input type="email" name="email_newsletter" placeholder="Votre adresse email" required>
-                    <button type="submit" aria-label="S'abonner">
-                        <svg viewBox="0 0 24 24">
-                            <line x1="22" y1="2" x2="11" y2="13" />
-                            <polygon points="22 2 15 22 11 13 2 9 22 2" fill="currentColor" />
-                        </svg>
-                    </button>
-                </div>
-            </form>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        &copy; {{ date('Y') }} CDC site. Tous droits réservés.
-    </div>
-</footer>
+@include('components.footer')
 
 @endsection

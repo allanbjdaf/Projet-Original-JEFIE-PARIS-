@@ -1,4 +1,4 @@
-{{-- resources/views/actualites/index.blade.php --}}
+﻿{{-- resources/views/actualites/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'Actualités & Annonces — Forum International de l\'Innovation 2026')
@@ -19,7 +19,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -40,7 +40,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -57,13 +57,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -88,7 +88,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -116,8 +116,8 @@
     }
 
     .btn-inscr {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 22px;
@@ -318,7 +318,7 @@
         gap: 7px;
         background: rgba(245, 166, 35, .12);
         border: 1px solid rgba(245, 166, 35, .3);
-        color: #f5a623;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 700;
         letter-spacing: .1em;
@@ -339,7 +339,7 @@
     }
 
     .hero h1 span {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .hero-desc {
@@ -372,12 +372,12 @@
     }
 
     .hero-search-input:focus {
-        border-color: #f5a623;
+        border-color: #f5c518;
     }
 
     .hero-search-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 11px 20px;
@@ -424,7 +424,7 @@
     .stat-num {
         font-size: 1.3rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .stat-lbl {
@@ -468,8 +468,8 @@
     }
 
     .cat-btn:hover {
-        border-color: #0d1b3e;
-        color: #0d1b3e;
+        border-color: #0f284e;
+        color: #0f284e;
     }
 
     .cat-btn.active {
@@ -501,13 +501,13 @@
         justify-content: space-between;
         margin-bottom: 1.25rem;
         padding-bottom: .75rem;
-        border-bottom: 3px solid #f5a623;
+        border-bottom: 3px solid #f5c518;
     }
 
     .articles-title {
         font-size: 13px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
         display: flex;
@@ -519,7 +519,7 @@
         content: '';
         width: 4px;
         height: 18px;
-        background: #f5a623;
+        background: #f5c518;
         border-radius: 2px;
     }
 
@@ -547,7 +547,7 @@
     }
 
     .article-card:hover {
-        box-shadow: 0 4px 18px rgba(13, 27, 62, .1);
+        box-shadow: 0 4px 18px rgba(15, 40, 78, .1);
         transform: translateY(-2px);
     }
 
@@ -555,7 +555,7 @@
         height: 180px;
         overflow: hidden;
         position: relative;
-        background: #0d1b3e;
+        background: #0f284e;
         flex-shrink: 0;
     }
 
@@ -572,7 +572,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
     }
 
     .ac-thumb-placeholder svg {
@@ -623,7 +623,7 @@
     .ac-title {
         font-size: 13px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.4;
         flex: 1;
     }
@@ -641,7 +641,7 @@
     .ac-link {
         font-size: 12px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         display: inline-flex;
         align-items: center;
         gap: 4px;
@@ -650,7 +650,7 @@
     }
 
     .ac-link:hover {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .ac-link svg {
@@ -724,7 +724,7 @@
         justify-content: center;
         font-size: 13px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         transition: all .2s;
         background: #fff;
@@ -732,14 +732,14 @@
     }
 
     .page-btn:hover {
-        border-color: #0d1b3e;
-        color: #0d1b3e;
+        border-color: #0f284e;
+        color: #0f284e;
     }
 
     .page-btn.active {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .page-btn.arrow svg {
@@ -777,11 +777,11 @@
     .rs-title {
         font-size: 11px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
         margin-bottom: .85rem;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 8px;
     }
 
@@ -805,7 +805,7 @@
         border-radius: 6px;
         overflow: hidden;
         flex-shrink: 0;
-        background: #0d1b3e;
+        background: #0f284e;
     }
 
     .rec-thumb img {
@@ -823,14 +823,14 @@
     .rec-title {
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.35;
         margin-bottom: 3px;
         transition: color .2s;
     }
 
     .rec-item:hover .rec-title {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .rec-date {
@@ -840,7 +840,7 @@
 
     /* ── NEWSLETTER SIDEBAR ── */
     .nl-card {
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 10px;
         padding: 1.25rem;
     }
@@ -859,7 +859,7 @@
     .nl-icon svg {
         width: 20px;
         height: 20px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
     }
@@ -901,8 +901,8 @@
     }
 
     .nl-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 11px;
@@ -949,7 +949,7 @@
         border-radius: 6px;
         overflow: hidden;
         flex-shrink: 0;
-        background: #0d1b3e;
+        background: #0f284e;
     }
 
     .rec-thumb img {
@@ -968,14 +968,14 @@
     .rec-title {
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.35;
         margin-bottom: 3px;
         transition: color .2s;
     }
 
     .rec-item:hover .rec-title {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .rec-date {
@@ -1001,7 +1001,7 @@
     .cat-name {
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -1016,17 +1016,17 @@
     }
 
     .cat-item:hover .cat-name {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .cat-item:hover .cat-name svg {
-        stroke: #f5a623;
+        stroke: #f5c518;
     }
 
     .cat-count {
         font-size: 11px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         background: #f0f4f8;
         padding: 2px 9px;
         border-radius: 10px;
@@ -1035,7 +1035,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
         margin-top: 2rem;
@@ -1300,7 +1300,7 @@
                 'image' => 'Cooo.jpg',
                 'categorie' => 'annonce',
                 'badge' => 'ANNONCE',
-                'badge_bg' => '#1565c0',
+                'badge_bg' => '#0f284e',
                 'date' => '15 Mai 2026',
                 'titre' => "Lancement officiel du Forum International de l'Innovation 2026",
                 'extrait' => "Le Forum International de l'Innovation 2026 ouvre officiellement ses portes. Rejoignez plus de 5 000 participants venus de 50 pays pour trois jours d'échanges, de rencontres et d'opportunités uniques.",
@@ -1322,7 +1322,7 @@
                 'image' => 'CGFjpg.jpg',
                 'categorie' => 'annonce',
                 'badge' => 'APPEL',
-                'badge_bg' => '#f5a623',
+                'badge_bg' => '#f5c518',
                 'date' => '28 Avr. 2026',
                 'titre' => "Appel à communication ouvert aux chercheurs et experts",
                 'extrait' => "Soumettez vos propositions d'interventions avant le 30 mai 2026.",
@@ -1385,7 +1385,7 @@
                     $slug = is_array($actu) ? $actu['slug'] : ($actu->slug ?? '#');
                     $date = is_array($actu) ? $actu['date'] : ($actu->date ?? now());
                     $badge = is_array($actu) ? $actu['badge'] : strtoupper($actu->categorie ?? 'ACTUALITÉ');
-                    $badgeBg = is_array($actu) ? $actu['badge_bg'] : '#162552';
+                    $badgeBg = is_array($actu) ? $actu['badge_bg'] : '#0a1e38';
                     $featured = is_array($actu) ? ($actu['featured'] ?? false) : false;
                     $dateStr = is_string($date) ? $date : \Carbon\Carbon::parse($date)->translatedFormat('d M Y');
                     @endphp
@@ -1402,7 +1402,7 @@
                                 </svg>
                             </div>
                             @endif
-                            <span class="ac-badge" style="background:{{ $badgeBg }};{{ $badgeBg==='#f5a623'?'color:#0d1b3e':'' }}">{{ $badge }}</span>
+                            <span class="ac-badge" style="background:{{ $badgeBg }};{{ $badgeBg==='#f5c518'?'color:#0f284e':'' }}">{{ $badge }}</span>
                         </div>
                         <div class="ac-body">
                             <div class="ac-date">
@@ -1539,76 +1539,7 @@
 
         {{-- ══ FOOTER ══ --}}
 
-        <footer class="site-footer">
-            <div class="footer-grid">
-                <div class="fb">
-                    <a href="http://127.0.0.1:8000/accueil-alias-index" class="nav-logo" style="margin-bottom:.4rem">
-                        <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                            <img src="http://127.0.0.1:8000/images/264.png"
-                                alt="Logo JEFIE Paris 2026"
-                                style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                        </div>
-                        <div class="nav-logo-text" style="color:#fff"><span>Forum International</span>de l'Innovation<br><small>2026</small></div>
-                    </a>
-                    <p>Le rendez-vous mondial des décideurs, innovateurs et entrepreneurs engagés pour un avenir durable.</p>
-                    <nav class="socials">
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
-                        <a href="#" aria-label="Twitter">&#120143;</a>
-                        <a href="#" aria-label="YouTube">&#9654;</a>
-                        <a href="#" aria-label="Instagram">&#9752;</a>
-                    </nav>
-                </div>
-                <div class="fc">
-                    <h4>Navigation</h4>
-                    <a href="http://127.0.0.1:8000/accueil-alias-index">Accueil</a>
-                    <a href="http://127.0.0.1:8000/programme">Programme</a>
-                    <a href="http://127.0.0.1:8000/institutionnel">Institutionnel</a>
-                    <a href="http://127.0.0.1:8000">Partenaires</a>
-                    <a href="http://127.0.0.1:8000/actualites">Actualités</a>
-                    <a href="http://127.0.0.1:8000/a-propos">À propos</a>
-                </div>
-                <div class="fc">
-                    <h4>Participer</h4>
-                    <a href="http://127.0.0.1:8000/inscription">S'inscrire</a>
-                    <a href="http://127.0.0.1:8000/partenaires/devenir">Devenir partenaire</a>
-                    <a href="http://127.0.0.1:8000/emploi">Emploi &amp; Recrutement</a>
-                    <a href="http://127.0.0.1:8000/cartographie">Cartographie Diaspora</a>
-                    <a href="http://127.0.0.1:8000/faq">FAQ</a>
-                </div>
-                <div class="fc">
-                    <h4>Contact</h4>
-                    <div class="fci">
-                        <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                            <rect x="2" y="4" width="20" height="16" rx="2" />
-                            <path d="M2 7l10 7 10-7" />
-                        </svg>
-                        contact@forum-innovation.org
-                    </div>
-                    <div class="fci">
-                        <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81" />
-                        </svg>
-                        +221 33 123 45 67
-                    </div>
-                    <div class="fci">
-                        <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        Paris, France &amp; Dakar, Sénégal
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span class="footer-copy">&copy; 2026 Forum International de l'Innovation. Tous droits réservés.</span>
-                <div class="footer-legal">
-                    <a href="http://127.0.0.1:8000/mentions-legales">Mentions légales</a>
-                    <a href="http://127.0.0.1:8000/confidentialite">Confidentialité</a>
-                    <a href="http://127.0.0.1:8000/conditions-utilisation">CGU</a>
-                </div>
-            </div>
-        </footer>
+@include('components.footer')
 
 
 

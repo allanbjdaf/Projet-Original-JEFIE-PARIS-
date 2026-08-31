@@ -1,4 +1,4 @@
-    {{-- resources/views/mon-espace/dashboard.blade.php --}}
+﻿    {{-- resources/views/mon-espace/dashboard.blade.php --}}
     <!DOCTYPE html>
     <html lang="fr">
 
@@ -36,7 +36,7 @@
             }
 
             .pp-row strong {
-                color: #0d1b3e;
+                color: #0f284e;
             }
 
             .pp-bar {
@@ -48,14 +48,14 @@
 
             .pp-fill {
                 height: 100%;
-                background: linear-gradient(90deg, #f5a623, #e09010);
+                background: linear-gradient(90deg, #f5c518, #e09010);
                 border-radius: 3px;
                 transition: width .6s;
             }
 
             .pp-tip {
                 font-size: 10px;
-                color: #f5a623;
+                color: #f5c518;
                 margin-top: 4px;
             }
 
@@ -85,13 +85,13 @@
             }
 
             .main-tab.active {
-                color: #0d1b3e;
-                border-bottom-color: #f5a623;
+                color: #0f284e;
+                border-bottom-color: #f5c518;
                 background: #fff8e6;
             }
 
             .main-tab:hover {
-                color: #0d1b3e;
+                color: #0f284e;
                 background: #fafbfc;
             }
 
@@ -124,13 +124,13 @@
 
             .subnav-item:hover {
                 background: #f4f6fa;
-                color: #0d1b3e;
+                color: #0f284e;
             }
 
             .subnav-item.active {
                 background: #fff8e6;
-                color: #0d1b3e;
-                border-left-color: #f5a623;
+                color: #0f284e;
+                border-left-color: #f5c518;
                 font-weight: 700;
             }
 
@@ -163,13 +163,13 @@
 
             .subnav-badge.blue {
                 background: #e3f2fd;
-                color: #1565c0;
+                color: #0f284e;
             }
 
             /* Lien rapide vers espace dédié */
             .go-espace {
                 margin: 1rem 1.25rem;
-                background: linear-gradient(108deg, #0d1b3e, #162552);
+                background: linear-gradient(108deg, #0f284e, #0a1e38);
                 border-radius: 10px;
                 padding: 1rem;
                 text-decoration: none;
@@ -197,7 +197,7 @@
             .go-espace-icon svg {
                 width: 18px;
                 height: 18px;
-                stroke: #f5a623;
+                stroke: #f5c518;
                 fill: none;
                 stroke-width: 1.7;
             }
@@ -272,7 +272,7 @@
 
             .notif.info {
                 background: #e3f2fd;
-                color: #1565c0;
+                color: #0f284e;
                 border: 1px solid #bbdefb;
             }
 
@@ -324,7 +324,7 @@
 
             /* Suite de votre CSS inchangé */
             .welcome-header {
-                background: linear-gradient(108deg, #0d1b3e, #162552);
+                background: linear-gradient(108deg, #0f284e, #0a1e38);
                 border-radius: 14px;
                 padding: 1.5rem;
                 display: flex;
@@ -396,8 +396,8 @@
             }
 
             .btn-wh-primary {
-                background: #f5a623;
-                color: #0d1b3e;
+                background: #f5c518;
+                color: #0f284e;
             }
 
             .btn-wh-primary:hover {
@@ -434,7 +434,7 @@
             }
 
             .stat-card:hover {
-                box-shadow: 0 4px 14px rgba(13, 27, 62, .08);
+                box-shadow: 0 4px 14px rgba(15, 40, 78, .08);
             }
 
             .stat-icon {
@@ -458,7 +458,7 @@
             .stat-num {
                 font-size: 1.4rem;
                 font-weight: 900;
-                color: #0d1b3e;
+                color: #0f284e;
                 display: block;
                 line-height: 1;
             }
@@ -503,7 +503,7 @@
             .card-title {
                 font-size: 12px;
                 font-weight: 900;
-                color: #0d1b3e;
+                color: #0f284e;
                 text-transform: uppercase;
                 letter-spacing: .08em;
                 display: flex;
@@ -515,14 +515,14 @@
                 content: '';
                 width: 3px;
                 height: 16px;
-                background: #f5a623;
+                background: #f5c518;
                 border-radius: 2px;
             }
 
             .card-link {
                 font-size: 12px;
                 font-weight: 700;
-                color: #162552;
+                color: #0a1e38;
                 text-decoration: none;
                 display: inline-flex;
                 align-items: center;
@@ -561,7 +561,7 @@
 
             td {
                 font-size: 12px;
-                color: #162552;
+                color: #0a1e38;
                 padding: 12px 14px;
                 border-bottom: 1px solid #f0f4f8;
                 vertical-align: middle;
@@ -608,7 +608,7 @@
 
             .b-en_cours {
                 background: #e3f2fd;
-                color: #1565c0;
+                color: #0f284e;
             }
 
             .b-accepte {
@@ -623,7 +623,7 @@
 
             .b-standard {
                 background: #e3f2fd;
-                color: #1565c0;
+                color: #0f284e;
                 border: 1px solid #bbdefb;
             }
 
@@ -646,7 +646,7 @@
 
             /* Billet */
             .billet-card {
-                background: linear-gradient(135deg, #0d1b3e 0%, #162552 60%, #1a3a72 100%);
+                background: linear-gradient(135deg, #0f284e 0%, #0a1e38 60%, #1a3a72 100%);
                 border-radius: 14px;
                 padding: 1.5rem;
                 color: #fff;
@@ -670,7 +670,7 @@
             .billet-icon svg {
                 width: 32px;
                 height: 32px;
-                stroke: #f5a623;
+                stroke: #f5c518;
                 fill: none;
                 stroke-width: 1.6;
             }
@@ -680,7 +680,7 @@
             }
 
             .billet-num {
-                color: #f5a623;
+                color: #f5c518;
                 font-size: 11px;
                 font-weight: 700;
                 text-transform: uppercase;
@@ -733,8 +733,8 @@
             }
 
             .bs-attente {
-                background: #f5a623;
-                color: #0d1b3e;
+                background: #f5c518;
+                color: #0f284e;
             }
 
             /* Items RDV / Alertes */
@@ -753,7 +753,7 @@
             .rdv-date-box {
                 width: 44px;
                 height: 44px;
-                background: #0d1b3e;
+                background: #0f284e;
                 border-radius: 8px;
                 display: flex;
                 flex-direction: column;
@@ -763,7 +763,7 @@
             }
 
             .rdv-day {
-                color: #f5a623;
+                color: #f5c518;
                 font-size: 1rem;
                 font-weight: 900;
                 line-height: 1;
@@ -782,7 +782,7 @@
             .rdv-titre {
                 font-size: 12px;
                 font-weight: 700;
-                color: #162552;
+                color: #0a1e38;
             }
 
             .rdv-sub {
@@ -836,7 +836,7 @@
             .offre-titre {
                 font-size: 12px;
                 font-weight: 700;
-                color: #162552;
+                color: #0a1e38;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -870,9 +870,9 @@
             }
 
             .qa-btn:hover {
-                border-color: #0d1b3e;
+                border-color: #0f284e;
                 background: #fff;
-                box-shadow: 0 2px 8px rgba(13, 27, 62, .08);
+                box-shadow: 0 2px 8px rgba(15, 40, 78, .08);
             }
 
             .qa-icon {
@@ -895,7 +895,7 @@
             .qa-label {
                 font-size: 11px;
                 font-weight: 700;
-                color: #162552;
+                color: #0a1e38;
                 line-height: 1.3;
             }
 
@@ -943,7 +943,7 @@
 
             /* ── FOOTER ── */
             .site-footer {
-                background: #0d1b3e;
+                background: #0f284e;
                 color: rgba(255, 255, 255, .7);
                 padding: 3rem 2.5rem 0;
             }
@@ -1099,18 +1099,18 @@
                             $roleConfig = [
                             'admin' => ['Admin','#c2185b','#fce4ec'],
                             'super_admin' => ['Super Admin','#c2185b','#fce4ec'],
-                            'recruteur' => ['Recruteur','#1565c0','#e3f2fd'],
+                            'recruteur' => ['Recruteur','#0f284e','#e3f2fd'],
                             'partenaire' => ['Partenaire','#b07d10','#fff8e6'],
                             'entrepreneur' => ['Entrepreneur','#2e7d32','#e8f5e9'],
                             'institution' => ['Institution','#00838f','#e0f7fa'],
                             'candidat' => ['Candidat','#6a1b9a','#ede7f6'],
-                            'participant_forum' => ['Participant','#1565c0','#e3f2fd'],
-                            'moderateur' => ['Modérateur','#e65100','#fff3e0'],
+                            'participant_forum' => ['Participant','#0f284e','#e3f2fd'],
+                            'moderateur' => ['Modérateur','#f5c518','#fff3e0'],
                             'intervenant' => ['Intervenant','#2e7d32','#e8f5e9'],
                             'visiteur' => ['Visiteur','#718096','#f0f4f8'],
                             'benevole' => ['Bénévole','#00838f','#e0f7fa'],
                             'editeur' => ['Éditeur','#6a1b9a','#ede7f6'],
-                            'support' => ['Support','#e65100','#fff3e0'],
+                            'support' => ['Support','#f5c518','#fff3e0'],
                             ];
                             $rl = $roleConfig[$role] ?? ['Utilisateur','#718096','#f0f4f8'];
                             @endphp
@@ -1486,19 +1486,19 @@
                 </div>
                 <div class="billet-qr">
                     <svg viewBox="0 0 50 50" fill="none">
-                        <rect x="2" y="2" width="18" height="18" rx="2" stroke="#0d1b3e" stroke-width="2.5" />
-                        <rect x="7" y="7" width="8" height="8" fill="#0d1b3e" />
-                        <rect x="30" y="2" width="18" height="18" rx="2" stroke="#0d1b3e" stroke-width="2.5" />
-                        <rect x="35" y="7" width="8" height="8" fill="#0d1b3e" />
-                        <rect x="2" y="30" width="18" height="18" rx="2" stroke="#0d1b3e" stroke-width="2.5" />
-                        <rect x="7" y="35" width="8" height="8" fill="#0d1b3e" />
-                        <rect x="30" y="30" width="4" height="4" fill="#0d1b3e" />
-                        <rect x="36" y="30" width="4" height="4" fill="#0d1b3e" />
-                        <rect x="42" y="30" width="4" height="4" fill="#0d1b3e" />
-                        <rect x="30" y="36" width="4" height="4" fill="#0d1b3e" />
-                        <rect x="42" y="36" width="4" height="4" fill="#0d1b3e" />
-                        <rect x="30" y="42" width="4" height="4" fill="#0d1b3e" />
-                        <rect x="42" y="42" width="4" height="4" fill="#0d1b3e" />
+                        <rect x="2" y="2" width="18" height="18" rx="2" stroke="#0f284e" stroke-width="2.5" />
+                        <rect x="7" y="7" width="8" height="8" fill="#0f284e" />
+                        <rect x="30" y="2" width="18" height="18" rx="2" stroke="#0f284e" stroke-width="2.5" />
+                        <rect x="35" y="7" width="8" height="8" fill="#0f284e" />
+                        <rect x="2" y="30" width="18" height="18" rx="2" stroke="#0f284e" stroke-width="2.5" />
+                        <rect x="7" y="35" width="8" height="8" fill="#0f284e" />
+                        <rect x="30" y="30" width="4" height="4" fill="#0f284e" />
+                        <rect x="36" y="30" width="4" height="4" fill="#0f284e" />
+                        <rect x="42" y="30" width="4" height="4" fill="#0f284e" />
+                        <rect x="30" y="36" width="4" height="4" fill="#0f284e" />
+                        <rect x="42" y="36" width="4" height="4" fill="#0f284e" />
+                        <rect x="30" y="42" width="4" height="4" fill="#0f284e" />
+                        <rect x="42" y="42" width="4" height="4" fill="#0f284e" />
                     </svg>
                 </div>
             </div>
@@ -1506,15 +1506,15 @@
             <div class="card" style="margin-bottom:1.25rem;border:2px dashed #e2e8f0">
                 <div style="padding:1.25rem;display:flex;align-items:center;gap:14px">
                     <div style="width:48px;height:48px;background:#fff8e6;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="#f5a623" fill="none" stroke-width="1.7">
+                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="#f5c518" fill="none" stroke-width="1.7">
                             <path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6M12 3v9M9 9l3 3 3-3" />
                         </svg>
                     </div>
                     <div style="flex:1">
-                        <div style="font-size:13px;font-weight:700;color:#0d1b3e;margin-bottom:3px">Vous n'avez pas encore de billet</div>
+                        <div style="font-size:13px;font-weight:700;color:#0f284e;margin-bottom:3px">Vous n'avez pas encore de billet</div>
                         <div style="font-size:12px;color:#718096">Inscrivez-vous au Forum JEFIE Paris 2026 pour obtenir votre badge et QR Code d'accès.</div>
                     </div>
-                    <a href="{{ route('inscription') }}" style="background:#f5a623;color:#0d1b3e;font-weight:700;font-size:12px;padding:10px 18px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:opacity .2s">S'inscrire →</a>
+                    <a href="{{ route('inscription') }}" style="background:#f5c518;color:#0f284e;font-weight:700;font-size:12px;padding:10px 18px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:opacity .2s">S'inscrire →</a>
                 </div>
             </div>
             @endif
@@ -1560,7 +1560,7 @@
                 ];
                 $ic = $icones[$s['icon']] ?? '
                 <circle cx="12" cy="12" r="10" />';
-                $bgMap = ['#1565c0'=>'#e3f2fd','#2e7d32'=>'#e8f5e9','#f5a623'=>'#fff8e6','#6a1b9a'=>'#ede7f6','#c2185b'=>'#fce4ec','#e65100'=>'#fff3e0'];
+                $bgMap = ['#0f284e'=>'#e3f2fd','#2e7d32'=>'#e8f5e9','#f5c518'=>'#fff8e6','#6a1b9a'=>'#ede7f6','#c2185b'=>'#fce4ec','#f5c518'=>'#fff3e0'];
                 $bg = $bgMap[$s['couleur']] ?? '#f4f6fa';
                 @endphp
                 <div class="stat-card">
@@ -1584,7 +1584,7 @@
                 <div style="padding:1.1rem">
                     <div class="quick-actions">
                         <a href="{{ route('mon-espace.profil') }}" class="qa-btn">
-                            <div class="qa-icon" style="background:#e3f2fd;color:#1565c0"><svg viewBox="0 0 24 24">
+                            <div class="qa-icon" style="background:#e3f2fd;color:#0f284e"><svg viewBox="0 0 24 24">
                                     <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
                                     <circle cx="12" cy="7" r="4" />
                                 </svg></div>
@@ -1604,7 +1604,7 @@
                             <span class="qa-label">Mes candidatures</span>
                         </a>
                         <a href="{{ route('emploi') }}" class="qa-btn">
-                            <div class="qa-icon" style="background:#fff3e0;color:#e65100"><svg viewBox="0 0 24 24">
+                            <div class="qa-icon" style="background:#fff3e0;color:#f5c518"><svg viewBox="0 0 24 24">
                                     <circle cx="11" cy="11" r="8" />
                                     <path d="M21 21l-4.35-4.35" />
                                 </svg></div>
@@ -1662,7 +1662,7 @@
                             <span class="qa-label">Administration</span>
                         </a>
                         <a href="{{ route('admin.export') }}" class="qa-btn">
-                            <div class="qa-icon" style="background:#e3f2fd;color:#1565c0"><svg viewBox="0 0 24 24">
+                            <div class="qa-icon" style="background:#e3f2fd;color:#0f284e"><svg viewBox="0 0 24 24">
                                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
                                     <polyline points="7 10 12 15 17 10" />
                                 </svg></div>
@@ -1718,7 +1718,7 @@
                     </div>
                     @else
                     <div class="empty-mini">
-                        Aucune candidature — <a href="{{ route('emploi') }}" style="color:#f5a623;font-weight:700">Voir les offres</a>
+                        Aucune candidature — <a href="{{ route('emploi') }}" style="color:#f5c518;font-weight:700">Voir les offres</a>
                     </div>
                     @endif
                 </div>
@@ -1751,7 +1751,7 @@
                         <span class="badge b-{{ $o->statut }}">{{ ucfirst($o->statut) }}</span>
                     </div>
                     @empty
-                    <div class="empty-mini"><a href="{{ route('recruteur.offre.creer') }}" style="color:#f5a623;font-weight:700">+ Publier une offre</a></div>
+                    <div class="empty-mini"><a href="{{ route('recruteur.offre.creer') }}" style="color:#f5c518;font-weight:700">+ Publier une offre</a></div>
                     @endforelse
                 </div>
                 @endif
@@ -1795,7 +1795,7 @@
                             @if ($o->logo_entreprise)
                             <img src="{{ asset('storage/'.$o->logo_entreprise) }}" alt="">
                             @else
-                            <span style="font-size:12px;font-weight:700;color:#0d1b3e">{{ strtoupper(substr($o->entreprise ?? 'E',0,2)) }}</span>
+                            <span style="font-size:12px;font-weight:700;color:#0f284e">{{ strtoupper(substr($o->entreprise ?? 'E',0,2)) }}</span>
                             @endif
                         </div>
                         <div class="offre-info">
@@ -1826,85 +1826,8 @@
         {{-- ══════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════ --}}
-        <footer class="site-footer">
-            <div class="footer-grid">
 
-                <div class="fb">
-                    <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.5rem">
-                        <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                            <img src="http://127.0.0.1:8000/images/264.png"
-                                alt="Logo JEFIE Paris 2026"
-                                style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                        </div>
-                        <div class="nav-logo-text">
-                            <span>Forum International</span>de l'Innovation<br><small>2026</small>
-                        </div>
-                    </a>
-                    <p>Ensemble, construisons l'avenir par l'innovation.</p>
-                    <nav class="socials" aria-label="Réseaux sociaux">
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
-                        <a href="#" aria-label="Twitter / X">&#120143;</a>
-                        <a href="#" aria-label="YouTube">&#9654;</a>
-                    </nav>
-                </div>
-
-                <div class="fc">
-                    <h4>Liens Utiles</h4>
-                    <a href="{{ route('index') }}">Accueil</a>
-                    <a href="{{ route('programme') }}">Programme</a>
-                    <a href="{{ route('institutionnel') }}">Institutionnel</a>
-                    <a href="{{ route('emploi') }}">Emploi &amp; Recrutement</a>
-                    <a href="{{ route('cartographie') }}">Cartographie Diaspora</a>
-                </div>
-
-                <div class="fc">
-                    <h4>Ressources</h4>
-                    <a href="{{ route('dossiers') }}">Dossiers presse</a>
-                    <a href="{{ route('actualites') }}">Communiqués</a>
-                    <a href="{{ route('galerie') }}">Galerie média</a>
-                    <a href="{{ route('branding') }}">Branding &amp; Logos</a>
-                    <a href="{{ route('rapports') }}">Rapports &amp; Études</a>
-                </div>
-
-                <div class="fc">
-                    <h4>Informations</h4>
-                    <a href="{{ route('contact') }}">Contact</a>
-                    <a href="{{ route('Faq') }}">FAQ</a>
-                    <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-                    <a href="{{ route('confidentialite') }}">Politique de confidentialité</a>
-                </div>
-
-                <div class="fc">
-                    <h4>Contact Rapide</h4>
-                    <div class="fci">
-                        <svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                            <rect x="2" y="4" width="20" height="16" rx="2" />
-                            <path d="M2 7l10 7 10-7" />
-                        </svg>
-                        contact@forum-innovation.org
-                    </div>
-                    <div class="fci">
-                        <svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12 12 0 00.74 2.9A2 2 0 017.21 7l-1.27 1.27a16 16 0 006.79 6.79L14 13.79a2 2 0 012.18-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z" />
-                        </svg>
-                        +221 33 123 45 67
-                    </div>
-                    <div class="fci">
-                        <svg width="14" height="14" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8" aria-hidden="true">
-                            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        Cité de l'innovation, Dakar, Sénégal
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                &copy; {{ date('Y') }} Forum International de l'Innovation &ndash; Tous droits réservés.
-            </div>
-        </footer>
+@include('components.footer')
 
     </body>
 

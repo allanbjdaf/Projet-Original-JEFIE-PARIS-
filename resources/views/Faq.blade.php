@@ -1,4 +1,4 @@
-{{-- resources/views/faq/index.blade.php --}}
+﻿{{-- resources/views/faq/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'FAQ — Questions fréquentes — Forum International de l\'Innovation 2026')
@@ -19,7 +19,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -40,7 +40,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -57,13 +57,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -88,7 +88,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -116,8 +116,8 @@
     }
 
     .btn-inscr {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 22px;
@@ -270,7 +270,7 @@
     .hero {
         /* Superposition : Le dégradé officiel à 108° passe en premier (avec transparence à la fin), suivi de l'image */
         background-image:
-            linear-gradient(108deg, #060e20 0%, #0d1b3e 55%, rgba(15, 42, 94, 0.4) 100%),
+            linear-gradient(108deg, #060e20 0%, #0f284e 55%, rgba(15, 42, 94, 0.4) 100%),
             url('/images/pca.png');
         /* <-- Déposez votre image sous ce nom dans public/images/ */
 
@@ -306,7 +306,7 @@
         gap: 7px;
         background: rgba(245, 166, 35, .12);
         border: 1px solid rgba(245, 166, 35, .3);
-        color: #f5a623;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 700;
         letter-spacing: .1em;
@@ -337,7 +337,7 @@
     }
 
     .hero h1 span {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .hero-desc {
@@ -380,13 +380,13 @@
     }
 
     .hero-search-input:focus {
-        border-color: #f5a623;
+        border-color: #f5c518;
         background: rgba(255, 255, 255, .12);
     }
 
     .hero-search-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 13px 24px;
@@ -437,7 +437,7 @@
     .stat-num {
         font-size: 1.4rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
     }
 
@@ -483,7 +483,7 @@
     .cat-card-title {
         font-size: 11px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .08em;
         text-transform: uppercase;
         padding: 1rem 1.25rem .75rem;
@@ -505,7 +505,7 @@
     }
 
     .cat-item.active {
-        border-left-color: #f5a623;
+        border-left-color: #f5c518;
         background: rgba(245, 166, 35, .06);
     }
 
@@ -535,7 +535,7 @@
     }
 
     .cat-item.active .cat-label {
-        color: #0d1b3e;
+        color: #0f284e;
         font-weight: 700;
     }
 
@@ -550,7 +550,7 @@
 
     /* Besoin d'aide card */
     .aide-card {
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 12px;
         padding: 1.25rem;
     }
@@ -569,7 +569,7 @@
     .aide-icon svg {
         width: 20px;
         height: 20px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
     }
@@ -589,8 +589,8 @@
     }
 
     .aide-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 12px;
         padding: 9px;
@@ -639,7 +639,7 @@
     .srb-clear {
         font-size: 12px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -658,10 +658,10 @@
     .faq-section-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 10px;
     }
 
@@ -680,7 +680,7 @@
         padding: 5px 12px;
         font-size: 11px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         cursor: pointer;
         text-decoration: none;
         transition: all .2s;
@@ -690,9 +690,9 @@
     }
 
     .pop-chip:hover {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .pop-chip svg {
@@ -741,7 +741,7 @@
     .faq-group-name {
         font-size: 13px;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     .faq-group-count {
@@ -798,25 +798,25 @@
     }
 
     .faq-item.open .faq-q-icon {
-        background: #f5a623;
+        background: #f5c518;
     }
 
     .faq-item.open .faq-q-icon svg {
-        stroke: #0d1b3e;
+        stroke: #0f284e;
         transform: rotate(45deg);
     }
 
     .faq-q-text {
         font-size: 14px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.45;
         flex: 1;
         padding-top: 3px;
     }
 
     .faq-item.open .faq-q-text {
-        color: #0d1b3e;
+        color: #0f284e;
         font-weight: 700;
     }
 
@@ -851,16 +851,16 @@
     }
 
     .faq-answer-inner a {
-        color: #0d1b3e;
+        color: #0f284e;
         font-weight: 700;
         text-decoration: none;
-        border-bottom: 1px solid rgba(13, 27, 62, .2);
+        border-bottom: 1px solid rgba(15, 40, 78, .2);
         transition: border-color .2s;
     }
 
     .faq-answer-inner a:hover {
-        border-color: #f5a623;
-        color: #f5a623;
+        border-color: #f5c518;
+        color: #f5c518;
     }
 
     .faq-answer-actions {
@@ -884,7 +884,7 @@
         padding: 4px 12px;
         font-size: 11px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -893,9 +893,9 @@
     }
 
     .faq-helpful-btn:hover {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .faq-helpful-btn svg {
@@ -934,7 +934,7 @@
         margin-top: 10px;
         font-size: 13px;
         font-weight: 700;
-        color: #0d1b3e;
+        color: #0f284e;
         text-decoration: none;
     }
 
@@ -952,7 +952,7 @@
     .contact-section .section-title {
         font-size: 1.6rem;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         margin-bottom: .5rem;
     }
 
@@ -978,7 +978,7 @@
     }
 
     .contact-card:hover {
-        box-shadow: 0 4px 16px rgba(13, 27, 62, .08);
+        box-shadow: 0 4px 16px rgba(15, 40, 78, .08);
     }
 
     .cc-icon {
@@ -1002,7 +1002,7 @@
     .cc-title {
         font-size: 14px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 5px;
     }
 
@@ -1018,7 +1018,7 @@
         align-items: center;
         gap: 7px;
         font-size: 12px;
-        color: #162552;
+        color: #0a1e38;
         font-weight: 600;
         margin-bottom: 5px;
     }
@@ -1059,7 +1059,7 @@
 
     /* ── CTA BOTTOM ── */
     .cta-section {
-        background: linear-gradient(108deg, #0d1b3e, #162552);
+        background: linear-gradient(108deg, #0f284e, #0a1e38);
         padding: 3.5rem 2.5rem;
         text-align: center;
     }
@@ -1067,7 +1067,7 @@
     .cta-eyebrow {
         font-size: 10px;
         font-weight: 800;
-        color: #f5a623;
+        color: #f5c518;
         letter-spacing: .12em;
         text-transform: uppercase;
         margin-bottom: .75rem;
@@ -1096,8 +1096,8 @@
     }
 
     .btn-gold {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 13px 26px;
@@ -1143,7 +1143,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
     }
@@ -1635,65 +1635,8 @@
 </div>
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.4rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff"><span>Forum International</span>de l'Innovation<br><small>2026</small></div>
-            </a>
-            <p>Le rendez-vous mondial des décideurs, innovateurs et entrepreneurs engagés pour un avenir durable.</p>
-            <nav class="socials">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="Twitter">&#120143;</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-            </nav>
-        </div>
-        <div class="fc">
-            <h4>Navigation</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="{{ route('institutionnel') }}">Institutionnel</a>
-            <a href="{{ route('partenaires') }}">Partenaires</a>
-            <a href="{{ route('actualites') }}">Actualités</a>
-        </div>
-        <div class="fc">
-            <h4>Aide</h4>
-            <a href="{{ route('Faq') }}">FAQ complète</a>
-            <a href="{{ route('Faq', ['cat' => 'inscription']) }}">Inscription</a>
-            <a href="{{ route('Faq', ['cat' => 'paiement']) }}">Paiement & Tarifs</a>
-            <a href="{{ route('Faq', ['cat' => 'partenariat']) }}">Partenariats</a>
-            <a href="{{ route('contact') }}">Contact direct</a>
-        </div>
-        <div class="fc">
-            <h4>Contact</h4>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>contact@forum-innovation.org</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81" />
-                </svg>+221 33 123 45 67</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 6v6l4 2" />
-                </svg>Lun–Ven 8h–18h (GMT)</div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} Forum International de l'Innovation. Tous droits réservés.</span>
-        <div class="footer-legal">
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Confidentialité</a>
-            <a href="{{ route('conditions') }}">CGU</a>
-        </div>
-    </div>
-</footer>
+
+@include('components.footer')
 
 @push('scripts')
 <script>
@@ -1752,7 +1695,7 @@
         if (actions) {
             actions.innerHTML = helpful ?
                 '<span style="font-size:12px;color:#2e7d32;font-weight:700">✓ Merci pour votre retour !</span>' :
-                '<span style="font-size:12px;color:#718096">Merci. <a href="{{ route("contact") }}" style="color:#0d1b3e;font-weight:700">Contactez-nous</a> pour plus d\'aide.</span>';
+                '<span style="font-size:12px;color:#718096">Merci. <a href="{{ route("contact") }}" style="color:#0f284e;font-weight:700">Contactez-nous</a> pour plus d\'aide.</span>';
         }
     }
 

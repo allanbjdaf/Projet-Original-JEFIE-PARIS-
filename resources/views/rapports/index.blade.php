@@ -1,4 +1,4 @@
-{{-- resources/views/rapports/index.blade.php --}}
+﻿{{-- resources/views/rapports/index.blade.php --}}
 @extends('layouts.app')
 @section('title', 'Rapports & Documents — JEFIE Paris 2026')
 @section('styles')
@@ -17,7 +17,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -38,7 +38,7 @@
     .nav-logo-icon {
         width: 44px;
         height: 44px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -49,7 +49,7 @@
     .nav-logo-icon svg {
         width: 22px;
         height: 22px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
     }
@@ -63,7 +63,7 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
@@ -87,8 +87,8 @@
     }
 
     .nav-links a.active {
-        color: #f5a623;
-        border-bottom: 2px solid #f5a623;
+        color: #f5c518;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 700;
     }
@@ -100,8 +100,8 @@
     }
 
     .btn-nav {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 20px;
@@ -119,7 +119,7 @@
 
     /* ── HERO ── */
     .hero {
-        background: linear-gradient(108deg, #060e20 0%, #0d1b3e 55%, #0f2a5e 100%);
+        background: linear-gradient(108deg, #060e20 0%, #0f284e 55%, #0f2a5e 100%);
         padding: 2.5rem 2.5rem 3rem;
         position: relative;
         overflow: hidden;
@@ -149,7 +149,7 @@
         gap: 7px;
         background: rgba(245, 166, 35, .12);
         border: 1px solid rgba(245, 166, 35, .3);
-        color: #f5a623;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 800;
         letter-spacing: .12em;
@@ -177,7 +177,7 @@
     }
 
     .hero h1 span {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .hero-desc {
@@ -284,7 +284,7 @@
     }
 
     .btn-dl-sel {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 13px;
@@ -301,7 +301,7 @@
     }
 
     .btn-dl-sel:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .btn-dl-sel:disabled {
@@ -324,7 +324,7 @@
     }
 
     .sel-count strong {
-        color: #0d1b3e;
+        color: #0f284e;
     }
 
     /* ── CATÉGORIES TABS ── */
@@ -353,14 +353,14 @@
     }
 
     .cat-tab:hover {
-        border-color: #0d1b3e;
-        color: #0d1b3e;
+        border-color: #0f284e;
+        color: #0f284e;
     }
 
     .cat-tab.active {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
-        border-color: #0d1b3e;
+        border-color: #0f284e;
     }
 
     .cat-tab svg {
@@ -394,10 +394,10 @@
     .rapports-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         text-transform: uppercase;
         letter-spacing: .08em;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 10px;
     }
 
@@ -425,20 +425,20 @@
     }
 
     .rapport-card:hover {
-        box-shadow: 0 6px 22px rgba(13, 27, 62, .1);
+        box-shadow: 0 6px 22px rgba(15, 40, 78, .1);
         transform: translateY(-2px);
     }
 
     .rapport-card.featured {
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
     }
 
     .featured-badge {
         position: absolute;
         top: 12px;
         right: 12px;
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-size: 9px;
         font-weight: 800;
         padding: 3px 10px;
@@ -464,7 +464,7 @@
     }
 
     .preview-bg-pptx {
-        background: linear-gradient(135deg, #e65100, #ff7043);
+        background: linear-gradient(135deg, #f5c518, #d4a800);
     }
 
     .preview-bg-xlsx {
@@ -472,7 +472,7 @@
     }
 
     .preview-bg-docx {
-        background: linear-gradient(135deg, #0d47a1, #1976d2);
+        background: linear-gradient(135deg, #0f284e, #1976d2);
     }
 
     .preview-bg-zip {
@@ -480,7 +480,7 @@
     }
 
     .preview-bg-default {
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
     }
 
     .preview-icon {
@@ -524,7 +524,7 @@
     .preview-select input[type=checkbox] {
         width: 18px;
         height: 18px;
-        accent-color: #f5a623;
+        accent-color: #f5c518;
         cursor: pointer;
         border-radius: 3px;
     }
@@ -554,7 +554,7 @@
     .rapport-titre {
         font-size: 14px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.35;
     }
 
@@ -613,7 +613,7 @@
 
     .s-cours {
         background: #e3f2fd;
-        color: #1565c0;
+        color: #0f284e;
     }
 
     .s-bientot {
@@ -631,7 +631,7 @@
     }
 
     .btn-dl {
-        background: #0d1b3e;
+        background: #0f284e;
         color: #fff;
         font-weight: 700;
         font-size: 12px;
@@ -649,7 +649,7 @@
     }
 
     .btn-dl:hover {
-        background: #162552;
+        background: #0a1e38;
     }
 
     .btn-dl svg {
@@ -727,7 +727,7 @@
 
     /* ── SECTION NL ── */
     .nl-section {
-        background: #0d1b3e;
+        background: #0f284e;
         border-radius: 12px;
         padding: 2rem;
         display: flex;
@@ -751,7 +751,7 @@
     .nl-icon-wrap svg {
         width: 26px;
         height: 26px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.6;
     }
@@ -796,8 +796,8 @@
     }
 
     .nl-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 10px 20px;
@@ -815,7 +815,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
         margin-top: 2rem;
@@ -959,38 +959,8 @@
 
 @section('content')
 
-{{-- NAV --}}
+@include('components.navbar')
 
-<nav class="nav">
-
-    <a href="http://127.0.0.1:8000" class="nav-logo">
-        <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-            <img src="http://127.0.0.1:8000/images/264.png"
-                alt="Logo JEFIE Paris 2026"
-                style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-        </div>
-        <div class="nav-logo-text">
-            <span>JEFIE</span>
-            <small>Paris 2026</small>
-        </div>
-    </a>
-
-    <div class="nav-links">
-        <a href="{{ route('home') }}">Accueil</a>
-        <a href="{{ route('programme') }}">Programme</a>
-        <a href="{{ route('actualites') }}">Actualités</a>
-        <a href="{{ route('partenaires') }}">Partenaires</a>
-        <a href="{{ route('contact') }}">Contact</a>
-    </div>
-    <div class="nav-right">
-        @auth
-        <span style="color:rgba(255,255,255,.7);font-size:12px">{{ auth()->user()->name }}</span>
-        @else
-        <a href="{{ route('login') }}" style="color:rgba(255,255,255,.7);font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,.3);padding:7px 16px;border-radius:5px">Connexion</a>
-        @endauth
-        <a href="{{ route('inscription') }}" class="btn-nav">S'inscrire</a>
-    </div>
-</nav>
 
 {{-- HERO --}}
 <section class="hero">
@@ -1098,16 +1068,16 @@
         ['large'=>true,'featured'=>true,'cat'=>'rapport-annuel','cat_label'=>'Rapport Annuel','cat_color'=>'#c2185b','cat_bg'=>'#fce4ec','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Rapport Annuel du Forum JEFIE 2025','desc'=>'Bilan complet de l\'édition 2025 : participants, opportunités créées, impact économique sur la diaspora gabonaise et résultats des tables rondes.','periode'=>'Décembre 2025','taille'=>'8.2 MB','telechargements'=>'1 247','annee'=>'2025','statut'=>'pret','url'=>'#'],
         // NORMAUX
         ['large'=>false,'featured'=>false,'cat'=>'rapport-annuel','cat_label'=>'Rapport Annuel','cat_color'=>'#c2185b','cat_bg'=>'#fce4ec','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Rapport Financier Q4 2025','desc'=>'Analyse financière du dernier trimestre 2025 incluant les budgets alloués et les résultats des partenariats conclus.','periode'=>'Oct - Déc 2025','taille'=>'4.2 MB','telechargements'=>'342','annee'=>'2025','statut'=>'pret','url'=>'#'],
-        ['large'=>false,'featured'=>false,'cat'=>'etude','cat_label'=>'Étude','cat_color'=>'#1565c0','cat_bg'=>'#e3f2fd','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Étude sur l\'Emploi de la Diaspora Gabonaise en Europe','desc'=>'Analyse approfondie du marché de l\'emploi pour les Gabonais d\'Europe : secteurs porteurs, rémunérations et perspectives.','periode'=>'Novembre 2025','taille'=>'6.8 MB','telechargements'=>'892','annee'=>'2025','statut'=>'pret','url'=>'#'],
-        ['large'=>false,'featured'=>false,'cat'=>'presentation','cat_label'=>'Présentation','cat_color'=>'#e65100','cat_bg'=>'#fff3e0','ext'=>'PPTX','preview_class'=>'preview-bg-pptx','titre'=>'Présentation Officielle du Forum JEFIE Paris 2026','desc'=>'Dossier de présentation complet du Forum : objectifs, programme, intervenants et opportunités de partenariat.','periode'=>'Janvier 2026','taille'=>'12.4 MB','telechargements'=>'2 103','annee'=>'2026','statut'=>'pret','url'=>'#'],
+        ['large'=>false,'featured'=>false,'cat'=>'etude','cat_label'=>'Étude','cat_color'=>'#0f284e','cat_bg'=>'#e3f2fd','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Étude sur l\'Emploi de la Diaspora Gabonaise en Europe','desc'=>'Analyse approfondie du marché de l\'emploi pour les Gabonais d\'Europe : secteurs porteurs, rémunérations et perspectives.','periode'=>'Novembre 2025','taille'=>'6.8 MB','telechargements'=>'892','annee'=>'2025','statut'=>'pret','url'=>'#'],
+        ['large'=>false,'featured'=>false,'cat'=>'presentation','cat_label'=>'Présentation','cat_color'=>'#f5c518','cat_bg'=>'#fff3e0','ext'=>'PPTX','preview_class'=>'preview-bg-pptx','titre'=>'Présentation Officielle du Forum JEFIE Paris 2026','desc'=>'Dossier de présentation complet du Forum : objectifs, programme, intervenants et opportunités de partenariat.','periode'=>'Janvier 2026','taille'=>'12.4 MB','telechargements'=>'2 103','annee'=>'2026','statut'=>'pret','url'=>'#'],
         ['large'=>false,'featured'=>false,'cat'=>'guide','cat_label'=>'Guide','cat_color'=>'#2e7d32','cat_bg'=>'#e8f5e9','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Guide du Participant — JEFIE 2026','desc'=>'Tout ce que vous devez savoir pour préparer votre participation : logistique, programme, networking et opportunités.','periode'=>'Mars 2026','taille'=>'3.1 MB','telechargements'=>'4 521','annee'=>'2026','statut'=>'pret','url'=>'#'],
-        ['large'=>false,'featured'=>false,'cat'=>'etude','cat_label'=>'Étude','cat_color'=>'#1565c0','cat_bg'=>'#e3f2fd','ext'=>'XLSX','preview_class'=>'preview-bg-xlsx','titre'=>'Base de Données — Entrepreneurs Diaspora 2025','desc'=>'Données structurées des 3 811 entrepreneurs référencés : secteur, pays, chiffre d\'affaires et contacts clés.','periode'=>'Décembre 2025','taille'=>'15.3 MB','telechargements'=>'678','annee'=>'2025','statut'=>'pret','url'=>'#'],
+        ['large'=>false,'featured'=>false,'cat'=>'etude','cat_label'=>'Étude','cat_color'=>'#0f284e','cat_bg'=>'#e3f2fd','ext'=>'XLSX','preview_class'=>'preview-bg-xlsx','titre'=>'Base de Données — Entrepreneurs Diaspora 2025','desc'=>'Données structurées des 3 811 entrepreneurs référencés : secteur, pays, chiffre d\'affaires et contacts clés.','periode'=>'Décembre 2025','taille'=>'15.3 MB','telechargements'=>'678','annee'=>'2025','statut'=>'pret','url'=>'#'],
         ['large'=>false,'featured'=>false,'cat'=>'guide','cat_label'=>'Guide','cat_color'=>'#2e7d32','cat_bg'=>'#e8f5e9','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Guide du Recruteur — Talent de la Diaspora','desc'=>'Manuel pratique pour les recruteurs souhaitant attirer et intégrer les talents de la diaspora africaine.','periode'=>'Février 2026','taille'=>'2.8 MB','telechargements'=>'1 034','annee'=>'2026','statut'=>'pret','url'=>'#'],
         ['large'=>false,'featured'=>false,'cat'=>'programme','cat_label'=>'Programme','cat_color'=>'#6a1b9a','cat_bg'=>'#ede7f6','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Programme Complet — Forum JEFIE Paris 2026','desc'=>'Programme détaillé des 4 jours : conférences, ateliers, tables rondes, rendez-vous B2B et événements de networking.','periode'=>'2026','taille'=>'5.6 MB','telechargements'=>'8 902','annee'=>'2026','statut'=>'pret','url'=>'#'],
         ['large'=>false,'featured'=>false,'cat'=>'bilan','cat_label'=>'Bilan','cat_color'=>'#b07d10','cat_bg'=>'#fff8e6','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Bilan d\'Impact Économique — Forum 2024','desc'=>'Mesure de l\'impact économique du Forum 2024 : emplois créés, partenariats signés, investissements générés.','periode'=>'2024','taille'=>'7.1 MB','telechargements'=>'445','annee'=>'2024','statut'=>'pret','url'=>'#'],
-        ['large'=>false,'featured'=>false,'cat'=>'presentation','cat_label'=>'Présentation','cat_color'=>'#e65100','cat_bg'=>'#fff3e0','ext'=>'PPTX','preview_class'=>'preview-bg-pptx','titre'=>'Pitch Deck Partenaires & Sponsors 2026','desc'=>'Présentation destinée aux partenaires potentiels : visibilité, avantages, niveaux de partenariat et ROI attendu.','periode'=>'Janvier 2026','taille'=>'9.7 MB','telechargements'=>'312','annee'=>'2026','statut'=>'pret','url'=>'#'],
+        ['large'=>false,'featured'=>false,'cat'=>'presentation','cat_label'=>'Présentation','cat_color'=>'#f5c518','cat_bg'=>'#fff3e0','ext'=>'PPTX','preview_class'=>'preview-bg-pptx','titre'=>'Pitch Deck Partenaires & Sponsors 2026','desc'=>'Présentation destinée aux partenaires potentiels : visibilité, avantages, niveaux de partenariat et ROI attendu.','periode'=>'Janvier 2026','taille'=>'9.7 MB','telechargements'=>'312','annee'=>'2026','statut'=>'pret','url'=>'#'],
         ['large'=>false,'featured'=>false,'cat'=>'rapport-annuel','cat_label'=>'Rapport Annuel','cat_color'=>'#c2185b','cat_bg'=>'#fce4ec','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Performance Marketing & Stratégie Digitale','desc'=>'Analyse des actions marketing menées en 2025 : réseaux sociaux, SEO, campagnes email et résultats.','periode'=>'Novembre 2025','taille'=>'1.8 MB','telechargements'=>'219','annee'=>'2025','statut'=>'pret','url'=>'#'],
-        ['large'=>false,'featured'=>false,'cat'=>'etude','cat_label'=>'Étude','cat_color'=>'#1565c0','cat_bg'=>'#e3f2fd','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Cartographie des Secteurs Porteurs en Afrique 2026','desc'=>'Analyse sectorielle des opportunités d\'investissement et d\'emploi en Afrique subsaharienne pour la diaspora.','periode'=>'Janvier 2026','taille'=>'11.2 MB','telechargements'=>'1 567','annee'=>'2026','statut'=>'pret','url'=>'#'],
+        ['large'=>false,'featured'=>false,'cat'=>'etude','cat_label'=>'Étude','cat_color'=>'#0f284e','cat_bg'=>'#e3f2fd','ext'=>'PDF','preview_class'=>'preview-bg-pdf','titre'=>'Cartographie des Secteurs Porteurs en Afrique 2026','desc'=>'Analyse sectorielle des opportunités d\'investissement et d\'emploi en Afrique subsaharienne pour la diaspora.','periode'=>'Janvier 2026','taille'=>'11.2 MB','telechargements'=>'1 567','annee'=>'2026','statut'=>'pret','url'=>'#'],
         ];
         @endphp
 
@@ -1235,87 +1205,7 @@
 
 </div>{{-- /.page-wrap --}}
 
-
-<footer class="site-footer">
-    <div class="footer-grid">
-        <div class="fb">
-            <a href="http://127.0.0.1:8000" class="nav-logo" style="margin-bottom:.4rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff"><span>Journées économiques et Forum international </span>de l'emploi de la diaspora Gabonaise<br><small>2026</small></div>
-            </a>
-            <p>Le rendez-vous mondial des décideurs, innovateurs et entrepreneurs engagés pour un avenir durable.</p>
-            <nav class="socials" aria-label="Réseaux sociaux">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Twitter">&#120143;</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-                <a href="#" aria-label="Instagram">&#9752;</a>
-            </nav>
-        </div>
-        <div class="fc">
-            <h4>Liens Rapides</h4>
-            <a href="http://127.0.0.1:8000">Accueil</a>
-            <a href="http://127.0.0.1:8000/programme">Programme</a>
-            <a href="#">Intervenants</a>
-            <a href="http://127.0.0.1:8000/partenaires">Partenaires</a>
-            <a href="http://127.0.0.1:8000/actualites">Actualités</a>
-        </div>
-        <div class="fc">
-            <h4>Participer</h4>
-            <a href="http://127.0.0.1:8000/inscription">S'inscrire</a>
-            <a href="http://127.0.0.1:8000/partenaires/devenir">Devenir partenaire</a>
-            <a href="#">Soumettre un pitch</a>
-            <a href="#">Planifier un RDV B2B</a>
-            <a href="#">Informations pratiques</a>
-            <a href="http://127.0.0.1:8000/faq">FAQ</a>
-        </div>
-        <div class="fc">
-            <h4>Informations</h4>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                </svg>15 – 18 Juin 2026</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>Palais des Congrès<br>Abidjan, Côte d'Ivoire</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 7l10 7 10-7" />
-                </svg>contact@forum-innovation.org</div>
-            <div class="fci"><svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5a623" fill="none" stroke-width="1.8">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12 12 0 00.74 2.9A2 2 0 017.21 7l-1.27 1.27a16 16 0 006.79 6.79L14 13.79a2 2 0 012.18-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z" />
-                </svg>+225 01 23 45 67 89</div>
-        </div>
-        <div class="fc">
-            <h4>Recevez nos Actualités</h4>
-            <form action="http://127.0.0.1:8000/newsletter/subscribe" method="POST">
-                <input type="hidden" name="_token" value="P8EJrNzQgqa7ZwyL1jVOgZoQaKOLz2m0IKbYe3m1" autocomplete="off">
-                <div class="footer-nl-form">
-                    <input type="email" name="email_newsletter" placeholder="Votre email" required>
-                    <button type="submit" aria-label="S'abonner">
-                        <svg viewBox="0 0 24 24">
-                            <line x1="22" y1="2" x2="11" y2="13" />
-                            <polygon points="22 2 15 22 11 13 2 9 22 2" fill="#0d1b3e" />
-                        </svg>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; 2026 CDC site. Tous droits réservés.</span>
-        <div class="footer-legal">
-            <a href="http://127.0.0.1:8000/mentions-legales">Mentions légales</a>
-            <a href="http://127.0.0.1:8000/confidentialite">Confidentialité</a>
-            <a href="#">CGU</a>
-        </div>
-    </div>
-</footer>
+@include('components.footer')
 @push('scripts')
 <script>
     // ── Sélection multiple ─────────────────────────────────────────

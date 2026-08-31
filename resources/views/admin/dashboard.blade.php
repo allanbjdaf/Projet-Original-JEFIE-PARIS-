@@ -1,4 +1,4 @@
-{{-- resources/views/admin/dashboard.blade.php --}}
+﻿{{-- resources/views/admin/dashboard.blade.php --}}
 @extends('admin.layouts.master')
 @section('title','Tableau de bord')
 @section('page-title','Tableau de bord')
@@ -13,7 +13,7 @@
     <circle cx="12" cy="7" r="4" />
     <line x1="19" y1="8" x2="19" y2="14" />
     <line x1="22" y1="11" x2="16" y2="11" />',($counts['inscriptions_new']??0)],
-    [($counts['candidatures']??0), 'Candidatures', '#1565c0','#e3f2fd','
+    [($counts['candidatures']??0), 'Candidatures', '#0f284e','#e3f2fd','
     <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
     <polyline points="14 2 14 8 20 8" />',($counts['candidatures_new']??0)],
     [($counts['contacts']??0), 'Messages Contact', '#6a1b9a','#ede7f6','
@@ -166,7 +166,7 @@
         </div>
         <div class="timeline">
             @foreach ([
-            ['Amadou Koné','Demande de partenariat institutionnel','Il y a 1h','#1565c0','#e3f2fd',false],
+            ['Amadou Koné','Demande de partenariat institutionnel','Il y a 1h','#0f284e','#e3f2fd',false],
             ['Mireille Ondo','Question sur les inscriptions VIP','Il y a 3h','#2e7d32','#e8f5e9',true],
             ['Pierre Mouity','Renseignements accréditation presse','Il y a 5h','#b07d10','#fff8e6',false],
             ['Sophie Nzeng','Intervention comme speaker','Il y a 1j','#6a1b9a','#ede7f6',true],
@@ -191,7 +191,7 @@
         </div>
         <div style="padding:1.1rem">
             <div style="text-align:center;margin-bottom:1rem">
-                <div style="font-size:2rem;font-weight:900;color:#0d1b3e">{{ number_format($counts['newsletter'] ?? 2847) }}</div>
+                <div style="font-size:2rem;font-weight:900;color:#0f284e">{{ number_format($counts['newsletter'] ?? 2847) }}</div>
                 <div style="font-size:11px;color:#718096">abonnés actifs</div>
             </div>
             <div style="display:flex;flex-direction:column;gap:8px">
@@ -222,7 +222,7 @@
             [route('admin.export.download',['type'=>'inscriptions']),'Exporter inscriptions CSV','#2e7d32','#e8f5e9','
             <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
             <polyline points="7 10 12 15 17 10" />'],
-            [route('admin.export.download',['type'=>'candidatures']),'Exporter candidatures CSV','#1565c0','#e3f2fd','
+            [route('admin.export.download',['type'=>'candidatures']),'Exporter candidatures CSV','#0f284e','#e3f2fd','
             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />'],
             [route('admin.export.download',['type'=>'newsletter']),'Exporter newsletter CSV','#00838f','#e0f7fa','
             <rect x="2" y="4" width="20" height="16" rx="2" />'],

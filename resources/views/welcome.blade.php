@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -1794,8 +1794,8 @@
                     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)
                 }
 
-                .dark\:\[--stroke-color\:\#FF750F\] {
-                    --stroke-color: #ff750f
+                .dark\:\[--stroke-color\:\#f5c518\] {
+                    --stroke-color: #f5c518
                 }
 
                 .dark\:before\:border-\[\#3E3E3A\]:before {
@@ -2288,7 +2288,7 @@
                 </svg>
 
                 {{-- 13 --}}
-                <svg class="w-[438px] max-w-none relative -mt-[6.6rem] -ml-8 lg:ml-0 [--stroke-color:#1B1B18] dark:[--stroke-color:#FF750F]" viewBox="0 0 440 392" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-[438px] max-w-none relative -mt-[6.6rem] -ml-8 lg:ml-0 [--stroke-color:#1B1B18] dark:[--stroke-color:#f5c518]" viewBox="0 0 440 392" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g class="mix-blend-darken dark:mix-blend-normal transition-all delay-300 opacity-100 duration-750 starting:opacity-0 text-[#1B1B18] dark:text-black">
                         <mask id="path-1-mask" maskUnits="userSpaceOnUse" x="-0.328613" y="103" width="338" height="299" fill="black">
                             <rect fill="white" x="-0.328613" y="103" width="338" height="299" />

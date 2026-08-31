@@ -1,4 +1,4 @@
-{{-- resources/views/programme/mon-agenda.blade.php --}}
+﻿{{-- resources/views/programme/mon-agenda.blade.php --}}
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -22,7 +22,7 @@
 
         /* NAV */
         .nav {
-            background: #0d1b3e;
+            background: #0f284e;
             height: 64px;
             display: flex;
             align-items: center;
@@ -43,7 +43,7 @@
         .nav-logo-icon {
             width: 42px;
             height: 42px;
-            border: 2px solid #f5a623;
+            border: 2px solid #f5c518;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -53,7 +53,7 @@
         .nav-logo-icon svg {
             width: 20px;
             height: 20px;
-            stroke: #f5a623;
+            stroke: #f5c518;
             fill: none;
             stroke-width: 1.8
         }
@@ -67,7 +67,7 @@
         }
 
         .nav-logo-text span {
-            color: #f5a623;
+            color: #f5c518;
             display: block;
             font-size: 11px
         }
@@ -87,7 +87,7 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #f5a623
+            color: #f5c518
         }
 
         .nav-right {
@@ -123,8 +123,8 @@
         }
 
         .btn-inscr {
-            background: #f5a623;
-            color: #0d1b3e;
+            background: #f5c518;
+            color: #0f284e;
             font-weight: 700;
             font-size: 13px;
             padding: 9px 20px;
@@ -134,7 +134,7 @@
 
         /* HERO */
         .hero {
-            background: linear-gradient(108deg, #060e20, #0d1b3e 60%, #0f2a5e);
+            background: linear-gradient(108deg, #060e20, #0f284e 60%, #0f2a5e);
             padding: 2rem 2.5rem;
             position: relative;
             overflow: hidden
@@ -169,7 +169,7 @@
             gap: 7px;
             background: rgba(245, 166, 35, .12);
             border: 1px solid rgba(245, 166, 35, .3);
-            color: #f5a623;
+            color: #f5c518;
             font-size: 10px;
             font-weight: 800;
             letter-spacing: .12em;
@@ -197,7 +197,7 @@
         }
 
         .hero h1 span {
-            color: #f5a623
+            color: #f5c518
         }
 
         .hero-sub {
@@ -265,8 +265,8 @@
         }
 
         .bh-gold {
-            background: #f5a623;
-            color: #0d1b3e
+            background: #f5c518;
+            color: #0f284e
         }
 
         .bh-gold:hover {
@@ -345,7 +345,7 @@
         }
 
         .btn-go-prog {
-            background: #0d1b3e;
+            background: #0f284e;
             color: #fff;
             font-weight: 700;
             font-size: 14px;
@@ -360,7 +360,7 @@
         }
 
         .btn-go-prog:hover {
-            background: #162552
+            background: #0a1e38
         }
 
         .btn-go-prog svg {
@@ -391,7 +391,7 @@
         }
 
         .tb-info strong {
-            color: #0d1b3e
+            color: #0f284e
         }
 
         .tb-actions {
@@ -425,19 +425,19 @@
         }
 
         .bt-primary {
-            background: #0d1b3e;
+            background: #0f284e;
             color: #fff;
-            border-color: #0d1b3e
+            border-color: #0f284e
         }
 
         .bt-primary:hover {
-            background: #162552
+            background: #0a1e38
         }
 
         .bt-gold {
-            background: #f5a623;
-            color: #0d1b3e;
-            border-color: #f5a623
+            background: #f5c518;
+            color: #0f284e;
+            border-color: #f5c518
         }
 
         .bt-gold:hover {
@@ -446,12 +446,12 @@
 
         .bt-outline {
             background: #fff;
-            color: #162552;
+            color: #0a1e38;
             border-color: #d1d9e6
         }
 
         .bt-outline:hover {
-            border-color: #0d1b3e
+            border-color: #0f284e
         }
 
         .bt-red {
@@ -498,7 +498,7 @@
 
         .vb.active,
         .vb:hover {
-            background: #0d1b3e;
+            background: #0f284e;
             color: #fff
         }
 
@@ -524,14 +524,14 @@
         }
 
         .jf:hover {
-            border-color: #0d1b3e;
-            color: #0d1b3e
+            border-color: #0f284e;
+            color: #0f284e
         }
 
         .jf.active {
-            background: #0d1b3e;
+            background: #0f284e;
             color: #fff;
-            border-color: #0d1b3e
+            border-color: #0f284e
         }
 
         /* SECTION JOUR */
@@ -548,13 +548,13 @@
             background: #fff;
             border: 1px solid #e2e8f0;
             border-radius: 10px;
-            border-left: 4px solid #f5a623
+            border-left: 4px solid #f5c518
         }
 
         .jh-date-box {
             width: 52px;
             height: 52px;
-            background: #0d1b3e;
+            background: #0f284e;
             border-radius: 10px;
             display: flex;
             flex-direction: column;
@@ -564,7 +564,7 @@
         }
 
         .jh-day {
-            color: #f5a623;
+            color: #f5c518;
             font-size: 1.2rem;
             font-weight: 900;
             line-height: 1
@@ -582,7 +582,7 @@
         .jh-title {
             font-size: 15px;
             font-weight: 800;
-            color: #0d1b3e
+            color: #0f284e
         }
 
         .jh-sub {
@@ -596,7 +596,7 @@
 
         .jh-count {
             background: #fff8e6;
-            color: #f5a623;
+            color: #f5c518;
             font-size: 10px;
             font-weight: 700;
             padding: 2px 9px;
@@ -616,7 +616,7 @@
 
         .jh-prog-fill {
             height: 100%;
-            background: linear-gradient(90deg, #f5a623, #e09010);
+            background: linear-gradient(90deg, #f5c518, #e09010);
             border-radius: 3px
         }
 
@@ -633,11 +633,11 @@
         }
 
         .session-card:hover {
-            box-shadow: 0 4px 16px rgba(13, 27, 62, .08)
+            box-shadow: 0 4px 16px rgba(15, 40, 78, .08)
         }
 
         .session-card.vedette {
-            border-color: #f5a623
+            border-color: #f5c518
         }
 
         .sc-heure {
@@ -657,7 +657,7 @@
         .sc-h-debut {
             font-size: 1rem;
             font-weight: 900;
-            color: #0d1b3e;
+            color: #0f284e;
             line-height: 1
         }
 
@@ -722,7 +722,7 @@
         .sc-titre {
             font-size: .95rem;
             font-weight: 800;
-            color: #0d1b3e;
+            color: #0f284e;
             line-height: 1.3
         }
 
@@ -773,11 +773,11 @@
             width: 26px;
             height: 26px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #0d1b3e, #162552);
+            background: linear-gradient(135deg, #0f284e, #0a1e38);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #f5a623;
+            color: #f5c518;
             font-size: 10px;
             font-weight: 700;
             border: 2px solid #fff;
@@ -818,7 +818,7 @@
         }
 
         .vedette-star {
-            color: #f5a623;
+            color: #f5c518;
             font-size: 10px;
             font-weight: 700;
             background: #fff8e6;
@@ -865,7 +865,7 @@
             font-size: 12px;
             font-weight: 700;
             background: #f4f6fa;
-            color: #162552;
+            color: #0a1e38;
             border: 1.5px solid #e2e8f0;
             cursor: pointer;
             transition: all .2s;
@@ -873,7 +873,7 @@
         }
 
         .btn-voir-detail:hover {
-            border-color: #0d1b3e;
+            border-color: #0f284e;
             background: #fff
         }
 
@@ -901,13 +901,13 @@
         }
 
         .cal-col-head {
-            background: #0d1b3e;
+            background: #0f284e;
             padding: .75rem 1rem;
             text-align: center
         }
 
         .cal-col-jour {
-            color: #f5a623;
+            color: #f5c518;
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
@@ -952,7 +952,7 @@
 
         .cal-s-titre {
             font-weight: 700;
-            color: #162552;
+            color: #0a1e38;
             line-height: 1.3
         }
 
@@ -982,7 +982,7 @@
         .sg-num {
             font-size: 1.4rem;
             font-weight: 900;
-            color: #0d1b3e;
+            color: #0f284e;
             display: block;
             line-height: 1
         }
@@ -1028,14 +1028,14 @@
         .ts-label {
             font-size: 12px;
             font-weight: 700;
-            color: #162552;
+            color: #0a1e38;
             flex: 1
         }
 
         .ts-count {
             font-size: 12px;
             font-weight: 800;
-            color: #0d1b3e
+            color: #0f284e
         }
 
         .ts-bar-wrap {
@@ -1123,7 +1123,7 @@
             }
 
             .hero {
-                background: #0d1b3e !important;
+                background: #0f284e !important;
                 print-color-adjust: exact;
                 -webkit-print-color-adjust: exact
             }
@@ -1131,7 +1131,7 @@
 
         /* FOOTER */
         .site-footer {
-            background: #0d1b3e;
+            background: #0f284e;
             color: rgba(255, 255, 255, .7);
             padding: 2rem 2.5rem 0;
             margin-top: 2rem
@@ -1166,7 +1166,7 @@
             position: fixed;
             bottom: 24px;
             right: 24px;
-            background: #0d1b3e;
+            background: #0f284e;
             color: #fff;
             font-size: 13px;
             font-weight: 600;
@@ -1192,7 +1192,7 @@
         .toast svg {
             width: 15px;
             height: 15px;
-            stroke: #f5a623;
+            stroke: #f5c518;
             fill: none;
             stroke-width: 2.5;
             flex-shrink: 0
@@ -1270,7 +1270,7 @@
                 <div class="hero-stats" id="heroStats">
                     <div class="hs">
                         <div style="width:36px;height:36px;background:rgba(245,166,35,.15);border-radius:8px;display:flex;align-items:center;justify-content:center">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="#f5a623" fill="none" stroke-width="1.7">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="#f5c518" fill="none" stroke-width="1.7">
                                 <rect x="3" y="4" width="18" height="18" rx="2" />
                                 <path d="M16 2v4M8 2v4M3 10h18" />
                             </svg>
@@ -1292,7 +1292,7 @@
                     </div>
                     <div class="hs">
                         <div style="width:36px;height:36px;background:rgba(21,101,192,.15);border-radius:8px;display:flex;align-items:center;justify-content:center">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="#1565c0" fill="none" stroke-width="1.7">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="#0f284e" fill="none" stroke-width="1.7">
                                 <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
                                 <circle cx="9" cy="7" r="4" />
                             </svg>
@@ -1452,16 +1452,8 @@
     </div>
 
     {{-- FOOTER --}}
-    <footer class="site-footer">
-        <div class="footer-bottom">
-            <span class="footer-copy">&copy; {{ date('Y') }} JEFIE Paris 2026 — Agenda personnel</span>
-            <div class="footer-legal">
-                <a href="{{ route('programme') }}">Retour au programme</a>
-                <a href="{{ route('inscription') }}">S'inscrire</a>
-                <a href="{{ route('contact') }}">Contact</a>
-            </div>
-        </div>
-    </footer>
+
+@include('components.footer')
 
     <div class="toast" id="toast"><svg viewBox="0 0 24 24">
             <polyline points="20 6 9 17 4 12" />
@@ -1474,10 +1466,10 @@
         const STORAGE_KEY = 'jefie_agenda_2026';
 
         const TYPE_COLORS = {
-            conference: '#1565c0',
+            conference: '#0f284e',
             panel: '#6a1b9a',
             atelier: '#2e7d32',
-            networking: '#e65100',
+            networking: '#f5c518',
             b2b: '#b07d10',
             pitch: '#c2185b'
         };
@@ -1623,12 +1615,12 @@
         <div class="sg-card">
             <span class="sg-num">${agenda.length}</span>
             <div class="sg-lbl">Sessions sélectionnées</div>
-            <div class="sg-bar" style="background:linear-gradient(90deg,#f5a623 ${Math.min(agenda.length/16*100,100)}%,#f0f4f8 0)"></div>
+            <div class="sg-bar" style="background:linear-gradient(90deg,#f5c518 ${Math.min(agenda.length/16*100,100)}%,#f0f4f8 0)"></div>
         </div>
         <div class="sg-card">
             <span class="sg-num">${jours.size} / 4</span>
             <div class="sg-lbl">Jours avec sessions</div>
-            <div class="sg-bar" style="background:linear-gradient(90deg,#1565c0 ${jours.size/4*100}%,#f0f4f8 0)"></div>
+            <div class="sg-bar" style="background:linear-gradient(90deg,#0f284e ${jours.size/4*100}%,#f0f4f8 0)"></div>
         </div>
         <div class="sg-card">
             <span class="sg-num">${calcDuree()}h</span>
@@ -1651,7 +1643,7 @@
             <div class="ts-bar-wrap"><div class="ts-bar-fill" style="width:${n/total*100}%;background:${TYPE_COLORS[t]||'#718096'}"></div></div>
             <div class="ts-count">${n} session${n>1?'s':''}</div>
         </div>`).join('');
-            document.getElementById('typeSummary').innerHTML = `<div style="font-size:11px;font-weight:800;color:#0d1b3e;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;border-left:3px solid #f5a623;padding-left:8px">Répartition par type</div>${html}`;
+            document.getElementById('typeSummary').innerHTML = `<div style="font-size:11px;font-weight:800;color:#0f284e;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;border-left:3px solid #f5c518;padding-left:8px">Répartition par type</div>${html}`;
         }
 
         // ── Vue Liste ──────────────────────────────────────────────────

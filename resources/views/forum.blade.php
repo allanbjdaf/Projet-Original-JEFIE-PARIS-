@@ -1,4 +1,4 @@
-{{-- resources/views/forum/index.blade.php --}}
+﻿{{-- resources/views/forum/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'Forum de discussion — Forum International de l\'Innovation 2026')
@@ -19,7 +19,7 @@
 
     /* ── NAV ── */
     .nav {
-        background: #0d1b3e;
+        background: #0f284e;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -40,7 +40,7 @@
     .nav-logo-icon {
         width: 42px;
         height: 42px;
-        border: 2px solid #f5a623;
+        border: 2px solid #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -57,13 +57,13 @@
     }
 
     .nav-logo-text span {
-        color: #f5a623;
+        color: #f5c518;
         display: block;
         font-size: 11px;
     }
 
     .nav-logo-text small {
-        color: #f5a623;
+        color: #f5c518;
         font-size: 9px;
         font-weight: 700;
     }
@@ -88,7 +88,7 @@
 
     .nav-links a.active {
         color: #fff;
-        border-bottom: 2px solid #f5a623;
+        border-bottom: 2px solid #f5c518;
         padding-bottom: 2px;
         font-weight: 600;
     }
@@ -116,8 +116,8 @@
     }
 
     .btn-inscr {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 9px 22px;
@@ -268,7 +268,7 @@
 
     /* ── HERO ── */
     .hero {
-        background: linear-gradient(108deg, rgba(6, 14, 32, 0.90) 0%, rgba(13, 27, 62, 0.85) 55%, rgba(15, 42, 94, 0.85) 100%),
+        background: linear-gradient(108deg, rgba(6, 14, 32, 0.90) 0%, rgba(15, 40, 78, 0.85) 55%, rgba(15, 42, 94, 0.85) 100%),
         url("{{ asset('images/div.png') }}") no-repeat center center/cover;
         padding: 3rem 2.5rem 2.75rem;
         position: relative;
@@ -307,7 +307,7 @@
         gap: 7px;
         background: rgba(245, 166, 35, .12);
         border: 1px solid rgba(245, 166, 35, .3);
-        color: #f5a623;
+        color: #f5c518;
         font-size: 10px;
         font-weight: 700;
         letter-spacing: .1em;
@@ -336,7 +336,7 @@
     }
 
     .hero h1 span {
-        color: #f5a623;
+        color: #f5c518;
     }
 
     .hero-desc {
@@ -353,8 +353,8 @@
     }
 
     .btn-gold {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 12px 22px;
@@ -456,17 +456,17 @@
     .section-title {
         font-size: 12px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
-        border-left: 3px solid #f5a623;
+        border-left: 3px solid #f5c518;
         padding-left: 10px;
     }
 
     .section-link {
         font-size: 12px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -532,7 +532,7 @@
     .cat-nom {
         font-size: 14px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
         margin-bottom: 3px;
     }
 
@@ -558,7 +558,7 @@
     .cat-count {
         font-size: 11px;
         font-weight: 700;
-        color: #162552;
+        color: #0a1e38;
     }
 
     .cat-count span {
@@ -614,11 +614,11 @@
         width: 38px;
         height: 38px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #f5a623;
+        color: #f5c518;
         font-size: 13px;
         font-weight: 700;
         flex-shrink: 0;
@@ -640,7 +640,7 @@
     .sr-titre {
         font-size: 13px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         line-height: 1.35;
         margin-bottom: 3px;
         white-space: nowrap;
@@ -734,7 +734,7 @@
     .sw-title {
         font-size: 11px;
         font-weight: 900;
-        color: #0d1b3e;
+        color: #0f284e;
         letter-spacing: .08em;
         text-transform: uppercase;
         margin-bottom: .9rem;
@@ -742,7 +742,7 @@
 
     /* Nouveau sujet card */
     .nouveau-card {
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         border-radius: 12px;
         padding: 1.4rem;
     }
@@ -761,7 +761,7 @@
     .nc-icon svg {
         width: 22px;
         height: 22px;
-        stroke: #f5a623;
+        stroke: #f5c518;
         fill: none;
         stroke-width: 1.8;
     }
@@ -781,8 +781,8 @@
     }
 
     .nc-btn {
-        background: #f5a623;
-        color: #0d1b3e;
+        background: #f5c518;
+        color: #0f284e;
         font-weight: 700;
         font-size: 13px;
         padding: 11px;
@@ -828,7 +828,7 @@
     .stat-num {
         font-size: 1.1rem;
         font-weight: 800;
-        color: #0d1b3e;
+        color: #0f284e;
         display: block;
     }
 
@@ -877,11 +877,11 @@
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #0d1b3e, #162552);
+        background: linear-gradient(135deg, #0f284e, #0a1e38);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #f5a623;
+        color: #f5c518;
         font-size: 11px;
         font-weight: 700;
         flex-shrink: 0;
@@ -890,7 +890,7 @@
     .m-name {
         font-size: 12px;
         font-weight: 600;
-        color: #162552;
+        color: #0a1e38;
         flex: 1;
     }
 
@@ -918,8 +918,8 @@
     .regle-num {
         width: 20px;
         height: 20px;
-        background: #0d1b3e;
-        color: #f5a623;
+        background: #0f284e;
+        color: #f5c518;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -932,7 +932,7 @@
 
     /* ── FOOTER ── */
     .site-footer {
-        background: #0d1b3e;
+        background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2rem 2.5rem 0;
     }
@@ -1319,7 +1319,7 @@
             @foreach ($categories->take(6) as $cat)
             <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f4f8">
                 <a href="{{ route('forum.categorie', $cat->slug) }}"
-                    style="font-size:12px;font-weight:600;color:#162552;text-decoration:none;display:flex;align-items:center;gap:7px;transition:color .2s">
+                    style="font-size:12px;font-weight:600;color:#0a1e38;text-decoration:none;display:flex;align-items:center;gap:7px;transition:color .2s">
                     <span style="width:8px;height:8px;border-radius:50%;background:<?php echo $cat->couleur; ?>;flex-shrink:0"></span>
                     {{ $cat->nom }}
                 </a>
@@ -1349,55 +1349,7 @@
 </div>{{-- /.page-layout --}}
 
 {{-- ══ FOOTER ══ --}}
-<footer class="site-footer">
-    <div class="footer-main">
-        <div class="fb">
-            <a href="{{ route('index') }}" class="nav-logo" style="margin-bottom:.4rem">
-                <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
-                    <img src="http://127.0.0.1:8000/images/264.png"
-                        alt="Logo JEFIE Paris 2026"
-                        style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
-                </div>
-                <div class="nav-logo-text" style="color:#fff"><span>Forum International</span>de l'Innovation<br><small>2026</small></div>
-            </a>
-            <p>Communauté de discussion du Forum International de l'Innovation 2026.</p>
-            <nav class="socials">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="Twitter">&#120143;</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-            </nav>
-        </div>
-        <div class="fc">
-            <h4>Navigation</h4>
-            <a href="{{ route('index') }}">Accueil</a>
-            <a href="{{ route('programme') }}">Programme</a>
-            <a href="{{ route('partenaires') }}">Partenaires</a>
-            <a href="{{ route('actualites') }}">Actualités</a>
-            <a href="{{ route('contact') }}">Contact</a>
-        </div>
-        <div class="fc">
-            <h4>Forum</h4>
-            @foreach ($categories->take(5) as $cat)
-            <a href="{{ route('forum.categorie', $cat->slug) }}">{{ $cat->nom }}</a>
-            @endforeach
-        </div>
-        <div class="fc">
-            <h4>Aide</h4>
-            <a href="{{ route('Faq') }}">FAQ</a>
-            <a href="{{ route('contact') }}">Support</a>
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Confidentialité</a>
-            <a href="{{ route('conditions') }}">CGU</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span class="footer-copy">&copy; {{ date('Y') }} Forum International de l'Innovation. Tous droits réservés.</span>
-        <div class="footer-links">
-            <a href="{{ route('mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('confidentialite') }}">Confidentialité</a>
-        </div>
-    </div>
-</footer>
+
+@include('components.footer')
 
 @endsection
