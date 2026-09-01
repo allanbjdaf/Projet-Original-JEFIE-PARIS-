@@ -117,6 +117,32 @@ Route::get('/partenaires/liste', [PartenairesController::class, 'liste'])->name(
 Route::get('/partenaires/packs/{slug}', [PartenairesController::class, 'showPack'])->name('partenaires.pack');
 Route::get('/partenaires/mes-avantages', [PartenairesController::class, 'avantages'])->name('partenaires.avantages');
 
+
+// Pages publiques partenaires
+Route::prefix('partenaires')->name('partenaires.')->group(function () {
+
+    // Liste des partenaires (offres masquées)
+    Route::get('/', [PartenairesController::class, 'index'])
+        ->name('index');
+
+    // Page entreprise avec ses offres (URL propre par slug)
+    // ex: /partenaires/orange-gabon
+    Route::get('/{slug}', [PartenairesController::class, 'show'])
+        ->name('show')
+        ->where('slug', '[a-z0-9\-]+');
+
+    // Scan QR Code → déverrouille les offres de l'entreprise
+    // ex: /partenaires/orange-gabon/qr-acces/AbCdEf123...
+    Route::get('/{slug}/qr-acces/{token}', [PartenairesController::class, 'qrAcces'])
+        ->name('qr-acces')
+        ->where(['slug' => '[a-z0-9\-]+', 'token' => '[A-Za-z0-9]+']);
+});
+
+// Admin : régénérer QR d'un partenaire
+Route::post('/admin/partenaires/{id}/regenerer-qr', [PartenairesController::class, 'regenererQr'])
+    ->name('admin.partenaires.regenerer-qr')
+    ->middleware(['auth', 'role:admin,super_admin']);
+
 // =========================================================================
 // 💼 1. ESPACE EMPLOI (Accès libre temporaire pour développement)
 // =========================================================================
@@ -145,8 +171,8 @@ Route::get('/inscription/confirmation', [InscriptionController::class, 'confirma
 // Badge QR — accès au badge via QR Code
 Route::get('/badge/{numero}/{token}', function ($numero, $token) {
     $inscription = \App\Models\Inscription::where('numero_badge', $numero)
-                   ->where('qr_token', $token)
-                   ->firstOrFail();
+        ->where('qr_token', $token)
+        ->firstOrFail();
     return view('badge', compact('inscription'));
 })->name('inscription.badge');
 

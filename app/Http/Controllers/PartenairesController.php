@@ -41,7 +41,7 @@ class PartenairesController extends Controller
     }
     public function liste(): View
     {
-        return view('partenaires.liste', ['partenaires' => Partenaire::paginate(12)]);
+        return view('partenaires_show', ['partenaires' => Partenaire::paginate(12)]);
     }
     public function profil(): View
     {
