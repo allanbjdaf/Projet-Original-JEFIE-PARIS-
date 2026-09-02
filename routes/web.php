@@ -95,47 +95,46 @@ Route::get('/notifications', [NotificationController::class, 'index'])
 
 // ── Partenaires ───────────────────────────────────────────────
 
+// ── Partenaires ───────────────────────────────────────────────
+
 Route::get('/partenaires/devenir', [DevenirPartenaireController::class, 'index'])->name('partenaires.devenir');
 Route::post('/partenaires/devenir', [DevenirPartenaireController::class, 'store'])->name('partenaires.devenir.store');
-// Routes pour l'espace ou la présentation des partenaires
-Route::get('/partenaires/profil', [PartenairesController::class, 'profil'])->name('partenaires.profil');
-Route::get('/partenaires/activites', [PartenairesController::class, 'activites'])->name('partenaires.activites');
-Route::get('/partenaires/media', [PartenairesController::class, 'media'])->name('partenaires.media');
-Route::get('/partenaires/opportunites/creer', [PartenairesController::class, 'createOpportunite'])->name('partenaires.opportunites.create');
-Route::get('/partenaires/opportunites', [PartenairesController::class, 'indexOpportunites'])->name('partenaires.opportunites.index');
-Route::get('/partenaires/stands/reserver', [PartenairesController::class, 'reserverStand'])->name('partenaires.stands.reserver');
-Route::get('/partenaires/reservations', [PartenairesController::class, 'reservations'])->name('partenaires.reservations');
-Route::get('/partenaires/badges', [PartenairesController::class, 'badges'])->name('partenaires.badges');
-Route::get('/partenaires/actualites', [PartenairesController::class, 'actualites'])->name('partenaires.actualites');
-Route::get('/partenaires/offres', [PartenairesController::class, 'offres'])->name('partenaires.offres');
-Route::get('/partenaires/documents', [PartenairesController::class, 'documents'])->name('partenaires.docs');
-Route::get('/partenaires/statistiques', [PartenairesController::class, 'statistiques'])->name('partenaires.stats');
-Route::get('/partenaires/visibilite', [PartenairesController::class, 'visibilite'])->name('partenaires.visibilite');
-Route::get('/partenaires/plan-salon', [PartenairesController::class, 'planSalon'])->name('partenaires.plan');
-Route::get('/partenaires/liste', [PartenairesController::class, 'liste'])->name('partenaires.liste');
-Route::get('/partenaires/packs/{slug}', [PartenairesController::class, 'showPack'])->name('partenaires.pack');
-Route::get('/partenaires/mes-avantages', [PartenairesController::class, 'avantages'])->name('partenaires.avantages');
 
+// Pages publiques partenaires (Groupe unifié pour éviter les conflits)
+Route::prefix('partenaires')->name('partenaires.')->group(function () {
 
-// Pages publiques partenaires
-Route::prefix('partenaires')->group(function () {
+    // 1. Mettre TOUTES les routes fixes en premier
+    Route::get('/', [PartenairesController::class, 'index'])->name('index');
+    Route::get('/liste', [PartenairesController::class, 'liste'])->name('liste');
+    Route::get('/profil', [PartenairesController::class, 'profil'])->name('profil');
+    Route::get('/activites', [PartenairesController::class, 'activites'])->name('activites');
+    Route::get('/media', [PartenairesController::class, 'media'])->name('media');
+    Route::get('/opportunites/creer', [PartenairesController::class, 'createOpportunite'])->name('opportunites.create');
+    Route::get('/opportunites', [PartenairesController::class, 'indexOpportunites'])->name('opportunites.index');
+    Route::get('/stands/reserver', [PartenairesController::class, 'reserverStand'])->name('stands.reserver');
+    Route::get('/reservations', [PartenairesController::class, 'reservations'])->name('reservations');
+    Route::get('/badges', [PartenairesController::class, 'badges'])->name('badges');
+    Route::get('/actualites', [PartenairesController::class, 'actualites'])->name('actualites');
+    Route::get('/offres', [PartenairesController::class, 'offres'])->name('offres');
+    Route::get('/documents', [PartenairesController::class, 'documents'])->name('docs');
+    Route::get('/statistiques', [PartenairesController::class, 'statistiques'])->name('stats');
+    Route::get('/visibilite', [PartenairesController::class, 'visibilite'])->name('visibilite');
+    Route::get('/plan-salon', [PartenairesController::class, 'planSalon'])->name('plan');
+    Route::get('/mes-avantages', [PartenairesController::class, 'avantages'])->name('avantages');
+    Route::get('/packs/{slug}', [PartenairesController::class, 'showPack'])->name('pack');
 
-    // Cette route répondra à /partenaires ET aura le nom exact "partenaires" attendu par votre barre de navigation
-    Route::get('/', [PartenairesController::class, 'index'])
-        ->name('partenaires');
-
-    // Page entreprise avec ses offres (URL propre par slug)
-    // ex: /partenaires/orange-gabon
+    // 2. Mettre les routes dynamiques {slug} TOUJOURS en dernier
     Route::get('/{slug}', [PartenairesController::class, 'show'])
         ->name('show')
         ->where('slug', '[a-z0-9\-]+');
 
-    // Scan QR Code → déverrouille les offres de l'entreprise
-    // ex: /partenaires/orange-gabon/qr-acces/AbCdEf123...
     Route::get('/{slug}/qr-acces/{token}', [PartenairesController::class, 'qrAcces'])
         ->name('qr-acces')
         ->where(['slug' => '[a-z0-9\-]+', 'token' => '[A-Za-z0-9]+']);
 });
+
+
+
 
 // Admin : régénérer QR d'un partenaire
 Route::post('/admin/partenaires/{id}/regenerer-qr', [PartenairesController::class, 'regenererQr'])
