@@ -993,12 +993,12 @@
         </a>
         <div class="nav-links">
             <a href="{{ route('home') }}">Accueil</a>
-            <a href="{{ route('partenaires.index') }}">Partenaires</a>
+            <a href="{{ route('partenaires') }}">Partenaires</a>
             <a href="{{ route('emploi') }}">Emploi</a>
             <a href="{{ route('programme') }}">Programme</a>
         </div>
         <div class="nav-right">
-            <a href="{{ route('partenaires.index') }}" class="btn-back"><svg viewBox="0 0 24 24">
+            <a href="{{ route('partenaires') }}" class="btn-back"><svg viewBox="0 0 24 24">
                     <path d="M19 12H5M12 5l-7 7 7 7" />
                 </svg>Partenaires</a>
             <a href="{{ route('inscription') }}" class="btn-inscr">S'inscrire</a>
