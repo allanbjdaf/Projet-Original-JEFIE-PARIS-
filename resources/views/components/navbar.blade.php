@@ -915,7 +915,7 @@
         <div class="nav-logo-icon" style="background: none; border: none; border-radius: 0; padding: 0; box-shadow: none;">
             <img src="{{ asset('images/r2c.png') }}"
                 alt="Logo JEFIE Paris 2026"
-                style="height: 60px; width: 200px; display: block; border-radius: 0; border: none; background: transparent;">
+                style="height: 130px; width: auto; display: block; border-radius: 0; border: none; background: transparent;">
         </div>
 
     </a>
