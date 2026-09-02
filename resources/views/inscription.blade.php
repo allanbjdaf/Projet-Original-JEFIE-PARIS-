@@ -26,7 +26,7 @@
 
         /* NAV */
         .nav {
-            background: #0f284e;
+            background: #2a5aa2;
             height: 64px;
             display: flex;
             align-items: center;
@@ -117,8 +117,8 @@
         }
 
         .tc-card:hover {
-            border-color: #0f284e;
-            box-shadow: 0 8px 28px rgba(15, 40, 78, .1);
+            border-color: #2a5aa2;
+            box-shadow: 0 8px 28px rgba(42, 90, 162, .1);
             transform: translateY(-3px)
         }
 
@@ -174,7 +174,7 @@
         .tc-title {
             font-size: 1rem;
             font-weight: 800;
-            color: #0f284e;
+            color: #2a5aa2;
             margin-bottom: .35rem
         }
 
@@ -236,10 +236,10 @@
         }
 
         .step.active .step-circle {
-            background: #0f284e;
-            border-color: #0f284e;
+            background: #2a5aa2;
+            border-color: #2a5aa2;
             color: #f5c518;
-            box-shadow: 0 0 0 4px rgba(15, 40, 78, .1)
+            box-shadow: 0 0 0 4px rgba(42, 90, 162, .1)
         }
 
         .step-label {
@@ -253,7 +253,7 @@
         }
 
         .step.active .step-label {
-            color: #0f284e
+            color: #2a5aa2
         }
 
         .step.done .step-label {
@@ -272,7 +272,7 @@
         .card-title {
             font-size: 13px;
             font-weight: 800;
-            color: #0f284e;
+            color: #2a5aa2;
             text-transform: uppercase;
             letter-spacing: .08em;
             border-left: 3px solid #f5c518;
@@ -311,7 +311,7 @@
         .form-label {
             font-size: 11px;
             font-weight: 700;
-            color: #0a1e38;
+            color: #1e4a8a;
             display: flex;
             align-items: center;
             gap: 4px
@@ -342,8 +342,8 @@
         }
 
         .form-control:focus {
-            border-color: #0f284e;
-            box-shadow: 0 0 0 3px rgba(15, 40, 78, .06)
+            border-color: #2a5aa2;
+            box-shadow: 0 0 0 3px rgba(42, 90, 162, .06)
         }
 
         .form-control::placeholder {
@@ -403,14 +403,14 @@
         }
 
         .check-item:hover {
-            border-color: #0f284e;
+            border-color: #2a5aa2;
             background: #fff
         }
 
         .check-item input[type=checkbox] {
             width: 16px;
             height: 16px;
-            accent-color: #0f284e;
+            accent-color: #2a5aa2;
             flex-shrink: 0;
             margin-top: 1px;
             cursor: pointer
@@ -419,7 +419,7 @@
         .check-item input[type=radio] {
             width: 16px;
             height: 16px;
-            accent-color: #0f284e;
+            accent-color: #2a5aa2;
             flex-shrink: 0;
             margin-top: 1px;
             cursor: pointer
@@ -427,7 +427,7 @@
 
         .check-item label {
             font-size: 12px;
-            color: #0a1e38;
+            color: #1e4a8a;
             font-weight: 600;
             cursor: pointer;
             line-height: 1.45
@@ -464,7 +464,7 @@
         }
 
         .profil-card:hover {
-            border-color: #0f284e
+            border-color: #2a5aa2
         }
 
         .profil-card.pc-selected {
@@ -493,7 +493,7 @@
         .pc-lbl {
             font-size: 10px;
             font-weight: 700;
-            color: #0a1e38;
+            color: #1e4a8a;
             line-height: 1.3
         }
 
@@ -510,7 +510,7 @@
         }
 
         .upload-zone:hover {
-            border-color: #0f284e;
+            border-color: #2a5aa2;
             background: #f4f6fa
         }
 
@@ -540,7 +540,7 @@
         }
 
         .upload-zone p strong {
-            color: #0f284e
+            color: #2a5aa2
         }
 
         .upload-name {
@@ -599,7 +599,7 @@
             gap: 6px;
             background: #fff;
             border: 1.5px dashed #d1d9e6;
-            color: #0a1e38;
+            color: #1e4a8a;
             font-size: 12px;
             font-weight: 700;
             padding: 10px 18px;
@@ -610,7 +610,7 @@
         }
 
         .btn-add-collab:hover {
-            border-color: #0f284e;
+            border-color: #2a5aa2;
             background: #f4f6fa
         }
 
@@ -680,7 +680,7 @@
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            background: #0f284e;
+            background: #2a5aa2;
             color: #fff;
             font-size: 13px;
             font-weight: 700;
@@ -693,7 +693,7 @@
         }
 
         .btn-add-offre:hover {
-            background: #0a1e38
+            background: #1e4a8a
         }
 
         .btn-add-offre svg {
@@ -716,7 +716,7 @@
         .rb-title {
             font-size: 10px;
             font-weight: 800;
-            color: #0f284e;
+            color: #2a5aa2;
             text-transform: uppercase;
             letter-spacing: .08em;
             margin-bottom: .65rem;
@@ -743,7 +743,7 @@
         }
 
         .rb-row span:last-child {
-            color: #0a1e38;
+            color: #1e4a8a;
             font-weight: 700;
             text-align: right;
             max-width: 65%
@@ -764,13 +764,13 @@
         }
 
         .consent-check:hover {
-            border-color: #0f284e
+            border-color: #2a5aa2
         }
 
         .consent-check input {
             width: 17px;
             height: 17px;
-            accent-color: #0f284e;
+            accent-color: #2a5aa2;
             flex-shrink: 0;
             margin-top: 1px;
             cursor: pointer
@@ -778,13 +778,13 @@
 
         .consent-check label {
             font-size: 12px;
-            color: #0a1e38;
+            color: #1e4a8a;
             line-height: 1.55;
             cursor: pointer
         }
 
         .consent-check label strong {
-            color: #0f284e
+            color: #2a5aa2
         }
 
         /* NAVIGATION STEPS */
@@ -798,7 +798,7 @@
 
         .btn-prev {
             background: #fff;
-            color: #0a1e38;
+            color: #1e4a8a;
             border: 1.5px solid #d1d9e6;
             font-weight: 700;
             font-size: 13px;
@@ -813,7 +813,7 @@
         }
 
         .btn-prev:hover {
-            border-color: #0f284e
+            border-color: #2a5aa2
         }
 
         .btn-prev svg {
@@ -825,7 +825,7 @@
         }
 
         .btn-next {
-            background: #0f284e;
+            background: #2a5aa2;
             color: #fff;
             border: none;
             font-weight: 700;
@@ -842,7 +842,7 @@
         }
 
         .btn-next:hover {
-            background: #0a1e38
+            background: #1e4a8a
         }
 
         .btn-next svg {
@@ -855,7 +855,7 @@
 
         .btn-submit-final {
             background: #f5c518;
-            color: #0f284e;
+            color: #2a5aa2;
             border: none;
             font-weight: 800;
             font-size: 14px;
@@ -992,7 +992,7 @@
         .ph-title {
             font-size: 1.6rem;
             font-weight: 900;
-            color: #0f284e;
+            color: #2a5aa2;
             margin-bottom: .4rem
         }
 
@@ -1036,7 +1036,7 @@
 
     <nav class="nav">
         <a href="{{ route('index') }}" class="nav-logo">
-            <img src="{{ asset('images/264.png') }}" alt="JEFIE Paris 2026">
+            <img src="{{ asset('images/r2c.png') }}" alt="JEFIE Paris 2026" style="width: auto; height: 130px;">
         </a>
         <a href="{{ route('index') }}" class="btn-back">
             <svg viewBox="0 0 24 24">
@@ -1082,13 +1082,13 @@
          ÉTAPE 0 — CHOIX DU TYPE D'INSCRIPTION
     ═══════════════════════════════════ --}}
         <div id="step0">
-            <h2 style="font-size:1.05rem;font-weight:800;color:#0f284e;margin-bottom:1.25rem;text-align:center">Quel est votre type d'inscription ?</h2>
+            <h2 style="font-size:1.05rem;font-weight:800;color:#2a5aa2;margin-bottom:1.25rem;text-align:center">Quel est votre type d'inscription ?</h2>
             <div class="type-choice">
                 <div class="tc-card" id="choixParticipant" onclick="selectType('participant')">
                     <div class="tc-check"><svg viewBox="0 0 24 24">
                             <polyline points="20 6 9 17 4 12" />
                         </svg></div>
-                    <div class="tc-icon" style="background:#e3f2fd;color:#0f284e">
+                    <div class="tc-icon" style="background:#e3f2fd;color:#2a5aa2">
                         <svg viewBox="0 0 24 24">
                             <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
                             <circle cx="9" cy="7" r="4" />
@@ -1155,7 +1155,7 @@
                             @foreach([
                             ['participant','Participant','
                             <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />','#0f284e','#e3f2fd'],
+                            <circle cx="9" cy="7" r="4" />','#0f284eff','#e3f2fd'],
                             ['ecoute','Écoute d\'opportunité','
                             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />','#2e7d32','#e8f5e9'],
                             ['entrepreneur','Entrepreneur / Porteur de projet','

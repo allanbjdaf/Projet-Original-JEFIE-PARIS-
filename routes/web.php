@@ -94,8 +94,7 @@ Route::get('/notifications', [NotificationController::class, 'index'])
     ->name('notifications');
 
 // ── Partenaires ───────────────────────────────────────────────
-Route::get('/partenaires', [PartenairesController::class, 'index'])->name('partenaires.index');
-Route::get('/partenaires', [PartenairesController::class, 'index'])->name('partenaires');
+
 Route::get('/partenaires/devenir', [DevenirPartenaireController::class, 'index'])->name('partenaires.devenir');
 Route::post('/partenaires/devenir', [DevenirPartenaireController::class, 'store'])->name('partenaires.devenir.store');
 // Routes pour l'espace ou la présentation des partenaires
@@ -119,11 +118,11 @@ Route::get('/partenaires/mes-avantages', [PartenairesController::class, 'avantag
 
 
 // Pages publiques partenaires
-Route::prefix('partenaires')->name('partenaires.')->group(function () {
+Route::prefix('partenaires')->group(function () {
 
-    // Liste des partenaires (offres masquées)
+    // Cette route répondra à /partenaires ET aura le nom exact "partenaires" attendu par votre barre de navigation
     Route::get('/', [PartenairesController::class, 'index'])
-        ->name('index');
+        ->name('partenaires');
 
     // Page entreprise avec ses offres (URL propre par slug)
     // ex: /partenaires/orange-gabon
