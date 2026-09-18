@@ -44,9 +44,8 @@ class AuthenticatedSessionController extends Controller
         }
 
         if ($user->role === 'candidat' || $user->role === 'benevole') {
-            return redirect('/emploi');
+            return redirect('/mon-espace');
         }
-
         return redirect('/');
     }
 
