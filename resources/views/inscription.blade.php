@@ -26,7 +26,7 @@
 
         /* NAV */
         .nav {
-            background: #2a5aa2;
+            background: #0a2651ff;
             height: 64px;
             display: flex;
             align-items: center;
@@ -1823,7 +1823,7 @@
             </form>
         </div>
     </div>
-
+    @include('components.footer')
     <script>
         // ══════════════════════════════════════════════════════════
         // GESTION DES TYPES

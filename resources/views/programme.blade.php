@@ -121,12 +121,6 @@
         stroke-width: 2;
     }
 
-
-
-
-
-
-
     /* ── HERO ── */
     .hero {
         background: linear-gradient(105deg, #060e20 0%, #0f284e 50%, #0f2a5e 100%);
@@ -147,7 +141,7 @@
         top: 0;
         width: 45%;
         height: 100%;
-        background: url('/images/institutionnel.jpg');
+        background: url('/images/264.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -477,7 +471,7 @@
     .programme-layout {
         display: grid;
         grid-template-columns: 1fr 280px;
-        gap: 0;
+        gap: 2rem;
         padding: 2rem 2.5rem;
         background: #f4f6fa;
         align-items: start;
@@ -871,6 +865,10 @@
         gap: 1rem;
         position: sticky;
         top: 80px;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        scrollbar-width: thin;
+        padding-bottom: 1rem;
     }
 
     .rs-title {
@@ -1089,6 +1087,8 @@
         gap: 2rem;
         flex-wrap: wrap;
         margin-top: 1.5rem;
+        position: relative;
+        z-index: 1;
     }
 
     .nl-icon {
@@ -1262,6 +1262,8 @@
         background: #0f284e;
         color: rgba(255, 255, 255, .7);
         padding: 2.5rem 2.5rem 0;
+        position: relative;
+        z-index: 1;
     }
 
     .footer-grid {
@@ -1415,6 +1417,16 @@
         color: rgba(255, 255, 255, .7);
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
     @media (max-width:1100px) {
         .programme-layout {
             grid-template-columns: 1fr;
@@ -1478,6 +1490,94 @@
         .footer-grid {
             grid-template-columns: 1fr;
         }
+
+        .programme-layout {
+            padding: 1.25rem 1rem;
+        }
+
+        .cta-participer {
+            margin: 0 1rem;
+            padding: 1.25rem 1.25rem;
+        }
+
+        .newsletter-bar,
+        .filters-bar {
+            padding: 1.25rem 1rem;
+        }
+
+        /* Empêche toute largeur fixe de dépasser l'écran */
+        .filter-select,
+        .nl-form input,
+        .footer-nl-form input {
+            min-width: 0;
+            width: 100%;
+        }
+
+        /* Countdown resserré pour ne pas déborder */
+        .countdown-block,
+        .accès-rapides-block {
+            padding: 1.25rem 1rem;
+            border-right: none;
+        }
+
+        .countdown-units {
+            gap: .6rem;
+            flex-wrap: wrap;
+        }
+
+        .cu-num {
+            font-size: 1.6rem;
+        }
+
+        .cu-sep {
+            font-size: 1.4rem;
+        }
+
+        .ar-list {
+            gap: .9rem;
+        }
+
+        /* Timeline : réduit les colonnes fixes qui poussaient la page en largeur */
+        .timeline-item {
+            gap: .6rem;
+        }
+
+        .timeline-time {
+            width: 46px;
+            padding-top: 1rem;
+        }
+
+        .timeline-connector {
+            width: 16px;
+            padding-top: 1.15rem;
+        }
+
+        .activity-card {
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* La carte passe en colonne : icône+texte en haut, actions en bas, pleine largeur */
+        .activity-body {
+            width: 100%;
+        }
+
+        .activity-actions {
+            min-width: 0;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .activity-actions .btn-gold,
+        .activity-actions .act-btn {
+            flex: 1 1 140px;
+        }
+
+        .activity-meta {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 </style>
 @endsection {{-- AJOUTÉ : Ferme proprement les styles --}}
@@ -1488,7 +1588,7 @@
 
 
 {{-- ══ HERO ══ --}}
-<section class="hero hero-compact" style="background-image: url('{{ asset('images/institutionnel.jpg') }}'); min-height: auto; padding: 4rem 2.5rem 3.5rem;">
+<section class="hero hero-compact" style="background-image: url('{{ asset('images/264.png') }}'); min-height: auto; padding: 4rem 2.5rem 3.5rem;">
     <div class="hero-left" style="max-width: 600px;">
         <div class="hero-eyebrow" style="margin-bottom: 0.5rem; font-size: 0.85rem;">
             <svg width="12" height="12" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
@@ -1791,45 +1891,49 @@
             </button>
         </div>
     </div>
-</div>
 
-
-{{-- Sidebar droite : À ne pas manquer --}}
-<aside class="right-sidebar" aria-label="À ne pas manquer">
-    <div class="rs-title">À Ne Pas Manquer</div>
-    @foreach ($aNesPasManquer as $item)
-    @php $aneColor = $item['color']; @endphp
-    <div class="ane-card">
-        <div class="ane-photo">
-            @if ($item['photo'])
-            <img src="{{ asset('images/'.$item['photo']) }}" alt="{{ $item['titre'] }}">
-            @else
-            <div class="ane-photo-placeholder">
-                <svg viewBox="0 0 24 24">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                </svg>
+    {{-- Sidebar droite : À ne pas manquer --}}
+    {{--
+        FIX : l'aside doit être la 2e colonne de la grille .programme-layout
+        (avant, une </div> mal placée la sortait de la grille : elle devenait
+        sticky par rapport à toute la page et recouvrait la newsletter/le footer
+        au scroll).
+    --}}
+    <aside class="right-sidebar" aria-label="À ne pas manquer">
+        <div class="rs-title">À Ne Pas Manquer</div>
+        @foreach ($aNesPasManquer as $item)
+        @php $aneColor = $item['color']; @endphp
+        <div class="ane-card">
+            <div class="ane-photo">
+                @if ($item['photo'])
+                <img src="{{ asset('images/'.$item['photo']) }}" alt="{{ $item['titre'] }}">
+                @else
+                <div class="ane-photo-placeholder">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </div>
+                @endif
             </div>
-            @endif
+            <div class="ane-info">
+                <div class="ane-date" style="color:<?php echo $aneColor; ?>">{{ $item['date'] }}</div>
+                <div class="ane-title">{{ $item['titre'] }}</div>
+                <div class="ane-salle">{{ $item['salle'] }}</div>
+                {{-- ✅ Bouton modifié avec les attributs data pour JavaScript --}}
+                <button class="ane-detail-btn" type="button"
+                    data-titre="{{ $item['titre'] }}"
+                    data-description="{{ $item['description'] ?? 'Aucune description disponible.' }}"
+                    data-date="{{ $item['date'] }}"
+                    data-salle="{{ $item['salle'] }}">
+                    Détails
+                </button>
+            </div>
         </div>
-        <div class="ane-info">
-            <div class="ane-date" style="color:<?php echo $aneColor; ?>">{{ $item['date'] }}</div>
-            <div class="ane-title">{{ $item['titre'] }}</div>
-            <div class="ane-salle">{{ $item['salle'] }}</div>
-            {{-- ✅ Bouton modifié avec les attributs data pour JavaScript --}}
-            <button class="ane-detail-btn" type="button"
-                data-titre="{{ $item['titre'] }}"
-                data-description="{{ $item['description'] ?? 'Aucune description disponible.' }}"
-                data-date="{{ $item['date'] }}"
-                data-salle="{{ $item['salle'] }}">
-                Détails
-            </button>
-        </div>
-    </div>
+        @endforeach
+    </aside>
 
-    @endforeach
-</aside>
-
+</div>{{-- /.programme-layout --}}
 
 {{-- ✅ Structure HTML de la Modale (Masquée par défaut) --}}
 <div id="customSidebarModal" class="sb-modal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center;">
@@ -1855,7 +1959,6 @@
         </div>
     </div>
 </div>
-
 
 {{-- ✅ Script JavaScript pour gérer l'ouverture et la fermeture --}}
 <script>
@@ -1896,8 +1999,6 @@
         });
     });
 </script>
-
-</div>{{-- /.programme-layout --}}
 
 {{-- ══ CTA PARTICIPER ══ --}}
 <div class="cta-participer">
@@ -1963,8 +2064,8 @@
 {{-- UN SEUL ET UNIQUE SCRIPT NETTOYÉ POUR ÉVITER LES ERREURS BLADE --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Définition de la date cible : 15 Septembre 2026 à 09:00:00
-        const targetDate = new Date('2026-09-15T09:00:00').getTime();
+        // Définition de la date cible : 27 Novembre 2026 à 00:00:00
+        const targetDate = new Date('2026-11-27T00:00:00').getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -1977,13 +2078,14 @@
             const secsEl = document.getElementById('cd-secs');
             const labelEl = document.querySelector('.countdown-label');
 
-            // Si la date cible est atteinte ou passée
+            // Si la date cible du 27 novembre est atteinte ou passée
             if (timeDifference <= 0) {
                 if (daysEl) daysEl.textContent = '00';
                 if (hoursEl) hoursEl.textContent = '00';
                 if (minsEl) minsEl.textContent = '00';
                 if (secsEl) secsEl.textContent = '00';
                 if (labelEl) labelEl.textContent = "Le Forum a débuté !";
+                clearInterval(countdownInterval); // Arrête le timer
                 return;
             }
 
@@ -2004,7 +2106,7 @@
         updateCountdown();
 
         // Actualisation toutes les secondes
-        setInterval(updateCountdown, 1000);
+        const countdownInterval = setInterval(updateCountdown, 1000);
     });
 </script>
 

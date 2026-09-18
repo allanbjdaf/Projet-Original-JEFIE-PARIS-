@@ -55,18 +55,27 @@ class Partenaire extends Model
         return route('partenaires.show', $this->slug);
     }
 
-    // URL QR Code (celle qui est encodée dans le QR)
+    // URL QR Code (sécurisée contre les paramètres manquants ou nuls)
     public function getQrUrlAttribute(): string
     {
-        return route('partenaires.qr-acces', [$this->slug, $this->qr_token]);
+        // Si le slug ou le token est absent, on retourne une URL de secours au lieu de faire crasher Laravel
+        if (empty($this->slug) || empty($this->qr_token)) {
+            return url('/partenaires/liste');
+        }
+
+        return route('partenaires.qr-acces', [
+            'slug'  => $this->slug,
+            'token' => $this->qr_token
+        ]);
     }
 
-    // URL image QR générée via l'API Google Charts (sans librairie)
+    // URL image QR générée via l'API Google Charts (sécurisée)
     public function getQrImageUrlAttribute(): string
     {
         $url = urlencode($this->qr_url);
         return "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={$url}&bgcolor=ffffff&color=0d1b3e&margin=10";
     }
+
 
     // Badge type partenaire
     public function getBadgeTypeAttribute(): array

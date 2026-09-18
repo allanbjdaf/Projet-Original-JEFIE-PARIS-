@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
- 
+
 use App\Models\Inscription;
 use App\Models\CollaborateurForum;
 use App\Models\OffreEmploi;
@@ -9,9 +9,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
- 
+use App\Mail\BadgeInscription;
+
 class InscriptionController extends Controller
 {
     // ── Afficher le formulaire ────────────────────────────────
@@ -19,23 +21,29 @@ class InscriptionController extends Controller
     {
         return view('inscription');
     }
- 
+
+    // AJOUTEZ CETTE MÉTHODE ICI POUR CORRIGER L'ERREUR OVH :
+    public function showFormulaire(): View
+    {
+        return $this->index();
+    }
+
     // ── Traiter et enregistrer l'inscription ──────────────────
     public function store(Request $request): RedirectResponse
     {
         $type = $request->input('type_inscription');
- 
+
         if ($type === 'participant') {
             return $this->storeParticipant($request);
         }
- 
+
         if ($type === 'entreprise') {
             return $this->storeEntreprise($request);
         }
- 
+
         return back()->withErrors(['type' => 'Type d\'inscription invalide.']);
     }
- 
+
     // ── PARTICIPANT ───────────────────────────────────────────
     private function storeParticipant(Request $request): RedirectResponse
     {
@@ -65,16 +73,22 @@ class InscriptionController extends Controller
             'certif_exactitude.accepted' => 'Vous devez certifier l\'exactitude des informations.',
             'accepte_donnees.accepted'   => 'Vous devez accepter l\'utilisation de vos données.',
         ]);
- 
+
         // Upload CV si présent
         $cvPath = null;
         if ($request->hasFile('cv')) {
             $cvPath = $request->file('cv')->store('cvs', 'public');
         }
- 
+
+        // Découper le nom complet en Nom et Prénom pour la base de données
+        $nomComplet = $request->input('nom_complet', $request->input('nom', ''));
+        $parties = explode(' ', trim($nomComplet), 2);
+        $prenomDefaut = isset($parties[1]) ? $parties[1] : '';
+        $nomDefaut = $parties[0];
+
         // Créer le numéro de badge unique
         $numeroBadge = 'JEFIE-2026-' . strtoupper(Str::random(8));
- 
+
         // Enregistrement
         $inscription = Inscription::create([
             'type_inscription'  => 'participant',
@@ -108,15 +122,20 @@ class InscriptionController extends Controller
             'statut'            => 'confirme',
             'qr_token'          => Str::random(40),
         ]);
- 
-        // Envoi email de confirmation avec badge (Job en queue)
-        // dispatch(new \App\Jobs\EnvoyerBadgeInscription($inscription));
- 
+
+        // Envoi email de confirmation avec badge
+        try {
+            Mail::to($inscription->email)->send(new BadgeInscription($inscription));
+            $inscription->update(['badge_envoye_le' => now()]);
+        } catch (\Throwable $e) {
+            Log::error('Erreur envoi badge participant : ' . $e->getMessage());
+        }
+
         return redirect()
             ->route('inscription')
             ->with('success', "Merci {$inscription->prenom} ! Votre inscription #{$numeroBadge} est confirmée. Votre badge avec QR Code vous a été envoyé par e-mail.");
     }
- 
+
     // ── ENTREPRISE ────────────────────────────────────────────
     private function storeEntreprise(Request $request): RedirectResponse
     {
@@ -131,7 +150,7 @@ class InscriptionController extends Controller
             'entreprise_nom'     => 'required|string|max:200',
             'forme_juridique'    => 'required|string|max:100',
             'pays_siege'         => 'required|string|max:100',
-            'activite_principale'=> 'required|string|max:200',
+            'activite_principale' => 'required|string|max:200',
             'taille_entreprise'  => 'required|string|max:50',
             'logo'               => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
             'cert_habilite'      => 'required|accepted',
@@ -152,22 +171,22 @@ class InscriptionController extends Controller
             'admin_telephone.required'    => 'Le téléphone est obligatoire.',
             'entreprise_nom.required'     => 'La raison sociale est obligatoire.',
             'forme_juridique.required'    => 'La forme juridique est obligatoire.',
-            'activite_principale.required'=> 'L\'activité principale est obligatoire.',
+            'activite_principale.required' => 'L\'activité principale est obligatoire.',
             'taille_entreprise.required'  => 'La taille de l\'entreprise est obligatoire.',
             'cert_habilite.accepted'      => 'Vous devez certifier être habilité(e) à administrer ce compte.',
             'cert_exactitude.accepted'    => 'Vous devez certifier l\'exactitude des informations.',
             'accepte_traitement.accepted' => 'Vous devez accepter le traitement des données.',
             'engage_usage.accepted'       => 'Vous devez vous engager sur l\'usage des données.',
         ]);
- 
+
         // Upload logo
         $logoPath = null;
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->store('logos-entreprises', 'public');
         }
- 
+
         $numeroBadge = 'JEFIE-ENT-2026-' . strtoupper(Str::random(6));
- 
+
         // Créer l'inscription entreprise
         $inscription = Inscription::create([
             'type_inscription'    => 'entreprise',
@@ -197,7 +216,7 @@ class InscriptionController extends Controller
             'statut'              => 'confirme',
             'qr_token'            => Str::random(40),
         ]);
- 
+
         // Enregistrer les collaborateurs
         if ($request->ajoute_collabs === 'oui' && $request->has('collabs')) {
             foreach ($request->collabs as $collab) {
@@ -214,19 +233,19 @@ class InscriptionController extends Controller
                 ]);
             }
         }
- 
+
         // Enregistrer les offres d'emploi
         if ($request->publie_offres === 'oui' && $request->has('offres')) {
             foreach ($request->offres as $i => $offre) {
                 if (empty($offre['titre'])) continue;
- 
+
                 // Upload fiche de poste
                 $fichePath = null;
                 $ficheKey  = "offres.{$i}.fiche";
                 if ($request->hasFile($ficheKey)) {
                     $fichePath = $request->file($ficheKey)->store('fiches-poste', 'public');
                 }
- 
+
                 OffreEmploi::create([
                     'inscription_id'  => $inscription->id,
                     'partenaire_id'   => null,
@@ -247,48 +266,31 @@ class InscriptionController extends Controller
                 ]);
             }
         }
- 
-        // dispatch(new \App\Jobs\EnvoyerConfirmationEntreprise($inscription));
- 
+
+        // Envoi email de confirmation à l'entreprise
+        try {
+            Mail::to($inscription->email)->send(new BadgeInscription($inscription));
+            $inscription->update(['badge_envoye_le' => now()]);
+        } catch (\Throwable $e) {
+            Log::error('Erreur envoi badge entreprise : ' . $e->getMessage());
+        }
+
+        // Envoi des e-mails individuels aux collaborateurs
+        if ($inscription->collaborateurs && $inscription->collaborateurs->count() > 0) {
+            foreach ($inscription->collaborateurs as $collab) {
+                if ($collab->email) {
+                    try {
+                        Mail::to($collab->email)->send(new \App\Mail\BadgeCollaborateur($collab));
+                        $collab->update(['badge_envoye_le' => now()]);
+                    } catch (\Throwable $e) {
+                        Log::error("Erreur envoi email collaborateur ID {$collab->id} : " . $e->getMessage());
+                    }
+                }
+            }
+        }
+
         return redirect()
             ->route('inscription')
             ->with('success', "Compte entreprise créé ! Référence : #{$numeroBadge}. Les codes d'accès ont été envoyés à {$request->admin_email}.");
     }
 }
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -14,14 +14,15 @@ use Illuminate\Support\Facades\Cache;
 class PartenairesController extends Controller
 {
     // Page liste partenaires — offres masquées
-    public function liste()
+    public function index()
     {
         $partenaires = Partenaire::where('statut', 'actif')
             ->withCount('offres')
             ->orderBy('nom')
+
             ->paginate(12);
 
-        return view('partenaires_show', compact('partenaires'));
+        return view('partenaires.show', compact('partenaire'));
     }
 
     // Page entreprise individuelle avec ses offres — URL propre

@@ -1340,8 +1340,7 @@
         <div>
             <div class="ci-label">Email</div>
             <div class="ci-val">
-                contact@forum-innovation.org<br>
-                presse@forum-innovation.org
+                info@jefieparis2026.com<br>
             </div>
         </div>
     </div>
@@ -1355,7 +1354,7 @@
         <div>
             <div class="ci-label">Téléphone</div>
             <div class="ci-val">
-                +221 33 123 45 67<br>
+                +33 7 58 35 07 57<br>
                 Lun – Ven : 8h00 – 18h00 (GMT)
             </div>
         </div>
@@ -1371,8 +1370,8 @@
         <div>
             <div class="ci-label">Adresse</div>
             <div class="ci-val">
-                Cité de l'innovation,<br>
-                Dakar, Sénégal
+                CNIT FOREST DE LA DEFENSE
+                2 palce la defense, 92800 Puteaux<br>
             </div>
         </div>
     </div>

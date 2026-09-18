@@ -1682,30 +1682,7 @@
                 </div>
             </div>
 
-            <div class="fsi-card">
-                <div class="fsi-title">Ce qui vous attend</div>
-                @foreach ([
-                ['Réception de votre demande', 'Confirmation immédiate par email', '
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="M2 7l10 7 10-7" />'],
-                ['Appel de découverte', 'Notre équipe vous contacte sous 48h', '
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07" />'],
-                ['Proposition sur mesure', 'Offre adaptée à vos objectifs', '
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />'],
-                ['Signature & onboarding', 'Accompagnement dédié jusqu\'au Forum', '
-                <polyline points="20 6 9 17 4 12" />'],
-                ] as $i => [$titre, $desc, $ic])
-                <div class="fsi-item">
-                    <div class="fsi-icon" style="background:{{ ['rgba(245,166,35,.12)','rgba(15, 40, 78,.07)','rgba(15, 40, 78,.07)','rgba(46,125,50,.1)'][$i] }}">
-                        <svg viewBox="0 0 24 24" style="stroke:{{ ['#f5c518','#0f284e','#0f284e','#2e7d32'][$i] }}" aria-hidden="true">{!! $ic !!}</svg>
-                    </div>
-                    <div class="fsi-text">
-                        <strong>{{ ($i+1) }}. {{ $titre }}</strong>
-                        <span>{{ $desc }}</span>
-                    </div>
-                </div>
-                @endforeach
-            </div>
+
 
             <div class="fsi-contact">
                 <div class="fsi-contact-title">Une question avant de vous lancer ?</div>

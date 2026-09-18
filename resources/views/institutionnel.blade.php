@@ -1259,7 +1259,7 @@
                     @endforeach
                 </div>
 
-                <a href="{{ route('partenaires') }}" class="ts-link">En savoir plus...</a>
+                <a href="{{ route('partenaires.liste') }}" class="ts-link">En savoir plus...</a>
             </div>
 
             {{-- Partenaires institutionnels --}}
@@ -1285,7 +1285,7 @@
                     </div>
                     @endforeach
                 </div>
-                <a href="{{ route('partenaires') }}" class="ts-link">Voir tous les partenaires...</a>
+                <a href="{{ route('partenaires.liste') }}" class="ts-link">Voir tous les partenaires...</a>
             </div>
 
         </div>{{-- /.top-sections --}}
@@ -1309,7 +1309,7 @@
                     @endforeach
 
                 </div>
-                <a href="{{ route('partenaires') }}" class="ts-link">Voir tous les sponsors...</a>
+                <a href="{{ route('partenaires.liste') }}" class="ts-link">Voir tous les sponsors...</a>
             </div>
         </div>
 

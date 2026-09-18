@@ -11,6 +11,7 @@ use App\Models\RendezVousB2B;
 use App\Models\DocumentCandidat;
 use App\Models\OffreEmploi;
 use App\Models\ProfilEntrepreneur;
+use App\Models\ProfilCandidat;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -61,8 +62,18 @@ class MonEspaceController extends Controller
     public function profil(): View
     {
         $user = Auth::user();
+
+        $profil = ProfilCandidat::firstOrCreate(
+            ['user_id' => $user->id],
+            [
+                'nom_complet' => $user->name,
+                'email'       => $user->email,
+            ]
+        );
+
         return view('mon-espace.profil', [
             'user'        => $user,
+            'profil'      => $profil,
             'role'        => $user->role ?? 'participant',
             'inscription' => $this->getInscription($user->id),
         ]);
@@ -71,23 +82,37 @@ class MonEspaceController extends Controller
     public function updateProfil(Request $request): RedirectResponse
     {
         $user = Auth::user();
+
         $validated = $request->validate([
-            'name'          => ['required', 'string', 'max:255'],
+            'nom_complet'   => ['required', 'string', 'max:255'],
+            'email'         => ['required', 'email', 'max:255'],
             'telephone'     => ['nullable', 'string', 'max:30'],
-            'organisation'  => ['nullable', 'string', 'max:255'],
-            'fonction'      => ['nullable', 'string', 'max:255'],
-            'pays'          => ['nullable', 'string', 'max:100'],
-            'ville'         => ['nullable', 'string', 'max:100'],
+            'localisation'  => ['nullable', 'string', 'max:150'],
+            'titre_pro'     => ['nullable', 'string', 'max:150'],
+            'secteur'       => ['nullable', 'string', 'max:150'],
+            'linkedin'      => ['nullable', 'url', 'max:255'],
             'bio'           => ['nullable', 'string', 'max:1000'],
+            'disponibilite' => ['nullable', 'in:immediate,1_mois,3_mois,non_disponible'],
             'photo'         => ['nullable', 'image', 'max:2048'],
         ]);
 
+        $profil = ProfilCandidat::firstOrCreate(['user_id' => $user->id]);
+
         if ($request->hasFile('photo')) {
-            if ($user->photo) Storage::disk('public')->delete($user->photo);
+            if ($profil->photo) {
+                Storage::disk('public')->delete($profil->photo);
+            }
             $validated['photo'] = $request->file('photo')->store('avatars', 'public');
         }
 
-        $user->update($validated);
+        $profil->update($validated);
+
+        // Garde le nom/email également synchronisés sur le compte utilisateur
+        $user->update([
+            'name'  => $validated['nom_complet'],
+            'email' => $validated['email'],
+        ]);
+
         return back()->with('success', '✅ Profil mis à jour avec succès !');
     }
 

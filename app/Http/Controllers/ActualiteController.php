@@ -28,7 +28,7 @@ class ActualiteController extends Controller
             ->orderByDesc('date_publication')->first();
         $recentes    = Actualite::where('publie', true)->orderByDesc('date_publication')->take(4)->get();
 
-        return view('actualites', [
+        return view('Actualites', [
             'actualites'   => $actualites,
             'aLaUne'       => $aLaUne,
             'recentes'     => $recentes,

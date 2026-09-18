@@ -28,6 +28,8 @@ use App\Http\Controllers\PaiementController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProfilEntrepreneurController;
+use Illuminate\Support\Facades\DB;
+
 
 
 // ✅ OBLIGATOIRE — Routes Breeze auth (login, register, logout, etc.)
@@ -100,11 +102,14 @@ Route::get('/notifications', [NotificationController::class, 'index'])
 Route::get('/partenaires/devenir', [DevenirPartenaireController::class, 'index'])->name('partenaires.devenir');
 Route::post('/partenaires/devenir', [DevenirPartenaireController::class, 'store'])->name('partenaires.devenir.store');
 
+
+Route::get('/partenaires', [PartenairesController::class, 'index'])->name('partenaires');
+
+
 // Pages publiques partenaires (Groupe unifié pour éviter les conflits)
 Route::prefix('partenaires')->name('partenaires.')->group(function () {
 
     // 1. Mettre TOUTES les routes fixes en premier
-    Route::get('/', [PartenairesController::class, 'index'])->name('index');
     Route::get('/liste', [PartenairesController::class, 'liste'])->name('liste');
     Route::get('/profil', [PartenairesController::class, 'profil'])->name('profil');
     Route::get('/activites', [PartenairesController::class, 'activites'])->name('activites');
@@ -132,9 +137,6 @@ Route::prefix('partenaires')->name('partenaires.')->group(function () {
         ->name('qr-acces')
         ->where(['slug' => '[a-z0-9\-]+', 'token' => '[A-Za-z0-9]+']);
 });
-
-
-
 
 // Admin : régénérer QR d'un partenaire
 Route::post('/admin/partenaires/{id}/regenerer-qr', [PartenairesController::class, 'regenererQr'])
@@ -176,11 +178,34 @@ Route::get('/badge/{numero}/{token}', function ($numero, $token) {
 
 
 // ── Newsletter ────────────────────────────────────────────────
-Route::post('/newsletter/subscribe', function (Request $r) {
-    $r->validate(['email_newsletter' => ['required', 'email']]);
-    return back()->with('success', '✅ Vous êtes abonné à notre newsletter !');
-})->name('newsletter.subscribe');
 
+
+// UNE SEULE ROUTE POUR LA NEWSLETTER
+Route::post('/newsletter/subscribe', function (Request $request) {
+
+    // 1. Validation de l'e-mail
+    $request->validate([
+        'email_newsletter' => 'required|email'
+    ]);
+
+    // 2. Vérification manuelle des doublons pour éviter un plantage SQL
+    $existe = DB::table('newsletter_subscriptions')
+        ->where('email', strtolower(trim($request->email_newsletter)))
+        ->exists();
+
+    if ($existe) {
+        return redirect()->back()->withErrors(['email_newsletter' => 'Cet e-mail est déjà inscrit à la newsletter !']);
+    }
+
+    // 3. Insertion dans la table active de votre phpMyAdmin
+    DB::table('newsletter_subscriptions')->insert([
+        'email'      => strtolower(trim($request->email_newsletter)),
+        'created_at' => now(),
+    ]);
+
+    // 4. Retour avec le message de succès attendu par votre code
+    return redirect()->back()->with('success_newsletter', '✅ Félicitations ! Vous êtes maintenant inscrit à notre newsletter.');
+})->name('newsletter.subscribe');
 
 use App\Http\Controllers\RapportController;
 

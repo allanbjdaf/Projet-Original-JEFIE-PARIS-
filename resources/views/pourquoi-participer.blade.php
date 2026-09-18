@@ -2088,7 +2088,7 @@
         </div>
     </section>
 
-@include('components.footer')
+    @include('components.footer')
 
 
 
@@ -2096,7 +2096,7 @@
     <script>
         // Countdown universel
         function countdown() {
-            const target = new Date('2026-09-15T09:00:00').getTime();
+            const target = new Date('2026-11-27T09:00:00').getTime();
             const now = Date.now();
             const diff = Math.max(0, target - now);
             const d = Math.floor(diff / 86400000);

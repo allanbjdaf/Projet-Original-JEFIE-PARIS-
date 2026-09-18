@@ -1636,7 +1636,7 @@
 </nav>
 
 {{-- ══ HERO ══ --}}
-<section class="hero" style="background-image: url('{{ asset('images/coo.jpg') }}')">
+<section class="hero" style="background-image: url('{{ asset('images/ina.jpg') }}')">
     <div class="hero-left">
         <h1>
             Journées économiques et Forum international de
@@ -1649,14 +1649,14 @@
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <path d="M16 2v4M8 2v4M3 10h18" />
                 </svg>
-                15 - 17 Juin 2026
+                27-28 Novembre 2026
             </div>
             <div class="hero-meta-item">
                 <svg viewBox="0 0 24 24">
                     <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
                     <circle cx="12" cy="10" r="3" />
                 </svg>
-                Palais des Congrès,Paris, France
+                CNIT FOREST LA DEFENSE, 2 place de la defense, 92800 puteaux ,France
             </div>
         </div>
         <div class="hero-actions">
@@ -1847,7 +1847,11 @@
             </div>
             <div class="actu-list">
                 @foreach ($actualites as $actu)
-                <a href="{{ route('actualites.show', $actu['slug']) }}" class="actu-card">
+                {{-- Modification ici : Choix dynamique du lien et ajout de target="_blank" si externe --}}
+                <a href="{{ $actu['url_externe'] ?? route('actualites.show', $actu['slug']) }}"
+                    @if(!empty($actu['url_externe'])) target="_blank" rel="noopener noreferrer" @endif
+                    class="actu-card">
+
                     <div class="actu-thumb">
                         {{-- ✅ Vos vraies images : Cooo.jpg, Ctr.jpg, CGFjpg.jpg --}}
                         <img src="{{ asset('images/'.$actu['image']) }}" alt="{{ $actu['titre'] }}" loading="lazy">
@@ -1856,6 +1860,7 @@
                             {{ explode(' ', $actu['date'])[1] ?? '' }}
                         </div>
                     </div>
+
                     <div class="actu-body">
                         <div class="actu-title">{{ $actu['titre'] }}</div>
                         <div class="actu-excerpt">{{ $actu['resume'] }}</div>
@@ -1869,40 +1874,45 @@
                 </a>
                 @endforeach
             </div>
-        </div>
 
-        {{-- Vidéos --}}
-        <div>
-            <div class="sec-header-row">
-                <h2 class="sec-h">Vidéos Promotionnelles &amp; Teasers</h2>
-                <a href="{{ route('galerie') }}">
-                    Voir toutes les vidéos
-                    <svg viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
-            </div>
-            <div class="videos-grid">
-                @foreach ($videos as $vid)
-                <div class="video-item">
-                    {{-- ✅ Thumbnails : bo.jpg, boaa.jpg, son.jpg --}}
-                    <img src="{{ asset('images/'.$vid['thumbnail']) }}" alt="{{ $vid['titre'] }}" loading="lazy">
-                    <div class="video-item-overlay">
-                        <div class="vid-play-btn">
-                            <svg viewBox="0 0 24 24">
-                                <polygon points="5 3 19 12 5 21 5 3" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="video-item-label">
-                        <p>{{ $vid['titre'] }}</p>
-                    </div>
+            {{-- Vidéos --}}
+            <div>
+                <div class="sec-header-row">
+                    <h2 class="sec-h">Vidéos Promotionnelles &amp; Teasers</h2>
+                    <a href="{{ route('galerie') }}">
+                        Voir toutes les vidéos
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
                 </div>
-                @endforeach
-            </div>
-        </div>
+                <div class="videos-grid">
+                    @foreach ($videos as $vid)
+                    {{-- Modification ici : On entoure chaque vidéo d'un lien si 'url_externe' est défini, sinon on met '#' --}}
+                    <a href="{{ $vid['url_externe'] ?? '#' }}"
+                        @if(!empty($vid['url_externe']) && $vid['url_externe'] !=='#' ) target="_blank" rel="noopener noreferrer" @endif
+                        class="video-item" style="display: block; text-decoration: none; color: inherit;">
 
-    </div>
+                        {{-- ✅ Thumbnails : bo.jpg, boaa.jpg, son.jpg --}}
+                        <img src="{{ asset('images/'.$vid['thumbnail']) }}" alt="{{ $vid['titre'] }}" loading="lazy">
+                        <div class="video-item-overlay">
+                            <div class="vid-play-btn">
+                                <svg viewBox="0 0 24 24">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-item-label">
+                            <p>{{ $vid['titre'] }}</p>
+                        </div>
+
+                    </a>
+                    @endforeach
+                </div>
+
+            </div>
+
+        </div>
 </section>
 
 {{-- ══ PARTENAIRES ══ --}}
@@ -1918,7 +1928,7 @@
         <div class="partners-scroll" id="partners-row" role="list">
             @foreach ($partenaires as $p)
             <div class="partner-logo-box" role="listitem">
-                {{-- ✅ Vos vrais logos : Pnp.jpg, ba.jpg, ue.png, etc. --}}
+                {{-- ✅ Vos vrais logos : Logo_PNPE.png, pnpp.png, ue.png, etc. --}}
                 @if ($p['logo'])
                 <img src="{{ asset('images/'.$p['logo']) }}" alt="{{ $p['nom'] }}" loading="lazy">
                 @else

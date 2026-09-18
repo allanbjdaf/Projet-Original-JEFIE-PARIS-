@@ -10,34 +10,38 @@ class UserAdminSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. Super Admin (Rôle configuré en 'super_admin' pour votre contrôleur)
-        User::updateOrCreate(
+        // 1. Super Admin
+        $superAdmin = User::updateOrCreate(
             ['email' => 'superadmin@forum2026.com'],
             [
                 'name'     => 'Super Administrateur',
                 'password' => Hash::make('password123'),
-                'role'     => 'super_admin', // 👈 Rempli la colonne attendue par le contrôleur
+                'role'     => 'super_admin', // Conservé pour votre contrôleur
             ]
         );
+        // On lui assigne le rôle Spatie correspondant (nom exact du RolesAndPermissionsSeeder)
+        $superAdmin->assignRole('super-admin'); 
 
         // 2. Admin Partenaires
-        User::updateOrCreate(
+        $partnerAdmin = User::updateOrCreate(
             ['email' => 'partenaires@forum2026.com'],
             [
                 'name'     => 'Responsable Partenariats',
                 'password' => Hash::make('password123'),
-                'role'     => 'partenaire', // 👈 Rempli la colonne attendue par le contrôleur
+                'role'     => 'partenaire', 
             ]
         );
+        $partnerAdmin->assignRole('admin-partenaires');
 
         // 3. Admin Médias
-        User::updateOrCreate(
+        $mediaAdmin = User::updateOrCreate(
             ['email' => 'medias@forum2026.com'],
             [
                 'name'     => 'Journaliste Modérateur',
                 'password' => Hash::make('password123'),
-                'role'     => 'admin', // 👈 Rempli la colonne attendue par le contrôleur
+                'role'     => 'admin', 
             ]
         );
+        $mediaAdmin->assignRole('admin-medias');
     }
 }

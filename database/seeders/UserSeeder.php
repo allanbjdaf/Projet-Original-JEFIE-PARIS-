@@ -4,16 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-
 use Spatie\Permission\Models\Role;
-
-// À ajouter au tout début de la fonction run() :
-Role::findOrCreate('super-admin');
-Role::findOrCreate('admin-partenaires');
-Role::findOrCreate('admin-medias');
 
 class UserSeeder extends Seeder
 {
@@ -22,10 +15,32 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'name' => 'Administrateur',
-            'email' => 'admin@forum2026.sn',
-            'password' => Hash::make('password123'),
-        ]);
+        // 1. Sécurité : On s'assure que les rôles Spatie existent en base de données
+        $roleSuperAdmin = Role::findOrCreate('super-admin', 'web');
+        $rolePartenaire = Role::findOrCreate('admin-partenaires', 'web');
+        $roleMedias     = Role::findOrCreate('admin-medias', 'web');
+
+        // 2. Création du Super Admin principal (avec la colonne 'role' pour votre contrôleur)
+        $admin = User::updateOrCreate(
+            ['email' => 'admin@forum2026.sn'],
+            [
+                'name'     => 'Administrateur',
+                'password' => Hash::make('password123'),
+                'role'     => 'super_admin', // Requis par votre contrôleur personnalisé
+            ]
+        );
+        // On lui assigne officiellement le rôle Spatie
+        $admin->assignRole($roleSuperAdmin);
+
+        // 3. Création du compte Super Admin secondaire (si vous souhaitez conserver l'ancien)
+        $superAdmin2 = User::updateOrCreate(
+            ['email' => 'superadmin@forum2026.com'],
+            [
+                'name'     => 'Super Administrateur',
+                'password' => Hash::make('password123'),
+                'role'     => 'super_admin',
+            ]
+        );
+        $superAdmin2->assignRole($roleSuperAdmin);
     }
 }

@@ -29,7 +29,7 @@ class FaqController extends Controller
             });
         }
 
-        return view('faq', [
+        return view('Faq', [
             'categories'      => $categories,
             'faqs'            => array_values($faqs),
             'categorieActive' => $categorieActive,

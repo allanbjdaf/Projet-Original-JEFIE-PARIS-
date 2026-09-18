@@ -1173,46 +1173,57 @@
             grid-template-columns: 1fr;
         }
 
-        .article-card.featured {
-            flex-direction: column;
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-wrap {
+                padding: 1.5rem 1rem;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card.featured {
+                flex-direction: column;
+            }
+
+            .article-card.featured .ac-thumb {
+                width: 100%;
+                height: 200px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .stats-band {
+                gap: 1rem;
+                padding: .85rem 1rem;
+            }
+
+            .site-footer {
+                padding: 2rem 1.25rem 0;
+            }
         }
 
-        .article-card.featured .ac-thumb {
-            width: 100%;
-            height: 200px;
-        }
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
 
-        .hero h1 {
-            font-size: 1.8rem;
-        }
+            .filtres-row {
+                gap: 5px;
+            }
 
-        .stats-band {
-            gap: 1rem;
-            padding: .85rem 1rem;
+            .filtre-tab {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
         }
-
-        .site-footer {
-            padding: 2rem 1.25rem 0;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .footer-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .filtres-row {
-            gap: 5px;
-        }
-
-        .filtre-tab {
-            font-size: 12px;
-            padding: 6px 12px;
-        }
-    }
 </style>
-
-
 
 
 @endsection
@@ -1221,8 +1232,7 @@
 
 @include('components.navbar')
 
-</div>
-</nav>
+
 
 {{-- ══ HERO ══ --}}
 <section class="hero">
@@ -1539,7 +1549,7 @@
 
         {{-- ══ FOOTER ══ --}}
 
-@include('components.footer')
+        @include('components.footer')
 
 
 

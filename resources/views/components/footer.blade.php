@@ -195,7 +195,7 @@
                     <small style="font-size:10px">2026</small>
                 </div>
             </a>
-            <p>Le rendez-vous mondial des décideurs, innovateurs et entrepreneurs engagés pour un avenir durable.</p>
+            <p>Le rendez-vous de la diaspora gabonaise, des entrepreneurs et porteur de projets engagés pour l'avenir pour la nation.</p>
             <nav class="footer-socials" aria-label="Réseaux sociaux">
                 <a href="#" aria-label="Facebook">f</a>
                 <a href="#" aria-label="Twitter">&#120143;</a>
@@ -211,7 +211,7 @@
             <a href="{{ route('index') }}">Accueil</a>
             <a href="{{ route('programme') }}">Programme</a>
             <a href="#">Intervenants</a>
-            <a href="{{ route('partenaires') }}">Partenaires</a>
+            <a href="{{ route('partenaires.liste') }}">Partenaires</a>
             <a href="{{ route('actualites') }}">Actualités</a>
         </div>
 
@@ -234,27 +234,27 @@
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <path d="M16 2v4M8 2v4M3 10h18" />
                 </svg>
-                15 – 18 Septembre 2026
+                27 – 28 Novembre 2026
             </div>
             <div class="footer-info-row">
                 <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="1.8">
                     <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
                     <circle cx="12" cy="10" r="3" />
                 </svg>
-                Palais des Congrès<br>Paris, France
+                Paris, France
             </div>
             <div class="footer-info-row">
                 <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="1.8">
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                     <path d="M2 7l10 7 10-7" />
                 </svg>
-                contact@forum-innovation.org
+                info@jefieparis2026.com
             </div>
             <div class="footer-info-row">
                 <svg width="13" height="13" viewBox="0 0 24 24" stroke="#f5c518" fill="none" stroke-width="1.8">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12 12 0 00.74 2.9A2 2 0 017.21 7l-1.27 1.27a16 16 0 006.79 6.79L14 13.79a2 2 0 012.18-.45c.93.35 1.9.61 2.9.74A2 2 0 0122 16.92z" />
                 </svg>
-                +33 1 00 00 00 00
+                +33 7 58 35 07 57
             </div>
         </div>
 

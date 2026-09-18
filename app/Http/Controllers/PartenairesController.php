@@ -7,6 +7,8 @@ use App\Models\Partenaire;
 use App\Models\Opportunite;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\OffreEmploi; // Assurez-vous d'avoir ce modèle importé
+
 
 class PartenairesController extends Controller
 {
@@ -23,8 +25,10 @@ class PartenairesController extends Controller
             END
         ")->take(4)->get();
 
+        // On charge la vue 'partenaires' (votre tableau de bord / liste)
         return view('partenaires', [
-            'partenairesUne'    => $partenairesUne, // Attention à la minuscule sur la clé 'partenairesUne'
+            'partenaires'       => Partenaire::paginate(12), // ✅ Ajout de la liste complète pour votre grille
+            'partenairesUne'    => $partenairesUne,
             'opportunites'      => Opportunite::latest('date')->take(3)->get(),
             'packs'             => $this->listePacks(),
             'visibilite'        => $this->statsVisibilite(),
@@ -34,15 +38,106 @@ class PartenairesController extends Controller
         ]);
     }
 
+    // 2. ALIAS POUR LA ROUTE : Redirige proprement 'partenaires.liste' vers la vue globale
+    // 2. PAGE LISTE / PROFILS (Ce qui doit s'afficher au clic sur "Voir tous les partenaires")
+    public function liste(): View
 
+    {
+        $partenairesUne = Partenaire::orderByRaw("
+            CASE niveau
+                WHEN 'platinum' THEN 1
+                WHEN 'gold' THEN 2
+                WHEN 'silver' THEN 3
+                WHEN 'bronze' THEN 4
+                ELSE 5
+            END
+        ")->take(4)->get();
+
+        $partenaireParDefaut = $partenairesUne->first() ?? new Partenaire([
+            'nom' => 'Forum JEFIE',
+            'description' => 'Sélectionnez un partenaire.',
+            'secteur' => 'Paris 2026'
+        ]);
+        // ✅ AJOUT : Initialisation des variables QR et Offres pour éviter l'erreur 500
+        $qrValide = session("qr_acces_{$partenaireParDefaut->id}", false);
+        $offres = $qrValide
+            ? OffreEmploi::where('partenaire_id', $partenaireParDefaut->id)->where('statut', 'active')->latest()->get()
+            : collect();
+
+        return view('partenaires_show', [
+            'partenaire'        => $partenaireParDefaut,
+            'partenaires'       => Partenaire::paginate(12),
+            'partenairesUne'    => $partenairesUne,
+            'qrValide'          => $qrValide, // ✅ Injecté
+            'offres'            => $offres,   // ✅ Injecté
+            'opportunites'      => Opportunite::latest('date')->take(3)->get(),
+            'packs'             => $this->listePacks(),
+            'visibilite'        => $this->statsVisibilite(),
+            'niveauPartenariat' => ['niveau' => 'Gold', 'expiration' => '31 Décembre 2026'],
+            'standImage'        => null,
+            'conseillerPhoto'   => null,
+        ]);
+    }
+    // 3. PAGE INDIVIDUELLE : Affiche le profil d'UN SEUL partenaire (resources/views/partenaires_show.blade.php)
+    public function show(string $slug): View
+    {
+        // On récupère le partenaire cliqué grâce à son slug
+
+        $partenaire = Partenaire::where('slug', $slug)->firstOrFail();
+
+        // ✅ AJOUT : Chargement du statut QR et des offres spécifiques au partenaire cliqué
+        $qrValide = session("qr_acces_{$partenaire->id}", false);
+        $offres = $qrValide
+            ? OffreEmploi::where('partenaire_id', $partenaire->id)->where('statut', 'active')->latest()->get()
+            : collect();
+        $partenairesUne = Partenaire::orderByRaw("
+            CASE niveau
+                WHEN 'platinum' THEN 1
+                WHEN 'gold' THEN 2
+                WHEN 'silver' THEN 3
+                WHEN 'bronze' THEN 4
+                ELSE 5
+            END
+        ")->take(4)->get();
+
+
+        // ✅ CORRECTION : Ajout d'un slug et qr_token fictifs pour le partenaire virtuel par défaut
+        // pour empêcher le plantage de la fonction route() à la ligne 61 de Partenaire.php
+        $partenaireParDefaut = $partenairesUne->first() ?? new Partenaire([
+            'id'          => 0,
+            'nom'         => 'Forum JEFIE',
+            'slug'        => 'forum-jefie',  // <-- Rempli pour satisfaire le routage Laravel
+            'qr_token'    => 'default-token', // <-- Rempli pour satisfaire le routage Laravel
+            'description' => 'Sélectionnez un partenaire dans la liste pour voir ses détails.',
+            'secteur'     => 'Paris 2026'
+        ]);
+        // Initialisation des variables QR et Offres pour le partenaire sélectionné par défaut
+        $qrValide = session("qr_acces_{$partenaireParDefaut->id}", false);
+        $offres = $qrValide
+            ? OffreEmploi::where('partenaire_id', $partenaireParDefaut->id)->where('statut', 'active')->latest()->get()
+            : collect();
+
+
+        return view('partenaires_show', [
+            'partenaire'        => $partenaire,
+            'partenaires'       => Partenaire::paginate(12), // Permet de garder la liste accessible
+            'partenairesUne'    => $partenairesUne,
+            'qrValide'          => $qrValide, // ✅ Injecté
+            'offres'            => $offres,   // ✅ Injecté
+            'opportunites'      => Opportunite::latest('date')->take(3)->get(),
+            'packs'             => $this->listePacks(),
+            'visibilite'        => $this->statsVisibilite(),
+            'niveauPartenariat' => ['niveau' => 'Gold', 'expiration' => '31 Décembre 2026'],
+            'standImage'        => null,
+            'conseillerPhoto'   => null,
+        ]);
+    }
     public function devenir(): View
     {
         return view('partenaires.devenir');
     }
-    public function liste(): View
-    {
-        return view('partenaires_show', ['partenaires' => Partenaire::paginate(12)]);
-    }
+
+
     public function profil(): View
     {
         return view('partenaires.profil');
@@ -88,11 +183,6 @@ class PartenairesController extends Controller
         return view('partenaires.avantages');
     }
 
-    public function show(string $slug): View
-    {
-        $partenaire = Partenaire::where('slug', $slug)->firstOrFail();
-        return view('partenaires.show', compact('partenaire'));
-    }
 
     public function pack(string $slug): View
     {

@@ -1385,7 +1385,7 @@
 
         <div class="ls-section">
             <div class="ls-section-title">Espace Partenaire</div>
-            <a href="{{ route('partenaires') }}" class="ls-item active">
+            <a href="{{ route('partenaires.liste') }}" class="ls-item active">
                 <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
                     <rect x="3" y="3" width="7" height="7" rx="1" />
                     <rect x="14" y="3" width="7" height="7" rx="1" />

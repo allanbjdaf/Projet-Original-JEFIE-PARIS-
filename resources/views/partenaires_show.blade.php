@@ -1,15 +1,9 @@
-{{-- resources/views/partenaires/show.blade.php --}}
-{{-- Page entreprise individuelle : /partenaires/{slug} --}}
-<!DOCTYPE html>
-<html lang="fr">
+    {{-- resources/views/partenaires/show.blade.php --}}
+    @extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Nos Partenaires — JEFIE Paris 2026</title>
-    <meta name="description" content="Découvrez la liste des partenaires officiels du Forum JEFIE Paris 2026.">
+    @section('title', 'JEFIE - PARIS 2026' )
 
+    @section('styles')
     <style>
         * {
             box-sizing: border-box;
@@ -23,118 +17,6 @@
             background: #f0f2f7
         }
 
-        /* NAV */
-        .nav {
-            background: #0d1b3e;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 300
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none
-        }
-
-        .nav-logo-icon {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #f3cc21ff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center
-        }
-
-        .nav-logo-icon svg {
-            width: 18px;
-            height: 18px;
-            stroke: #f3cc21ff;
-            fill: none;
-            stroke-width: 1.8
-        }
-
-        .nav-logo-text {
-            color: #fff;
-            font-size: 9px;
-            font-weight: 700;
-            text-transform: uppercase;
-            line-height: 1.3
-        }
-
-        .nav-logo-text span {
-            color: #f3cc21ff;
-            display: block;
-            font-size: 11px;
-            font-weight: 800
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem
-        }
-
-        .nav-links a {
-            color: rgba(255, 255, 255, .75);
-            font-size: 13px;
-            text-decoration: none;
-            transition: color .2s
-        }
-
-        .nav-links a:hover {
-            color: #f3cc21ff
-        }
-
-        .nav-right {
-            display: flex;
-            gap: 8px;
-            align-items: center
-        }
-
-        .btn-back {
-            color: rgba(255, 255, 255, .7);
-            font-size: 12px;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, .2);
-            padding: 7px 14px;
-            border-radius: 5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: all .2s
-        }
-
-        .btn-back:hover {
-            background: rgba(255, 255, 255, .1);
-            color: #fff
-        }
-
-        .btn-back svg {
-            width: 13px;
-            height: 13px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2
-        }
-
-        .btn-inscr {
-            background: #f3cc21ff;
-            color: #0d1b3e;
-            font-weight: 700;
-            font-size: 13px;
-            padding: 9px 18px;
-            border-radius: 5px;
-            text-decoration: none
-        }
-
-        /* HERO ENTREPRISE */
         .hero-ent {
             background: linear-gradient(108deg, #060e20, #0d1b3e 55%, #0a2356);
             padding: 2.5rem 2.5rem 0;
@@ -180,7 +62,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #f3cc21ff;
+            color: #f5a623;
             font-size: 2rem;
             font-weight: 900;
             flex-shrink: 0
@@ -262,7 +144,7 @@
         }
 
         .bh-gold {
-            background: #f3cc21ff;
+            background: #f5a623;
             color: #0d1b3e
         }
 
@@ -296,7 +178,7 @@
         }
 
         .he-stat-num {
-            color: #f3cc21ff;
+            color: #f5a623;
             font-size: 1.1rem;
             font-weight: 900;
             display: block;
@@ -311,7 +193,6 @@
             margin-top: 3px
         }
 
-        /* TABS NAVIGATION */
         .ent-tabs {
             background: #fff;
             border-bottom: 2px solid #f0f4f8;
@@ -355,11 +236,10 @@
 
         .etab.active {
             color: #0d1b3e;
-            border-bottom-color: #f3cc21ff;
+            border-bottom-color: #f5a623;
             font-weight: 700
         }
 
-        /* LAYOUT */
         .page-content {
             max-width: 1100px;
             margin: 0 auto;
@@ -370,8 +250,6 @@
             align-items: start
         }
 
-        /* MAIN */
-        /* Alert succès QR */
         .alert-qr-ok {
             background: #e8f5e9;
             border: 1px solid #a5d6a7;
@@ -393,7 +271,6 @@
             flex-shrink: 0
         }
 
-        /* VERROU OFFRES */
         .lock-section {
             background: #fff;
             border: 1px solid #e2e8f0;
@@ -491,7 +368,7 @@
             width: 30px;
             height: 30px;
             background: #0d1b3e;
-            color: #f3cc21ff;
+            color: #f5a623;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -526,10 +403,9 @@
         }
 
         .lock-link a:hover {
-            color: #f3cc21ff
+            color: #f5a623
         }
 
-        /* OFFRES */
         .offres-header {
             display: flex;
             align-items: center;
@@ -543,7 +419,7 @@
             color: #0d1b3e;
             text-transform: uppercase;
             letter-spacing: .08em;
-            border-left: 3px solid #f3cc21ff;
+            border-left: 3px solid #f5a623;
             padding-left: 8px;
             display: flex;
             align-items: center;
@@ -622,7 +498,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #f3cc21ff;
+            color: #f5a623;
             font-size: 16px;
             font-weight: 700;
             flex-shrink: 0
@@ -741,7 +617,6 @@
             color: #a0aec0
         }
 
-        /* PRÉSENTATION */
         .card {
             background: #fff;
             border: 1px solid #e2e8f0;
@@ -756,7 +631,7 @@
             color: #0d1b3e;
             text-transform: uppercase;
             letter-spacing: .08em;
-            border-left: 3px solid #f3cc21ff;
+            border-left: 3px solid #f5a623;
             padding-left: 8px;
             margin-bottom: 1rem
         }
@@ -819,11 +694,9 @@
         }
 
         .info-val a:hover {
-            color: #f3cc21ff
+            color: #f5a623
         }
 
-        /* SIDEBAR */
-        /* QR miniature sidebar */
         .qr-sidebar-card {
             background: #0d1b3e;
             border-radius: 12px;
@@ -872,7 +745,7 @@
 
         .qsc-unlock-btn {
             display: block;
-            background: #f3cc21ff;
+            background: #f5a623;
             color: #0d1b3e;
             font-weight: 700;
             font-size: 12px;
@@ -887,7 +760,6 @@
             opacity: .9
         }
 
-        /* Contact card */
         .contact-card {
             background: #fff;
             border: 1px solid #e2e8f0;
@@ -896,7 +768,6 @@
             margin-bottom: 1.25rem
         }
 
-        /* Autres partenaires */
         .autres-list {
             display: flex;
             flex-direction: column;
@@ -961,10 +832,6 @@
         }
 
         @media(max-width:768px) {
-            .nav-links {
-                display: none
-            }
-
             .hero-inner {
                 flex-direction: column;
                 align-items: flex-start
@@ -979,31 +846,15 @@
             }
         }
     </style>
-</head>
+    @endsection
 
-<body>
+    @section('content')
 
-    {{-- NAV --}}
-    <nav class="nav">
-        <a href="{{ route('home') }}" class="nav-logo">
-            <div class="nav-logo-icon"><svg viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg></div>
-            <div class="nav-logo-text"><span>JEFIE</span>Paris 2026</div>
-        </a>
-        <div class="nav-links">
-            <a href="{{ route('home') }}">Accueil</a>
-            <a href="{{ route('partenaires') }}">Partenaires</a>
-            <a href="{{ route('emploi') }}">Emploi</a>
-            <a href="{{ route('programme') }}">Programme</a>
-        </div>
-        <div class="nav-right">
-            <a href="{{ route('partenaires') }}" class="btn-back"><svg viewBox="0 0 24 24">
-                    <path d="M19 12H5M12 5l-7 7 7 7" />
-                </svg>Partenaires</a>
-            <a href="{{ route('inscription') }}" class="btn-inscr">S'inscrire</a>
-        </div>
-    </nav>
+    @include('components.navbar')
+
+
+    {{-- ÉTAPE 1 : AJOUTEZ LA BOUCLE ICI --}}
+    @foreach($partenaires as $partenaire)
 
     {{-- HERO ENTREPRISE --}}
     <div class="hero-ent">
@@ -1065,10 +916,12 @@
             </div>
 
             <div class="he-stats">
-                <div class="he-stat"><span class="he-stat-num">{{ $partenaire->offres_actives_count ?? $partenaire->offresActives()->count() }}</span>
+                <div class="he-stat">
+                    <span class="he-stat-num">{{ $partenaire->offresActives()->count() }}</span>
                     <div class="he-stat-lbl">Offres actives</div>
                 </div>
-                <div class="he-stat"><span class="he-stat-num">{{ $partenaire->stand ?? '—' }}</span>
+                <div class="he-stat">
+                    <span class="he-stat-num">{{ $partenaire->stand ?? '—' }}</span>
                     <div class="he-stat-lbl">Stand Forum</div>
                 </div>
             </div>
@@ -1077,10 +930,14 @@
         {{-- TABS --}}
         <div class="ent-tabs">
             <div class="ent-tabs-inner">
-                <a href="#presentation" class="etab active"><svg viewBox="0 0 24 24">
+                <a href="#presentation" class="etab active">
+                    <svg viewBox="0 0 24 24">
                         <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                    </svg>Présentation</a>
-                <a href="#offres" class="etab"><svg viewBox="0 0 24 24">
+                    </svg>
+                    Présentation
+                </a>
+                <a href="#offres" class="etab">
+                    <svg viewBox="0 0 24 24">
                         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
                     </svg>
                     Offres
@@ -1088,11 +945,22 @@
                         {{ $qrValide ? $offres->count().' 🔓' : '🔒' }}
                     </span>
                 </a>
-                <a href="#contact" class="etab"><svg viewBox="0 0 24 24">
+                <a href="#contact" class="etab">
+                    <svg viewBox="0 0 24 24">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    </svg>Contact</a>
+                    </svg>
+                    Contact
+                </a>
             </div>
         </div>
+    </div>
+
+    {{-- 2. FIN DE LA BOUCLE GÉNÉRALE (À placer tout en bas de la structure du partenaire) --}}
+    @endforeach
+
+    {{-- 3. PAGINATION (À placer EN DEHORS et APRÈS la boucle @foreach) --}}
+    <div class="pagination-container" style="margin: 2rem 0; text-align: center;">
+        {{ $partenaires->links() }}
     </div>
 
     {{-- CONTENU --}}
@@ -1176,18 +1044,18 @@
             {{-- OFFRES --}}
             <div id="offres">
                 @if($qrValide)
-                {{-- ✅ QR VALIDÉ — Offres visibles --}}
                 <div class="offres-header">
                     <div class="oh-title">
                         Offres publiées par {{ $partenaire->nom }}
-                        <div class="oh-unlock"><svg viewBox="0 0 24 24">
+                        <div class="oh-unlock">
+                            <svg viewBox="0 0 24 24">
                                 <path d="M9 12l2 2 4-4" />
-                                <path d="M17 4h3a1 1 0 011 1v3M3 20V9a1 1 0 011-1h13a1 1 0 011 1v10a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                            </svg>Accès QR actif</div>
+                            </svg>
+                            Accès QR actif
+                        </div>
                     </div>
                     <span style="font-size:12px;color:#a0aec0">{{ $offres->count() }} offre(s)</span>
                 </div>
-
                 @if($offres->count() > 0)
                 <div class="offres-list">
                     @foreach($offres as $offre)
@@ -1203,7 +1071,6 @@
                                 <span>{{ $partenaire->nom }}</span>
                                 @if($offre->localisation)<span class="offre-meta-sep"></span><span>📍 {{ $offre->localisation }}</span>@endif
                                 @if($offre->type_contrat)<span class="offre-meta-sep"></span><span>{{ $offre->type_contrat }}</span>@endif
-                                @if($offre->date_limite)<span class="offre-meta-sep"></span><span>🕐 {{ \Carbon\Carbon::parse($offre->date_limite)->diffForHumans() }}</span>@endif
                             </div>
                             @if($offre->description)
                             <div class="offre-desc">{{ strip_tags($offre->description) }}</div>
@@ -1211,7 +1078,6 @@
                             <div class="offre-tags">
                                 @if($offre->type_contrat)<span class="offre-tag" style="background:#e3f2fd;color:#1565c0">{{ $offre->type_contrat }}</span>@endif
                                 @if($offre->secteur)<span class="offre-tag" style="background:#e8f5e9;color:#2e7d32">{{ $offre->secteur }}</span>@endif
-                                @if($offre->experience)<span class="offre-tag" style="background:#f0f4f8;color:#718096">{{ $offre->experience }}</span>@endif
                             </div>
                         </div>
                         <div class="offre-right">
@@ -1226,13 +1092,12 @@
                     <svg viewBox="0 0 24 24">
                         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
                     </svg>
-                    <p>Aucune offre disponible pour le moment.<br><span style="color:#c6c9d0;font-size:11px">Revenez prochainement ou activez les alertes emploi.</span></p>
+                    <p>Aucune offre disponible pour le moment.</p>
                     <a href="{{ route('emploi') }}" style="display:inline-flex;align-items:center;gap:6px;background:#0d1b3e;color:#fff;font-weight:700;font-size:12px;padding:10px 20px;border-radius:7px;text-decoration:none;margin-top:1rem">Voir toutes les offres</a>
                 </div>
                 @endif
-
                 @else
-                {{-- 🔒 QR NON VALIDÉ — Offres masquées --}}
+                {{-- 🔒 QR NON VALIDÉ --}}
                 <div class="lock-section">
                     <div class="lock-icon"><svg viewBox="0 0 24 24">
                             <rect x="3" y="11" width="18" height="11" rx="2" />
@@ -1240,15 +1105,12 @@
                         </svg></div>
                     <div class="lock-title">Offres d'emploi — Accès réservé</div>
                     <p class="lock-desc">Les offres publiées par <strong>{{ $partenaire->nom }}</strong> sont accessibles exclusivement via le QR Code présent sur le stand de l'entreprise au Forum JEFIE Paris 2026.</p>
-
-                    {{-- QR Code à afficher sur le stand --}}
                     <div class="qr-display">
                         <div class="qr-img">
                             <img src="{{ $partenaire->qr_image_url }}" alt="QR Code {{ $partenaire->nom }}" loading="lazy">
                         </div>
-                        <div class="qr-hint">📱 Scannez ce QR Code avec votre téléphone depuis le stand {{ $partenaire->stand ? 'N°'.$partenaire->stand : '' }} au Forum</div>
+                        <div class="qr-hint">📱 Scannez ce QR Code depuis le stand {{ $partenaire->stand ? 'N°'.$partenaire->stand : '' }} au Forum</div>
                     </div>
-
                     <div class="lock-steps">
                         <div class="ls-step">
                             <div class="ls-num">1</div>
@@ -1265,8 +1127,7 @@
                             <div class="ls-text">Accédez aux offres</div>
                         </div>
                     </div>
-
-                    <p class="lock-link">Vous avez déjà scanné le QR Code ? <a href="{{ $partenaire->qr_url }}">Cliquez ici pour déverrouiller</a></p>
+                    <p class="lock-link">Vous avez déjà scanné ? <a href="{{ $partenaire->qr_url }}">Cliquez ici pour déverrouiller</a></p>
                 </div>
                 @endif
             </div>
@@ -1316,7 +1177,6 @@
 
         {{-- SIDEBAR --}}
         <aside>
-            {{-- QR Card sidebar --}}
             @if(!$qrValide)
             <div class="qr-sidebar-card">
                 <div class="qsc-title">🔒 Offres verrouillées</div>
@@ -1335,12 +1195,11 @@
             </div>
             @endif
 
-            {{-- Infos rapides --}}
             <div class="contact-card">
                 <div class="card-title">Infos rapides</div>
                 <div style="display:flex;flex-direction:column;gap:.6rem;margin-top:.75rem">
                     @if($partenaire->site_web)
-                    <a href="{{ $partenaire->site_web }}" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:12px;color:#162552;text-decoration:none;font-weight:600;padding:.5rem .6rem;background:#f8fafc;border-radius:7px;transition:background .15s" onmouseover="this.style.background='#f0f4f8'" onmouseout="this.style.background='#f8fafc'">
+                    <a href="{{ $partenaire->site_web }}" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:12px;color:#162552;text-decoration:none;font-weight:600;padding:.5rem .6rem;background:#f8fafc;border-radius:7px">
                         <svg viewBox="0 0 24 24" width="14" height="14" stroke="#718096" fill="none" stroke-width="1.8">
                             <circle cx="12" cy="12" r="10" />
                             <path d="M2 12h20" />
@@ -1368,7 +1227,6 @@
                 </div>
             </div>
 
-            {{-- Autres partenaires --}}
             @if(isset($autresPartenaires) && $autresPartenaires->count() > 0)
             <div class="card">
                 <div class="card-title">Autres partenaires</div>
@@ -1392,17 +1250,12 @@
         </aside>
     </div>
 
-    {{-- FOOTER --}}
-    <footer style="background:#0a1428;color:rgba(255,255,255,.6);padding:1.5rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-top:2rem">
-        <span style="font-size:11px;color:rgba(255,255,255,.3)">&copy; {{ date('Y') }} JEFIE Paris 2026</span>
-        <div style="display:flex;gap:1rem">
-            <a href="{{ route('partenaires.index') }}" style="font-size:11px;color:rgba(255,255,255,.4);text-decoration:none">← Tous les partenaires</a>
-            <a href="{{ route('inscription') }}" style="font-size:11px;color:#f5a623;text-decoration:none;font-weight:700">S'inscrire au Forum</a>
-        </div>
-    </footer>
+    {{-- À la place des lignes 519 à 525 --}}
+    @include('components.footer')
 
+
+    @push('scripts')
     <script>
-        // Smooth scroll tabs
         document.querySelectorAll('.etab').forEach(tab => {
             tab.addEventListener('click', e => {
                 e.preventDefault();
@@ -1417,10 +1270,8 @@
                 }
             });
         });
-        // Activer le bon onglet au scroll
         window.addEventListener('scroll', () => {
-            const sections = ['presentation', 'offres', 'contact'];
-            sections.forEach(id => {
+            ['presentation', 'offres', 'contact'].forEach(id => {
                 const el = document.getElementById(id);
                 if (!el) return;
                 const rect = el.getBoundingClientRect();
@@ -1432,6 +1283,6 @@
             });
         });
     </script>
-</body>
+    @endpush
 
-</html>
+    @endsection
