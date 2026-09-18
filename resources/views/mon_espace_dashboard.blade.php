@@ -1680,134 +1680,7 @@
                 </div>
             </div>
 
-            {{-- Grid : Candidatures + RDV --}}
-            <div class="grid2">
 
-                {{-- Dernières candidatures --}}
-                @if (in_array($role,['candidat','participant_forum','benevole','moderateur','intervenant']))
-                <div class="card">
-                    <div class="card-head">
-                        <div class="card-title">Mes candidatures</div>
-                        <a href="{{ route('mon-espace.candidatures') }}" class="card-link">Voir tout <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></a>
-                    </div>
-                    @if (isset($candidatures_recentes) && $candidatures_recentes->count() > 0)
-                    <div class="table-wrap">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Poste</th>
-                                    <th>Statut</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($candidatures_recentes as $c)
-                                <tr>
-                                    <td>
-                                        <div class="td-name">{{ $c->poste_cible }}</div>
-                                        <div class="td-sub">{{ $c->offreEmploi?->entreprise ?? '—' }}</div>
-                                    </td>
-                                    <td><span class="badge b-{{ $c->statut }}">{{ ucfirst(str_replace('_',' ',$c->statut)) }}</span></td>
-                                    <td style="font-size:11px;color:#a0aec0">{{ $c->created_at?->format('d/m/Y') }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    @else
-                    <div class="empty-mini">
-                        Aucune candidature — <a href="{{ route('emploi') }}" style="color:#f5c518;font-weight:700">Voir les offres</a>
-                    </div>
-                    @endif
-                </div>
-                @endif
-
-                {{-- Offres recruteur --}}
-                @if (in_array($role,['recruteur','partenaire']) && isset($offres_recentes))
-                <div class="card">
-                    <div class="card-head">
-                        <div class="card-title">Mes offres publiées</div>
-                        <a href="{{ route('recruteur.offres') }}" class="card-link">Voir tout <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></a>
-                    </div>
-                    @forelse ($offres_recentes as $o)
-                    <div class="offre-item" style="text-decoration:none">
-                        <div class="offre-logo">
-                            @if ($o->logo_entreprise)
-                            <img src="{{ asset('storage/'.$o->logo_entreprise) }}" alt="">
-                            @else
-                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="#718096" fill="none" stroke-width="1.5">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                            </svg>
-                            @endif
-                        </div>
-                        <div class="offre-info">
-                            <div class="offre-titre">{{ $o->titre }}</div>
-                            <div class="offre-meta">{{ $o->type_contrat }} · {{ $o->lieu }} · {{ $o->candidatures_count ?? 0 }} candid.</div>
-                        </div>
-                        <span class="badge b-{{ $o->statut }}">{{ ucfirst($o->statut) }}</span>
-                    </div>
-                    @empty
-                    <div class="empty-mini"><a href="{{ route('recruteur.offre.creer') }}" style="color:#f5c518;font-weight:700">+ Publier une offre</a></div>
-                    @endforelse
-                </div>
-                @endif
-
-                {{-- Prochains RDV --}}
-                @if (isset($rdvs_prochains) && $rdvs_prochains->count() > 0)
-                <div class="card">
-                    <div class="card-head">
-                        <div class="card-title">Prochains RDV B2B</div>
-                        <a href="{{ route('emploi.rdvb2b') }}" class="card-link">Voir tout <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></a>
-                    </div>
-                    @foreach ($rdvs_prochains as $rdv)
-                    <div class="rdv-item">
-                        <div class="rdv-date-box">
-                            <span class="rdv-day">{{ \Carbon\Carbon::parse($rdv->date_heure)->format('d') }}</span>
-                            <span class="rdv-month">{{ \Carbon\Carbon::parse($rdv->date_heure)->translatedFormat('M') }}</span>
-                        </div>
-                        <div class="rdv-info">
-                            <div class="rdv-titre">{{ $rdv->objet }}</div>
-                            <div class="rdv-sub">{{ $rdv->recruteur_id }} · {{ \Carbon\Carbon::parse($rdv->date_heure)->format('H:i') }}</div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                @endif
-
-                {{-- Offres suggérées --}}
-                @if (isset($offres_suggeres) && $offres_suggeres->count() > 0)
-                <div class="card">
-                    <div class="card-head">
-                        <div class="card-title">Offres suggérées</div>
-                        <a href="{{ route('emploi') }}" class="card-link">Voir tout <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></a>
-                    </div>
-                    @foreach ($offres_suggeres as $o)
-                    <a href="{{ route('emploi.show', $o->slug ?? $o->id) }}" class="offre-item">
-                        <div class="offre-logo">
-                            @if ($o->logo_entreprise)
-                            <img src="{{ asset('storage/'.$o->logo_entreprise) }}" alt="">
-                            @else
-                            <span style="font-size:12px;font-weight:700;color:#0f284e">{{ strtoupper(substr($o->entreprise ?? 'E',0,2)) }}</span>
-                            @endif
-                        </div>
-                        <div class="offre-info">
-                            <div class="offre-titre">{{ $o->titre }}</div>
-                            <div class="offre-meta">{{ $o->entreprise }} · {{ $o->type_contrat }} · {{ $o->lieu }}</div>
-                        </div>
-                        <span class="badge b-active">Nouveau</span>
-                    </a>
-                    @endforeach
-                </div>
-                @endif
-            </div>
 
         </main>
         </div>
@@ -1827,7 +1700,7 @@
      FOOTER
 ══════════════════════════════════════════ --}}
 
-@include('components.footer')
+        @include('components.footer')
 
     </body>
 
