@@ -1144,6 +1144,7 @@
                 <input type="hidden" name="sous_profil" id="sousProfil" value="">
 
                 {{-- ── ÉTAPE 1 — Profil ── --}}
+
                 <div id="panelP1">
                     {{-- Profil --}}
                     <div class="card">
@@ -1162,666 +1163,732 @@
                             <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />','#f5c518','#fff8e6'],
                             ] as [$v,$l,$ic,$c,$bg])
                             <label class="profil-card" id="pc-{{ $v }}" onclick="selectSousProfil('{{ $v }}')">
-                                <input type="radio" name="profil_visiteur" value="{{ $v }}" {{ old('profil_visiteur')===$v?'checked':'' }}>
+                                <input type="radio" name="profil_visiteur" value="{{ $v }}" {{ old('profil_visiteur')===$v?'checked':'' }} required>
                                 <div class="pc-icon" style="background:{{ $bg }};color:{{ $c }}"><svg viewBox="0 0 24 24" stroke="{{ $c }}" fill="none" stroke-width="1.7">{!! $ic !!}</svg></div>
                                 <div class="pc-lbl">{{ $l }}</div>
                             </label>
                             @endforeach
                         </div>
                     </div>
-
-                    {{-- Identité --}}
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                                <circle cx="12" cy="7" r="4" />
-                            </svg>Identité</div>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Civilité <span class="req">*</span></label>
-                                <select name="civilite" class="form-control" required>
-                                    <option value="">Sélectionnez...</option>
-                                    <option value="M" {{ old('civilite')==='M'?'selected':'' }}>Monsieur</option>
-                                    <option value="Mme" {{ old('civilite')==='Mme'?'selected':'' }}>Madame</option>
-                                </select>
-                            </div>
-                            <div></div>
-                            <div class="form-group">
-                                <label class="form-label">Nom(s) <span class="req">*</span></label>
-                                <input type="text" name="nom" class="form-control" placeholder="Votre nom de famille" value="{{ old('nom') }}" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Prénom(s) <span class="req">*</span></label>
-                                <input type="text" name="prenom" class="form-control" placeholder="Votre prénom" value="{{ old('prenom') }}" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Nationalité <span class="req">*</span></label>
-                                <select name="nationalite" class="form-control" required>
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['Gabonaise','Française','Belge','Canadienne','Américaine','Britannique','Camerounaise','Sénégalaise','Ivoirienne','Congolaise','Marocaine','Autre'] as $n)
-                                    <option value="{{ $n }}" {{ old('nationalite')===$n?'selected':'' }}>{{ $n }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Pays de résidence <span class="req">*</span></label>
-                                <select name="pays_residence" class="form-control" required>
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['France','Gabon','Belgique','Canada','États-Unis','Royaume-Uni','Suisse','Espagne','Allemagne','Portugal','Sénégal','Côte d\'Ivoire','Cameroun','Maroc','Autre'] as $p)
-                                    <option value="{{ $p }}" {{ old('pays_residence')===$p?'selected':'' }}>{{ $p }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Numéro WhatsApp <span class="req">*</span></label>
-                                <input type="tel" name="whatsapp" class="form-control" placeholder="+33 6 00 00 00 00" value="{{ old('whatsapp') }}" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Adresse e-mail <span class="req">*</span></label>
-                                <input type="email" name="email" class="form-control" placeholder="votre@email.com" value="{{ old('email') }}" required autocomplete="email">
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Thématiques --}}
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" />
-                            </svg>Thématiques d'intérêt</div>
-                        <p style="font-size:12px;color:#718096;margin-bottom:1rem">Quelles thématiques du Forum vous intéressent particulièrement ?</p>
-                        <div class="check-grid">
-                            @foreach(['Investissement','Entrepreneuriat','Emploi','Transformation numérique','Industrie','Agriculture','Énergie','Finance','Commerce','Autre'] as $t)
-                            <label class="check-item">
-                                <input type="checkbox" name="thematiques[]" value="{{ $t }}" {{ in_array($t, old('thematiques',[]))?'checked':'' }}>
-                                <label style="cursor:pointer">{{ $t }}</label>
-                            </label>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    {{-- B2B --}}
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <rect x="3" y="4" width="18" height="18" rx="2" />
-                                <path d="M16 2v4M8 2v4M3 10h18" />
-                            </svg>Rencontres B2B</div>
-                        <p style="font-size:12px;color:#718096;margin-bottom:1rem">Souhaitez-vous participer aux rencontres B2B ?</p>
-                        <div style="display:flex;gap:1rem">
-                            <label class="check-item" style="flex:1">
-                                <input type="radio" name="participe_b2b" value="oui" {{ old('participe_b2b')==='oui'?'checked':'' }}>
-                                <label>✅ Oui, je souhaite participer</label>
-                            </label>
-                            <label class="check-item" style="flex:1">
-                                <input type="radio" name="participe_b2b" value="non" {{ old('participe_b2b')==='non'?'checked':'' }}>
-                                <label>Non merci</label>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="step-nav">
-                        <button type="button" onclick="backToChoice()" class="btn-prev"><svg viewBox="0 0 24 24">
-                                <path d="M19 12H5M12 5l-7 7 7 7" />
-                            </svg>Retour</button>
-                        <button type="button" onclick="nextPanelP(1)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
+                    {{-- Bouton pour passer à l'étape suivante (Validation obligatoire des champs) --}}
+                    <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                        <button type="button" class="btn-next" onclick="validerEtChangerEtape(1, 2)" style="background: #2a5aa2; color: #fff; padding: 10px 24px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Suivant</button>
                     </div>
                 </div>
 
-                {{-- ── ÉTAPE 2 — Si "Écoute d'opportunité" ── --}}
-                <div id="panelP2" style="display:none">
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                            </svg>Profil — Écoute d'opportunité</div>
-                        <p style="font-size:12px;color:#718096;margin-bottom:1.25rem">Si vous êtes à l'écoute des opportunités au Gabon, cette étape est indispensable. Merci d'y répondre avec le plus grand intérêt et de communiquer des informations exactes.</p>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Nationalité <span class="req">*</span></label>
-                                <select name="nationalite_type" class="form-control">
-                                    <option value="">Sélectionnez...</option>
-                                    <option value="gabonaise">Gabonaise</option>
-                                    <option value="autre">Autre</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Niveau d'études <span class="req">*</span></label>
-                                <select name="niveau_etudes" class="form-control">
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['3ème','Terminale','BAC+2','BAC+3','BAC+4','BAC+5','Docteur','Autre'] as $n)
-                                    <option value="{{ $n }}">{{ $n }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Diplôme le plus élevé <span class="req">*</span></label>
-                                <select name="diplome" class="form-control">
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['BEPC','Licence','Master 1','Master 2','Doctorat'] as $d)
-                                    <option value="{{ $d }}">{{ $d }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Expérience pour ce poste</label>
-                                <select name="experience" class="form-control">
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['Junior (-2 ans)','Entre 2 et 5 ans','Entre 5 et 10 ans','Entre 10 et 15 ans','Plus de 15 ans'] as $e)
-                                    <option value="{{ $e }}">{{ $e }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group fg1">
-                                <label class="form-label">Domaine de formation <span class="req">*</span></label>
-                                <select name="domaine_formation" class="form-control">
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['Informatique, Numérique & Cybersécurité','Ingénierie, Industrie & Technologies','Énergie, Pétrole, Gaz & Mines','BTP, Architecture & Urbanisme','Agriculture, Agroalimentaire, Pêche & Environnement','Santé, Médecine & Sciences biomédicales','Économie, Finance, Banque & Assurance','Gestion, Management & Administration','Commerce, Marketing & Communication','Droit, Sciences politiques & Relations internationales','Sciences humaines & sociales','Éducation, Enseignement & Formation','Transport, Logistique & Supply Chain','Tourisme, Hôtellerie, Restauration & Culture','Autre domaine'] as $d)
-                                    <option value="{{ $d }}">{{ $d }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group fg1">
-                                <label class="form-label">Situation professionnelle actuelle <span class="req">*</span></label>
-                                <select name="situation_pro" class="form-control">
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['Primo-chercheur d\'emploi','Ancien travailleur','En poste','En fin de scolarité'] as $s)
-                                    <option value="{{ $s }}">{{ $s }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+                {{-- Informations de compte & Sécurité (Commun) --}}
+                <div class="card">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        Sécurité du compte
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Mot de passe <span class="req">*</span></label>
+                            <input type="password" name="password" id="password" class="form-control" required minlength="8" placeholder="Minimum 8 caractères">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Confirmer le mot de passe <span class="req">*</span></label>
+                            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required minlength="8" placeholder="Confirmez votre mot de passe">
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Bloc Nationalité adaptatif (Étape 1) --}}
+                <div class="card" id="blocNationaliteContainer">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        Identité & Citoyenneté <span class="req">*</span>
+                    </div>
+
+                    {{-- S'affichera dynamiquement via selectSousProfil() selon le choix utilisateur --}}
+                    <div id="natStandard">
+                        <div class="form-group fg1">
+                            <label class="form-label">Nationalité <span class="req">*</span></label>
+                            <input type="text" name="nationalite_libre" id="nationalite_libre" class="form-control" placeholder="Ex: Française, Ivoirienne...">
                         </div>
                     </div>
 
-                    {{-- Postes recherchés --}}
-                    <div class="card">
-                        <div class="card-title">Postes recherchés <span class="req">*</span></div>
-                        <p style="font-size:12px;color:#718096;margin-bottom:1rem">Quel est le poste que vous recherchez en priorité ?</p>
-                        <div class="check-grid">
-                            @foreach(['Direction générale / Direction exécutive','Management / Responsable d\'équipe','Administration / Assistanat / Secrétariat','Finance / Comptabilité / Audit','Banque / Assurance','Ressources humaines','Commercial / Vente / Business Development','Marketing / Communication / Événementiel','Informatique / Digital / Cybersécurité','Ingénierie / Technique / Maintenance','BTP / Architecture / Urbanisme','Énergie / Pétrole / Gaz / Mines','Logistique / Transport / Achats / Supply Chain','Santé / Social','Juridique / Conformité','Enseignement / Formation / Recherche','Agriculture / Agroalimentaire / Environnement','Hôtellerie / Restauration / Tourisme','Stage','Alternance / Apprentissage','Autre'] as $p)
-                            <label class="check-item">
-                                <input type="checkbox" name="postes_recherches[]" value="{{ $p }}">
-                                <label>{{ $p }}</label>
+                    <div id="natGabonSeul" style="display:none">
+                        <div class="form-group fg1">
+                            <label class="form-label">Nationalité <span class="req">*</span></label>
+                            <select name="nationalite_gabon" id="nationalite_gabon" class="form-control">
+                                <option value="Gabonais" selected>Gabonaise / Gabonais</option>
+                            </select>
+                            <small class="form-hint" style="color: #2e7d32; font-weight: bold;">✓ Ce profil d'écoute d'opportunités est réservé exclusivement aux ressortissants Gabonais.</small>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Nom(s) <span class="req">*</span></label>
+            <input type="text" name="nom" class="form-control" placeholder="Votre nom de famille" value="{{ old('nom') }}" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Prénom(s) <span class="req">*</span></label>
+            <input type="text" name="prenom" class="form-control" placeholder="Votre prénom" value="{{ old('prenom') }}" required>
+        </div>
+
+        {{-- [CORRECTION] Ce bloc Nationalité sera masqué automatiquement en JavaScript si le profil est Écoute d'opportunité --}}
+        <div class="form-group" id="container-nationalite-etape2">
+            <label class="form-label">Nationalité <span class="req">*</span></label>
+            <select name="nationalite" id="nationalite_etape2" class="form-control" required>
+                <option value="">Sélectionnez...</option>
+                @foreach(['Gabonaise','Française','Belge','Canadienne','Américaine','Britannique','Camerounaise','Sénégalaise','Ivoirienne','Congolaise','Marocaine','Autre'] as $n)
+                <option value="{{ $n }}" {{ old('nationalite')===$n?'selected':'' }}>{{ $n }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        {{-- [CORRECTION] Ajout des champs Date de naissance + Âge (Visibles uniquement pour le profil Écoute d'opportunité) --}}
+        <div class="form-group" id="box-date-naissance" style="display:none;">
+            <label class="form-label">Date de naissance <span class="req">*</span></label>
+            <input type="date" name="date_naissance" id="date_naissance" class="form-control" value="{{ old('date_naissance') }}">
+        </div>
+
+        <div class="form-group" id="box-age-auto" style="display:none;">
+            <label class="form-label">Âge auto-calculé</label>
+            <input type="text" id="age_auto" class="form-control" readonly style="background: #edf2f7; font-weight: bold;" placeholder="Saisissez votre date de naissance">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Pays de résidence <span class="req">*</span></label>
+            <select name="pays_residence" class="form-control" required>
+                <option value="">Sélectionnez...</option>
+                @foreach(['France','Gabon','Belgique','Canada','États-Unis','Royaume-Uni','Suisse','Espagne','Allemagne','Portugal','Sénégal','Côte d\'Ivoire','Cameroun','Maroc','Autre'] as $p)
+                <option value="{{ $p }}" {{ old('pays_residence')===$p?'selected':'' }}>{{ $p }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Numéro WhatsApp <span class="req">*</span></label>
+            <input type="tel" name="whatsapp" class="form-control" placeholder="+33 6 00 00 00 00" value="{{ old('whatsapp') }}" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Adresse e-mail <span class="req">*</span></label>
+            <input type="email" name="email" class="form-control" placeholder="votre@email.com" value="{{ old('email') }}" required autocomplete="email">
+        </div>
+    </div>
+
+    {{-- [CORRECTION] Boutons de navigation de l'Étape 2 vers l'Étape 3 avec contrôle de validation --}}
+    <div style="display: flex; justify-content: space-between; margin-top: 1.5rem; width: 100%;">
+        <button type="button" class="btn-prev" onclick="document.getElementById('panelP2').style.display='none'; document.getElementById('panelP1').style.display='block';" style="background: #e2e8f0; padding: 10px 24px; border: none; border-radius: 6px; cursor: pointer;">Précédent</button>
+        <button type="button" class="btn-next" onclick="validerEtChangerEtape(2, 3)" style="background: #2a5aa2; color: #fff; padding: 10px 24px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Suivant</button>
+    </div>
+    </div>
+
+    {{-- Thématiques --}}
+    <div class="card">
+        <div class="card-title"><svg viewBox="0 0 24 24">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" />
+            </svg>Thématiques d'intérêt</div>
+        <p style="font-size:12px;color:#718096;margin-bottom:1rem">Quelles thématiques du Forum vous intéressent particulièrement ?</p>
+        <div class="check-grid">
+            @foreach(['Investissement','Entrepreneuriat','Emploi','Transformation numérique','Industrie','Agriculture','Énergie','Finance','Commerce','Autre'] as $t)
+            <label class="check-item">
+                <input type="checkbox" name="thematiques[]" value="{{ $t }}" {{ in_array($t, old('thematiques',[]))?'checked':'' }}>
+                <label style="cursor:pointer">{{ $t }}</label>
+            </label>
+            @endforeach
+        </div>
+    </div>
+
+    {{-- B2B --}}
+    <div class="card">
+        <div class="card-title"><svg viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>Rencontres B2B</div>
+        <p style="font-size:12px;color:#718096;margin-bottom:1rem">Souhaitez-vous participer aux rencontres B2B ?</p>
+        <div style="display:flex;gap:1rem">
+            <label class="check-item" style="flex:1">
+                <input type="radio" name="participe_b2b" value="oui" {{ old('participe_b2b')==='oui'?'checked':'' }}>
+                <label>✅ Oui, je souhaite participer</label>
+            </label>
+            <label class="check-item" style="flex:1">
+                <input type="radio" name="participe_b2b" value="non" {{ old('participe_b2b')==='non'?'checked':'' }}>
+                <label>Non merci</label>
+            </label>
+        </div>
+    </div>
+
+    <div class="step-nav">
+        <button type="button" onclick="backToChoice()" class="btn-prev"><svg viewBox="0 0 24 24">
+                <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>Retour</button>
+        <button type="button" onclick="nextPanelP(1)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></button>
+    </div>
+    </div>
+
+    {{-- ── ÉTAPE 2 — Si "Écoute d'opportunité" ── --}}
+    <div id="panelP2" style="display:none">
+        <div class="card">
+            <div class="card-title"><svg viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                </svg>Profil — Écoute d'opportunité</div>
+            <p style="font-size:12px;color:#718096;margin-bottom:1.25rem">Si vous êtes à l'écoute des opportunités au Gabon, cette étape est indispensable. Merci d'y répondre avec le plus grand intérêt et de communiquer des informations exactes.</p>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Nationalité <span class="req">*</span></label>
+                    <select name="nationalite_type" class="form-control">
+                        <option value="">Sélectionnez...</option>
+                        <option value="gabonaise">Gabonaise</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Niveau d'études <span class="req">*</span></label>
+                    <select name="niveau_etudes" class="form-control">
+                        <option value="">Sélectionnez...</option>
+                        @foreach(['3ème','Terminale','BAC+2','BAC+3','BAC+4','BAC+5','Docteur','Autre'] as $n)
+                        <option value="{{ $n }}">{{ $n }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Diplôme le plus élevé <span class="req">*</span></label>
+                    <select name="diplome" class="form-control">
+                        <option value="">Sélectionnez...</option>
+                        @foreach(['BEPC','Licence','Master 1','Master 2','Doctorat'] as $d)
+                        <option value="{{ $d }}">{{ $d }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Expérience pour ce poste</label>
+                    <select name="experience" class="form-control">
+                        <option value="">Sélectionnez...</option>
+                        @foreach(['Junior (-2 ans)','Entre 2 et 5 ans','Entre 5 et 10 ans','Entre 10 et 15 ans','Plus de 15 ans'] as $e)
+                        <option value="{{ $e }}">{{ $e }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group fg1">
+                    <label class="form-label">Domaine de formation <span class="req">*</span></label>
+                    <select name="domaine_formation" class="form-control">
+                        <option value="">Sélectionnez...</option>
+                        @foreach(['Informatique, Numérique & Cybersécurité','Ingénierie, Industrie & Technologies','Énergie, Pétrole, Gaz & Mines','BTP, Architecture & Urbanisme','Agriculture, Agroalimentaire, Pêche & Environnement','Santé, Médecine & Sciences biomédicales','Économie, Finance, Banque & Assurance','Gestion, Management & Administration','Commerce, Marketing & Communication','Droit, Sciences politiques & Relations internationales','Sciences humaines & sociales','Éducation, Enseignement & Formation','Transport, Logistique & Supply Chain','Tourisme, Hôtellerie, Restauration & Culture','Autre domaine'] as $d)
+                        <option value="{{ $d }}">{{ $d }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group fg1">
+                    <label class="form-label">Situation professionnelle actuelle <span class="req">*</span></label>
+                    <select name="situation_pro" class="form-control">
+                        <option value="">Sélectionnez...</option>
+                        @foreach(['Primo-chercheur d\'emploi','Ancien travailleur','En poste','En fin de scolarité'] as $s)
+                        <option value="{{ $s }}">{{ $s }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        {{-- Postes recherchés --}}
+        <div class="card">
+            <div class="card-title">Postes recherchés <span class="req">*</span></div>
+            <p style="font-size:12px;color:#718096;margin-bottom:1rem">Quel est le poste que vous recherchez en priorité ?</p>
+            <div class="check-grid">
+                @foreach(['Direction générale / Direction exécutive','Management / Responsable d\'équipe','Administration / Assistanat / Secrétariat','Finance / Comptabilité / Audit','Banque / Assurance','Ressources humaines','Commercial / Vente / Business Development','Marketing / Communication / Événementiel','Informatique / Digital / Cybersécurité','Ingénierie / Technique / Maintenance','BTP / Architecture / Urbanisme','Énergie / Pétrole / Gaz / Mines','Logistique / Transport / Achats / Supply Chain','Santé / Social','Juridique / Conformité','Enseignement / Formation / Recherche','Agriculture / Agroalimentaire / Environnement','Hôtellerie / Restauration / Tourisme','Stage','Alternance / Apprentissage','Autre'] as $p)
+                <label class="check-item">
+                    <input type="checkbox" name="postes_recherches[]" value="{{ $p }}">
+                    <label>{{ $p }}</label>
+                </label>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- CV --}}
+        <div class="card">
+            <div class="card-title"><svg viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                </svg>Curriculum Vitae</div>
+            <label class="upload-zone">
+                <input type="file" name="cv" accept=".pdf,.doc,.docx" onchange="showFileName(this,'cvName')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <p><strong>Déposer votre CV</strong> ou cliquez pour parcourir<br><span style="font-size:10px">PDF, DOC, DOCX — max 5 Mo</span></p>
+                <div id="cvName" class="upload-name"></div>
+            </label>
+        </div>
+
+        <div class="step-nav">
+            <button type="button" onclick="prevPanelP(2)" class="btn-prev"><svg viewBox="0 0 24 24">
+                    <path d="M19 12H5M12 5l-7 7 7 7" />
+                </svg>Précédent</button>
+            <button type="button" onclick="nextPanelP(2)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></button>
+        </div>
+    </div>
+
+    {{-- ── ÉTAPE 3 — Si "Entrepreneur" ── --}}
+    <div id="panelP3" style="display:none">
+        <div class="card">
+            <div class="card-title"><svg viewBox="0 0 24 24">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                </svg>Informations sur votre entreprise</div>
+            <div class="form-grid">
+                <div class="form-group fg1">
+                    <label class="form-label">Raison sociale / Forme juridique <span class="req">*</span></label>
+                    <select name="forme_juridique_part" class="form-control">
+                        <option value="">Sélectionnez...</option>
+                        @foreach(['Entreprise individuelle (EI)','SARL','SARLU','SA','SAS','SASU','SNC','SCS','GIE','Société coopérative','Association / ONG','Établissement public','Autre'] as $f)
+                        <option value="{{ $f }}">{{ $f }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group fg1">
+                    <label class="form-label">Domaine d'activité de l'entreprise <span class="req">*</span></label>
+                    <select name="domaine_activite_part" class="form-control">
+                        <option value="">Sélectionnez...</option>
+                        @foreach(['Agriculture, élevage, pêche & agroalimentaire','Bois, forêt & industrie du bois','Mines & métallurgie','Pétrole, gaz & hydrocarbures','Énergie, eau & services environnementaux','BTP, construction & immobilier','Industrie & production manufacturière','Transport, logistique & services portuaires','Commerce & distribution','Banque, finance, assurance & microfinance','Télécommunications, numérique & technologies','Conseil & services aux entreprises','Tourisme, hôtellerie & restauration','Santé & services sociaux','Éducation & formation','Administration publique & services publics','Culture, médias, communication & événementiel','Association, ONG & économie sociale','Autre'] as $d)
+                        <option value="{{ $d }}">{{ $d }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Secteur économique <span class="req">*</span></label>
+                    <select name="secteur_eco" class="form-control">
+                        <option value="">Sélectionnez...</option>
+                        <option value="Primaire">Primaire</option>
+                        <option value="Secondaire">Secondaire</option>
+                        <option value="Tertiaire">Tertiaire</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Pays du siège de l'entreprise <span class="req">*</span></label>
+                    <select name="pays_siege_part" class="form-control">
+                        <option value="">Sélectionnez...</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="France">France</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="step-nav">
+            <button type="button" onclick="prevPanelP(3)" class="btn-prev"><svg viewBox="0 0 24 24">
+                    <path d="M19 12H5M12 5l-7 7 7 7" />
+                </svg>Précédent</button>
+            <button type="button" onclick="nextPanelP(3)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></button>
+        </div>
+    </div>
+
+    {{-- ── ÉTAPE 4 — Validation ── --}}
+    <div id="panelP4" style="display:none">
+        {{-- Récap --}}
+        <div class="card">
+            <div class="card-title"><svg viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>Récapitulatif de votre inscription</div>
+            <div class="recap-block">
+                <div class="rb-title">Informations personnelles</div>
+                <div class="rb-row"><span>Profil</span><span id="rProfil">—</span></div>
+                <div class="rb-row"><span>Identité</span><span id="rIdentite">—</span></div>
+                <div class="rb-row"><span>E-mail</span><span id="rEmail">—</span></div>
+                <div class="rb-row"><span>Téléphone</span><span id="rTel">—</span></div>
+                <div class="rb-row"><span>Pays de résidence</span><span id="rPays">—</span></div>
+                <div class="rb-row"><span>Participation B2B</span><span id="rB2B">—</span></div>
+            </div>
+            <p style="font-size:11px;color:#a0aec0;text-align:center;margin-top:.75rem">
+                🔒 Ces informations seront intégrées dans le QR Code de votre badge d'accès
+            </p>
+        </div>
+
+        {{-- Consentements --}}
+        <div class="card">
+            <div class="card-title">Consentements <span class="req">*</span></div>
+            <label class="consent-check">
+                <input type="checkbox" name="certif_exactitude" value="1" required>
+                <label>☐ Je certifie que les informations fournies sont exactes. <span class="req">*</span></label>
+            </label>
+            <label class="consent-check">
+                <input type="checkbox" name="accepte_donnees" value="1" required>
+                <label>☐ J'accepte que mes données soient utilisées dans le cadre de l'organisation du <strong>JEFIE 2026</strong>. <span class="req">*</span></label>
+            </label>
+        </div>
+
+        <div class="step-nav">
+            <button type="button" onclick="prevPanelP(4)" class="btn-prev"><svg viewBox="0 0 24 24">
+                    <path d="M19 12H5M12 5l-7 7 7 7" />
+                </svg>Précédent</button>
+            <button type="submit" class="btn-submit-final" id="btnSubmitP">
+                <svg viewBox="0 0 24 24">
+                    <path d="M22 2L11 13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                ENVOYER MON INSCRIPTION
+            </button>
+        </div>
+    </div>
+    </form>
+    </div>
+
+    {{-- ═══════════════════════════════════════════════════════
+         FORMULAIRE ENTREPRISE / ACTEUR ÉCONOMIQUE
+    ═══════════════════════════════════════════════════════ --}}
+    <div id="formEntreprise" style="display:none">
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progE" style="width:20%"></div>
+        </div>
+        <div class="stepper" id="stepperE">
+            @foreach([['1','Compte'],['2','Collaborateurs'],['3','Participation'],['4','Offres'],['5','Validation']] as $i => [$n,$l])
+            <div class="step {{ $i===0?'active':'' }}" id="stepE{{ $n }}">
+                <div class="step-circle">{{ $n }}</div>
+                <div class="step-label">{{ $l }}</div>
+            </div>
+            @endforeach
+        </div>
+
+        <form method="POST" action="{{ route('inscription.store') }}" enctype="multipart/form-data" id="formE">
+            @csrf
+            <input type="hidden" name="type_inscription" value="entreprise">
+
+            {{-- ── ÉTAPE 1 — MAJ Compte Entreprise ── --}}
+            <div id="panelE1">
+                {{-- Admin --}}
+                <div class="card">
+                    <div class="card-title"><svg viewBox="0 0 24 24">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>Administrateur du compte entreprise</div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Civilité <span class="req">*</span></label>
+                            <select name="admin_civilite" class="form-control" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="M">Monsieur</option>
+                                <option value="Mme">Madame</option>
+                            </select>
+                        </div>
+                        <div></div>
+                        <div class="form-group">
+                            <label class="form-label">Nom <span class="req">*</span></label>
+                            <input type="text" name="admin_nom" class="form-control" placeholder="Nom de famille" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Prénom <span class="req">*</span></label>
+                            <input type="text" name="admin_prenom" class="form-control" placeholder="Prénom" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Fonction <span class="req">*</span></label>
+                            <input type="text" name="admin_fonction" class="form-control" placeholder="Ex: DRH, Directeur général..." required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Profil <span class="req">*</span></label>
+                            <select name="admin_profil" class="form-control" required>
+                                <option value="">Sélectionnez...</option>
+                                @foreach(['Dirigeant / Chef d\'entreprise','Employeur / Recruteur','Responsable RH','Responsable recrutement','Responsable commercial / Business Development','Investisseur','Institution / Organisme public','Personne contact de l\'entreprise'] as $ap)
+                                <option value="{{ $ap }}">{{ $ap }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">E-mail professionnel <span class="req">*</span></label>
+                            <input type="email" name="admin_email" class="form-control" placeholder="email@entreprise.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">WhatsApp / Téléphone <span class="req">*</span></label>
+                            <input type="tel" name="admin_telephone" class="form-control" placeholder="+33 6 00 00 00 00" required>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Entreprise --}}
+                <div class="card">
+                    <div class="card-title"><svg viewBox="0 0 24 24">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                        </svg>Informations de l'entreprise</div>
+                    <div class="form-grid">
+                        <div class="form-group fg1">
+                            <label class="form-label">Nom de l'entreprise / Raison sociale <span class="req">*</span></label>
+                            <input type="text" name="entreprise_nom" class="form-control" placeholder="Nom officiel de l'entreprise" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Forme juridique <span class="req">*</span></label>
+                            <select name="forme_juridique" class="form-control" required>
+                                <option value="">Sélectionnez...</option>
+                                @foreach(['Entreprise individuelle (EI)','SARL','SARLU','SA','SAS','SASU','SNC','SCS','GIE','Société coopérative','Association / ONG','Établissement public / Entreprise publique','Autre'] as $f)
+                                <option value="{{ $f }}">{{ $f }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Pays du siège social <span class="req">*</span></label>
+                            <select name="pays_siege" class="form-control" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="Gabon">Gabon</option>
+                                <option value="France">France</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Taille de l'entreprise <span class="req">*</span></label>
+                            <select name="taille_entreprise" class="form-control" required>
+                                <option value="">Sélectionnez...</option>
+                                @foreach(['1 à 9 salariés','10 à 49 salariés','50 à 249 salariés','250 à 999 salariés','1 000 salariés et plus'] as $t)
+                                <option value="{{ $t }}">{{ $t }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group fg1">
+                            <label class="form-label">Activité principale <span class="req">*</span></label>
+                            <select name="activite_principale" class="form-control" required>
+                                <option value="">Sélectionnez...</option>
+                                @foreach(['Agriculture, élevage, pêche & agroalimentaire','Bois, forêt & industrie du bois','Mines & métallurgie','Pétrole, gaz & hydrocarbures','Énergie, eau & services environnementaux','BTP, construction & immobilier','Industrie & production manufacturière','Transport, logistique & services portuaires','Commerce & distribution','Banque, finance, assurance & microfinance','Télécommunications, numérique & technologies','Conseil & services aux entreprises','Tourisme, hôtellerie & restauration','Santé & services sociaux','Éducation & formation','Administration publique & services publics','Association, ONG & économie sociale','Autre'] as $a)
+                                <option value="{{ $a }}">{{ $a }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Site internet</label>
+                            <input type="url" name="site_internet" class="form-control" placeholder="https://www.entreprise.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Logo de l'entreprise</label>
+                            <label class="upload-zone" style="padding:.85rem">
+                                <input type="file" name="logo" accept="image/*" onchange="showFileName(this,'logoName')">
+                                <svg viewBox="0 0 24 24" style="width:20px;height:20px">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                </svg>
+                                <p style="font-size:11px">Déposer votre logo (PNG, JPG)</p>
+                                <div id="logoName" class="upload-name"></div>
                             </label>
-                            @endforeach
                         </div>
                     </div>
+                </div>
 
-                    {{-- CV --}}
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                            </svg>Curriculum Vitae</div>
-                        <label class="upload-zone">
-                            <input type="file" name="cv" accept=".pdf,.doc,.docx" onchange="showFileName(this,'cvName')">
+                <div class="step-nav">
+                    <button type="button" onclick="backToChoice()" class="btn-prev"><svg viewBox="0 0 24 24">
+                            <path d="M19 12H5M12 5l-7 7 7 7" />
+                        </svg>Retour</button>
+                    <button type="button" onclick="nextPanelE(1)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></button>
+                </div>
+            </div>
+
+            {{-- ── ÉTAPE 2 — Collaborateurs ── --}}
+            <div id="panelE2" style="display:none">
+                <div class="card">
+                    <div class="card-title"><svg viewBox="0 0 24 24">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                        </svg>Inscrire des collaborateurs</div>
+                    <p style="font-size:12px;color:#718096;margin-bottom:1.25rem">Souhaitez-vous inscrire d'autres collaborateurs de votre entreprise au Forum JEFIE 2026 ?<br><span style="font-size:11px;color:#a0aec0">Chaque collaborateur recevra son badge d'accès PDF par e-mail.</span></p>
+                    <div style="display:flex;gap:1rem;margin-bottom:1.25rem">
+                        <label class="check-item" style="flex:1">
+                            <input type="radio" name="ajoute_collabs" value="oui" onclick="showCollabs(true)">
+                            <label>✅ Oui, ajouter des collaborateurs</label>
+                        </label>
+                        <label class="check-item" style="flex:1">
+                            <input type="radio" name="ajoute_collabs" value="non" onclick="showCollabs(false)" checked>
+                            <label>Non, passer à l'étape suivante</label>
+                        </label>
+                    </div>
+                    <div id="collabsZone" style="display:none">
+                        <div id="collabsList"></div>
+                        <button type="button" onclick="addCollab()" class="btn-add-collab">
                             <svg viewBox="0 0 24 24">
-                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                <polyline points="7 10 12 15 17 10" />
-                                <line x1="12" y1="15" x2="12" y2="3" />
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
                             </svg>
-                            <p><strong>Déposer votre CV</strong> ou cliquez pour parcourir<br><span style="font-size:10px">PDF, DOC, DOCX — max 5 Mo</span></p>
-                            <div id="cvName" class="upload-name"></div>
-                        </label>
-                    </div>
-
-                    <div class="step-nav">
-                        <button type="button" onclick="prevPanelP(2)" class="btn-prev"><svg viewBox="0 0 24 24">
-                                <path d="M19 12H5M12 5l-7 7 7 7" />
-                            </svg>Précédent</button>
-                        <button type="button" onclick="nextPanelP(2)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-                {{-- ── ÉTAPE 3 — Si "Entrepreneur" ── --}}
-                <div id="panelP3" style="display:none">
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                            </svg>Informations sur votre entreprise</div>
-                        <div class="form-grid">
-                            <div class="form-group fg1">
-                                <label class="form-label">Raison sociale / Forme juridique <span class="req">*</span></label>
-                                <select name="forme_juridique_part" class="form-control">
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['Entreprise individuelle (EI)','SARL','SARLU','SA','SAS','SASU','SNC','SCS','GIE','Société coopérative','Association / ONG','Établissement public','Autre'] as $f)
-                                    <option value="{{ $f }}">{{ $f }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group fg1">
-                                <label class="form-label">Domaine d'activité de l'entreprise <span class="req">*</span></label>
-                                <select name="domaine_activite_part" class="form-control">
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['Agriculture, élevage, pêche & agroalimentaire','Bois, forêt & industrie du bois','Mines & métallurgie','Pétrole, gaz & hydrocarbures','Énergie, eau & services environnementaux','BTP, construction & immobilier','Industrie & production manufacturière','Transport, logistique & services portuaires','Commerce & distribution','Banque, finance, assurance & microfinance','Télécommunications, numérique & technologies','Conseil & services aux entreprises','Tourisme, hôtellerie & restauration','Santé & services sociaux','Éducation & formation','Administration publique & services publics','Culture, médias, communication & événementiel','Association, ONG & économie sociale','Autre'] as $d)
-                                    <option value="{{ $d }}">{{ $d }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Secteur économique <span class="req">*</span></label>
-                                <select name="secteur_eco" class="form-control">
-                                    <option value="">Sélectionnez...</option>
-                                    <option value="Primaire">Primaire</option>
-                                    <option value="Secondaire">Secondaire</option>
-                                    <option value="Tertiaire">Tertiaire</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Pays du siège de l'entreprise <span class="req">*</span></label>
-                                <select name="pays_siege_part" class="form-control">
-                                    <option value="">Sélectionnez...</option>
-                                    <option value="Gabon">Gabon</option>
-                                    <option value="France">France</option>
-                                    <option value="Autre">Autre</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="step-nav">
-                        <button type="button" onclick="prevPanelP(3)" class="btn-prev"><svg viewBox="0 0 24 24">
-                                <path d="M19 12H5M12 5l-7 7 7 7" />
-                            </svg>Précédent</button>
-                        <button type="button" onclick="nextPanelP(3)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-                {{-- ── ÉTAPE 4 — Validation ── --}}
-                <div id="panelP4" style="display:none">
-                    {{-- Récap --}}
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                                <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>Récapitulatif de votre inscription</div>
-                        <div class="recap-block">
-                            <div class="rb-title">Informations personnelles</div>
-                            <div class="rb-row"><span>Profil</span><span id="rProfil">—</span></div>
-                            <div class="rb-row"><span>Identité</span><span id="rIdentite">—</span></div>
-                            <div class="rb-row"><span>E-mail</span><span id="rEmail">—</span></div>
-                            <div class="rb-row"><span>Téléphone</span><span id="rTel">—</span></div>
-                            <div class="rb-row"><span>Pays de résidence</span><span id="rPays">—</span></div>
-                            <div class="rb-row"><span>Participation B2B</span><span id="rB2B">—</span></div>
-                        </div>
-                        <p style="font-size:11px;color:#a0aec0;text-align:center;margin-top:.75rem">
-                            🔒 Ces informations seront intégrées dans le QR Code de votre badge d'accès
-                        </p>
-                    </div>
-
-                    {{-- Consentements --}}
-                    <div class="card">
-                        <div class="card-title">Consentements <span class="req">*</span></div>
-                        <label class="consent-check">
-                            <input type="checkbox" name="certif_exactitude" value="1" required>
-                            <label>☐ Je certifie que les informations fournies sont exactes. <span class="req">*</span></label>
-                        </label>
-                        <label class="consent-check">
-                            <input type="checkbox" name="accepte_donnees" value="1" required>
-                            <label>☐ J'accepte que mes données soient utilisées dans le cadre de l'organisation du <strong>JEFIE 2026</strong>. <span class="req">*</span></label>
-                        </label>
-                    </div>
-
-                    <div class="step-nav">
-                        <button type="button" onclick="prevPanelP(4)" class="btn-prev"><svg viewBox="0 0 24 24">
-                                <path d="M19 12H5M12 5l-7 7 7 7" />
-                            </svg>Précédent</button>
-                        <button type="submit" class="btn-submit-final" id="btnSubmitP">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M22 2L11 13" />
-                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                            </svg>
-                            ENVOYER MON INSCRIPTION
+                            + AJOUTER UN PARTICIPANT
                         </button>
                     </div>
                 </div>
-            </form>
-        </div>
-
-        {{-- ═══════════════════════════════════════════════════════
-         FORMULAIRE ENTREPRISE / ACTEUR ÉCONOMIQUE
-    ═══════════════════════════════════════════════════════ --}}
-        <div id="formEntreprise" style="display:none">
-
-            <div class="progress-bar">
-                <div class="progress-fill" id="progE" style="width:20%"></div>
-            </div>
-            <div class="stepper" id="stepperE">
-                @foreach([['1','Compte'],['2','Collaborateurs'],['3','Participation'],['4','Offres'],['5','Validation']] as $i => [$n,$l])
-                <div class="step {{ $i===0?'active':'' }}" id="stepE{{ $n }}">
-                    <div class="step-circle">{{ $n }}</div>
-                    <div class="step-label">{{ $l }}</div>
+                <div class="step-nav">
+                    <button type="button" onclick="prevPanelE(2)" class="btn-prev"><svg viewBox="0 0 24 24">
+                            <path d="M19 12H5M12 5l-7 7 7 7" />
+                        </svg>Précédent</button>
+                    <button type="button" onclick="nextPanelE(2)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></button>
                 </div>
-                @endforeach
             </div>
 
-            <form method="POST" action="{{ route('inscription.store') }}" enctype="multipart/form-data" id="formE">
-                @csrf
-                <input type="hidden" name="type_inscription" value="entreprise">
-
-                {{-- ── ÉTAPE 1 — MAJ Compte Entreprise ── --}}
-                <div id="panelE1">
-                    {{-- Admin --}}
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                                <circle cx="12" cy="7" r="4" />
-                            </svg>Administrateur du compte entreprise</div>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Civilité <span class="req">*</span></label>
-                                <select name="admin_civilite" class="form-control" required>
-                                    <option value="">Sélectionnez...</option>
-                                    <option value="M">Monsieur</option>
-                                    <option value="Mme">Madame</option>
-                                </select>
-                            </div>
-                            <div></div>
-                            <div class="form-group">
-                                <label class="form-label">Nom <span class="req">*</span></label>
-                                <input type="text" name="admin_nom" class="form-control" placeholder="Nom de famille" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Prénom <span class="req">*</span></label>
-                                <input type="text" name="admin_prenom" class="form-control" placeholder="Prénom" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Fonction <span class="req">*</span></label>
-                                <input type="text" name="admin_fonction" class="form-control" placeholder="Ex: DRH, Directeur général..." required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Profil <span class="req">*</span></label>
-                                <select name="admin_profil" class="form-control" required>
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['Dirigeant / Chef d\'entreprise','Employeur / Recruteur','Responsable RH','Responsable recrutement','Responsable commercial / Business Development','Investisseur','Institution / Organisme public','Personne contact de l\'entreprise'] as $ap)
-                                    <option value="{{ $ap }}">{{ $ap }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">E-mail professionnel <span class="req">*</span></label>
-                                <input type="email" name="admin_email" class="form-control" placeholder="email@entreprise.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">WhatsApp / Téléphone <span class="req">*</span></label>
-                                <input type="tel" name="admin_telephone" class="form-control" placeholder="+33 6 00 00 00 00" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Entreprise --}}
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                            </svg>Informations de l'entreprise</div>
-                        <div class="form-grid">
-                            <div class="form-group fg1">
-                                <label class="form-label">Nom de l'entreprise / Raison sociale <span class="req">*</span></label>
-                                <input type="text" name="entreprise_nom" class="form-control" placeholder="Nom officiel de l'entreprise" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Forme juridique <span class="req">*</span></label>
-                                <select name="forme_juridique" class="form-control" required>
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['Entreprise individuelle (EI)','SARL','SARLU','SA','SAS','SASU','SNC','SCS','GIE','Société coopérative','Association / ONG','Établissement public / Entreprise publique','Autre'] as $f)
-                                    <option value="{{ $f }}">{{ $f }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Pays du siège social <span class="req">*</span></label>
-                                <select name="pays_siege" class="form-control" required>
-                                    <option value="">Sélectionnez...</option>
-                                    <option value="Gabon">Gabon</option>
-                                    <option value="France">France</option>
-                                    <option value="Autre">Autre</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Taille de l'entreprise <span class="req">*</span></label>
-                                <select name="taille_entreprise" class="form-control" required>
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['1 à 9 salariés','10 à 49 salariés','50 à 249 salariés','250 à 999 salariés','1 000 salariés et plus'] as $t)
-                                    <option value="{{ $t }}">{{ $t }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group fg1">
-                                <label class="form-label">Activité principale <span class="req">*</span></label>
-                                <select name="activite_principale" class="form-control" required>
-                                    <option value="">Sélectionnez...</option>
-                                    @foreach(['Agriculture, élevage, pêche & agroalimentaire','Bois, forêt & industrie du bois','Mines & métallurgie','Pétrole, gaz & hydrocarbures','Énergie, eau & services environnementaux','BTP, construction & immobilier','Industrie & production manufacturière','Transport, logistique & services portuaires','Commerce & distribution','Banque, finance, assurance & microfinance','Télécommunications, numérique & technologies','Conseil & services aux entreprises','Tourisme, hôtellerie & restauration','Santé & services sociaux','Éducation & formation','Administration publique & services publics','Association, ONG & économie sociale','Autre'] as $a)
-                                    <option value="{{ $a }}">{{ $a }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Site internet</label>
-                                <input type="url" name="site_internet" class="form-control" placeholder="https://www.entreprise.com">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Logo de l'entreprise</label>
-                                <label class="upload-zone" style="padding:.85rem">
-                                    <input type="file" name="logo" accept="image/*" onchange="showFileName(this,'logoName')">
-                                    <svg viewBox="0 0 24 24" style="width:20px;height:20px">
-                                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                    </svg>
-                                    <p style="font-size:11px">Déposer votre logo (PNG, JPG)</p>
-                                    <div id="logoName" class="upload-name"></div>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="step-nav">
-                        <button type="button" onclick="backToChoice()" class="btn-prev"><svg viewBox="0 0 24 24">
-                                <path d="M19 12H5M12 5l-7 7 7 7" />
-                            </svg>Retour</button>
-                        <button type="button" onclick="nextPanelE(1)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-                {{-- ── ÉTAPE 2 — Collaborateurs ── --}}
-                <div id="panelE2" style="display:none">
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 00-3-3.87" />
-                            </svg>Inscrire des collaborateurs</div>
-                        <p style="font-size:12px;color:#718096;margin-bottom:1.25rem">Souhaitez-vous inscrire d'autres collaborateurs de votre entreprise au Forum JEFIE 2026 ?<br><span style="font-size:11px;color:#a0aec0">Chaque collaborateur recevra son badge d'accès PDF par e-mail.</span></p>
-                        <div style="display:flex;gap:1rem;margin-bottom:1.25rem">
-                            <label class="check-item" style="flex:1">
-                                <input type="radio" name="ajoute_collabs" value="oui" onclick="showCollabs(true)">
-                                <label>✅ Oui, ajouter des collaborateurs</label>
-                            </label>
-                            <label class="check-item" style="flex:1">
-                                <input type="radio" name="ajoute_collabs" value="non" onclick="showCollabs(false)" checked>
-                                <label>Non, passer à l'étape suivante</label>
-                            </label>
-                        </div>
-                        <div id="collabsZone" style="display:none">
-                            <div id="collabsList"></div>
-                            <button type="button" onclick="addCollab()" class="btn-add-collab">
-                                <svg viewBox="0 0 24 24">
-                                    <line x1="12" y1="5" x2="12" y2="19" />
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                </svg>
-                                + AJOUTER UN PARTICIPANT
-                            </button>
-                        </div>
-                    </div>
-                    <div class="step-nav">
-                        <button type="button" onclick="prevPanelE(2)" class="btn-prev"><svg viewBox="0 0 24 24">
-                                <path d="M19 12H5M12 5l-7 7 7 7" />
-                            </svg>Précédent</button>
-                        <button type="button" onclick="nextPanelE(2)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-                {{-- ── ÉTAPE 3 — Participation au Forum ── --}}
-                <div id="panelE3" style="display:none">
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <rect x="3" y="4" width="18" height="18" rx="2" />
-                                <path d="M16 2v4M8 2v4M3 10h18" />
-                            </svg>Objectifs au JEFIE 2026 <span class="req">*</span></div>
-                        <p style="font-size:12px;color:#718096;margin-bottom:1rem">Quels sont les principaux objectifs de votre entreprise au JEFIE 2026 ?</p>
-                        <div class="check-grid">
-                            @foreach(['Recruter des candidats','Identifier des talents de la diaspora','Publier des offres d\'emploi','Rechercher des partenaires commerciaux','Rechercher des investisseurs / financements','Identifier des opportunités d\'investissement au Gabon','Rencontrer des entreprises gabonaises','Rencontrer des institutions publiques','Présenter nos produits ou services','Développer notre réseau professionnel','Participer aux rencontres B2B','Autre'] as $obj)
-                            <label class="check-item">
-                                <input type="checkbox" name="objectifs[]" value="{{ $obj }}">
-                                <label>{{ $obj }}</label>
-                            </label>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-title">Profils recherchés</div>
-                        <p style="font-size:12px;color:#718096;margin-bottom:1rem">Quels profils recherchez-vous principalement ? <span style="color:#a0aec0">(permet le matching automatique candidats ↔ recruteurs)</span></p>
-                        <div class="check-grid">
-                            @foreach(['Direction générale / Direction exécutive','Management / Responsable d\'équipe','Administration / Assistanat / Secrétariat','Finance / Comptabilité / Audit','Banque / Assurance','Ressources humaines','Commercial / Vente / Business Development','Marketing / Communication / Événementiel','Informatique / Digital / Cybersécurité','Ingénierie / Technique / Maintenance','BTP / Architecture / Urbanisme','Énergie / Pétrole / Gaz / Mines','Logistique / Transport / Achats / Supply Chain','Santé / Social','Juridique / Conformité','Enseignement / Formation / Recherche','Agriculture / Agroalimentaire / Environnement','Hôtellerie / Restauration / Tourisme','Stagiaires','Alternants / Apprentis','Autre'] as $pr)
-                            <label class="check-item">
-                                <input type="checkbox" name="profils_recherches[]" value="{{ $pr }}">
-                                <label>{{ $pr }}</label>
-                            </label>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-title">Rencontres B2B <span class="req">*</span></div>
-                        <div style="display:flex;gap:1rem">
-                            <label class="check-item" style="flex:1">
-                                <input type="radio" name="entreprise_b2b" value="oui">
-                                <label>✅ Oui, participer aux rencontres B2B</label>
-                            </label>
-                            <label class="check-item" style="flex:1">
-                                <input type="radio" name="entreprise_b2b" value="non">
-                                <label>Non</label>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="step-nav">
-                        <button type="button" onclick="prevPanelE(3)" class="btn-prev"><svg viewBox="0 0 24 24">
-                                <path d="M19 12H5M12 5l-7 7 7 7" />
-                            </svg>Précédent</button>
-                        <button type="button" onclick="nextPanelE(3)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-                {{-- ── ÉTAPE 4 — Offres d'emploi ── --}}
-                <div id="panelE4" style="display:none">
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                            </svg>Publication d'offres d'emploi</div>
-                        <p style="font-size:12px;color:#718096;margin-bottom:1.25rem">Souhaitez-vous publier une offre d'emploi ?</p>
-                        <div style="display:flex;gap:1rem;margin-bottom:1.25rem">
-                            <label class="check-item" style="flex:1">
-                                <input type="radio" name="publie_offres" value="oui" onclick="showOffres(true)">
-                                <label>✅ Oui, publier des offres</label>
-                            </label>
-                            <label class="check-item" style="flex:1">
-                                <input type="radio" name="publie_offres" value="non" onclick="showOffres(false)" checked>
-                                <label>Non, passer à l'étape suivante</label>
-                            </label>
-                        </div>
-
-                        <div id="offresZone" style="display:none">
-                            <div id="offresList"></div>
-                            <button type="button" onclick="addOffre()" class="btn-add-offre">
-                                <svg viewBox="0 0 24 24">
-                                    <line x1="12" y1="5" x2="12" y2="19" />
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                </svg>
-                                + AJOUTER UNE OFFRE
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="step-nav">
-                        <button type="button" onclick="prevPanelE(4)" class="btn-prev"><svg viewBox="0 0 24 24">
-                                <path d="M19 12H5M12 5l-7 7 7 7" />
-                            </svg>Précédent</button>
-                        <button type="button" onclick="nextPanelE(4)" class="btn-next">Valider & Récapitulatif<svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg></button>
-                    </div>
-                </div>
-
-                {{-- ── ÉTAPE 5 — Validation ── --}}
-                <div id="panelE5" style="display:none">
-                    <div class="card">
-                        <div class="card-title"><svg viewBox="0 0 24 24">
-                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                                <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>Vérifiez vos informations</div>
-                        <div class="recap-block">
-                            <div class="rb-title">Entreprise</div>
-                            <div class="rb-row"><span>Raison sociale</span><span id="rEntNom">—</span></div>
-                            <div class="rb-row"><span>Forme juridique</span><span id="rEntFJ">—</span></div>
-                            <div class="rb-row"><span>Activité</span><span id="rEntAct">—</span></div>
-                            <div class="rb-row"><span>Pays du siège</span><span id="rEntPays">—</span></div>
-                            <div class="rb-row"><span>Taille</span><span id="rEntTaille">—</span></div>
-                        </div>
-                        <div class="recap-block" style="margin-top:.75rem">
-                            <div class="rb-title">Administrateur du compte</div>
-                            <div class="rb-row"><span>Nom & Prénom</span><span id="rAdminNom">—</span></div>
-                            <div class="rb-row"><span>Fonction</span><span id="rAdminFonction">—</span></div>
-                            <div class="rb-row"><span>E-mail</span><span id="rAdminEmail">—</span></div>
-                            <div class="rb-row"><span>Téléphone</span><span id="rAdminTel">—</span></div>
-                        </div>
-                        <div class="recap-block" style="margin-top:.75rem">
-                            <div class="rb-title">Participation au Forum</div>
-                            <div class="rb-row"><span>Rencontres B2B</span><span id="rEntB2B">—</span></div>
-                            <div class="rb-row"><span>Offres d'emploi</span><span id="rEntOffres">—</span></div>
-                            <div class="rb-row"><span>Collaborateurs inscrits</span><span id="rEntCollabs">—</span></div>
-                        </div>
-                    </div>
-
-                    {{-- Consentements --}}
-                    <div class="card">
-                        <div class="card-title">Déclarations et consentements <span class="req">*</span></div>
-                        @foreach([
-                        ['cert_habilite','Je certifie être habilité(e) à administrer ce compte au nom de l\'entreprise représentée.'],
-                        ['cert_exactitude','Je certifie que les informations fournies sont exactes et à jour.'],
-                        ['accepte_traitement','J\'accepte que les données communiquées soient collectées et traitées dans le cadre de l\'organisation et du fonctionnement de la plateforme JEFIE 2026.'],
-                        ['engage_usage','Je m\'engage à utiliser les informations et profils des candidats accessibles sur la plateforme exclusivement à des fins de recrutement et de mise en relation professionnelle.'],
-                        ] as [$name, $label])
-                        <label class="consent-check">
-                            <input type="checkbox" name="{{ $name }}" value="1" required>
-                            <label>☐ {{ $label }} <span class="req">*</span></label>
+            {{-- ── ÉTAPE 3 — Participation au Forum ── --}}
+            <div id="panelE3" style="display:none">
+                <div class="card">
+                    <div class="card-title"><svg viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <path d="M16 2v4M8 2v4M3 10h18" />
+                        </svg>Objectifs au JEFIE 2026 <span class="req">*</span></div>
+                    <p style="font-size:12px;color:#718096;margin-bottom:1rem">Quels sont les principaux objectifs de votre entreprise au JEFIE 2026 ?</p>
+                    <div class="check-grid">
+                        @foreach(['Recruter des candidats','Identifier des talents de la diaspora','Publier des offres d\'emploi','Rechercher des partenaires commerciaux','Rechercher des investisseurs / financements','Identifier des opportunités d\'investissement au Gabon','Rencontrer des entreprises gabonaises','Rencontrer des institutions publiques','Présenter nos produits ou services','Développer notre réseau professionnel','Participer aux rencontres B2B','Autre'] as $obj)
+                        <label class="check-item">
+                            <input type="checkbox" name="objectifs[]" value="{{ $obj }}">
+                            <label>{{ $obj }}</label>
                         </label>
                         @endforeach
                     </div>
+                </div>
 
-                    <div class="step-nav">
-                        <button type="button" onclick="prevPanelE(5)" class="btn-prev"><svg viewBox="0 0 24 24">
-                                <path d="M19 12H5M12 5l-7 7 7 7" />
-                            </svg>Précédent</button>
-                        <button type="submit" class="btn-submit-final" id="btnSubmitE">
+                <div class="card">
+                    <div class="card-title">Profils recherchés</div>
+                    <p style="font-size:12px;color:#718096;margin-bottom:1rem">Quels profils recherchez-vous principalement ? <span style="color:#a0aec0">(permet le matching automatique candidats ↔ recruteurs)</span></p>
+                    <div class="check-grid">
+                        @foreach(['Direction générale / Direction exécutive','Management / Responsable d\'équipe','Administration / Assistanat / Secrétariat','Finance / Comptabilité / Audit','Banque / Assurance','Ressources humaines','Commercial / Vente / Business Development','Marketing / Communication / Événementiel','Informatique / Digital / Cybersécurité','Ingénierie / Technique / Maintenance','BTP / Architecture / Urbanisme','Énergie / Pétrole / Gaz / Mines','Logistique / Transport / Achats / Supply Chain','Santé / Social','Juridique / Conformité','Enseignement / Formation / Recherche','Agriculture / Agroalimentaire / Environnement','Hôtellerie / Restauration / Tourisme','Stagiaires','Alternants / Apprentis','Autre'] as $pr)
+                        <label class="check-item">
+                            <input type="checkbox" name="profils_recherches[]" value="{{ $pr }}">
+                            <label>{{ $pr }}</label>
+                        </label>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Rencontres B2B <span class="req">*</span></div>
+                    <div style="display:flex;gap:1rem">
+                        <label class="check-item" style="flex:1">
+                            <input type="radio" name="entreprise_b2b" value="oui">
+                            <label>✅ Oui, participer aux rencontres B2B</label>
+                        </label>
+                        <label class="check-item" style="flex:1">
+                            <input type="radio" name="entreprise_b2b" value="non">
+                            <label>Non</label>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="step-nav">
+                    <button type="button" onclick="prevPanelE(3)" class="btn-prev"><svg viewBox="0 0 24 24">
+                            <path d="M19 12H5M12 5l-7 7 7 7" />
+                        </svg>Précédent</button>
+                    <button type="button" onclick="nextPanelE(3)" class="btn-next">Étape suivante<svg viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></button>
+                </div>
+            </div>
+
+            {{-- ── ÉTAPE 4 — Offres d'emploi ── --}}
+            <div id="panelE4" style="display:none">
+                <div class="card">
+                    <div class="card-title"><svg viewBox="0 0 24 24">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                        </svg>Publication d'offres d'emploi</div>
+                    <p style="font-size:12px;color:#718096;margin-bottom:1.25rem">Souhaitez-vous publier une offre d'emploi ?</p>
+                    <div style="display:flex;gap:1rem;margin-bottom:1.25rem">
+                        <label class="check-item" style="flex:1">
+                            <input type="radio" name="publie_offres" value="oui" onclick="showOffres(true)">
+                            <label>✅ Oui, publier des offres</label>
+                        </label>
+                        <label class="check-item" style="flex:1">
+                            <input type="radio" name="publie_offres" value="non" onclick="showOffres(false)" checked>
+                            <label>Non, passer à l'étape suivante</label>
+                        </label>
+                    </div>
+
+                    <div id="offresZone" style="display:none">
+                        <div id="offresList"></div>
+                        <button type="button" onclick="addOffre()" class="btn-add-offre">
                             <svg viewBox="0 0 24 24">
-                                <path d="M22 2L11 13" />
-                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
                             </svg>
-                            VALIDER MON COMPTE ENTREPRISE
+                            + AJOUTER UNE OFFRE
                         </button>
                     </div>
                 </div>
 
-            </form>
-        </div>
+                <div class="step-nav">
+                    <button type="button" onclick="prevPanelE(4)" class="btn-prev"><svg viewBox="0 0 24 24">
+                            <path d="M19 12H5M12 5l-7 7 7 7" />
+                        </svg>Précédent</button>
+                    <button type="button" onclick="nextPanelE(4)" class="btn-next">Valider & Récapitulatif<svg viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></button>
+                </div>
+            </div>
+
+            {{-- ── ÉTAPE 5 — Validation ── --}}
+            <div id="panelE5" style="display:none">
+                <div class="card">
+                    <div class="card-title"><svg viewBox="0 0 24 24">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>Vérifiez vos informations</div>
+                    <div class="recap-block">
+                        <div class="rb-title">Entreprise</div>
+                        <div class="rb-row"><span>Raison sociale</span><span id="rEntNom">—</span></div>
+                        <div class="rb-row"><span>Forme juridique</span><span id="rEntFJ">—</span></div>
+                        <div class="rb-row"><span>Activité</span><span id="rEntAct">—</span></div>
+                        <div class="rb-row"><span>Pays du siège</span><span id="rEntPays">—</span></div>
+                        <div class="rb-row"><span>Taille</span><span id="rEntTaille">—</span></div>
+                    </div>
+                    <div class="recap-block" style="margin-top:.75rem">
+                        <div class="rb-title">Administrateur du compte</div>
+                        <div class="rb-row"><span>Nom & Prénom</span><span id="rAdminNom">—</span></div>
+                        <div class="rb-row"><span>Fonction</span><span id="rAdminFonction">—</span></div>
+                        <div class="rb-row"><span>E-mail</span><span id="rAdminEmail">—</span></div>
+                        <div class="rb-row"><span>Téléphone</span><span id="rAdminTel">—</span></div>
+                    </div>
+                    <div class="recap-block" style="margin-top:.75rem">
+                        <div class="rb-title">Participation au Forum</div>
+                        <div class="rb-row"><span>Rencontres B2B</span><span id="rEntB2B">—</span></div>
+                        <div class="rb-row"><span>Offres d'emploi</span><span id="rEntOffres">—</span></div>
+                        <div class="rb-row"><span>Collaborateurs inscrits</span><span id="rEntCollabs">—</span></div>
+                    </div>
+                </div>
+
+                {{-- Consentements --}}
+                <div class="card">
+                    <div class="card-title">Déclarations et consentements <span class="req">*</span></div>
+                    @foreach([
+                    ['cert_habilite','Je certifie être habilité(e) à administrer ce compte au nom de l\'entreprise représentée.'],
+                    ['cert_exactitude','Je certifie que les informations fournies sont exactes et à jour.'],
+                    ['accepte_traitement','J\'accepte que les données communiquées soient collectées et traitées dans le cadre de l\'organisation et du fonctionnement de la plateforme JEFIE 2026.'],
+                    ['engage_usage','Je m\'engage à utiliser les informations et profils des candidats accessibles sur la plateforme exclusivement à des fins de recrutement et de mise en relation professionnelle.'],
+                    ] as [$name, $label])
+                    <label class="consent-check">
+                        <input type="checkbox" name="{{ $name }}" value="1" required>
+                        <label>☐ {{ $label }} <span class="req">*</span></label>
+                    </label>
+                    @endforeach
+                </div>
+
+                <div class="step-nav">
+                    <button type="button" onclick="prevPanelE(5)" class="btn-prev"><svg viewBox="0 0 24 24">
+                            <path d="M19 12H5M12 5l-7 7 7 7" />
+                        </svg>Précédent</button>
+                    <button type="submit" class="btn-submit-final" id="btnSubmitE">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 2L11 13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                        VALIDER MON COMPTE ENTREPRISE
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
     </div>
     @include('components.footer')
     <script>
@@ -2120,6 +2187,80 @@
             offreCount = Math.max(0, offreCount - 1);
         }
 
+
+        //pour le champs obligatoire de la nationalité
+        function selectSousProfil(profil) {
+            document.getElementById('sousProfil').value = profil;
+
+            const natStandard = document.getElementById('natStandard');
+            const natGabonSeul = document.getElementById('natGabonSeul');
+            const inputLibre = document.getElementById('nationalite_libre');
+            const selectGabon = document.getElementById('nationalite_gabon');
+
+            if (profil === 'ecoute') {
+                // Mode Écoute d'opportunité : Bloquer sur Gabonais
+                natStandard.style.display = 'none';
+                inputLibre.removeAttribute('required');
+                inputLibre.value = '';
+
+                natGabonSeul.style.display = 'block';
+                selectGabon.setAttribute('required', 'required');
+
+                // Au cas où le champ Nationalité Étape 2 existe encore physiquement, on le cache
+                const champEtape2Nat = document.getElementById('nationalite_type');
+                if (champEtape2Nat) champEtape2Nat.closest('.form-group').style.display = 'none';
+            } else {
+                // Mode normal
+                natGabonSeul.style.display = 'none';
+                selectGabon.removeAttribute('required');
+
+                natStandard.style.style.display = 'block';
+                inputLibre.setAttribute('required', 'required');
+            }
+        }
+
+        function validerEtape1() {
+            // Sélectionner uniquement les champs visibles de l'étape 1
+            const panel = document.getElementById('panelP1');
+            const inputs = panel.querySelectorAll('input[required], select[required]');
+            let valide = true;
+
+            // Vérification des champs requis remplis
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    valide = false;
+                    input.style.borderColor = '#e53935';
+                } else {
+                    input.style.borderColor = '#d1d9e6';
+                }
+            });
+
+            // Validation spécifique de la confirmation du mot de passe
+            const pass = document.getElementById('password').value;
+            const conf = document.getElementById('password_confirmation').value;
+            if (pass !== conf || pass.length < 8) {
+                valide = false;
+                document.getElementById('password').style.borderColor = '#e53935';
+                document.getElementById('password_confirmation').style.borderColor = '#e53935';
+                alert("Les mots de passe doivent faire au moins 8 caractères et être identiques.");
+            }
+
+            if (valide) {
+                // Code pour passer au panelP2 (Étape suivante) de votre script existant
+                document.getElementById('panelP1').style.display = 'none';
+                document.getElementById('panelP2').style.display = 'block';
+
+                // Mettre à jour le stepper
+                document.getElementById('stepP1').classList.remove('active');
+                document.getElementById('stepP1').classList.add('done');
+                document.getElementById('stepP2').classList.add('active');
+                document.getElementById('progP').style.width = "50%";
+            } else if (pass === conf) {
+                alert("Veuillez remplir tous les champs obligatoires avant de continuer.");
+            }
+        }
+
+
         // ══════════════════════════════════════════════════════════
         // UTILITAIRES
         // ══════════════════════════════════════════════════════════
@@ -2147,6 +2288,202 @@
             if (!item) return;
             if (e.target.type === 'checkbox') {
                 item.classList.toggle('selected', e.target.checked);
+            }
+        });
+
+        // Initialisation visuelle des cartes de profils radios
+        document.querySelectorAll('.profil-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.profil-card').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) {
+                    radio.checked = true;
+                    gererChancementsProfil(radio.value);
+                }
+            });
+
+            // Appliquer l'état sélectionné par défaut au chargement
+            const checkedRadio = card.querySelector('input[type="radio"]');
+            if (checkedRadio && checkedRadio.checked) {
+                card.classList.add('selected');
+                gererChancementsProfil(checkedRadio.value);
+            }
+        });
+
+        // 1. GESTION DYNAMIQUE DES CHAMPS SELON LE PROFIL SÉLECTIONNÉ
+        function gererChancementsProfil(profil) {
+            if (document.getElementById('sousProfil')) {
+                document.getElementById('sousProfil').value = profil;
+            }
+
+            // Éléments Étape 2 (Identité)
+            const containerNatEtape2 = document.getElementById('container-nationalite-etape2');
+            const selectNatEtape2 = document.getElementById('nationalite_etape2');
+            const boxNaissance = document.getElementById('box-date-naissance');
+            const boxAge = document.getElementById('box-age-auto');
+            const inputNaissance = document.getElementById('date_naissance');
+
+            // Éléments Étape 3 (CV)
+            const labelCv = document.getElementById('label-cv');
+            const fieldCv = document.getElementById('field-cv');
+
+            if (profil === 'ecoute') {
+                // [CORRECTION] Supprimer/Masquer le choix Nationalité libre à l'étape 2 et forcer sur Gabonaise
+                if (containerNatEtape2) containerNatEtape2.style.display = 'none';
+                if (selectNatEtape2) {
+                    selectNatEtape2.removeAttribute('required');
+                    selectNatEtape2.value = 'Gabonaise';
+                }
+
+                // [CORRECTION] Ajouter + Rendre obligatoire la date de naissance
+                if (boxNaissance) boxNaissance.style.display = 'block';
+                if (boxAge) boxAge.style.display = 'block';
+                if (inputNaissance) inputNaissance.setAttribute('required', 'required');
+
+                // [CORRECTION] Rendre le CV strictement obligatoire pour ce profil
+                if (labelCv) labelCv.innerHTML = 'Curriculum Vitae (CV) <span class="req">*</span>';
+                if (fieldCv) fieldCv.setAttribute('required', 'required');
+
+            } else {
+                // Rétablir les paramètres standards pour 'participant' et 'entrepreneur'
+                if (containerNatEtape2) containerNatEtape2.style.display = 'block';
+                if (selectNatEtape2) {
+                    selectNatEtape2.setAttribute('required', 'required');
+                    if (selectNatEtape2.value === 'Gabonaise') selectNatEtape2.value = '';
+                }
+
+                if (boxNaissance) boxNaissance.style.display = 'none';
+                if (boxAge) boxAge.style.display = 'none';
+                if (inputNaissance) {
+                    inputNaissance.removeAttribute('required');
+                    inputNaissance.value = '';
+                }
+                if (document.getElementById('age_auto')) {
+                    document.getElementById('age_auto').value = '';
+                }
+
+                if (labelCv) labelCv.innerHTML = 'Curriculum Vitae (CV)';
+                if (fieldCv) {
+                    fieldCv.removeAttribute('required');
+                    fieldCv.style.borderColor = '#d1d9e6';
+                }
+            }
+        }
+
+        // 2. [CORRECTION] CALCUL AUTOMATIQUE DE L'ÂGE
+        const inputDateNaissance = document.getElementById('date_naissance');
+        if (inputDateNaissance) {
+            inputDateNaissance.addEventListener('change', function() {
+                const naissance = new Date(this.value);
+                if (isNaN(naissance)) return;
+
+                const aujourdhui = new Date();
+                let age = aujourdhui.getFullYear() - naissance.getFullYear();
+                const m = aujourdhui.getMonth() - naissance.getMonth();
+
+                if (m < 0 || (m === 0 && aujourdhui.getDate() < naissance.getDate())) {
+                    age--;
+                }
+
+                const fieldAgeAuto = document.getElementById('age_auto');
+                if (fieldAgeAuto) {
+                    fieldAgeAuto.value = age >= 0 ? age + " ans" : "Date invalide";
+                }
+            });
+        }
+
+        // 3. [CORRECTION] NAVIGATION AVEC VALIDATION STRICTE AVANT DE PASSER À L'ÉTAPE SUIVANTE
+        function validerEtChangerEtape(etapeActuelle, etapeSuivante) {
+            // Validation uniquement si on cherche à avancer
+            if (etapeSuivante > etapeActuelle) {
+                const panelActuel = document.getElementById('panelP' + etapeActuelle);
+                if (!panelActuel) return;
+
+                const champsObligatoires = panelActuel.querySelectorAll('input[required], select[required], textarea[required]');
+                let etapeValide = true;
+
+                champsObligatoires.forEach(champ => {
+                    // Gestion des inputs standards et sélections vides
+                    if (!champ.value.trim() || (champ.type === 'checkbox' && !champ.checked)) {
+                        etapeValide = false;
+                        champ.style.borderColor = '#e53935'; // Souligné en rouge si vide
+                        champ.classList.add('is-invalid');
+                    } else {
+                        champ.style.borderColor = '#d1d9e6';
+                        champ.classList.remove('is-invalid');
+                    }
+                });
+
+                // Validation de sécurité additionnelle pour l'Étape 1 (Mots de passe requis et identiques)
+                if (etapeActuelle === 1) {
+                    const password = document.getElementById('password') ? document.getElementById('password').value : '';
+                    const confirm = document.getElementById('password_confirmation') ? document.getElementById('password_confirmation').value : '';
+
+                    if (password.length < 8) {
+                        etapeValide = false;
+                        if (document.getElementById('password')) document.getElementById('password').style.borderColor = '#e53935';
+                        alert("Le mot de passe configuré doit contenir au moins 8 caractères.");
+                        return;
+                    }
+
+                    if (password !== confirm) {
+                        etapeValide = false;
+                        if (document.getElementById('password_confirmation')) document.getElementById('password_confirmation').style.borderColor = '#e53935';
+                        alert("Les deux champs de mot de passe ne correspondent pas.");
+                        return;
+                    }
+                }
+
+                if (!etapeValide) {
+                    alert("Impossible de continuer : veuillez remplir tous les champs obligatoires (*) de cette étape.");
+                    return; // Bloque la progression
+                }
+            }
+
+            // Si tout est valide ou si on recule : changement de panneau visuel
+            const actuel = document.getElementById('panelP' + etapeActuelle);
+            const suivant = document.getElementById('panelP' + etapeSuivante);
+
+            if (actuel && suivant) {
+                actuel.style.display = 'none';
+                suivant.style.display = 'block';
+
+                // Mise à jour du stepper graphique de progression (si existant)
+                const stepElementActuel = document.getElementById('stepP' + etapeActuelle);
+                const stepElementSuivant = document.getElementById('stepP' + etapeSuivante);
+
+                if (stepElementActuel && stepElementSuivant) {
+                    stepElementActuel.classList.remove('active');
+                    if (etapeSuivante > etapeActuelle) stepElementActuel.classList.add('done');
+                    stepElementSuivant.classList.add('active');
+                }
+
+                // Met à jour la barre de progression globale si l'élément progP existe
+                const progBar = document.getElementById('progP');
+                if (progBar) {
+                    const progressionMap = {
+                        1: '25%',
+                        2: '50%',
+                        3: '75%',
+                        4: '100%'
+                    };
+                    progBar.style.width = progressionMap[etapeSuivante] || '25%';
+                }
+
+                // Remonter automatiquement la page pour le confort utilisateur
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Lancer une première vérification au chargement initial du formulaire
+        window.addEventListener('DOMContentLoaded', () => {
+            const profilInitial = document.querySelector('input[name="profil_visiteur"]:checked');
+            if (profilInitial) {
+                gererChancementsProfil(profilInitial.value);
             }
         });
 
