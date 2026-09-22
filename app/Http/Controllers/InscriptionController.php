@@ -47,32 +47,66 @@ class InscriptionController extends Controller
     // ── PARTICIPANT ───────────────────────────────────────────
     private function storeParticipant(Request $request): RedirectResponse
     {
-        $request->validate([
+        // 1. DÉFINITION DES RÈGLES DE VALIDATION (Contrôleur)
+        $rules = [
             'profil_visiteur'   => 'required|in:participant,ecoute,entrepreneur',
             'civilite'          => 'required|in:M,Mme',
             'nom'               => 'required|string|max:100',
             'prenom'            => 'required|string|max:100',
-            'nationalite'       => 'required|string|max:100',
             'pays_residence'    => 'required|string|max:100',
             'whatsapp'          => 'required|string|max:30',
-            'email'             => 'required|email|max:200',
+            // [CORRECTION] Bloquer les doubles inscriptions (unique:inscriptions,email)
+            'email'             => 'required|email|max:200|unique:inscriptions,email',
+
+            // [CORRECTION] Ajouter champs mot de passe + confirmer mot de passe (commun)
+            'password'          => 'required|string|min:8|confirmed',
+
             'certif_exactitude' => 'required|accepted',
             'accepte_donnees'   => 'required|accepted',
-            // CV optionnel
-            'cv'                => 'nullable|file|mimes:pdf,doc,docx|max:5120',
-        ], [
+        ];
+
+        // [CORRECTION] Validation spécifique selon le profil sélectionné
+        if ($request->input('profil_visiteur') === 'ecoute') {
+            // Rendre le CV obligatoire
+            $rules['cv'] = 'required|file|mimes:pdf,doc,docx|max:5120';
+
+            // Ajouter le champ date de naissance
+            $rules['date_naissance'] = 'required|date|before:today';
+
+            // Validation stricte du profil Écoute d'opportunité : Uniquement gabonais
+            // (La valeur doit correspondre exactement à ce que votre formulaire envoie pour le Gabon, ex: 'Gabonaise' ou 'Gabonais')
+            $rules['nationalite'] = 'required|string|in:Gabonais,Gabonaise,Gabon,gabonais,gabonaise';
+        } else {
+            // Pour les autres participants, le CV reste optionnel et la nationalité est libre
+            $rules['cv'] = 'nullable|file|mimes:pdf,doc,docx|max:5120';
+            $rules['nationalite'] = 'required|string|max:100';
+        }
+
+        // Messages d'erreur personnalisés en français
+        $messages = [
             'profil_visiteur.required'   => 'Veuillez sélectionner votre profil.',
             'civilite.required'          => 'La civilité est obligatoire.',
             'nom.required'               => 'Le nom est obligatoire.',
             'prenom.required'            => 'Le prénom est obligatoire.',
             'nationalite.required'       => 'La nationalité est obligatoire.',
+            'nationalite.in'             => 'Désolé, ce profil est exclusivement réservé aux ressortissants Gabonais.', // [CORRECTION]
             'pays_residence.required'    => 'Le pays de résidence est obligatoire.',
             'whatsapp.required'          => 'Le numéro WhatsApp est obligatoire.',
             'email.required'             => 'L\'adresse e-mail est obligatoire.',
             'email.email'                => 'L\'adresse e-mail n\'est pas valide.',
+            'email.unique'               => 'Cette adresse e-mail est déjà inscrite.', // [CORRECTION]
+            'password.required'          => 'Le mot de passe est obligatoire.', // [CORRECTION]
+            'password.min'               => 'Le mot de passe doit contenir au moins 8 caractères.', // [CORRECTION]
+            'password.confirmed'         => 'Les deux mots de passe ne correspondent pas.', // [CORRECTION]
+            'date_naissance.required'    => 'La date de naissance est obligatoire.', // [CORRECTION]
+            'cv.required'                => 'Le CV est obligatoire pour le profil Écoute d\'opportunité.', // [CORRECTION]
             'certif_exactitude.accepted' => 'Vous devez certifier l\'exactitude des informations.',
             'accepte_donnees.accepted'   => 'Vous devez accepter l\'utilisation de vos données.',
-        ]);
+        ];
+
+
+        // Lancement de la validation Laravel
+        $request->validate($rules, $messages);
 
         // Upload CV si présent
         $cvPath = null;
@@ -101,10 +135,14 @@ class InscriptionController extends Controller
             'pays_residence'    => $request->pays_residence,
             'whatsapp'          => $request->whatsapp,
             'email'             => strtolower($request->email),
+            'password'          => bcrypt($request->password),
             'thematiques'       => $request->thematiques ?? [],
             'participe_b2b'     => $request->participe_b2b === 'oui',
+
+
             // Écoute d'opportunité
             'nationalite_type'  => $request->nationalite_type,
+            'date_naissance'    => $request->date_naissance, // [CORRECTION] Stocker la date
             'niveau_etudes'     => $request->niveau_etudes,
             'diplome'           => $request->diplome,
             'domaine_formation' => $request->domaine_formation,
@@ -112,11 +150,15 @@ class InscriptionController extends Controller
             'experience'        => $request->experience,
             'postes_recherches' => $request->postes_recherches ?? [],
             'cv_path'           => $cvPath,
+
+
             // Entrepreneur
             'forme_juridique'   => $request->forme_juridique_part,
             'domaine_activite'  => $request->domaine_activite_part,
             'secteur_eco'       => $request->secteur_eco,
             'pays_siege'        => $request->pays_siege_part,
+
+
             // Meta
             'numero_badge'      => $numeroBadge,
             'statut'            => 'confirme',
@@ -127,6 +169,22 @@ class InscriptionController extends Controller
         try {
             Mail::to($inscription->email)->send(new BadgeInscription($inscription));
             $inscription->update(['badge_envoye_le' => now()]);
+
+            $contenuAlerte = "⚠️ NOUVELLE INSCRIPTION PARTICIPANT VALIDÉE\n\n" .
+                "Fiche récapitulative du candidat :\n" .
+                "----------------------------------------\n" .
+                "Numéro de Badge : " . $inscription->numero_badge . "\n" .
+                "Civilité & Nom : " . $inscription->civilite . " " . $inscription->nom . " " . $inscription->prenom . "\n" .
+                "Profil Sélectionné : " . $inscription->profil . "\n" .
+                "Adresse E-mail : " . $inscription->email . "\n" .
+                "Numéro WhatsApp : " . $inscription->whatsapp . "\n" .
+                "Pays de résidence : " . $inscription->pays_residence . "\n" .
+                "Date : " . now()->format('d/m/Y H:i') . "\n";
+
+            Mail::raw($contenuAlerte, function ($message) use ($inscription) {
+                $message->to('info@jefieparis2026.net')
+                    ->subject('🔔 Alerte : ' . $inscription->nom . ' ' . $inscription->prenom . ' s\'est inscrit');
+            });
         } catch (\Throwable $e) {
             Log::error('Erreur envoi badge participant : ' . $e->getMessage());
         }
@@ -271,6 +329,23 @@ class InscriptionController extends Controller
         try {
             Mail::to($inscription->email)->send(new BadgeInscription($inscription));
             $inscription->update(['badge_envoye_le' => now()]);
+
+            // === AJOUTEZ CE BLOC JUSTE ICI ===
+            $contenuAlerteCorp = "💼 NOUVELLE INSCRIPTION ENTREPRISE VALIDÉE\n\n" .
+                "Fiche récapitulative de la structure :\n" .
+                "----------------------------------------\n" .
+                "Numéro de Dossier : " . $entreprise->numero_badge . "\n" .
+                "Raison Sociale : " . $entreprise->entreprise_nom . " (" . $entreprise->forme_juridique . ")\n" .
+                "Secteur / Activité : " . $entreprise->activite_principale . "\n" .
+                "Contact Admin : " . $entreprise->civilite . " " . $entreprise->nom . " " . $entreprise->prenom . "\n" .
+                "E-mail Pro : " . $entreprise->email . "\n" .
+                "Téléphone : " . $entreprise->telephone . "\n" .
+                "Date : " . now()->format('d/m/Y H:i') . "\n";
+
+            Mail::raw($contenuAlerteCorp, function ($message) use ($entreprise) {
+                $message->to('info@jefieparis2026.net')
+                    ->subject('🏢 Alerte : L\'entreprise ' . $entreprise->entreprise_nom . ' s\'est inscrite');
+            });
         } catch (\Throwable $e) {
             Log::error('Erreur envoi badge entreprise : ' . $e->getMessage());
         }

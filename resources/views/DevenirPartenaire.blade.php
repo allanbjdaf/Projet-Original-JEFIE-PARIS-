@@ -1691,13 +1691,13 @@
                         <rect x="2" y="4" width="20" height="16" rx="2" />
                         <path d="M2 7l10 7 10-7" />
                     </svg>
-                    partenariats@forum-innovation.org
+                    partenariats@jefieparis2026.net
                 </div>
                 <div class="fsi-contact-line">
                     <svg viewBox="0 0 24 24">
                         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81" />
                     </svg>
-                    +221 33 123 45 67
+                    +33 7 58 35 07 57
                 </div>
                 <a href="{{ route('contact') }}" class="fsi-contact-btn">Nous contacter directement</a>
             </div>

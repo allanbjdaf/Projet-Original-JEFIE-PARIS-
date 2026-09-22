@@ -12,6 +12,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'JEFIE — Paris 2026')</title>
 
+    {{-- 🌟 AJOUT DE VOTRE LOGO PERSONNALISÉ POUR L'ONGLET --}}
+    <link rel="icon" type="image/png" href="{{ asset('iamges/r2c.png') }}">
+
     {{-- ✅ PAS de @vite ici — évite que Tailwind Breeze écrase votre CSS --}}
     {{-- ✅ PAS de @stack('styles') Breeze --}}
 
