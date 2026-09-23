@@ -1233,13 +1233,12 @@
 
 {{-- ══ HERO ══ --}}
 <section class="hero">
-    <div class="hero-eyebrow">Forum International de l'Innovation 2026</div>
+    <div class="hero-eyebrow">Journées Economique et Forum Internationale de l'Emploi de la Diaspora Gabonaise</div>
     <h1>À <span>Propos</span> du Forum</h1>
-    <p class="hero-tagline">Innover, Collaborer, Transformer l'Avenir</p>
     <p class="hero-desc">
-        Le Forum International de l'Innovation est la plateforme de référence réunissant
-        décideurs, entrepreneurs, investisseurs, chercheurs et membres de la diaspora africaine
-        autour des grands défis du développement durable et de l'innovation.
+        Les JEFIE ont vocation à constituer une plateforme opérationnelle de mise en relation entre talents,
+        demandeurs d'emploi, entrepreneurs, investisseurs, entreprises, institutions publics et partenaires économiques,
+        autour de deux dimensions complementaires: l'emploi et l'investissement. 
     </p>
     <div class="hero-actions">
         <a href="#mission" class="btn-gold">
@@ -1255,39 +1254,70 @@
 </section>
 
 {{-- ══ STATS ══ --}}
+
 <div class="stats-bar">
-    @foreach ($stats as $s)
-    <div class="stat-item">
-        <div class="stat-icon-wrap">
-            <svg viewBox="0 0 24 24" aria-hidden="true">{!! $s['icon'] !!}</svg>
+        <div class="stat-item">
+        <div class="stat-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
-        <span class="stat-num">{{ $s['valeur'] }}</span>
-        <div class="stat-lbl">{{ $s['label'] }}</div>
+        <div>
+            <span class="stat-num">35000+</span>
+            <div class="stat-lbl">Gabonais
+en France</div>
+        </div>
     </div>
-    @endforeach
-</div>
+        <div class="stat-item">
+        <div class="stat-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        </div>
+        <div>
+            <span class="stat-num">2000+</span>
+            <div class="stat-lbl">Gabonais
+del&#039;Europe</div>
+        </div>
+    </div>
+        <div class="stat-item">
+        <div class="stat-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+            <span class="stat-num">2000+</span>
+            <div class="stat-lbl">Participants
+attendus</div>
+        </div>
+    </div>
+        <div class="stat-item">
+        <div class="stat-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <div>
+            <span class="stat-num">2000 </span>
+            <div class="stat-lbl">Entretiens
+de recrutement</div>
+        </div>
+    </div>
+    </div>
+
+
 
 {{-- ══ MISSION & VISION ══ --}}
 <section class="mission-section" id="mission">
     <div class="mission-left">
-        <div class="mission-eyebrow">Notre raison d'être</div>
         <h2 class="mission-title">
             Un Forum au service de<br>
-            <span>l'Afrique qui innove</span>
+            <span>la Diaspora Gabonaise</span>
         </h2>
         <p class="mission-text">
-            Le Forum International de l'Innovation 2026 est né d'une conviction forte :
-            l'Afrique possède les talents, les ressources et l'énergie pour devenir un
-            acteur majeur de l'économie mondiale. Ce Forum est le catalyseur de cette transformation.
+            Dans le cadre de la dynamique de transformation économique et sociale engagée par le Président de la République, Chef de l’État, Chef du Gouvernement, 
+            Son Excellence Brice Clotaire OLIGUI NGUEMA, le Gabon entend renforcer la valorisation de son capital humain, la création d’emplois, l’entrepreneuriat, l’investissement 
+            et la mobilisation des compétences gabonaises, au Gabon comme à l’étranger.
         </p>
         <div class="mission-quote">
-            « Ensemble, nous pouvons construire des ponts entre les talents de la diaspora
-            et les opportunités sur le continent africain. L'innovation est notre passeport
-            pour l'avenir. »
+            «  La diaspora gabonaise constitue, à ce titre, une force vive majeure. Forte de ses compétences, de son expérience internationale, de ses capacités entrepreneuriales et de 
+            ses réseaux professionnels et économiques, elle représente un potentiel important pour accompagner le développement du pays. »
         </div>
         <p class="mission-text">
-            Chaque édition réunit des esprits brillants, des institutions engagées et des
-            entrepreneurs déterminés pour créer des synergies concrètes et durables.
+            C’est dans cette perspective que se tiendront les Journées Économiques & Forum International de l’Emploi de la Diaspora Gabonaise (JEFIE Paris 2026), les 27 et 28 novembre 2026 au CNIT Forest – La Défense, à Paris.
         </p>
     </div>
     <div class="mission-right">
@@ -1299,7 +1329,9 @@
             </div>
             <div>
                 <div class="vision-title">Notre Vision</div>
-                <p class="vision-text">Faire de l'Afrique un hub mondial d'innovation et de création de valeur, porté par sa diaspora et ses entrepreneurs.</p>
+                <p class="vision-text">Les JEFIE Paris 2026 ont pour ambition de créer une plateforme opérationnelle réunissant talents, demandeurs d’emploi, entrepreneurs, investisseurs, entreprises, institutions publiques et partenaires économiques,
+                     autour de deux axes majeurs : l’emploi et l’investissement. Au-delà de l’événement, les JEFIE Paris 2026 ambitionnent de poser les bases d’un dispositif durable de mobilisation de la diaspora, avec un mécanisme de suivi des recrutements, 
+                     projets, partenariats et investissements initiés à l’issue des rencontres.</p>
             </div>
         </div>
         <div class="vision-card">
@@ -1311,7 +1343,8 @@
             </div>
             <div>
                 <div class="vision-title">Notre Mission</div>
-                <p class="vision-text">Créer des espaces de dialogue, de collaboration et de co-création entre les acteurs du développement africain, en Afrique et dans la diaspora.</p>
+                <p class="vision-text"> L’événement permettra notamment de valoriser les compétences de la diaspora, de présenter les besoins en recrutement des entreprises au Gabon, de faciliter les rencontres professionnelles et les recrutements, de promouvoir les opportunités d’investissement et d’entrepreneuriat 
+                    et de favoriser la création d’un réseau durable de compétences et d’acteurs économiques de la diaspora.</p>
             </div>
         </div>
         <div class="vision-card">
@@ -1323,7 +1356,8 @@
             </div>
             <div>
                 <div class="vision-title">Notre Engagement</div>
-                <p class="vision-text">Générer des résultats concrets : partenariats signés, projets financés, emplois créés et solutions innovantes déployées sur le continent.</p>
+                <p class="vision-text">Cette initiative est portée par la complémentarité des missions du Pôle National de Promotion de l’Emploi (PNPE) et de l’Agence Nationale de Promotion des Investissements (ANPI-Gabon), avec l’accompagnement de l’Ambassade 
+                    de la République Gabonaise en France et la mobilisation de la Plateforme Européenne des Organisations Gabonaises (PEOG).</p>
             </div>
         </div>
     </div>
