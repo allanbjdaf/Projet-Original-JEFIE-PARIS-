@@ -1788,7 +1788,7 @@
                 <svg viewBox="0 0 24 24">
                     <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
                 </svg>
-                À ne pas manquer — 15-18 Septembre 2026 · Paris
+                À ne pas manquer — 27-28 Novembre 2026 ·
             </div>
             <h1>Pourquoi participer<br><em>au Forum JEFIE 2026 ?</em></h1>
             <p class="hero-desc">Le Forum International de l'Emploi de la Diaspora Gabonaise est <strong style="color:#f5c518">l'événement le plus important de l'année</strong> pour tous les entrepreneurs, talents et décideurs de la diaspora. Voici pourquoi vous ne pouvez pas vous permettre de le manquer.</p>
@@ -1817,10 +1817,10 @@
     <div class="stats-bar">
         <div class="stats-inner">
             @foreach([
-            [($stats['inscrits'] ?? 2500).' +', 'Participants attendus', '+20% vs 2025'],
-            [($stats['pays'] ?? 78), 'Pays représentés', 'Présence mondiale'],
-            [($stats['investisseurs'] ?? 200).'+', 'Investisseurs présents', 'Fonds & Business Angels'],
-            [($stats['rdv_b2b'] ?? 500).'+', 'RDV B2B organisés', 'Matchmaking premium'],
+            [($stats['inscrits'] ?? 2000).' +', 'Participants attendus', '+20% vs 2025'],
+            [($stats['pays'] ?? 300), 'Opportunités professionnelles recensées', 'Présence Diaspora'],
+            [($stats['investisseurs'] ?? 500).'+', 'Entrepreneurs et porteurs de projets', 'Fonds & Business Angels'],
+            [($stats['rdv_b2b'] ?? 200).'+', 'Précontrats', 'Matchmaking premium'],
             ] as [$n,$l,$s])
             <div class="stat-item">
                 <span class="stat-num">{{ $n }}</span>
