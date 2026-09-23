@@ -1680,27 +1680,58 @@
     {{-- Vidéo à droite --}}
     <div class="hero-video">
         <div class="video-box" style="position: relative; cursor: pointer;">
-            {{-- ✅ Ajout de id="heroVideo" --}}
+            {{-- Conservé avec muted pour garantir l'autoplay au chargement --}}
             <video id="heroVideo" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover">
-                <source src="{{ asset('images/vd.mp4') }}" type="video/mp4">
+                <source src="{{ asset('images/vd.mov') }}" type="video/mp4">
             </video>
 
-            {{-- ✅ Ajout de id="playBtn" --}}
+            {{-- Bouton de contrôle --}}
             <div class="play-circle" id="playBtn">
                 <svg viewBox="0 0 24 24">
                     <polygon points="5 3 19 12 5 21 5 3" fill="#0f284e" />
                 </svg>
             </div>
         </div>
+    </div>
 
-        {{-- ✅ Ajout de id="captionBtn" --}}
-        <div class="video-caption" id="captionBtn" style="cursor: pointer;">
-            <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <polygon points="10 8 16 12 10 16 10 8" fill="#f5c518" stroke="none" />
-            </svg>
-            Voir la vidéo officielle
-        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('heroVideo');
+            const playBtn = document.getElementById('playBtn');
+            const videoBox = document.querySelector('.video-box');
+
+            if (video && videoBox) {
+                videoBox.addEventListener('click', () => {
+                    // Si la vidéo est actuellement coupée (muette), on active le son
+                    if (video.muted) {
+                        video.muted = false;
+                        video.volume = 0.5; // Configure le volume à 50%
+
+                        // Optionnel : masquer ou changer l'icône du bouton playBtn pour signifier que le son est actif
+                        if (playBtn) playBtn.style.opacity = '0';
+                    } else {
+                        // Si l'utilisateur clique à nouveau, on peut couper/remettre la pause ou couper le son
+                        if (video.paused) {
+                            video.play();
+                            if (playBtn) playBtn.style.opacity = '0';
+                        } else {
+                            video.pause();
+                            if (playBtn) playBtn.style.opacity = '1';
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+    {{-- ✅ Ajout de id="captionBtn" --}}
+    <div class="video-caption" id="captionBtn" style="cursor: pointer;">
+        <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <polygon points="10 8 16 12 10 16 10 8" fill="#f5c518" stroke="none" />
+        </svg>
+        Voir la vidéo officielle
+    </div>
     </div>
 
 </section>
