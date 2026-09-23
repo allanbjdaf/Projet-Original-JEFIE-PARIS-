@@ -270,7 +270,7 @@
         /* Superposition : Le dégradé officiel passe au premier plan avec une opacité réduite à droite, suivi de votre image */
         background-image:
             linear-gradient(108deg, #060e20 0%, #0f284e 45%, rgba(15, 40, 78, 0.75) 75%, rgba(15, 42, 94, 0.4) 100%),
-            url('/images/dav.jpg');
+            url('/images/cité éméraude gabon.jpg');
         /* <-- Déposez votre image sous ce nom dans public/images/ */
 
         background-color: #060e20;
@@ -1234,7 +1234,7 @@
 {{-- ══ HERO ══ --}}
 <section class="hero">
     <div class="hero-eyebrow">Journées Economique et Forum Internationale de l'Emploi de la Diaspora Gabonaise</div>
-    <h1>À <span>Propos</span> du Forum</h1>
+    <h1>À <span>APropos</span> du Forum</h1>
     <p class="hero-desc">
         Les JEFIE ont vocation à constituer une plateforme opérationnelle de mise en relation entre talents,
         demandeurs d'emploi, entrepreneurs, investisseurs, entreprises, institutions publics et partenaires économiques,
@@ -1441,14 +1441,7 @@ de recrutement</div>
             </div>
             <div class="eq-name">{{ $membre['nom'] }}</div>
             <div class="eq-poste">{{ $membre['poste'] }}</div>
-            <a href="{{ $membre['linkedin'] }}" class="eq-linkedin" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24">
-                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
-                    <rect x="2" y="9" width="4" height="12" />
-                    <circle cx="4" cy="4" r="2" />
-                </svg>
-                LinkedIn
-            </a>
+            
         </div>
         @endforeach
     </div>

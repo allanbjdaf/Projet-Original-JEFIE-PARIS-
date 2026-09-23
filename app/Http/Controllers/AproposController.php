@@ -113,12 +113,12 @@ class AProposController extends Controller
     private function equipe(): array
     {
         return [
-            ['nom' => 'Jean-Baptiste Moussavou', 'poste' => 'Président du Comité d\'organisation', 'photo' => 'boaa.jpg', 'linkedin' => '#'],
-            ['nom' => 'Aïcha Nzamba',            'poste' => 'Directrice générale',                  'photo' => 'baoo.jpeg', 'linkedin' => '#'],
-            ['nom' => 'Pierre Obiang',            'poste' => 'Directeur des partenariats',           'photo' => 'bao.jpg', 'linkedin' => '#'],
-            ['nom' => 'Fatima Mba',               'poste' => 'Responsable programme',                'photo' => 'bo.jpg', 'linkedin' => '#'],
-            ['nom' => 'David Nguema',             'poste' => 'Directeur technique & digital',        'photo' => 'dio.jpg', 'linkedin' => '#'],
-            ['nom' => 'Sandrine Ella',            'poste' => 'Coordinatrice diaspora',               'photo' => 'bao.jpg', 'linkedin' => '#'],
+            ['nom' => 'Jacqueline Ilogué Eps Bignouba', 'poste' => 'Ministre du travail,du Emploi, du Dialogue Social et de la formation Professionelle', 'photo' => 'Jacqueline Ilogué épouse Bignoumba.jpg'],
+            ['nom' => 'Thierry Minko',  'poste' => "Ministre de l'Ecomomie, des Finances, de la Dette et des Participations, chargé de la Lutte contre la Vie chère",    'photo' => 'Thierry Minko.jpg'],
+            ['nom' => 'Marie-Edith Tassyla-Ye-Doumbeneny',   'poste' => "Ministre des Affaires étrangères et de la Coopération, chargés de l'intégration et de la Diaspora Gabonaise",     'photo' => 'Marie-Edith Tassyla-Ye-Doumbeneny.jpg'],
+            ['nom' => 'Pascal Franck Nze Ndong Nze',         'poste' => "Directeur Géneral du pôle National de Promotion de l'Emploi (PNPE)",                'photo' => 'Pascal Franck Nze Ndong Nze.jpg'],
+            ['nom' => 'Ghislain Moandza Mboma',             'poste' => "Directeur Géneral de l'Agence National de Promotion des investissements du Gabon (ANPI)",        'photo' => 'Ghislain Moandza Mboma.jpg'],
+            ['nom' => 'Alfred NGUIA BANDA',            'poste' => 'Ambassadeur Haut représentant du Gabon en France',               'photo' => 'Alfred NGUIA BANDA.jpg'],
         ];
     }
 

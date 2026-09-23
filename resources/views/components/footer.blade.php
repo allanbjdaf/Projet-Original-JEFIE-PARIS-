@@ -198,10 +198,8 @@
             <p>Le rendez-vous de la diaspora gabonaise, des entrepreneurs et porteur de projets engagés pour l'avenir pour la nation.</p>
             <nav class="footer-socials" aria-label="Réseaux sociaux">
                 <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Twitter">&#120143;</a>
                 <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="YouTube">&#9654;</a>
-                <a href="#" aria-label="Instagram">&#9752;</a>
+               
             </nav>
         </div>
 
