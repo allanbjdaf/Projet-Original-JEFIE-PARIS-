@@ -20,16 +20,18 @@ return new class extends Migration
             $table->string('profil', 50)->nullable();
             $table->string('sous_profil', 50)->nullable();
 
-            // Identité commune
-            $table->string('civilite', 10)->nullable();
-            $table->string('nom', 100);
-            $table->string('prenom', 100)->nullable();
-            $table->string('email', 200);
-            $table->string('whatsapp', 30)->nullable();
-            $table->string('nationalite', 100)->nullable();
-            $table->string('pays_residence', 100)->nullable();
-            $table->string('fonction', 150)->nullable();
-            $table->string('admin_profil', 150)->nullable();
+             // Identité commune (AJOUT DU MOT DE PASSE + DATE NAISSANCE + EMAIL UNIQUE)
+    $table->string('civilite', 10)->nullable();
+    $table->string('nom', 100);
+    $table->string('prenom', 100)->nullable();
+    $table->string('email', 200)->unique(); // Bloque les doublons au niveau BDD
+    $table->string('password', 255);        // Nouveau champ pour la sécurité du compte
+    $table->date('date_naissance')->nullable(); // Nouveau champ pour le calcul de l'âge
+    $table->string('whatsapp', 30)->nullable();
+    $table->string('nationalite', 100)->nullable();
+    $table->string('pays_residence', 100)->nullable();
+    $table->string('fonction', 150)->nullable();
+    $table->string('admin_profil', 150)->nullable();
 
             // Thématiques & préférences participant
             $table->json('thematiques')->nullable();

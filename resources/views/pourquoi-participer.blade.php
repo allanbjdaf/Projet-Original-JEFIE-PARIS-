@@ -1932,74 +1932,8 @@
         </div>
     </section>
 
-    {{-- PALMARÈS --}}
-    <section class="section">
-        <div class="section-header center">
-            <div class="section-eyebrow"><svg viewBox="0 0 24 24">
-                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                </svg>Bilan des éditions</div>
-            <h2 class="section-title">Une croissance exponentielle<br>d'édition en édition</h2>
-            <p class="section-desc">Chaque année, le Forum JEFIE grandit en ambition, en participants et en impact économique. L'édition 2026 sera la plus grande jamais organisée.</p>
-        </div>
-        <div class="palmares-grid">
-            @foreach($palmares as $ed)
-            <div class="palmares-card {{ $ed['annee'] === '2026' ? 'edition-2026' : '' }}">
-                @if($ed['annee'] === '2026')
-                <div class="edition-en-cours">En cours</div>
-                @endif
-                <div class="pc-annee" style="color:{{ $ed['annee'] === '2026' ? '#f5c518' : '#0f284e' }}">
-                    {{ $ed['annee'] }}
-                    @if($ed['annee'] === '2026')
-                    <span class="pc-annee-badge" style="background:rgba(245,166,35,.2);color:#f5c518">Édition actuelle</span>
-                    @endif
-                </div>
-                <div class="pc-lieu" style="color:{{ $ed['annee'] === '2026' ? 'rgba(255,255,255,.6)' : '#718096' }}">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                        <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    {{ $ed['lieu'] }}
-                </div>
-                <div class="pc-chiffres">
-                    @foreach([['Inscrits',$ed['inscrits']],['Pays',$ed['pays']],['Partenariats',$ed['partenariats']],['Investissements',$ed['investissements']]] as [$l,$v])
-                    <div class="pc-chiffre" style="border-bottom-color:{{ $ed['annee']==='2026' ? 'rgba(255,255,255,.08)' : '#f0f4f8' }}">
-                        <span class="pc-ch-label" style="color:{{ $ed['annee']==='2026' ? 'rgba(255,255,255,.55)' : '#718096' }}">{{ $l }}</span>
-                        <span class="pc-ch-val" style="color:{{ $ed['annee']==='2026' ? '#f5c518' : '#0f284e' }}">{{ $v }}</span>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </section>
-
-    {{-- TEMOIGNAGES --}}
-    <section class="section section-dark">
-        <div class="section-header center">
-            <div class="section-eyebrow"><svg viewBox="0 0 24 24">
-                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-                </svg>Ils témoignent</div>
-            <h2 class="section-title section-title-w">Ceux qui y étaient<br>vous le disent</h2>
-            <p class="section-desc section-desc-w">Des témoignages concrets de participants qui ont transformé leur participation en résultats mesurables.</p>
-        </div>
-        <div class="temoignages-grid">
-            @foreach($temoignages as $t)
-            <div class="temoignage-card">
-                <div class="tc-stars">@for($i=0;$i<5;$i++)<span class="tc-star">★</span>@endfor</div>
-                <p class="tc-text">"{{ $t['texte'] }}"</p>
-                <div class="tc-author">
-                    <div class="tc-av" style="background:linear-gradient(135deg,{{ $t['couleur'] }},{{ $t['couleur'] }}99)">{{ $t['init'] }}</div>
-                    <div>
-                        <div class="tc-name">{{ $t['nom'] }}</div>
-                        <div class="tc-role">{{ $t['role'] }}</div>
-                        <div class="tc-pays">{{ $t['pays'] }}</div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </section>
-
+  
+   
     {{-- FAQ --}}
     <section class="section section-alt">
         <div class="section-header center">
