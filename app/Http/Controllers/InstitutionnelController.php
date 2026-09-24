@@ -74,19 +74,19 @@ class InstitutionnelController extends Controller
     private function organisateurs(): array
     {
         return [
-            ['nom' => "Ministère de l'Économie et de la Planification", 'logo' => 'mec.png', 'initiale' => 'ME'],
-            ['nom' => "Agence Nationale de l'Innovation",               'logo' => 'ctr.jpg', 'initiale' => 'ANI'],
-            ['nom' => "Comité des Gabonais de France",             'logo' => 'cgforga.png', 'initiale' => 'CGF'],
+            ['nom' => 'Pôle National de Promotion Emploi',   'logo' => 'IMG_0633.png', 'initiale' => 'PNPE'],
+            ['nom' => "Ambassade de France",               'logo' => 'IMG_0634.jpg', 'initiale' => 'ANI'],
+            ['nom' => "Plateforme Européenne des Organisations Gabonaises",             'logo' => 'LOGO PEOG.png', 'initiale' => 'PEOG'],
         ];
     }
 
     private function partenairesInstitution(): array
     {
         return [
-            ['nom' => 'Pôle National de Promotion Emploi',   'logo' => 'Pnp.jpg', 'initiale' => 'PNPE'],
-            ['nom' => 'Fédèration des Entreprises Gabonaises (FEG)', 'logo' => 'Feg.jpg', 'initiale' => 'FEG'],
-            ['nom' => 'Union Européenne',  'logo' => 'ue.png', 'initiale' => 'UE'],
-            ['nom' => 'Banque Mondiale',   'logo' => 'ba.jpg', 'initiale' => 'BM'],
+            ['nom' => 'Ministère du Travail, du Plein Emploi du Dialogue Social et la Formation Professionnelle',   'logo' => '16.png', 'initiale' => 'ME'],
+            ['nom' => "Ministère des Affaires étrangères et de la Coopération, Chargé de l'Integration", 'logo' => '17.png', 'initiale' => 'MAE'],
+            ['nom' => "Ministère de l'Economie, des Finances, de la Dette et des Participations, Chargé de la Lutte contre la vie chère",  'logo' => '18.png', 'initiale' => 'MEF'],
+            ['nom' => 'Ambassade de France',   'logo' => '19.png', 'initiale' => 'AM'],
         ];
     }
 
