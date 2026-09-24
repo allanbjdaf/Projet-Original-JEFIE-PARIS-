@@ -60,7 +60,6 @@ class FaqController extends Controller
             ['slug' => 'partenariat',    'label' => 'Partenariats',         'icon' => '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>',                                                           'color' => '#f5a623'],
             ['slug' => 'diaspora',       'label' => 'Espace Diaspora',      'icon' => '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>',                                                                                                    'color' => '#e65100'],
             ['slug' => 'logistique',     'label' => 'Logistique & Accès',   'icon' => '<path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>',                                                                                                                 'color' => '#6a1b9a'],
-            ['slug' => 'paiement',       'label' => 'Paiement & Tarifs',    'icon' => '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>',                                                                                                        'color' => '#00838f'],
             ['slug' => 'technique',      'label' => 'Technique & Accès',    'icon' => '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33"/>', 'color' => '#c2185b'],
         ];
     }
@@ -73,36 +72,17 @@ class FaqController extends Controller
                 'id' => 1,
                 'categorie' => 'inscription',
                 'populaire' => true,
-                'question' => 'Comment s\'inscrire au Forum International de l\'Innovation 2026 ?',
-                'reponse'  => 'L\'inscription se fait entièrement en ligne sur notre plateforme. Rendez-vous sur la page "Inscriptions & Billetterie", choisissez votre type de pass (Gratuit, Standard ou Premium), remplissez le formulaire avec vos informations personnelles et professionnelles, puis procédez au paiement si nécessaire. Vous recevrez immédiatement un email de confirmation avec votre badge QR Code.'
+                'question' => 'Comment s\'inscrire au JEFIE ?',
+                'reponse'  => 'L’inscription se fait en ligne sur notre plateforme. Rendez-vous sur la page « s’inscrire », choisissez votre profil « participant ou acteur économique », choisissez votre package (si vous êtes acteur économique), remplissez le formulaire en suivant les étapes, puis procédez à la validation. Vous recevrez immédiatement un email de confirmation avec votre badge QR Code.'
             ],
             [
                 'id' => 2,
                 'categorie' => 'inscription',
                 'populaire' => true,
                 'question' => 'Quels sont les différents types de pass disponibles ?',
-                'reponse'  => 'Trois niveaux de pass sont disponibles : le Pass Gratuit (accès aux conférences principales, espaces d\'exposition, supports numériques), le Pass Standard à 15 000 FCFA (accès à toutes les conférences, kit participant, attestation de participation) et le Pass Premium à 50 000 FCFA (accès VIP à toutes les activités, déjeuner networking, kit premium, certificat officiel et accès aux replays vidéo).'
-            ],
-            [
-                'id' => 3,
-                'categorie' => 'inscription',
-                'populaire' => false,
-                'question' => 'Puis-je modifier mon inscription après l\'avoir soumise ?',
-                'reponse'  => 'Oui, vous pouvez modifier certaines informations de votre inscription (coordonnées, type de participation) en vous connectant à votre espace personnel. Pour un changement de pass ou un remboursement, contactez notre équipe à inscription@forum-innovation.org au minimum 15 jours avant l\'événement.'
-            ],
-            [
-                'id' => 4,
-                'categorie' => 'inscription',
-                'populaire' => false,
-                'question' => 'Une inscription groupée est-elle possible pour une organisation ?',
-                'reponse'  => 'Oui, nous proposons des tarifs préférentiels pour les groupes de 5 personnes ou plus. Contactez notre équipe partenariats à groupes@forum-innovation.org pour obtenir un devis personnalisé et faciliter la gestion de vos inscriptions collectives.'
-            ],
-            [
-                'id' => 5,
-                'categorie' => 'inscription',
-                'populaire' => false,
-                'question' => 'Y a-t-il des tarifs réduits pour les étudiants ou jeunes entrepreneurs ?',
-                'reponse'  => 'Oui ! Nous proposons un tarif étudiant avec 50% de réduction sur le Pass Standard sur présentation d\'une carte étudiante valide. Les jeunes entrepreneurs de moins de 30 ans bénéficient également d\'un tarif préférentiel. Contactez-nous à jeunes@forum-innovation.org pour en bénéficier.'
+                'reponse'  => 'OFFICIEL — 50 000 € * Stand 36 m² * Naming officiel de l’événement (JEFIE Paris 2026 présenté par votre marque) * Stand 36 m² en emplacement premium * Keynote d’ouverture devant l’ensemble des participants * Visibilité maximale sur tous les supports (site, presse, réseaux sociaux, signalétique) * Accès prioritaire aux rencontres avec décideurs publics et investisseurs 
+                * Session de recrutement dédiée et accès à la CVthèque complète * Valorisation de votre marque employeur auprès des meilleurs talents de la diaspora * Invitations VIP (dîner de gala, cocktail partenaires) 2 places disponibles ⸻ PLATINE — 40 000 € * Stand 24 m² * Stand 24 m² en emplacement privilégié * Visibilité premium sur l’ensemble des supports de communication * Intervention lors d’une table ronde ou d’un panel thématique * Rencontres d’affaires ciblées avec décideurs et investisseurs * Session de recrutement dédiée * Renforcement de votre marque employeur auprès de la diaspora * Invitations VIP à la soirée partenaires 5 places disponibles ⸻ OR — 30 000 € * Stand 18 m² * Intervention lors d’une conférence thématique * Logo sur les principaux supports de communication (site, programme, badges) * Accès à l’espace networking dédié entreprises-diaspora * Participation à des sessions de recrutement * Mise en lumière de vos métiers et opportunités de carrière 10 places disponibles ⸻ ARGENT — 20 000 € * Stand 12 m² * Logo sur le site web et le programme officiel * Accès à l’espace networking général * Participation aux sessions de recrutement collectives * Mention de votre entreprise sur les réseaux sociaux 20 places disponibles ⸻ BRONZE — 10 000 € * Stand 9 m² * Logo sur le programme et les supports d’accueil * Accès à l’espace networking général 
+                * Visibilité sur le site web (page partenaires) 5 places disponibles.'
             ],
 
             // ── PROGRAMME ───────────────────────────────────────────
@@ -110,8 +90,8 @@ class FaqController extends Controller
                 'id' => 6,
                 'categorie' => 'programme',
                 'populaire' => true,
-                'question' => 'Quand et où se déroule le Forum International de l\'Innovation 2026 ?',
-                'reponse'  => 'Le Forum se tiendra du 15 au 18 juin 2026 à Paris, France. La localisation précise du lieu sera communiquée courant mars 2026 via notre newsletter et sur le site officiel. Le Forum accueillera 5 000+ participants de 50+ pays sur 4 jours d\'échanges intensifs.'
+                'question' => 'Quand et où se déroulent les JEFIE ?',
+                'reponse'  => 'Le Forum se tiendra du 27 au 28 Novembre 2026 au CNIT FOREST LA DEFENSE, 2 Place de la défense, 92800 Puteaux, France.'
             ],
             [
                 'id' => 7,
@@ -120,28 +100,15 @@ class FaqController extends Controller
                 'question' => 'Quelles sont les thématiques abordées lors du Forum ?',
                 'reponse'  => 'Le Forum 2026 s\'articule autour de 6 grandes thématiques : Innovation & Transformation digitale, Finance & Investissement en Afrique, Développement durable & Green Tech, Diaspora & Entrepreneuriat, Santé & Bien-être, et Éducation & Formation. Chaque thématique est déclinée en conférences plénières, panels et ateliers pratiques.'
             ],
-            [
-                'id' => 8,
-                'categorie' => 'programme',
-                'populaire' => false,
-                'question' => 'Comment soumettre un pitch entrepreneurial ?',
-                'reponse'  => 'Les pitchs sont ouverts aux entrepreneurs diaspora disposant d\'un projet innovant. Pour soumettre votre candidature, rendez-vous dans la section Programme, choisissez "Pitchs entrepreneuriaux" et remplissez le formulaire de soumission avant le 1er mai 2026. Les projets sélectionnés seront présentés devant un jury d\'investisseurs lors de la soirée dédiée.'
-            ],
-            [
-                'id' => 9,
-                'categorie' => 'programme',
-                'populaire' => false,
-                'question' => 'Les sessions seront-elles disponibles en replay ?',
-                'reponse'  => 'Oui, l\'ensemble des conférences plénières et panels seront enregistrés et disponibles en replay pour les détenteurs de Pass Premium dans les 7 jours suivant l\'événement. Les Pass Standard auront accès aux replays 30 jours après l\'événement. Le Pass Gratuit ne donne pas accès aux replays.'
-            ],
+
 
             // ── PARTENARIAT ─────────────────────────────────────────
             [
                 'id' => 10,
                 'categorie' => 'partenariat',
                 'populaire' => true,
-                'question' => 'Comment devenir partenaire officiel du Forum ?',
-                'reponse'  => 'Pour devenir partenaire, rendez-vous sur la page "Devenir Partenaire" et soumettez votre demande via le formulaire en ligne. Notre équipe commerciale vous contactera sous 48h pour discuter du niveau de partenariat adapté à vos objectifs (Bronze, Argent, Or, Platine ou Sur Mesure) et finaliser les modalités de collaboration.'
+                'question' => 'Comment devenir partenaire officiel des JEFIE ?',
+                'reponse'  => 'Pour devenir partenaire officiel des JEFIE, il vous faudra choisir le Package  "Officiel" ou "Platine" et contacter nos équipes pourune rencontre de confirmation (Bronze, Argent, Or, Platine ) .'
             ],
             [
                 'id' => 11,
@@ -150,13 +117,7 @@ class FaqController extends Controller
                 'question' => 'Quels sont les avantages d\'un partenariat avec le Forum ?',
                 'reponse'  => 'Les partenaires bénéficient d\'une visibilité internationale auprès de 5 000+ décideurs, d\'un espace d\'exposition dédié, de sessions de présentation, d\'accès à notre base de contacts qualifiés, d\'une présence sur tous nos supports de communication (site, newsletter, réseaux sociaux) et d\'un rapport d\'impact post-événement détaillé.'
             ],
-            [
-                'id' => 12,
-                'categorie' => 'partenariat',
-                'populaire' => false,
-                'question' => 'Puis-je sponsoriser un événement ou une session spécifique ?',
-                'reponse'  => 'Absolument ! Nous proposons des offres de "naming" sur des sessions spécifiques (conférence d\'ouverture, dîner de gala, sessions B2B, espace startup) qui permettent une visibilité ciblée et un association forte de votre marque à un moment clé du Forum. Contactez partenariats@forum-innovation.org pour les détails.'
-            ],
+
 
             // ── DIASPORA ────────────────────────────────────────────
             [
@@ -166,29 +127,10 @@ class FaqController extends Controller
                 'question' => 'Comment créer et compléter mon profil entrepreneur diaspora ?',
                 'reponse'  => 'Après votre inscription, accédez à votre espace personnel et cliquez sur "Mon profil entrepreneur". Renseignez vos informations professionnelles, votre secteur d\'activité, vos projets en cours et vos domaines d\'expertise. Un profil complété à 100% augmente votre visibilité de 5× dans l\'annuaire et vous permet d\'être mis en avant dans la section "Entrepreneurs à la une".'
             ],
-            [
-                'id' => 14,
-                'categorie' => 'diaspora',
-                'populaire' => false,
-                'question' => 'Comment planifier des rendez-vous B2B avec d\'autres entrepreneurs ?',
-                'reponse'  => 'Via votre tableau de bord entrepreneur, accédez à la section "Annuaire" pour rechercher des profils par secteur, pays ou expertise. Cliquez sur un profil et sélectionnez "Planifier un RDV". Vous pouvez proposer des créneaux disponibles pendant les 4 jours du Forum. Les deux parties reçoivent une confirmation par email.'
-            ],
-            [
-                'id' => 15,
-                'categorie' => 'diaspora',
-                'populaire' => false,
-                'question' => 'La cartographie des entrepreneurs est-elle accessible à tous ?',
-                'reponse'  => 'La carte mondiale des entrepreneurs de la diaspora gabonaise est accessible à tous les visiteurs du site. Les fonctionnalités avancées (filtres détaillés, informations de contact, prise de rendez-vous) sont réservées aux membres inscrits. Pour apparaître sur la cartographie, créez votre profil entrepreneur et renseignez votre localisation.'
-            ],
+
 
             // ── LOGISTIQUE ──────────────────────────────────────────
-            [
-                'id' => 16,
-                'categorie' => 'logistique',
-                'populaire' => false,
-                'question' => 'Des hébergements partenaires sont-ils disponibles pour les participants ?',
-                'reponse'  => 'Oui, nous avons négocié des tarifs préférentiels avec une sélection d\'hôtels partenaires situés à proximité du lieu de l\'événement à Paris. La liste des hébergements partenaires et les codes de réservation seront communiqués aux inscrits confirmés par email dès mars 2026.'
-            ],
+
             [
                 'id' => 17,
                 'categorie' => 'logistique',
@@ -204,28 +146,8 @@ class FaqController extends Controller
                 'reponse'  => 'Votre badge numérique QR Code vous sera envoyé par email après confirmation de votre paiement. Le jour J, présentez-le (sur téléphone ou imprimé) à l\'un de nos stands d\'accueil pour récupérer votre badge physique personnalisé. Un espace d\'accueil dédié "Inscription rapide" sera disponible pour les arrivées de dernière minute.'
             ],
 
-            // ── PAIEMENT ────────────────────────────────────────────
-            [
-                'id' => 19,
-                'categorie' => 'paiement',
-                'populaire' => true,
-                'question' => 'Quels moyens de paiement sont acceptés ?',
-                'reponse'  => 'Nous acceptons les paiements par Mobile Money (Orange Money, MTN Mobile Money, Wave, Moov Money, PayDunya), carte bancaire (Visa, Mastercard) et virement bancaire pour les montants supérieurs à 100 000 FCFA. Tous les paiements sont sécurisés. Pour les partenariats, des facilités de paiement en 2 ou 3 fois sont disponibles.'
-            ],
-            [
-                'id' => 20,
-                'categorie' => 'paiement',
-                'populaire' => false,
-                'question' => 'Quelle est la politique de remboursement en cas d\'annulation ?',
-                'reponse'  => 'Remboursement intégral jusqu\'à 30 jours avant l\'événement. Entre 15 et 30 jours avant : remboursement de 50%. Moins de 15 jours avant l\'événement : aucun remboursement, mais vous pouvez transférer votre inscription à une autre personne. En cas d\'annulation du Forum de notre fait, tous les participants seront intégralement remboursés.'
-            ],
-            [
-                'id' => 21,
-                'categorie' => 'paiement',
-                'populaire' => false,
-                'question' => 'Puis-je obtenir une facture pour mon inscription ?',
-                'reponse'  => 'Oui, une facture officielle au format PDF vous sera envoyée automatiquement par email après confirmation de votre paiement. Vous pouvez également la télécharger depuis votre espace personnel dans la section "Mes documents". Pour les entreprises nécessitant une facture avec TVA intracommunautaire, contactez facturation@forum-innovation.org.'
-            ],
+
+
 
             // ── TECHNIQUE ───────────────────────────────────────────
             [
@@ -258,8 +180,8 @@ class FaqController extends Controller
             [
                 'titre'   => 'Inscription & Billetterie',
                 'desc'    => 'Questions sur votre inscription, vos passes et vos paiements.',
-                'email'   => 'inscription@forum-innovation.org',
-                'tel'     => '+221 33 123 45 67',
+                'email'   => 'Contact@jefieparis.fr',
+                'tel'     => '+241 62397223',
                 'color'   => '#1565c0',
                 'bg'      => '#e3f2fd',
                 'icon'    => '<path d="M16 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/>',
@@ -267,8 +189,8 @@ class FaqController extends Controller
             [
                 'titre'   => 'Partenariats',
                 'desc'    => 'Opportunités de partenariat, sponsoring et exposants.',
-                'email'   => 'partenariats@forum-innovation.org',
-                'tel'     => '+221 33 123 45 68',
+                'email'   => 'partenariat@jefieparis.fr',
+                'tel'     => '+33 7 54 78 84',
                 'color'   => '#f5a623',
                 'bg'      => '#fff8e6',
                 'icon'    => '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>',
@@ -276,8 +198,8 @@ class FaqController extends Controller
             [
                 'titre'   => 'Support Technique',
                 'desc'    => 'Problèmes de connexion, accès à la plateforme, bugs.',
-                'email'   => 'support@forum-innovation.org',
-                'tel'     => '+221 33 123 45 69',
+                'email'   => 'Communication@jefieparis.fr',
+                'tel'     => '+241 62397223',
                 'color'   => '#2e7d32',
                 'bg'      => '#e8f5e9',
                 'icon'    => '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4"/>',

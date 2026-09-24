@@ -381,63 +381,22 @@
     {{-- Onglets de filtrage dynamique --}}
     <div class="gouv-tabs" role="tablist" aria-label="Filtrer par catégorie" style="background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.08); padding: 10px; border-radius: 50px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
         <button type="button" class="gouv-tab is-active" data-filter="tous">Tous</button>
-        <button type="button" class="gouv-tab" data-filter="bureau">Bureau Exécutif</button>
-        <button type="button" class="gouv-tab" data-filter="scientifique">Comité Scientifique</button>
+
         <button type="button" class="gouv-tab" data-filter="organisation">Comité d'Organisation</button>
         <button type="button" class="gouv-tab" data-filter="partenaires">Partenaires Institutionnels</button>
     </div>
 
-    {{-- Categorie : Bureau Exécutif --}}
-    <div class="gouv-section" data-category="bureau">
-        <div class="gouv-section-title">Bureau Exécutif</div>
-        <div class="gouv-grid">
-            <div class="gouv-card">
-                <img class="gouv-avatar" src="{{ asset('images/boaa.jpg') }}" alt="Photo de Pr. Alpha Oumar Barry" loading="lazy">
-                <p class="gouv-name">Pr. Alpha Oumar Barry</p>
-                <span class="gouv-poste">Président Exécutif — JEFIE</span>
-                <p class="gouv-bio">Ancien conseiller ministériel et expert international en stratégies d'innovation technologique et de codéveloppement durable.</p>
-                <div class="gouv-links">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .52 1 1.3v4.82zm-13.5-9.18a1.66 1.66 0 1 0 0-3.32 1.66 1.66 0 0 0 0 3.32m1.4 9.18v-8.37h-2.8v8.37z" />
-                        </svg>
-                        LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    {{-- Categorie : Comité Scientifique --}}
-    <div class="gouv-section" data-category="scientifique">
-        <div class="gouv-section-title">Comité Scientifique</div>
-        <div class="gouv-grid">
-            <div class="gouv-card">
-                <img class="gouv-avatar" src="{{ asset('images/baoo.jpeg') }}" alt="Photo de Dr. Eliane de Montgolfier" loading="lazy">
-                <p class="gouv-name">Dr. Eliane de Montgolfier</p>
-                <span class="gouv-poste">Présidente du Comité Scientifique</span>
-                <p class="gouv-bio">Directrice de recherche émérite, spécialiste des dynamiques de transition énergétique et de l'impact environnemental industriel.</p>
-                <div class="gouv-links">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .52 1 1.3v4.82zm-13.5-9.18a1.66 1.66 0 1 0 0-3.32 1.66 1.66 0 0 0 0 3.32m1.4 9.18v-8.37h-2.8v8.37z" />
-                        </svg>
-                        LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     {{-- Categorie : Comité d'Organisation --}}
     <div class="gouv-section" data-category="organisation">
         <div class="gouv-section-title">Comité d'Organisation</div>
         <div class="gouv-grid">
             <div class="gouv-card">
-                <img class="gouv-avatar" src="{{ asset('images/bao.jpg') }}" alt="Photo de Marc-Antoine Vancamp" loading="lazy">
-                <p class="gouv-name">Marc-Antoine Vancamp</p>
-                <span class="gouv-poste">Commissaire Général JEFIE Paris 2026</span>
-                <p class="gouv-bio">Plus de 20 ans d'expérience dans l'organisation et le pilotage opérationnel de sommets internationaux et de salons B2B.</p>
+                <img class="gouv-avatar" src="{{ asset('images/Pascal Franck Nze Ndong Nze.jpg') }}" alt="Photo de Marc-Antoine Vancamp" loading="lazy">
+                <p class="gouv-name">Pascal Franck Nze Ndong Nze</p>
+                <span class="gouv-poste">Directeur Géneral du pôle Nationale de promotion de l'Emploi(PNPE) </span>
                 <div class="gouv-links">
                     <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -449,10 +408,9 @@
             </div>
 
             <div class="gouv-card">
-                <img class="gouv-avatar" src="{{ asset('images/bo.jpg') }}" alt="Photo de Fatoumata Diallo-Sy" loading="lazy">
-                <p class="gouv-name">Toumata Diallo-Sy</p>
-                <span class="gouv-poste">Directrice des Relations Institutionnelles</span>
-                <p class="gouv-bio">Supervise les partenariats stratégiques avec les ministères, les représentations diplomatiques et les agences de développement.</p>
+                <img class="gouv-avatar" src="{{ asset('images/Ghislain Moandza Mboma.jpg') }}" alt="Photo de Fatoumata Diallo-Sy" loading="lazy">
+                <p class="gouv-name">Ghislain Moandza Mboma</p>
+                <span class="gouv-poste">Directeur Général de l'Agence National de Promotion des Investissements du Gabon (ANPI)</span>
                 <div class="gouv-links">
                     <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -470,10 +428,9 @@
         <div class="gouv-section-title">Partenaires Institutionnels</div>
         <div class="gouv-grid">
             <div class="gouv-card">
-                <img class="gouv-avatar" src="{{ asset('images/bao.jpg') }}" alt="Photo de Sébastien Legendre" loading="lazy">
-                <p class="gouv-name">Sébastien Legendre</p>
-                <span class="gouv-poste">Délégué aux Alliances Privées</span>
-                <p class="gouv-bio">Responsable du consortium des grands groupes industriels et des fonds d'investissement engagés pour la finance durable.</p>
+                <img class="gouv-avatar" src="{{ asset('images/Jacqueline Ilogué épouse Bignoumba.jpg') }}" alt="Photo de Jacqueline Legendre" loading="lazy">
+                <p class="gouv-name">Jacqueline Ilogué épouse Bignoumba</p>
+                <span class="gouv-poste">Ministre du Travail, du Plein Emploi, du Dialogue Social et de la Formation Professionnelle</span>
                 <div class="gouv-links">
                     <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -485,6 +442,36 @@
             </div>
         </div>
     </div>
+    <div class="gouv-card">
+        <img class="gouv-avatar" src="{{ asset('images/Thierry Minko.jpg') }}" alt="Photo de Fatoumata Diallo-Sy" loading="lazy">
+        <p class="gouv-name">Thierry Minko</p>
+        <span class="gouv-poste">Ministre de l'Economie, des Finances, de la Dette et des Particpations, Chargé de la vie chère.</span>
+        <div class="gouv-links">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .52 1 1.3v4.82zm-13.5-9.18a1.66 1.66 0 1 0 0-3.32 1.66 1.66 0 0 0 0 3.32m1.4 9.18v-8.37h-2.8v8.37z" />
+                </svg>
+                LinkedIn
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="gouv-card">
+    <img class="gouv-avatar" src="{{ asset('images/Marie-Edith Tassyla-Ye-Doumbeneny.jpg') }}" alt="Photo de Fatoumata Diallo-Sy" loading="lazy">
+    <p class="gouv-name">Marie-Edith Tassyla-Ye-Doumbeneny</p>
+    <span class="gouv-poste">Ministre des affaires étrangères et de la coopération, chargée de l'intégration et de la Diaspora du Gabon</span>
+    <div class="gouv-links">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .52 1 1.3v4.82zm-13.5-9.18a1.66 1.66 0 1 0 0-3.32 1.66 1.66 0 0 0 0 3.32m1.4 9.18v-8.37h-2.8v8.37z" />
+            </svg>
+            LinkedIn
+        </a>
+    </div>
+</div>
+</div>
+</div>
 
 </div>
 

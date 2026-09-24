@@ -1619,8 +1619,7 @@
 {{-- ══ CTA BOTTOM ══ --}}
 <div class="cta-section">
     <div class="cta-eyebrow">Passez à l'action</div>
-    <h2 class="cta-title">Prêt à participer au Forum 2026 ?</h2>
-    <p class="cta-desc">Inscrivez-vous maintenant et rejoignez 5 000+ décideurs, entrepreneurs et innovateurs du monde entier.</p>
+    <h2 class="cta-title">Prêt à participer au JEFIE PARIS 2026 ?</h2>
     <div class="cta-btns">
         <a href="{{ route('inscription') }}" class="btn-gold">
             <svg viewBox="0 0 24 24">

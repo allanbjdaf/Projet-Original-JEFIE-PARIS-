@@ -1587,44 +1587,73 @@
 @include('components.navbar')
 
 
-{{-- ══ HERO ══ --}}
-<section class="hero hero-compact" style="background-image: url('{{ asset('images/264.png') }}'); min-height: auto; padding: 4rem 2.5rem 3.5rem;">
-    <div class="hero-left" style="max-width: 600px;">
-        <div class="hero-eyebrow" style="margin-bottom: 0.5rem; font-size: 0.85rem;">
+
+{{-- ══ HERO ALIGNÉ & RESPONSIVE ══ --}}
+<section class="hero hero-compact custom-hero-fixed" style="background-image: url('{{ asset('images/cite-emeraude.jpg') }}'); min-height: auto; padding: 2.5rem; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; position: relative;">
+
+    {{-- Voile sombre optionnel pour garantir la lisibilité du texte blanc sur l'image --}}
+    <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(0, 0, 0, 0.15); z-index: 1;"></div>
+
+    <div class="hero-left" style="max-width: 45%; width: 100%; min-width: 320px; z-index: 2; position: relative; background: rgba(17, 24, 39, 0.85); padding: 2rem; border-radius: 8px; backdrop-filter: blur(4px);">
+        <div class="hero-eyebrow" style="margin-bottom: 0.5rem; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; color: #e7d809ec;">
             <svg width="12" height="12" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
                 <rect x="3" y="4" width="18" height="18" rx="2" />
                 <path d="M16 2v4M8 2v4M3 10h18" />
             </svg>
-            15 – 18 septembre 2026 · Dakar
+            27 Novembre 2026 <br>
+            28 Novembre 2026
         </div>
-        <h1 style="font-size: 2.6rem; font-weight: 900; text-transform: uppercase; letter-spacing: -.02em; line-height: 1.05; margin-bottom: 0.6rem; color: #fff;">Programme<br>Officiel</h1>
-        <p class="hero-tagline" style="font-size: 1rem; margin-bottom: 0.5rem;">Découvrez toutes les activités du Forum</p>
-        <p class="hero-desc" style="font-size: 0.9rem; margin-bottom: 1.25rem;">
+        <h1 style="font-size: 2.4rem; font-weight: 900; text-transform: uppercase; letter-spacing: -.02em; line-height: 1.1; margin-bottom: 0.8rem; color: #fff;">Programme<br>Officiel</h1>
+        <p class="hero-tagline" style="font-size: 1.05rem; margin-bottom: 0.5rem; color: #e5e7eb; font-weight: 600;">Découvrez toutes les activités du Forum</p>
+        <p class="hero-desc" style="font-size: 0.9rem; margin-bottom: 1.5rem; color: #d1d5db; line-height: 1.5;">
             Conférences, panels, ateliers, networking, B2B et pitchs entrepreneuriaux :
             construisons ensemble l'avenir.
         </p>
-        <div class="hero-actions">
-            <a href="{{ route('programme.mon-agenda') }}" class="btn-gold">
-                <svg viewBox="0 0 24 24">
+        <div class="hero-actions" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <a href="{{ route('programme.mon-agenda') }}" class="btn-gold" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: #f59e0b; color: #111; padding: 0.75rem 1rem; border-radius: 6px; font-weight: 700; text-decoration: none;">
+                <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2;">
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <path d="M16 2v4M8 2v4M3 10h18" />
                 </svg>
                 Consulter l'agenda
             </a>
-            <a href="{{ route('rapports') }}" class="btn-outline-w">
-                <svg viewBox="0 0 24 24">
+            <a href="{{ route('rapports') }}" class="btn-outline-w" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; border: 1px solid #fff; color: #fff; padding: 0.75rem 1rem; border-radius: 6px; font-weight: 600; text-decoration: none;">
+                <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2;">
                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
                 </svg>
                 Télécharger le programme PDF
             </a>
         </div>
-        <div class="hero-dots" aria-label="Diaporama" style="margin-top: 1rem;">
-            <button class="hero-dot active" aria-label="Slide 1" aria-current="true"></button>
-            <button class="hero-dot" aria-label="Slide 2"></button>
-            <button class="hero-dot" aria-label="Slide 3"></button>
+        <div class="hero-dots" aria-label="Diaporama" style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+            <button class="hero-dot active" style="width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; border: none; padding: 0;"></button>
+            <button class="hero-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #6b7280; border: none; padding: 0;"></button>
+            <button class="hero-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #6b7280; border: none; padding: 0;"></button>
         </div>
     </div>
 </section>
+
+{{-- ── AJUSTEMENTS CSS POUR LE RESPONSIVE STRICT ── --}}
+<style>
+    @media (max-width: 991px) {
+        .custom-hero-fixed {
+            padding: 1.5rem !important;
+        }
+
+        .custom-hero-fixed .hero-left {
+            max-width: 100% !important;
+            /* Prend toute la largeur si l'écran devient trop petit pour le côte à côte */
+            background: rgba(17, 24, 39, 0.9) !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .custom-hero-fixed .hero-left h1 {
+            font-size: 1.8rem !important;
+        }
+    }
+</style>
+
+
 
 {{-- ══ COUNTDOWN + ACCÈS RAPIDES ══ --}}
 <div class="info-bar">
@@ -1694,40 +1723,9 @@
                     @endforeach
                 </select>
             </div>
-            <div class="filter-group">
-                <label for="f-thematique">Thématique</label>
-                <select id="f-thematique" name="thematique" class="filter-select">
-                    <option value="">Toutes les thématiques</option>
-                    @foreach ($thematiques as $t)
-                    <option value="{{ $t }}" {{ request('thematique') === $t ? 'selected' : '' }}>{{ $t }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="f-intervenant">Intervenant</label>
-                <select id="f-intervenant" name="intervenant" class="filter-select">
-                    <option value="">Tous les intervenants</option>
-                    @foreach ($intervenants as $i)
-                    <option value="{{ $i }}" {{ request('intervenant') === $i ? 'selected' : '' }}>{{ $i }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="f-format">Format</label>
-                <select id="f-format" name="format" class="filter-select">
-                    <option value="">Tous les formats</option>
-                    @foreach ($formats as $f)
-                    <option value="{{ $f }}" {{ request('format') === $f ? 'selected' : '' }}>{{ $f }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <button type="submit" class="filter-search-btn">
-                Rechercher
-                <svg viewBox="0 0 24 24">
-                    <circle cx="11" cy="11" r="8" />
-                    <path d="M21 21l-4.35-4.35" />
-                </svg>
-            </button>
+
+
+
         </div>
     </form>
 </div>
@@ -1892,46 +1890,8 @@
         </div>
     </div>
 
-    {{-- Sidebar droite : À ne pas manquer --}}
-    {{--
-        FIX : l'aside doit être la 2e colonne de la grille .programme-layout
-        (avant, une </div> mal placée la sortait de la grille : elle devenait
-        sticky par rapport à toute la page et recouvrait la newsletter/le footer
-        au scroll).
-    --}}
-    <aside class="right-sidebar" aria-label="À ne pas manquer">
-        <div class="rs-title">À Ne Pas Manquer</div>
-        @foreach ($aNesPasManquer as $item)
-        @php $aneColor = $item['color']; @endphp
-        <div class="ane-card">
-            <div class="ane-photo">
-                @if ($item['photo'])
-                <img src="{{ asset('images/'.$item['photo']) }}" alt="{{ $item['titre'] }}">
-                @else
-                <div class="ane-photo-placeholder">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                        <circle cx="12" cy="7" r="4" />
-                    </svg>
-                </div>
-                @endif
-            </div>
-            <div class="ane-info">
-                <div class="ane-date" style="color:<?php echo $aneColor; ?>">{{ $item['date'] }}</div>
-                <div class="ane-title">{{ $item['titre'] }}</div>
-                <div class="ane-salle">{{ $item['salle'] }}</div>
-                {{-- ✅ Bouton modifié avec les attributs data pour JavaScript --}}
-                <button class="ane-detail-btn" type="button"
-                    data-titre="{{ $item['titre'] }}"
-                    data-description="{{ $item['description'] ?? 'Aucune description disponible.' }}"
-                    data-date="{{ $item['date'] }}"
-                    data-salle="{{ $item['salle'] }}">
-                    Détails
-                </button>
-            </div>
-        </div>
-        @endforeach
-    </aside>
+
+
 
 </div>{{-- /.programme-layout --}}
 

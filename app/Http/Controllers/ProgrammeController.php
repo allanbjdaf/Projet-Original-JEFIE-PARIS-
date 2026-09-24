@@ -16,11 +16,8 @@ class ProgrammeController extends Controller
             'jours'           => $this->jours(),
             'activites'       => $this->activitesParJour($jourActif),
             'jourActif'       => (int) $jourActif,
-            'aNesPasManquer'  => $this->aNesPasManquer(),
             'accesRapides'    => $this->accesRapides(), // <-- CORRIGÉ : Un seul "e" pour correspondre à Blade
-            'thematiques'     => $this->thematiques(),
-            'intervenants'    => $this->intervenants(),
-            'formats'         => $this->formats(),
+
         ]);
     }
 
@@ -95,9 +92,7 @@ class ProgrammeController extends Controller
             'slugActif'       => $slug,              // <-- Pratique pour savoir quel filtre est coché dans Blade
             'aNesPasManquer'  => $this->aNesPasManquer(),
             'accesRapides'    => $this->accesRapides(),
-            'thematiques'     => $this->thematiques(),
-            'intervenants'    => $this->intervenants(),
-            'formats'         => $this->formats(),
+
         ]);
     }
     /**
@@ -112,10 +107,9 @@ class ProgrammeController extends Controller
     private function jours(): array
     {
         return [
-            ['num' => 1, 'label' => 'Jour 1', 'date' => '15 septembre 2026'],
-            ['num' => 2, 'label' => 'Jour 2', 'date' => '16 septembre 2026'],
-            ['num' => 3, 'label' => 'Jour 3', 'date' => '17 septembre 2026'],
-            ['num' => 4, 'label' => 'Jour 4', 'date' => '18 septembre 2026'],
+            ['num' => 1, 'label' => 'Jour 1', 'date' => '27 Novembre 2026'],
+            ['num' => 2, 'label' => 'Jour 2', 'date' => '28 Novembre 2026'],
+
         ];
     }
 
@@ -135,7 +129,7 @@ class ProgrammeController extends Controller
                     'photo' => 'bao.jpg',
                     'couleur' => '#1565c0',
                     'bg' => '#e3f2fd',
-                    'intervenant_nom' => 'Pr. Amadou KONÉ',
+                    'intervenant_nom' => 'Pascal Nze Ndong Nze',
                     'intervenant_role' => 'Président du Comité',
                     'nb_intervenants' => 5,
                     'icon' => '<path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/>',
@@ -399,15 +393,7 @@ class ProgrammeController extends Controller
         return $data[$jour] ?? $data[1];
     }
 
-    private function aNesPasManquer(): array
-    {
-        return [
-            ['date' => '15 JUIN · 09:00', 'titre' => 'Conférence d\'ouverture',       'salle' => 'Salle plénière',    'color' => '#1565c0', 'photo' => 'bao.jpg'],
-            ['date' => '15 JUIN · 14:00', 'titre' => 'Panel Innovation Africa',        'salle' => 'Salle A',           'color' => '#6a1b9a', 'photo' => 'Cooo.jpg'],
-            ['date' => '16 JUIN · 10:00', 'titre' => 'Atelier Design Thinking',        'salle' => 'Salle B',           'color' => '#2e7d32', 'photo' => 'coo.jpg'],
-            ['date' => '17 JUIN · 16:30', 'titre' => 'Networking Cocktail',            'salle' => 'Espace Networking', 'color' => '#e65100', 'photo' => 'co.jpg'],
-        ];
-    }
+
     private function accesRapides(): array
     {
         return [
