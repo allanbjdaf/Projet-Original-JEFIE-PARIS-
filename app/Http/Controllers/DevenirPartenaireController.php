@@ -186,8 +186,8 @@ class DevenirPartenaireController extends Controller
     private function temoignages(): array
     {
         return [
-            ['nom' => 'Ibrahim Coulibaly', 'poste' => 'DG Orange Sénégal',    'photo' => 'baoo.jpeg', 'texte' => 'Ce partenariat nous a permis de connecter notre marque avec l\'écosystème entrepreneurial africain. Un retour sur investissement exceptionnel.'],
-            ['nom' => 'Fatou Diallo',      'poste' => 'Directrice Ecobank CI', 'photo' => 'bao.jpg', 'texte' => 'L\'organisation était irréprochable et la qualité des participants remarquable. Nous renouvelons notre partenariat pour la 3ème année consécutive.'],
+            ['nom' => 'Astima Ognia Daffney', 'poste' => 'DG BJ TECh',    'photo' => 'ALLAN.jpg', 'texte' => 'Ce partenariat nous a permis de connecter notre marque avec l\'écosystème entrepreneurial africain. Un retour sur investissement exceptionnel.'],
+            ['nom' => 'Pascal Franck Nze Ndong Nze',      'poste' => 'DG PNPE', 'photo' => 'Pascal Franck Nze Ndong Nze.jpg', 'texte' => 'L\'organisation était irréprochable et la qualité des participants remarquable.'],
         ];
     }
 

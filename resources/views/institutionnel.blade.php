@@ -1,4 +1,4 @@
-﻿{{-- resources/views/institutionnel/index.blade.php --}}
+{{-- resources/views/institutionnel/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'Espace Institutionnel — JEFIE PARIS 2026')
@@ -139,16 +139,13 @@
     .page-layout {
         display: grid;
         grid-template-columns: 260px 1fr;
-        min-height: calc(100vh - 1000px);
-        align-items: start;
+        align-items: start;  /* La sidebar ne s'étire pas jusqu'en bas */
+    }
 
-        .main-content {
-            flex: 1;
-            /* Prend tout l'espace restant à droite */
-            padding: 0;
-        }
-
-        /* ◄ CRUCIAL : Empêche la barre latérale de s'étirer verticalement jusqu'au sol */
+    .main-content {
+        flex: 1;
+        padding: 0;
+        min-width: 0; /* Évite le dépassement horizontal */
     }
 
     /* ══ SIDEBAR ══ */
@@ -159,20 +156,21 @@
         padding: 1.5rem 0;
         display: flex;
         flex-direction: column;
-
-        /* ══ AJUSTEMENT DE LA HAUTEUR ══ */
-        height: max-content;
-        /* Le fond blanc s'adaptera pile à la taille cumulative de vos éléments */
+        /* La sidebar prend exactement la hauteur de son contenu */
+        height: fit-content;
+        position: sticky;  /* Elle reste visible au scroll sans s'étirer */
+        top: 64px;         /* Colle sous la navbar sticky */
+        align-self: start;
         box-sizing: border-box;
-
+        overflow: hidden;  /* Évite tout débordement interne */
     }
 
     .ls-header {
-        padding: .75rem 1.25rem 1.25rem;
+        padding: 1rem 1.5rem 1.5rem;
     }
 
     .ls-header-title {
-        font-size: 11px;
+        font-size: 13px;
         font-weight: 900;
         color: #f5c518;
         text-transform: uppercase;
@@ -184,8 +182,8 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        padding: 10px 1.25rem;
-        font-size: 13px;
+        padding: 13px 1.5rem;
+        font-size: 14px;
         color: #4a5568;
         text-decoration: none;
         transition: background .15s, color .15s;
@@ -205,8 +203,8 @@
     }
 
     .ls-item svg {
-        width: 16px;
-        height: 16px;
+        width: 17px;
+        height: 17px;
         stroke: currentColor;
         fill: none;
         stroke-width: 1.8;
@@ -246,25 +244,25 @@
 
     .ls-partner-title {
         color: #fff;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 700;
-        margin-bottom: 5px;
+        margin-bottom: 6px;
     }
 
     .ls-partner-desc {
         color: rgba(255, 255, 255, .6);
-        font-size: 11px;
-        line-height: 1.5;
-        margin-bottom: 12px;
+        font-size: 13px;
+        line-height: 1.55;
+        margin-bottom: 14px;
     }
 
     .ls-partner-btn {
         background: #f5c518;
         color: #0f284e;
         font-weight: 700;
-        font-size: 12px;
-        padding: 9px;
-        border-radius: 5px;
+        font-size: 13px;
+        padding: 11px;
+        border-radius: 6px;
         border: none;
         cursor: pointer;
         width: 100%;
@@ -297,52 +295,51 @@
     /* ══ HERO ══ */
     .hero {
         background: linear-gradient(105deg, #060e20 0%, #262d3e 55%, #1054d0 100%);
-        padding: 4rem 2.5rem 3.5rem;
+        padding: 5rem 3rem 4.5rem;
         min-height: auto;
         position: relative;
         overflow: hidden;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         gap: 2rem;
         background-color: rgba(16, 16, 16, .7);
         background-blend-mode: overlay;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-
     }
 
     .hero-left {
         flex: 1;
         position: relative;
         z-index: 2;
-        max-width: 480px;
-
+        max-width: 700px;
+        text-align: center;
     }
 
     .hero-left h1 {
         color: #fff;
-        font-size: 2.6rem;
+        font-size: 3rem;
         font-weight: 900;
         text-transform: uppercase;
         letter-spacing: -.02em;
         line-height: 1.05;
-        margin-bottom: .6rem;
+        margin-bottom: .8rem;
     }
 
     .hero-tagline {
         color: #f5c518;
-        font-size: 1rem;
+        font-size: 1.15rem;
         font-weight: 700;
         font-style: italic;
-        margin-bottom: .75rem;
+        margin-bottom: 1rem;
     }
 
     .hero-desc {
         color: rgba(255, 255, 255, .65);
-        font-size: 1rem;
-        line-height: 1.65;
+        font-size: 1.05rem;
+        line-height: 1.7;
     }
 
     .hero-stats {
@@ -410,33 +407,33 @@
 
     .top-section {
         background: #fff;
-        padding: 1.75rem 1.5rem;
+        padding: 2.5rem 2rem;
     }
 
     .ts-title {
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 900;
         color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
         border-bottom: 2px solid #f5c518;
-        padding-bottom: 6px;
-        margin-bottom: 1rem;
+        padding-bottom: 8px;
+        margin-bottom: 1.5rem;
         display: inline-block;
     }
 
     .ts-body {
-        font-size: 13px;
-        line-height: 1.75;
+        font-size: 15px;
+        line-height: 1.8;
         color: #4a5568;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
     }
 
     .ts-link {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
-        font-size: 13px;
+        gap: 6px;
+        font-size: 14px;
         font-weight: 700;
         color: #0a1e38;
         text-decoration: none;
@@ -448,8 +445,8 @@
     }
 
     .ts-link svg {
-        width: 12px;
-        height: 12px;
+        width: 13px;
+        height: 13px;
         stroke: currentColor;
         fill: none;
         stroke-width: 2;
@@ -459,21 +456,21 @@
     .obj-list {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        margin-bottom: 1rem;
+        gap: 14px;
+        margin-bottom: 1.5rem;
     }
 
     .obj-item {
         display: flex;
         align-items: flex-start;
-        gap: 10px;
+        gap: 12px;
     }
 
     .obj-icon {
-        width: 30px;
-        height: 30px;
+        width: 34px;
+        height: 34px;
         background: #eef2ff;
-        border-radius: 6px;
+        border-radius: 7px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -481,66 +478,66 @@
     }
 
     .obj-icon svg {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
         stroke: #0f284e;
         fill: none;
         stroke-width: 1.8;
     }
 
     .obj-text {
-        font-size: 13px;
+        font-size: 15px;
         color: #4a5568;
-        line-height: 1.5;
-        padding-top: 5px;
+        line-height: 1.6;
+        padding-top: 6px;
     }
 
     /* Organisateurs */
     .org-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-bottom: 1rem;
+        gap: 12px;
+        margin-bottom: 1.5rem;
     }
 
     .org-card {
         background: #f8fafc;
         border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        padding: .75rem;
+        border-radius: 10px;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
         text-align: center;
     }
 
     .org-logo-box {
-        width: 70px;
-        height: 60px;
+        width: 80px;
+        height: 68px;
         background: #eef2ff;
-        border-radius: 6px;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .org-logo-box img {
-        max-width: 65px;
-        max-height: 55px;
+        max-width: 74px;
+        max-height: 62px;
         object-fit: contain;
     }
 
     .org-logo-init {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 800;
         color: #0f284e;
     }
 
     .org-name {
-        font-size: 11px;
+        font-size: 13px;
         color: #4a5568;
-        line-height: 1.3;
+        line-height: 1.4;
         text-align: center;
     }
 
@@ -552,54 +549,77 @@
     .pi-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 8px;
-        margin-bottom: 1rem;
+        gap: 10px;
+        margin-bottom: 1.5rem;
     }
 
     .pi-card {
         background: #f8fafc;
         border: 1px solid #e2e8f0;
-        border-radius: 7px;
-        padding: .75rem .5rem;
+        border-radius: 9px;
+        padding: 1rem .75rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 5px;
+        gap: 7px;
         text-align: center;
     }
 
     .pi-logo {
-        width: 70px;
-        height: 50px;
+        width: 76px;
+        height: 56px;
         background: #eef2ff;
-        border-radius: 5px;
+        border-radius: 7px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .pi-logo img {
-        max-width: 65px;
-        max-height: 45px;
+        max-width: 70px;
+        max-height: 50px;
         object-fit: contain;
     }
 
     .pi-logo-init {
-        font-size: 10px;
+        font-size: 13px;
         font-weight: 800;
         color: #0f284e;
     }
 
     .pi-name {
-        font-size: 11px;
+        font-size: 13px;
         color: #4a5568;
-        line-height: 1.3;
+        line-height: 1.4;
     }
 
-    /* Bottom sections */
+    /* Section Sponsors — pleine largeur centrée */
+    .sponsors-section {
+        background: #fff;
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 2.5rem 2rem;
+        text-align: center;
+    }
+
+    .sponsors-section .ts-title {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sponsors-section .sponsors-row {
+        justify-content: center;
+    }
+
+    .sponsors-section .ts-link {
+        justify-content: center;
+    }
+
+    /* Bottom sections — grille 2 colonnes pour Messages + Documents */
     .bottom-sections {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 1px;
         background: #e2e8f0;
         border-top: 1px solid #e2e8f0;
@@ -607,27 +627,27 @@
 
     .bottom-section {
         background: #fff;
-        padding: 1.75rem 1.5rem;
+        padding: 2.5rem 2rem;
     }
 
     /* Sponsors */
     .sponsors-row {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.25rem;
         flex-wrap: wrap;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .sponsor {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 4px;
+        gap: 6px;
     }
 
     .sponsor-niveau {
-        font-size: 9px;
+        font-size: 12px;
         color: #718096;
         text-align: center;
     }
@@ -636,24 +656,24 @@
     .msg-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-        margin-bottom: 1rem;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .msg-card {
         background: #f8fafc;
         border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        padding: 1rem;
+        border-radius: 12px;
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
     }
 
     .msg-avatar {
-        width: 90px;
-        height: 90px;
-        border-radius: 8px;
+        width: 96px;
+        height: 96px;
+        border-radius: 10px;
         flex-shrink: 0;
         background: linear-gradient(135deg, #0f284e, #0a1e38);
         display: flex;
@@ -663,50 +683,50 @@
     }
 
     .msg-avatar img {
-        width: 90px;
-        height: 90px;
+        width: 96px;
+        height: 96px;
         object-fit: cover;
         display: block;
-        border-radius: 5px;
+        border-radius: 7px;
     }
 
     .msg-avatar-init {
         color: #fff;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
     }
 
     .msg-quote-mark {
         color: #f5c518;
-        font-size: 1.7rem;
+        font-size: 2rem;
         line-height: 0.7;
     }
 
     .msg-text {
-        font-size: 14px;
+        font-size: 15px;
         color: #4a5568;
-        line-height: 1.5;
+        line-height: 1.65;
         font-style: italic;
     }
 
     .msg-name {
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 700;
         color: #0a1e38;
     }
 
     .msg-role {
-        font-size: 12px;
+        font-size: 13px;
         color: #718096;
-        line-height: 1.3;
+        line-height: 1.4;
     }
 
     /* Documents */
     .doc-item {
         display: flex;
         align-items: center;
-        gap: 10px;
-        padding: 9px 0;
+        gap: 12px;
+        padding: 13px 0;
         border-bottom: 1px solid #f0f4f8;
     }
 
@@ -715,10 +735,10 @@
     }
 
     .doc-icon {
-        width: 32px;
-        height: 32px;
+        width: 36px;
+        height: 36px;
         background: #fce4ec;
-        border-radius: 6px;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -726,30 +746,30 @@
     }
 
     .doc-icon svg {
-        width: 15px;
-        height: 15px;
+        width: 17px;
+        height: 17px;
         stroke: #c2185b;
         fill: none;
         stroke-width: 1.8;
     }
 
     .doc-name {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 600;
         color: #0a1e38;
         flex: 1;
     }
 
     .doc-meta {
-        font-size: 10px;
+        font-size: 12px;
         color: #a0aec0;
     }
 
     .doc-dl {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
         background: #f0f4f8;
-        border-radius: 5px;
+        border-radius: 6px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -763,22 +783,22 @@
     }
 
     .doc-dl svg {
-        width: 14px;
-        height: 14px;
+        width: 15px;
+        height: 15px;
         stroke: #0a1e38;
         fill: none;
         stroke-width: 1.8;
     }
 
     .docs-see-all {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 700;
         color: #0a1e38;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
-        gap: 4px;
-        margin-top: .5rem;
+        gap: 6px;
+        margin-top: .75rem;
         transition: color .2s;
     }
 
@@ -787,8 +807,8 @@
     }
 
     .docs-see-all svg {
-        width: 12px;
-        height: 12px;
+        width: 13px;
+        height: 13px;
         stroke: currentColor;
         fill: none;
         stroke-width: 2;
@@ -797,23 +817,23 @@
     /* CTA Banner */
     .cta-banner {
         background: #0f284e;
-        padding: 2rem 2.5rem;
+        padding: 3rem 3rem;
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 2.5rem;
         flex-wrap: wrap;
     }
 
     .cta-left {
         display: flex;
         align-items: center;
-        gap: 1.25rem;
+        gap: 1.5rem;
         flex: 1;
     }
 
     .cta-icon {
-        width: 48px;
-        height: 48px;
+        width: 56px;
+        height: 56px;
         background: rgba(245, 166, 35, .15);
         border-radius: 50%;
         display: flex;
@@ -823,8 +843,8 @@
     }
 
     .cta-icon svg {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
         stroke: #f5c518;
         fill: none;
         stroke-width: 1.6;
@@ -832,33 +852,33 @@
 
     .cta-stars {
         display: flex;
-        gap: 3px;
-        margin-bottom: 5px;
+        gap: 4px;
+        margin-bottom: 6px;
     }
 
     .cta-stars svg {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
         stroke: #f5c518;
         fill: #f5c518;
     }
 
     .cta-title {
         color: #fff;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         font-weight: 800;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
     }
 
     .cta-desc {
         color: rgba(255, 255, 255, .65);
-        font-size: 13px;
-        line-height: 1.5;
+        font-size: 15px;
+        line-height: 1.65;
     }
 
     .cta-actions {
         display: flex;
-        gap: 12px;
+        gap: 14px;
         align-items: center;
         flex-wrap: wrap;
     }
@@ -867,9 +887,9 @@
         background: #f5c518;
         color: #0f284e;
         font-weight: 700;
-        font-size: 13px;
-        padding: 12px 24px;
-        border-radius: 5px;
+        font-size: 15px;
+        padding: 14px 28px;
+        border-radius: 6px;
         border: none;
         cursor: pointer;
         display: inline-flex;
@@ -884,8 +904,8 @@
     }
 
     .cta-btn-primary svg {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
         stroke: currentColor;
         fill: none;
         stroke-width: 2;
@@ -895,9 +915,9 @@
         background: transparent;
         color: #fff;
         font-weight: 700;
-        font-size: 13px;
-        padding: 11px 22px;
-        border-radius: 5px;
+        font-size: 15px;
+        padding: 13px 26px;
+        border-radius: 6px;
         border: 1.5px solid rgba(255, 255, 255, .35);
         cursor: pointer;
         display: inline-flex;
@@ -912,8 +932,8 @@
     }
 
     .cta-btn-outline svg {
-        width: 15px;
-        height: 15px;
+        width: 16px;
+        height: 16px;
         stroke: currentColor;
         fill: none;
         stroke-width: 2;
@@ -1184,19 +1204,7 @@
                 <p class="hero-tagline">Innover ensemble pour un avenir africain prospère</p>
                 <p class="hero-desc">Découvrez le cadre stratégique, les acteurs institutionnels engagés et les documents officiels qui structurent le Forum International de l'Innovation — plateforme de référence pour les décideurs et entrepreneurs du continent.</p>
             </div>
-            <div class="hero-stats">
-                @foreach ($stats as $s)
-                <div class="hstat">
-                    <div class="hstat-icon">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">{!! $s['icon'] !!}</svg>
-                    </div>
-                    <div>
-                        <span class="hstat-num">{{ $s['valeur'] }}</span>
-                        <div class="hstat-lbl">{{ $s['label'] }}</div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
+           
         </section>
 
         {{-- TOP 4 SECTIONS --}}
@@ -1290,27 +1298,23 @@
 
         </div>{{-- /.top-sections --}}
 
-        {{-- BOTTOM 3 SECTIONS --}}
-        <div class="bottom-sections">
-            {{-- Sponsors --}}
-            <div class="bottom-section" id="sponsors">
-                <div class="ts-title">Nos Sponsors & Soutiens</div>
-                <div class="sponsors-row">
-                    @foreach ($sponsors as $sp)
-                    <div class="sponsor company-logo-click"
-                        data-nom="{{ $sp['nom'] }}"
-                        data-description="{{ $sp['description'] ?? 'Aucune description disponible.' }}"
-                        data-email="{{ $sp['email'] ?? 'Non renseigné' }}"
-                        data-stand="{{ $sp['stand'] ?? 'Non attribué' }}"
-                        style="cursor: pointer;">
-                        <span style="font-size:13px;font-weight:700;color:{{ $sp['color'] }}">{{ $sp['nom'] }}</span>
-                        <div class="sponsor-niveau">{{ $sp['niveau'] }}</div>
-                    </div>
-                    @endforeach
-
+        {{-- ══ SPONSORS — Section pleine largeur ══ --}}
+        <div class="sponsors-section" id="sponsors">
+            <div class="ts-title">Nos Sponsors & Soutiens</div>
+            <div class="sponsors-row">
+                @foreach ($sponsors as $sp)
+                <div class="sponsor company-logo-click"
+                    data-nom="{{ $sp['nom'] }}"
+                    data-description="{{ $sp['description'] ?? 'Aucune description disponible.' }}"
+                    data-email="{{ $sp['email'] ?? 'Non renseigné' }}"
+                    data-stand="{{ $sp['stand'] ?? 'Non attribué' }}"
+                    style="cursor: pointer;">
+                    <span style="font-size:14px;font-weight:700;color:{{ $sp['color'] }}">{{ $sp['nom'] }}</span>
+                    <div class="sponsor-niveau">{{ $sp['niveau'] }}</div>
                 </div>
-                <a href="{{ route('partenaires.liste') }}" class="ts-link">Voir tous les sponsors...</a>
+                @endforeach
             </div>
+            <a href="{{ route('partenaires.liste') }}" class="ts-link">Voir tous les sponsors...</a>
         </div>
 
         {{-- ── STRUCTURE DE LA FENÊTRE MODALE pour la description ───────────────────────────────── --}}
@@ -1337,62 +1341,64 @@
             </div>
         </div>
 
+        {{-- ══ BOTTOM 2 SECTIONS : Messages + Documents ══ --}}
+        <div class="bottom-sections">
 
-        {{-- ✅ FIX : Messages officiels — balises correctement imbriquées --}}
-        <div class="bottom-section" id="messages">
-            <div class="ts-title">Paroles de Leaders</div>
-            <div class="msg-grid">
-                @forelse ($messagesOfficiels as $msg)
-                <div class="msg-card">
-                    <div class="msg-avatar">
-                        @if ($msg['photo'])
-                        <img src="{{ asset('images/'.$msg['photo']) }}" alt="{{ $msg['nom'] }}">
-                        @else
-                        <span class="msg-avatar-init">{{ strtoupper(substr($msg['nom'],0,1)) }}</span>
-                        @endif
+            {{-- Messages officiels --}}
+            <div class="bottom-section" id="messages">
+                <div class="ts-title">Paroles de Leaders</div>
+                <div class="msg-grid">
+                    @forelse ($messagesOfficiels as $msg)
+                    <div class="msg-card">
+                        <div class="msg-avatar">
+                            @if ($msg['photo'])
+                            <img src="{{ asset('images/'.$msg['photo']) }}" alt="{{ $msg['nom'] }}">
+                            @else
+                            <span class="msg-avatar-init">{{ strtoupper(substr($msg['nom'],0,1)) }}</span>
+                            @endif
+                        </div>
+                        <div class="msg-quote-mark">&ldquo;</div>
+                        <p class="msg-text">{{ $msg['message'] }}</p>
+                        <div class="msg-name">{{ $msg['nom'] }}</div>
+                        <div class="msg-role">{{ $msg['poste'] }}</div>
                     </div>
-                    <div class="msg-quote-mark">&ldquo;</div>
-                    <p class="msg-text">{{ $msg['message'] }}</p>
-                    <div class="msg-name">{{ $msg['nom'] }}</div>
-                    <div class="msg-role">{{ $msg['poste'] }}</div>
+                    @empty
+                    <p style="color:#a0aec0;font-size:15px">Aucun message disponible.</p>
+                    @endforelse
                 </div>
-                @empty
-                <p style="color:#a0aec0;font-size:13px">Aucun message disponible.</p>
-                @endforelse
-            </div>
-        </div>{{-- /.bottom-section#messages --}}
+            </div>{{-- /.bottom-section#messages --}}
 
-        {{-- ✅ FIX : Documents — section séparée et correctement fermée --}}
-        <div class="bottom-section" id="documents">
-            <div class="ts-title">Documents & Ressources</div>
-            @foreach ($documents as $doc)
-            <div class="doc-item">
-                <div class="doc-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                        <polyline points="14 2 14 8 20 8" />
-                    </svg>
+            {{-- Documents --}}
+            <div class="bottom-section" id="documents">
+                <div class="ts-title">Documents & Ressources</div>
+                @foreach ($documents as $doc)
+                <div class="doc-item">
+                    <div class="doc-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                    </div>
+                    <div style="flex:1;min-width:0">
+                        <div class="doc-name">{{ $doc['nom'] }}</div>
+                        <div class="doc-meta">{{ $doc['type'] }} &bull; {{ $doc['taille'] }}</div>
+                    </div>
+                    <a href="{{ $doc['url'] }}" class="doc-dl" download aria-label="Télécharger">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                        </svg>
+                    </a>
                 </div>
-                <div style="flex:1;min-width:0">
-                    <div class="doc-name">{{ $doc['nom'] }}</div>
-                    <div class="doc-meta">{{ $doc['type'] }} &bull; {{ $doc['taille'] }}</div>
-                </div>
-                <a href="{{ $doc['url'] }}" class="doc-dl" download aria-label="Télécharger">
+                @endforeach
+                <a href="{{ route('rapports') }}" class="docs-see-all">
+                    Voir tous les documents
                     <svg viewBox="0 0 24 24">
-                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                        <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </a>
-            </div>
-            @endforeach
-            <a href="{{ route('rapports') }}" class="docs-see-all">
-                Voir tous les documents
-                <svg viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </a>
-        </div>{{-- /.bottom-section#documents --}}
+            </div>{{-- /.bottom-section#documents --}}
 
-</div>{{-- /.bottom-sections --}}
+        </div>{{-- /.bottom-sections --}}
 
 {{-- CTA BANNER --}}
 <div class="cta-banner">

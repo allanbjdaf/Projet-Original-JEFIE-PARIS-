@@ -1384,20 +1384,7 @@
                         </label>
                     </div>
                               
-                     {{-- Nouveaux champs : Mot de passe --}}
-                         <div class="card">
-        <div class="card-title">Sécurité du compte</div>
-        <div class="form-grid">
-            <div class="form-group">
-                <label class="form-label">Mot de passe <span class="req">*</span></label>
-                <input type="password" name="password" id="password" class="form-control" minlength="8">
-            </div>
-            <div class="form-group">
-                <label class="form-label">Confirmer le mot de passe <span class="req">*</span></label>
-                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
-            </div>
-        </div>
-    </div>
+                   
 
                     <div class="step-nav">
                         <button type="button" onclick="prevPanelP(2)" class="btn-prev"><svg viewBox="0 0 24 24">
@@ -1866,6 +1853,8 @@
         // GESTION DES TYPES
         // ══════════════════════════════════════════════════════════
 
+
+// ── ÉTAT GLOBAL ───────────────────────────────────────────────
 let currentType   = null;
 let currentPanelP = 1;
 let currentPanelE = 1;
@@ -1959,10 +1948,24 @@ function nextPanelP(from) {
         if (!wa)                    { showErr('Le numéro WhatsApp est obligatoire.'); return; }
         if (!email || !email.includes('@')) { showErr('L\'adresse e-mail est invalide.'); return; }
 
-        // Validation mot de passe si renseigné
-        if (pwd) {
-            if (pwd.length < 8)     { showErr('Le mot de passe doit contenir au moins 8 caractères.'); return; }
-            if (pwd !== pwdConf)    { showErr('Les mots de passe ne correspondent pas.'); return; }
+        // Mot de passe OBLIGATOIRE
+        if (!pwd)               { showErr('Le mot de passe est obligatoire.'); return; }
+        if (pwd.length < 8)     { showErr('Le mot de passe doit contenir au moins 8 caractères.'); return; }
+        if (!pwdConf)           { showErr('Veuillez confirmer votre mot de passe.'); return; }
+        if (pwd !== pwdConf)    { showErr('Les mots de passe ne correspondent pas.'); return; }
+
+        // Thématiques : au moins 1 obligatoire
+        const thematiques = document.querySelectorAll('[name="thematiques[]"]:checked');
+        if (thematiques.length === 0) {
+            showErr('Veuillez sélectionner au moins une thématique d\'intérêt.');
+            return;
+        }
+
+        // Rencontres B2B : choix obligatoire
+        const b2bChoice = document.querySelector('input[name="participe_b2b"]:checked');
+        if (!b2bChoice) {
+            showErr('Veuillez indiquer si vous souhaitez participer aux rencontres B2B.');
+            return;
         }
 
         // Bloquer "Écoute d'opportunité" aux non-Gabonais
@@ -1989,10 +1992,18 @@ function nextPanelP(from) {
         const sitPro = val('situation_pro');
         const postes = document.querySelectorAll('[name="postes_recherches[]"]:checked');
         const cvEl   = document.querySelector('[name="cv"]');
-        const pwd2   = val('password');
-        const pwdC2  = val('password_confirmation');
+        // Lire le mot de passe depuis les IDs corrects de l'étape 2
+        const pwd2El   = document.getElementById('passwordP');
+        const pwdC2El  = document.getElementById('passwordPConf');
+        const pwd2     = pwd2El?.value  || '';
+        const pwdC2    = pwdC2El?.value || '';
 
         if (!dob)           { showErr('La date de naissance est obligatoire.'); return; }
+
+        // Vérifier que l'âge calculé est valide (>= 18 ans)
+        const age = Math.floor((Date.now() - new Date(dob).getTime()) / (1000 * 60 * 60 * 24 * 365.25));
+        if (age < 18) { showErr('Vous devez avoir au moins 18 ans pour vous inscrire.'); return; }
+
         if (!niveau)        { showErr('Le niveau d\'études est obligatoire.'); return; }
         if (!dip)           { showErr('Le diplôme le plus élevé est obligatoire.'); return; }
         if (!dom)           { showErr('Le domaine de formation est obligatoire.'); return; }
@@ -2002,8 +2013,7 @@ function nextPanelP(from) {
             showErr('Le CV est obligatoire pour le profil "Écoute d\'opportunité".');
             return;
         }
-        if (!pwd2 || pwd2.length < 8) { showErr('Le mot de passe doit contenir au moins 8 caractères.'); return; }
-        if (pwd2 !== pwdC2)           { showErr('Les mots de passe ne correspondent pas.'); return; }
+       
 
         buildRecapP();
         showPanelP(4);
@@ -2301,11 +2311,32 @@ function removeOffre(i) {
 // ══════════════════════════════════════════════════════════════
 
 function calcAge() {
-    const dob = document.getElementById('dateNaissance')?.value;
+    const dobEl = document.getElementById('dateNaissance');
+    const dob   = dobEl?.value;
     if (!dob) return;
-    const age = Math.floor((Date.now() - new Date(dob).getTime()) / (1000 * 60 * 60 * 24 * 365.25));
-    const el  = document.getElementById('ageAuto');
-    if (el) el.value = age > 0 ? age + ' ans' : '';
+
+    const naissance = new Date(dob);
+    const now       = new Date();
+
+    // Calcul précis de l'âge (tient compte du mois/jour)
+    let age = now.getFullYear() - naissance.getFullYear();
+    const moisPasse = now.getMonth() > naissance.getMonth()
+        || (now.getMonth() === naissance.getMonth() && now.getDate() >= naissance.getDate());
+    if (!moisPasse) age--;
+
+    const el = document.getElementById('ageAuto');
+    if (el) {
+        if (age > 0 && age < 120) {
+            el.value = age + ' ans';
+            el.style.color = age >= 18 ? '#2e7d32' : '#e53935';
+        } else {
+            el.value = '';
+        }
+    }
+
+    // Mettre à jour le champ caché name="age" si présent
+    const ageHidden = document.querySelector('[name="age"]');
+    if (ageHidden && age > 0) ageHidden.value = age;
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -2366,11 +2397,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn = document.getElementById('btnSubmitP');
         if (btn) { btn.disabled = true; btn.style.opacity = '.7'; }
     });
-});
-
-      
-    
-    
+});    
 
     </script>
 </body>

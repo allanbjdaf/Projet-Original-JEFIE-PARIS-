@@ -1296,6 +1296,26 @@ attendus</div>
 de recrutement</div>
         </div>
     </div>
+
+<div class="stat-item">
+        <div class="stat-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div>
+            <span class="stat-num">300+</span>
+            <div class="stat-lbl">Investisseurs</div>
+        </div>
+    </div>
+        <div class="stat-item">
+        <div class="stat-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        </div>
+        <div>
+            <span class="stat-num">1000</span>
+            <div class="stat-lbl">Offres
+d&#039;Emploi</div>
+        </div>
+    </div>
     </div>
 
 

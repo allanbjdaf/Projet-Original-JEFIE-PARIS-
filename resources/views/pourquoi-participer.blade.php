@@ -1834,63 +1834,53 @@
     </div>
 
     {{-- LES 6 RAISONS --}}
+
+
     <section class="section">
         <div class="section-header center">
-            <div class="section-eyebrow"><svg viewBox="0 0 24 24">
+            <div class="section-eyebrow">
+                <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2;">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>6 raisons décisives</div>
+                </svg>
+                6 raisons décisives
+            </div>
             <h2 class="section-title">Les vraies raisons de ne pas<br>manquer ce Forum</h2>
             <p class="section-desc">Chaque édition du Forum JEFIE transforme des carrières et accélère des projets. Voici concrètement ce que vous allez vivre.</p>
         </div>
 
         @foreach($raisons as $raison)
-        <div class="raison-item" style="margin-bottom:1.5rem">
+        {{-- MODIFICATION ICI : le dernier chiffre passe de 2rem à 1.15rem pour réduire l'espace --}}
+        <div class="raison-item" style="max-width: 1000px; margin: 0 auto 1.15rem auto; padding: 1.75rem 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: center; background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
             <div class="raison-content">
-                <div class="raison-num">{{ $raison['numero'] }}</div>
-                <div class="raison-eyebrow" style="background:{{ $raison['bg'] }};color:{{ $raison['couleur'] }}">
-                    <svg viewBox="0 0 24 24" stroke="{{ $raison['couleur'] }}" fill="none" stroke-width="2">{!! $raison['icon'] !!}</svg>
+                <div class="raison-num" style="font-size: 2.2rem; font-weight: 800; opacity: 0.1; line-height: 1;">{{ $raison['numero'] }}</div>
+                <div class="raison-eyebrow" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; background: {{ $raison['bg'] }}; color: {{ $raison['couleur'] }}; margin-bottom: 0.75rem;">
+                    <svg viewBox="0 0 24 24" style="width: 16px; height: 16px;" stroke="{{ $raison['couleur'] }}" fill="none" stroke-width="2">{!! $raison['icon'] !!}</svg>
                     Raison N°{{ $raison['numero'] }}
                 </div>
-                <div class="raison-title">{{ $raison['titre'] }}</div>
-                <p class="raison-desc">{{ $raison['desc'] }}</p>
-                <div class="raison-points">
-                    @foreach($raison['points'] as $pt)
-                    <div class="rp-item">
-                        <div class="rp-dot" style="background:{{ $raison['bg'] }};color:{{ $raison['couleur'] }}">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        {{ $pt }}
-                    </div>
-                    @endforeach
-                </div>
-                <div class="raison-stat-box" style="border-left-color:{{ $raison['couleur'] }}">
-                    <span class="rsb-num" style="color:{{ $raison['couleur'] }}">{{ $raison['stat'] }}</span>
-                    <div class="rsb-lbl">{{ $raison['stat_label'] }}</div>
-                </div>
+                <div class="raison-title" style="font-size: 1.3rem; font-weight: 700; color: #111; margin-bottom: 0.5rem;">{{ $raison['titre'] }}</div>
+                <p class="raison-desc" style="font-size: 0.95rem; color: #555; margin-bottom: 1.25rem; line-height: 1.5;">{{ $raison['desc'] }}</p>
+
+
+
+
             </div>
-            <div class="raison-visual" style="background:linear-gradient(135deg,{{ $raison['couleur'] }}22,{{ $raison['couleur'] }}44)">
-                <div class="rv-bg">
-                    <div class="rv-icon-wrap" style="background:{{ $raison['couleur'] }}22">
-                        <div class="rv-icon-main" style="background:{{ $raison['couleur'] }}">
-                            <svg viewBox="0 0 24 24" stroke="#fff" fill="none" stroke-width="1.5">{!! $raison['icon'] !!}</svg>
+
+            <div class="raison-visual" style="height: 200px; border-radius: 8px; background: linear-gradient(135deg, {{ $raison['couleur'] }}22, {{ $raison['couleur'] }}44); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div class="rv-bg" style="position: relative;">
+                    <div class="rv-icon-wrap" style="width: 60px; height: 60px; border-radius: 50%; background: {{ $raison['couleur'] }}22; display: flex; align-items: center; justify-content: center;">
+                        <div class="rv-icon-main" style="width: 40px; height: 40px; border-radius: 50%; background: {{ $raison['couleur'] }}; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.5">{!! $raison['icon'] !!}</svg>
                         </div>
                     </div>
                 </div>
-                @foreach([['top:15%','left:10%'],['top:20%','right:8%'],['bottom:20%','left:8%'],['bottom:15%','right:10%']] as $i => $pos)
-                <div class="rv-stat" style="{{ $pos[0] }};{{ $pos[1] }};position:absolute">
-                    <svg viewBox="0 0 24 24" style="color:{{ $raison['couleur'] }};width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8">{!! $raison['icon'] !!}</svg>
-                    <div>
-                        <div class="rv-stat-num">{{ $raison['stat'] }}</div>
-                        <div class="rv-stat-lbl">{{ $raison['stat_label'] }}</div>
-                    </div>
-                </div>
-                @endforeach
             </div>
         </div>
         @endforeach
     </section>
+
+
+
+
 
     {{-- POUR QUI --}}
     <section class="section section-alt">
@@ -1932,8 +1922,8 @@
         </div>
     </section>
 
-  
-   
+
+
     {{-- FAQ --}}
     <section class="section section-alt">
         <div class="section-header center">
