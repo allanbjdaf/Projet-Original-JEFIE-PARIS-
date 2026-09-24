@@ -1234,7 +1234,7 @@
 {{-- ══ HERO ══ --}}
 <section class="hero">
     <div class="hero-eyebrow">Journées Economiques et Forum International de l'Emploi de la Diaspora Gabonaise</div>
-    <h1>À <span>APropos</span> des JEFIE</h1>
+    <h1>À <span>Propos</span> des JEFIE</h1>
     <p class="hero-desc">
         Les JEFIE ont vocation à constituer une plateforme opérationnelle de mise en relation entre talents,
         demandeurs d'emploi, entrepreneurs, investisseurs, entreprises, institutions publics et partenaires économiques,
