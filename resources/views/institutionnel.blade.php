@@ -726,6 +726,92 @@
         line-height: 1.4;
     }
 
+    .bottom-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .ts-title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #0f284e;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .msg-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .msg-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .msg-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        background: #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .msg-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .msg-quote-mark {
+        font-size: 2.5rem;
+        color: #cbd5e0;
+        line-height: 1;
+    }
+
+    .msg-text {
+        font-size: 0.95rem;
+        color: #4a5568;
+        line-height: 1.5;
+        margin-bottom: 1.25rem;
+        flex-grow: 1;
+    }
+
+    .msg-footer {
+        border-top: 1px solid #edf2f7;
+        padding-top: 0.75rem;
+        margin-top: auto;
+    }
+
+    .msg-name {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #1a202c;
+    }
+
+    .msg-role {
+        font-size: 0.8rem;
+        color: #718096;
+    }
+
+    /* Ajustement mobile strict si nécessaire */
+    @media (max-width: 768px) {
+        .msg-grid {
+            grid-template-columns: 1fr;
+            /* Force une seule colonne sur les petits téléphones */
+        }
+    }
+
     /* Documents */
     .doc-item {
         display: flex;
@@ -1331,25 +1417,33 @@
         <div class="bottom-sections">
 
             {{-- Messages officiels --}}
-            <div class="bottom-section" id="messages">
-                <div class="ts-title">Paroles de Leaders</div>
-                <div class="msg-grid">
+            <div class="bottom-section" id="messages" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem;">
+                <div class="ts-title" style="font-size: 1.5rem; font-weight: 800; color: #0f284e; margin-bottom: 1.5rem; text-align: center;">Paroles de Leaders</div>
+
+                <div class="msg-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
                     @forelse ($messagesOfficiels as $msg)
-                    <div class="msg-card">
-                        <div class="msg-avatar">
+                    <div class="msg-card" style="background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; position: relative; overflow: hidden;">
+
+                        {{-- Avatar du leader --}}
+                        <div class="msg-avatar" style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden; margin-bottom: 1rem; flex-shrink: 0; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">
                             @if ($msg['photo'])
-                            <img src="{{ asset('images/'.$msg['photo']) }}" alt="{{ $msg['nom'] }}">
+                            <img src="{{ asset('images/'.$msg['photo']) }}" alt="{{ $msg['nom'] }}" style="width: 100%; height: 100%; object-fit: cover;">
                             @else
-                            <span class="msg-avatar-init">{{ strtoupper(substr($msg['nom'],0,1)) }}</span>
+                            <span class="msg-avatar-init" style="font-size: 1.2rem; font-weight: bold; color: #4a5568;">{{ strtoupper(substr($msg['nom'],0,1)) }}</span>
                             @endif
                         </div>
-                        <div class="msg-quote-mark">&ldquo;</div>
-                        <p class="msg-text">{{ $msg['message'] }}</p>
-                        <div class="msg-name">{{ $msg['nom'] }}</div>
-                        <div class="msg-role">{{ $msg['poste'] }}</div>
+
+                        <div class="msg-quote-mark" style="font-size: 2.5rem; color: #cbd5e0; line-height: 1; margin-bottom: 0.25rem;">&ldquo;</div>
+
+                        <p class="msg-text" style="font-size: 0.95rem; color: #4a5568; line-height: 1.5; margin-bottom: 1.25rem; flex-grow: 1;">{{ $msg['message'] }}</p>
+
+                        <div class="msg-footer" style="border-top: 1px solid #edf2f7; padding-top: 0.75rem; margin-top: auto;">
+                            <div class="msg-name" style="font-weight: 700; font-size: 0.95rem; color: #1a202c;">{{ $msg['nom'] }}</div>
+                            <div class="msg-role" style="font-size: 0.8rem; color: #718096;">{{ $msg['poste'] }}</div>
+                        </div>
                     </div>
                     @empty
-                    <p style="color:#a0aec0;font-size:15px">Aucun message disponible.</p>
+                    <p style="color:#a0aec0; font-size:15px; text-align: grid-column: 1 / -1;">Aucun message disponible.</p>
                     @endforelse
                 </div>
             </div>{{-- /.bottom-section#messages --}}
