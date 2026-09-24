@@ -1,4 +1,4 @@
-{{-- resources/views/institutionnel/index.blade.php --}}
+﻿{{-- resources/views/institutionnel/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'Espace Institutionnel — JEFIE PARIS 2026')
@@ -139,13 +139,15 @@
     .page-layout {
         display: grid;
         grid-template-columns: 260px 1fr;
-        align-items: start;  /* La sidebar ne s'étire pas jusqu'en bas */
+        align-items: start;
+        /* La sidebar ne s'étire pas jusqu'en bas */
     }
 
     .main-content {
         flex: 1;
         padding: 0;
-        min-width: 0; /* Évite le dépassement horizontal */
+        min-width: 0;
+        /* Évite le dépassement horizontal */
     }
 
     /* ══ SIDEBAR ══ */
@@ -158,11 +160,14 @@
         flex-direction: column;
         /* La sidebar prend exactement la hauteur de son contenu */
         height: fit-content;
-        position: sticky;  /* Elle reste visible au scroll sans s'étirer */
-        top: 64px;         /* Colle sous la navbar sticky */
+        position: sticky;
+        /* Elle reste visible au scroll sans s'étirer */
+        top: 64px;
+        /* Colle sous la navbar sticky */
         align-self: start;
         box-sizing: border-box;
-        overflow: hidden;  /* Évite tout débordement interne */
+        overflow: hidden;
+        /* Évite tout débordement interne */
     }
 
     .ls-header {
@@ -1204,7 +1209,7 @@
                 <p class="hero-tagline">Innover ensemble pour un avenir africain prospère</p>
                 <p class="hero-desc">Découvrez le cadre stratégique, les acteurs institutionnels engagés et les documents officiels qui structurent le Forum International de l'Innovation — plateforme de référence pour les décideurs et entrepreneurs du continent.</p>
             </div>
-           
+
         </section>
 
         {{-- TOP 4 SECTIONS --}}
@@ -1214,17 +1219,15 @@
             <div class="top-section" id="contexte">
                 <div class="ts-title">Contexte du Projet</div>
                 <p class="ts-body">
-                    Né d'une conviction forte — l'Afrique possède les talents et les ressources pour devenir
-                    un acteur majeur de l'économie mondiale — le Forum International de l'Innovation réunit
-                    décideurs, entrepreneurs, investisseurs et chercheurs autour des grands défis du
-                    développement durable et de la transformation digitale.
-                </p>
-                <a href="{{ route('Apropos') }}" class="ts-link">
-                    En savoir plus
-                    <svg viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
+                    Les Journées Économiques & Forum International de l'Emploi de la Diaspora Gabonaise (JEFIE Paris 2026) se tiendront les 27 et 28 novembre 2026 au CNIT Forest – La Défense à Paris. Porté conjointement par le PNPE et l'ANP sous la vision du Président de la République, Chef de l'État, Chef du Gouvernement Brice Clotaire OLIGUI NGUEMA, cet événement vise à mobiliser la diaspora pour la transformation socio-économique du pays. Il constitue
+                    une plateforme opérationnelle destinée à rapprocher les compétences de la diaspora des opportunités d'emploi, à encourager l'entrepreneuriat et à stimuler l'investissement au Gabon. Enfin, cette initiative s'inscrit dans un dispositif pérenne doté de mécanismes de suivi pour mesurer
+                    concrètement les recrutements, projets et partenariats générés.
+                    <a href="{{ route('Apropos') }}" class="ts-link">
+                        En savoir plus
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
             </div>
 
             {{-- Objectifs --}}
@@ -1298,24 +1301,7 @@
 
         </div>{{-- /.top-sections --}}
 
-        {{-- ══ SPONSORS — Section pleine largeur ══ --}}
-        <div class="sponsors-section" id="sponsors">
-            <div class="ts-title">Nos Sponsors & Soutiens</div>
-            <div class="sponsors-row">
-                @foreach ($sponsors as $sp)
-                <div class="sponsor company-logo-click"
-                    data-nom="{{ $sp['nom'] }}"
-                    data-description="{{ $sp['description'] ?? 'Aucune description disponible.' }}"
-                    data-email="{{ $sp['email'] ?? 'Non renseigné' }}"
-                    data-stand="{{ $sp['stand'] ?? 'Non attribué' }}"
-                    style="cursor: pointer;">
-                    <span style="font-size:14px;font-weight:700;color:{{ $sp['color'] }}">{{ $sp['nom'] }}</span>
-                    <div class="sponsor-niveau">{{ $sp['niveau'] }}</div>
-                </div>
-                @endforeach
-            </div>
-            <a href="{{ route('partenaires.liste') }}" class="ts-link">Voir tous les sponsors...</a>
-        </div>
+
 
         {{-- ── STRUCTURE DE LA FENÊTRE MODALE pour la description ───────────────────────────────── --}}
         <div id="companyModal" class="modal-overlay" style="display:none;">
@@ -1400,46 +1386,46 @@
 
         </div>{{-- /.bottom-sections --}}
 
-{{-- CTA BANNER --}}
-<div class="cta-banner">
-    <div class="cta-left">
-        <div class="cta-icon">
-            <svg viewBox="0 0 24 24">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
-            </svg>
-        </div>
-        <div>
-            <div class="cta-stars" aria-hidden="true">
-                @for ($i = 0; $i < 3; $i++)
+        {{-- CTA BANNER --}}
+        <div class="cta-banner">
+            <div class="cta-left">
+                <div class="cta-icon">
                     <svg viewBox="0 0 24 24">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                    @endfor
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="cta-stars" aria-hidden="true">
+                        @for ($i = 0; $i < 3; $i++)
+                            <svg viewBox="0 0 24 24">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                            @endfor
+                    </div>
+                    <div class="cta-title">Rejoignez les acteurs du changement en 2026</div>
+                    <p class="cta-desc">Partenaire, sponsor ou institution — associez votre image à un événement international d'envergure et développez votre réseau d'influence en Afrique et dans la diaspora.</p>
+                </div>
             </div>
-            <div class="cta-title">Rejoignez les acteurs du changement en 2026</div>
-            <p class="cta-desc">Partenaire, sponsor ou institution — associez votre image à un événement international d'envergure et développez votre réseau d'influence en Afrique et dans la diaspora.</p>
+            <div class="cta-actions">
+                <a href="{{ route('partenaires.devenir') }}" class="cta-btn-primary">
+                    Devenir partenaire
+                    <svg viewBox="0 0 24 24">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                </a>
+                <a href="{{ route('contact') }}" class="cta-btn-outline">
+                    Nous contacter
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="M2 7l10 7 10-7" />
+                    </svg>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="cta-actions">
-        <a href="{{ route('partenaires.devenir') }}" class="cta-btn-primary">
-            Devenir partenaire
-            <svg viewBox="0 0 24 24">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-            </svg>
-        </a>
-        <a href="{{ route('contact') }}" class="cta-btn-outline">
-            Nous contacter
-            <svg viewBox="0 0 24 24">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="M2 7l10 7 10-7" />
-            </svg>
-        </a>
-    </div>
-</div>
 
-</main>
+    </main>
 </div>{{-- /.page-layout --}}
 
 
