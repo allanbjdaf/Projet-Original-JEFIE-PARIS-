@@ -204,6 +204,7 @@ class InscriptionController extends Controller
             'admin_fonction'     => 'required|string|max:150',
             'admin_profil'       => 'required|string|max:150',
             'admin_email'        => 'required|email|max:200',
+            'password' => 'required|string|min:8|confirmed', // <-- AJOUTEZ CETTE LIGNE
             'admin_telephone'    => 'required|string|max:30',
             'entreprise_nom'     => 'required|string|max:200',
             'forme_juridique'    => 'required|string|max:100',
@@ -235,6 +236,10 @@ class InscriptionController extends Controller
             'cert_exactitude.accepted'    => 'Vous devez certifier l\'exactitude des informations.',
             'accepte_traitement.accepted' => 'Vous devez accepter le traitement des données.',
             'engage_usage.accepted'       => 'Vous devez vous engager sur l\'usage des données.',
+            'password.required'  => 'Le mot de passe est obligatoire.', // <-- AJOUTEZ
+            'password.min'       => 'Le mot de passe doit contenir au moins 8 caractères.', // <-- AJOUTEZ
+            'password.confirmed' => 'Les deux mots de passe ne correspondent pas.', // <-- AJOUTEZ
+
         ]);
 
         // Upload logo
@@ -253,6 +258,8 @@ class InscriptionController extends Controller
             'nom'                 => strtoupper($request->admin_nom),
             'prenom'              => ucfirst(strtolower($request->admin_prenom)),
             'email'               => strtolower($request->admin_email),
+            'password' => bcrypt($request->password),
+
             'whatsapp'            => $request->admin_telephone,
             'fonction'            => $request->admin_fonction,
             'admin_profil'        => $request->admin_profil,
