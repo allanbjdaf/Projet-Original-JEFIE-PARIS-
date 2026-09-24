@@ -1,7 +1,7 @@
 ﻿{{-- resources/views/apropos/index.blade.php --}}
 @extends('layouts.app')
 
-@section('title', 'À propos — Forum International de l\'Innovation 2026')
+@section('title', 'À propos — Forum International  2026')
 
 @section('styles')
 <style>
@@ -1233,8 +1233,8 @@
 
 {{-- ══ HERO ══ --}}
 <section class="hero">
-    <div class="hero-eyebrow">Journées Economique et Forum Internationale de l'Emploi de la Diaspora Gabonaise</div>
-    <h1>À <span>APropos</span> du Forum</h1>
+    <div class="hero-eyebrow">Journées Economiques et Forum International de l'Emploi de la Diaspora Gabonaise</div>
+    <h1>À <span>APropos</span> des JEFIE</h1>
     <p class="hero-desc">
         Les JEFIE ont vocation à constituer une plateforme opérationnelle de mise en relation entre talents,
         demandeurs d'emploi, entrepreneurs, investisseurs, entreprises, institutions publics et partenaires économiques,

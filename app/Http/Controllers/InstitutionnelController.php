@@ -23,7 +23,7 @@ class InstitutionnelController extends Controller
     {
         return [
             [
-                'valeur' => '2s000+',
+                'valeur' => '2000+',
                 'label' => "Participants\nattendu",
                 'icon' => '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>'
             ],
@@ -71,24 +71,25 @@ class InstitutionnelController extends Controller
         ];
     }
 
-    private function organisateurs(): array
+       private function organisateurs(): array
     {
         return [
-            ['nom' => 'Pôle National de Promotion Emploi',   'logo' => 'IMG_0633.png', 'initiale' => 'PNPE'],
-            ['nom' => "Ambassade de France",               'logo' => 'IMG_0634.jpg', 'initiale' => 'ANI'],
-            ['nom' => "Plateforme Européenne des Organisations Gabonaises",             'logo' => 'LOGO PEOG.png', 'initiale' => 'PEOG'],
+            ['nom' => "Pôle National de Promotion de l'Emploi", 'logo' => 'IMG_0633.png', 'initiale' => 'PNPE'],
+            ['nom' => "Ambassade Haut Représentation du Gabon en France", 'logo' => 'IMG_0634.jpg', 'initiale' => 'ANI'],
+            ['nom' => "Plateforme Européenne des Organisations Gabonaises", 'logo' => 'LOGO PEOG.png', 'initiale' => 'PEOG'],
+            ['nom' => "Agence National pour la Promotion et l'Investissement (ANPI-Gabon)", 'logo' => '20.jpg', 'initiale' => 'ANPI-Gabon'],
         ];
     }
 
     private function partenairesInstitution(): array
     {
         return [
-            ['nom' => 'Ministère du Travail, du Plein Emploi du Dialogue Social et la Formation Professionnelle',   'logo' => '16.png', 'initiale' => 'ME'],
+            ['nom' => 'Ministère du Travail, du Plein Emploi du Dialogue Social et la Formation Professionnelle', 'logo' => '16.png', 'initiale' => 'ME'],
             ['nom' => "Ministère des Affaires étrangères et de la Coopération, Chargé de l'Integration", 'logo' => '17.png', 'initiale' => 'MAE'],
-            ['nom' => "Ministère de l'Economie, des Finances, de la Dette et des Participations, Chargé de la Lutte contre la vie chère",  'logo' => '18.png', 'initiale' => 'MEF'],
-            ['nom' => 'Ambassade de France',   'logo' => '19.png', 'initiale' => 'AM'],
+            ['nom' => "Ministère de l'Economie, des Finances, de la Dette et des Participations, Chargé de la Lutte contre la vie chère", 'logo' => '18.png', 'initiale' => 'MEF'],
         ];
     }
+
 
 
 

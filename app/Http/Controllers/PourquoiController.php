@@ -77,7 +77,7 @@ class PourquoiController extends Controller
                 'couleur' => '#1565c0',
                 'bg' => '#e3f2fd',
                 'numero' => '02',
-                'titre'  => 'Valoriser votre entreprie et vos compétences',
+                'titre'  => 'Valoriser votre entreprise et vos compétences',
                 'desc'   => 'Professionnels, jeunes diplômés et étudiants pourront faire connaître leurs parcours, experiences , compétences et intégrer progressivement
                 un répertoire structuré des talents gabonais de la diaspora.',
 

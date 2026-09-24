@@ -23,12 +23,12 @@ class AProposController extends Controller
     private function stats(): array
     {
         return [
-            ['valeur' => '5 000+',  'label' => 'Participants attendus',    'icon' => '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>'],
+            ['valeur' => '2 000+',  'label' => 'Participants attendus',    'icon' => '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>'],
             ['valeur' => '50+',     'label' => 'Pays représentés',         'icon' => '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>'],
             ['valeur' => '200+',    'label' => 'Intervenants & experts',   'icon' => '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>'],
-            ['valeur' => '3',       'label' => "Jours d'innovation",       'icon' => '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>'],
+            ['valeur' => '2',       'label' => "Jours d'innovation",       'icon' => '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>'],
             ['valeur' => '120+',    'label' => 'Partenaires officiels',    'icon' => '<path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>'],
-            ['valeur' => '2ème',    'label' => 'Édition du Forum',         'icon' => '<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'],
+            ['valeur' => '1ème',    'label' => 'Édition du Forum',         'icon' => '<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'],
         ];
     }
 
@@ -90,34 +90,23 @@ class AProposController extends Controller
                 'couleur' => '#f5a623',
             ],
             [
-                'annee'  => '2024',
+                'annee'  => '2026',
                 'titre'  => '1ère édition — Succès historique',
-                'desc'   => "La première édition réunit 2 800 participants de 38 pays. 45 partenariats stratégiques signés, 12 M€ de projets lancés.",
+                'desc'   => "La première édition - du 27 au 28 Novembre à Paris.",
                 'couleur' => '#1565c0',
             ],
-            [
-                'annee'  => '2025',
-                'titre'  => 'Expansion internationale',
-                'desc'   => "Ouverture de représentations dans 8 pays. Création de l'annuaire numérique des entrepreneurs de la diaspora (3 800+ profils).",
-                'couleur' => '#2e7d32',
-            ],
-            [
-                'annee'  => '2026',
-                'titre'  => '2ème édition — Paris',
-                'desc'   => "La 2ème édition vise 5 000+ participants de 50+ pays. Thème : \"Innover, Collaborer, Transformer l'Avenir\".",
-                'couleur' => '#0d1b3e',
-            ],
+            
         ];
     }
 
     private function equipe(): array
     {
         return [
-            ['nom' => 'Jacqueline Ilogué Eps Bignouba', 'poste' => 'Ministre du travail,du Emploi, du Dialogue Social et de la formation Professionelle', 'photo' => 'Jacqueline Ilogué épouse Bignoumba.jpg'],
-            ['nom' => 'Thierry Minko',  'poste' => "Ministre de l'Ecomomie, des Finances, de la Dette et des Participations, chargé de la Lutte contre la Vie chère",    'photo' => 'Thierry Minko.jpg'],
-            ['nom' => 'Marie-Edith Tassyla-Ye-Doumbeneny',   'poste' => "Ministre des Affaires étrangères et de la Coopération, chargés de l'intégration et de la Diaspora Gabonaise",     'photo' => 'Marie-Edith Tassyla-Ye-Doumbeneny.jpg'],
-            ['nom' => 'Pascal Franck Nze Ndong Nze',         'poste' => "Directeur Géneral du pôle National de Promotion de l'Emploi (PNPE)",                'photo' => 'Pascal Franck Nze Ndong Nze.jpg'],
-            ['nom' => 'Ghislain Moandza Mboma',             'poste' => "Directeur Géneral de l'Agence National de Promotion des investissements du Gabon (ANPI)",        'photo' => 'Ghislain Moandza Mboma.jpg'],
+            ['nom' => 'Jacqueline ILOGUE Eps BIGNOUMBA', 'poste' => 'Ministre du travail,du Emploi, du Dialogue Social et de la formation Professionelle', 'photo' => 'Jacqueline Ilogué épouse Bignoumba.jpg'],
+            ['nom' => 'Thierry MINKO',  'poste' => "Ministre de l'Ecomomie, des Finances, de la Dette et des Participations, chargé de la Lutte contre la Vie chère",    'photo' => 'Thierry Minko.jpg'],
+            ['nom' => 'Marie-Edith Tassyla-YE-DOUMBENENY',   'poste' => "Ministre des Affaires étrangères et de la Coopération, chargés de l'intégration et de la Diaspora Gabonaise",     'photo' => 'Marie-Edith Tassyla-Ye-Doumbeneny.jpg'],
+            ['nom' => 'Pascal Franck Nze Ndong Nze',         'poste' => "Directeur Géneral du Pôle National de Promotion de l'Emploi (PNPE)",                'photo' => 'Pascal Franck Nze Ndong Nze.jpg'],
+            ['nom' => 'Ghislain MOANDZA MBOMA',             'poste' => "Directeur Géneral de l'Agence National de Promotion des investissements du Gabon (ANPI)",        'photo' => 'Ghislain Moandza Mboma.jpg'],
             ['nom' => 'Alfred NGUIA BANDA',            'poste' => 'Ambassadeur Haut représentant du Gabon en France',               'photo' => 'Alfred NGUIA BANDA.jpg'],
         ];
     }
@@ -125,14 +114,12 @@ class AProposController extends Controller
     private function partenaires(): array
     {
         return [
-            ['nom' => 'Union Africaine',    'logo' => 'mec.png', 'initiale' => 'UA'],
-            ['nom' => 'BAD',                'logo' => 'ba.jpg', 'initiale' => 'BAD'],
-            ['nom' => 'ONU',                'logo' => 'Pnp.jpg', 'initiale' => 'ONU'],
-            ['nom' => 'Union Européenne',   'logo' => 'ue.png', 'initiale' => 'UE'],
-            ['nom' => 'Orange',             'logo' => 'ora.png', 'initiale' => 'O'],
-            ['nom' => 'Ecobank',            'logo' => 'eco.jpg', 'initiale' => 'E'],
-            ['nom' => 'Sonatel',            'logo' => 'son.jpg', 'initiale' => 'S'],
-            ['nom' => 'Société Générale',   'logo' => 'socie.png', 'initiale' => 'SG'],
+            ['nom' => 'Ministère du Travail, du Plein Emploi du Dialogue Social et la Formation Professionnelle',    'logo' => '16.png', 'initiale' => 'ME'],
+            ['nom' => "Ministère des Affaires étrangères et de la Coopération, Chargé de l'Integration",                'logo' => '17.png', 'initiale' => 'MA'],
+            ['nom' => 'Pôle National de Promotion de lEmploi',                'logo' => 'Pnp.jpg', 'initiale' => 'PNPE'],
+            ['nom' => "Ministère de l'Economie, des Finances, de la Dette et des Participations, Chargé de la Lutte contre la vie chère",   'logo' => '18.png', 'initiale' => 'MEF'],
+            ['nom' => 'Ambassade Huat Représentation du Gabon en France',             'logo' => '19.png', 'initiale' => 'A'],
+           
         ];
     }
 

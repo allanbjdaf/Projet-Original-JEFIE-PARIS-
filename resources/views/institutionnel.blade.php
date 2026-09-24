@@ -1292,8 +1292,9 @@
         <section class="hero" style="background-image:url('{{ asset('images/Institutionnel.jpg') }}')">
             <div class="hero-left">
                 <h1>Entreprises <span style="color: #f5c518;">Participantes</span></h1>
-                <p class="hero-tagline">Innover ensemble pour un avenir africain prospère</p>
-                <p class="hero-desc">Découvrez le cadre stratégique, les acteurs institutionnels engagés et les documents officiels qui structurent le Forum International de l'Innovation — plateforme de référence pour les décideurs et entrepreneurs du continent.</p>
+               
+                <p class="hero-desc">Découvrez les acteurs engagés,les documents officiels qui structurent les Journées Economiques 
+et Forum International de l'Emploi de la Diaspora Gabonaise édition Paris 2026.</p>
             </div>
 
         </section>
@@ -1305,7 +1306,8 @@
             <div class="top-section" id="contexte">
                 <div class="ts-title">Contexte du Projet</div>
                 <p class="ts-body">
-                    Les Journées Économiques & Forum International de l'Emploi de la Diaspora Gabonaise (JEFIE Paris 2026) se tiendront les 27 et 28 novembre 2026 au CNIT Forest – La Défense à Paris. Porté conjointement par le PNPE et l'ANP sous la vision du Président de la République, Chef de l'État, Chef du Gouvernement Brice Clotaire OLIGUI NGUEMA, cet événement vise à mobiliser la diaspora pour la transformation socio-économique du pays. Il constitue
+                    Les Journées Économiques & Forum International de l'Emploi de la Diaspora Gabonaise (JEFIE Paris 2026) se tiendront les 27 et 28 novembre 2026 au CNIT Forest – La Défense à Paris. Porté conjointement par le PNPE et l'ANPI sous la vision du Président de la République, Chef de l'État, Chef du Gouvernement Brice Clotaire OLIGUI NGUEMA, cet événement vise à mobiliser 
+la diaspora pour la transformation socio-économique du pays. Il constitue
                     une plateforme opérationnelle destinée à rapprocher les compétences de la diaspora des opportunités d'emploi, à encourager l'entrepreneuriat et à stimuler l'investissement au Gabon. Enfin, cette initiative s'inscrit dans un dispositif pérenne doté de mécanismes de suivi pour mesurer
                     concrètement les recrutements, projets et partenariats générés.
                     <a href="{{ route('Apropos') }}" class="ts-link">

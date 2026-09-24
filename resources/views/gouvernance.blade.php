@@ -367,8 +367,7 @@
     <div class="gouv-hero-content">
         <h1>Notre Gouvernance</h1>
         <p>
-            Découvrez les femmes et les hommes qui portent le projet JEFIE : bureau exécutif,
-            comité scientifique, comité d'organisation et partenaires institutionnels réunis
+            Découvrez les femmes et les hommes qui portent le projet JEFIE :comité d'organisation et partenaires institutionnels réunis
             autour d'une même ambition, l'innovation au service du développement durable.
         </p>
     </div>
@@ -395,29 +394,19 @@
         <div class="gouv-grid">
             <div class="gouv-card">
                 <img class="gouv-avatar" src="{{ asset('images/Pascal Franck Nze Ndong Nze.jpg') }}" alt="Photo de Marc-Antoine Vancamp" loading="lazy">
-                <p class="gouv-name">Pascal Franck Nze Ndong Nze</p>
+                <p class="gouv-name">Pascal Franck NZE NDONG NZE</p>
                 <span class="gouv-poste">Directeur Géneral du pôle Nationale de promotion de l'Emploi(PNPE) </span>
                 <div class="gouv-links">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .52 1 1.3v4.82zm-13.5-9.18a1.66 1.66 0 1 0 0-3.32 1.66 1.66 0 0 0 0 3.32m1.4 9.18v-8.37h-2.8v8.37z" />
-                        </svg>
-                        LinkedIn
-                    </a>
+                    
                 </div>
             </div>
 
             <div class="gouv-card">
                 <img class="gouv-avatar" src="{{ asset('images/Ghislain Moandza Mboma.jpg') }}" alt="Photo de Fatoumata Diallo-Sy" loading="lazy">
-                <p class="gouv-name">Ghislain Moandza Mboma</p>
+                <p class="gouv-name">Ghislain MOANDZA MBOMA</p>
                 <span class="gouv-poste">Directeur Général de l'Agence National de Promotion des Investissements du Gabon (ANPI)</span>
                 <div class="gouv-links">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .52 1 1.3v4.82zm-13.5-9.18a1.66 1.66 0 1 0 0-3.32 1.66 1.66 0 0 0 0 3.32m1.4 9.18v-8.37h-2.8v8.37z" />
-                        </svg>
-                        LinkedIn
-                    </a>
+                   
                 </div>
             </div>
         </div>
@@ -429,45 +418,30 @@
         <div class="gouv-grid">
             <div class="gouv-card">
                 <img class="gouv-avatar" src="{{ asset('images/Jacqueline Ilogué épouse Bignoumba.jpg') }}" alt="Photo de Jacqueline Legendre" loading="lazy">
-                <p class="gouv-name">Jacqueline Ilogué épouse Bignoumba</p>
+                <p class="gouv-name">Jacqueline ILOGUE épouse BIGNOUMBA</p>
                 <span class="gouv-poste">Ministre du Travail, du Plein Emploi, du Dialogue Social et de la Formation Professionnelle</span>
                 <div class="gouv-links">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .52 1 1.3v4.82zm-13.5-9.18a1.66 1.66 0 1 0 0-3.32 1.66 1.66 0 0 0 0 3.32m1.4 9.18v-8.37h-2.8v8.37z" />
-                        </svg>
-                        LinkedIn
-                    </a>
+                   
                 </div>
             </div>
         </div>
     </div>
     <div class="gouv-card">
         <img class="gouv-avatar" src="{{ asset('images/Thierry Minko.jpg') }}" alt="Photo de Fatoumata Diallo-Sy" loading="lazy">
-        <p class="gouv-name">Thierry Minko</p>
+        <p class="gouv-name">Thierry MINKO</p>
         <span class="gouv-poste">Ministre de l'Economie, des Finances, de la Dette et des Particpations, Chargé de la vie chère.</span>
         <div class="gouv-links">
-            <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .52 1 1.3v4.82zm-13.5-9.18a1.66 1.66 0 1 0 0-3.32 1.66 1.66 0 0 0 0 3.32m1.4 9.18v-8.37h-2.8v8.37z" />
-                </svg>
-                LinkedIn
-            </a>
+            
         </div>
     </div>
 </div>
 </div>
 <div class="gouv-card">
     <img class="gouv-avatar" src="{{ asset('images/Marie-Edith Tassyla-Ye-Doumbeneny.jpg') }}" alt="Photo de Fatoumata Diallo-Sy" loading="lazy">
-    <p class="gouv-name">Marie-Edith Tassyla-Ye-Doumbeneny</p>
+    <p class="gouv-name">Marie-Edith Tassyla-YE-DOUMBENENY</p>
     <span class="gouv-poste">Ministre des affaires étrangères et de la coopération, chargée de l'intégration et de la Diaspora du Gabon</span>
     <div class="gouv-links">
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="gouv-linkedin-btn" aria-label="Profil LinkedIn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .52 1 1.3v4.82zm-13.5-9.18a1.66 1.66 0 1 0 0-3.32 1.66 1.66 0 0 0 0 3.32m1.4 9.18v-8.37h-2.8v8.37z" />
-            </svg>
-            LinkedIn
-        </a>
+        
     </div>
 </div>
 </div>
