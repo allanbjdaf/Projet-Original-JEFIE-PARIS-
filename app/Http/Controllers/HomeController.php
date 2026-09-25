@@ -87,11 +87,9 @@ class HomeController extends Controller
         // ✅ Vos vrais fichiers dans public/images/
         return [
             ['nom' => 'PNUD',           'logo' => 'Pnp.jpg'],
-            ['nom' => 'Banque Mondiale', 'logo' => 'ba.jpg'],
-            ['nom' => 'UNESCO',          'logo' => 'ue.png'],
-            ['nom' => 'AFD',             'logo' => 'cgforga.png'],
-            ['nom' => 'BAD',             'logo' => 'bao.jpg'],
-            ['nom' => 'Orange',          'logo' => 'ora.png'],
+            ['nom' => 'Ministère du Travail, du Plein Emploi du Dialogue Social et la Formation Professionnelle', 'logo' => '16.png'],
+            ['nom' => "Ministère des Affaires étrangères et de la Coopération, Chargé de l'Integration",          'logo' => '17.png'],
+            ['nom' => "Ministère de l'Economie, des Finances, de la Dette et des Participations, Chargé de la Lutte contre la vie chère",             'logo' => '18.png'],
             ['nom' => 'Société Générale', 'logo' => 'socie.png'],
             ['nom' => 'Ecobank',         'logo' => 'eco.jpg'],
         ];

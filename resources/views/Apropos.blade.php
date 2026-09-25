@@ -1539,10 +1539,10 @@ d&#039;Emploi</div>
 {{-- ══ CTA ══ --}}
 <section class="cta-section">
     <div class="cta-eyebrow">Rejoignez l'aventure</div>
-    <h2 class="cta-title">Prêt à faire partie du Forum 2026 ?</h2>
+    <h2 class="cta-title">Prêt à faire partie du JEFIE 2026 ?</h2>
     <p class="cta-desc">
         Que vous soyez entrepreneur, investisseur, partenaire ou simplement passionné d'innovation,
-        votre place est au Forum International de l'Innovation.
+        votre place est aux Journées Économiques et Forum International de l’Emploi de la Diaspora Gabonaise.
     </p>
     <div class="cta-btns">
         <a href="{{ route('inscription') }}" class="btn-gold">

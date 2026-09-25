@@ -325,8 +325,8 @@
 
     .hero-left h1 {
         color: #fff;
-        font-size: 3rem;
-        font-weight: 900;
+        font-size: 2.5rem;
+        font-weight: 800;
         text-transform: uppercase;
         letter-spacing: -.02em;
         line-height: 1.05;
@@ -416,8 +416,8 @@
     }
 
     .ts-title {
-        font-size: 15px;
-        font-weight: 900;
+        font-size: 13px;
+        font-weight: 700;
         color: #0f284e;
         letter-spacing: .1em;
         text-transform: uppercase;
@@ -733,8 +733,8 @@
     }
 
     .ts-title {
-        font-size: 1.5rem;
-        font-weight: 800;
+        font-size: 13px;
+        font-weight: 700;
         color: #0f284e;
         margin-bottom: 1.5rem;
         text-align: center;
@@ -1292,9 +1292,9 @@
         <section class="hero" style="background-image:url('{{ asset('images/Institutionnel.jpg') }}')">
             <div class="hero-left">
                 <h1>Entreprises <span style="color: #f5c518;">Participantes</span></h1>
-               
-                <p class="hero-desc">Découvrez les acteurs engagés,les documents officiels qui structurent les Journées Economiques 
-et Forum International de l'Emploi de la Diaspora Gabonaise édition Paris 2026.</p>
+
+                <p class="hero-desc">Découvrez les acteurs engagés,les documents officiels qui structurent les Journées Economiques
+                    et Forum International de l'Emploi de la Diaspora Gabonaise édition Paris 2026.</p>
             </div>
 
         </section>
@@ -1306,8 +1306,8 @@ et Forum International de l'Emploi de la Diaspora Gabonaise édition Paris 2026.
             <div class="top-section" id="contexte">
                 <div class="ts-title">Contexte du Projet</div>
                 <p class="ts-body">
-                    Les Journées Économiques & Forum International de l'Emploi de la Diaspora Gabonaise (JEFIE Paris 2026) se tiendront les 27 et 28 novembre 2026 au CNIT Forest – La Défense à Paris. Porté conjointement par le PNPE et l'ANPI sous la vision du Président de la République, Chef de l'État, Chef du Gouvernement Brice Clotaire OLIGUI NGUEMA, cet événement vise à mobiliser 
-la diaspora pour la transformation socio-économique du pays. Il constitue
+                    Les Journées Économiques & Forum International de l'Emploi de la Diaspora Gabonaise (JEFIE Paris 2026) se tiendront les 27 et 28 novembre 2026 au CNIT Forest – La Défense à Paris. Porté conjointement par le PNPE et l'ANPI sous la vision du Président de la République, Chef de l'État, Chef du Gouvernement Brice Clotaire OLIGUI NGUEMA, cet événement vise à mobiliser
+                    la diaspora pour la transformation socio-économique du pays. Il constitue
                     une plateforme opérationnelle destinée à rapprocher les compétences de la diaspora des opportunités d'emploi, à encourager l'entrepreneuriat et à stimuler l'investissement au Gabon. Enfin, cette initiative s'inscrit dans un dispositif pérenne doté de mécanismes de suivi pour mesurer
                     concrètement les recrutements, projets et partenariats générés.
                     <a href="{{ route('Apropos') }}" class="ts-link">
@@ -1420,7 +1420,7 @@ la diaspora pour la transformation socio-économique du pays. Il constitue
 
             {{-- Messages officiels --}}
             <div class="bottom-section" id="messages" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem;">
-                <div class="ts-title" style="font-size: 1.5rem; font-weight: 800; color: #0f284e; margin-bottom: 1.5rem; text-align: center;">Paroles de Leaders</div>
+                <div class="ts-title" style="font-size: 1.3rem; font-weight: 800; color: #0f284e; margin-bottom: 1.5rem; text-align: center;">Paroles de Leaders</div>
 
                 <div class="msg-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
                     @forelse ($messagesOfficiels as $msg)

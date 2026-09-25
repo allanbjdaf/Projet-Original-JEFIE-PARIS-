@@ -1702,15 +1702,7 @@
                 <a href="{{ route('contact') }}" class="fsi-contact-btn">Nous contacter directement</a>
             </div>
 
-            <div class="fsi-card">
-                <div class="fsi-title">Ils nous font déjà confiance</div>
-                @foreach (['Orange', 'Ecobank', 'Sonatel', 'Société Générale', 'BAD', 'Union Africaine'] as $brand)
-                <div style="display:inline-block;background:#f4f6fa;border:1px solid #e2e8f0;border-radius:5px;padding:5px 12px;font-size:11px;font-weight:700;color:#0a1e38;margin:3px">
-                    {{ $brand }}
-                </div>
-                @endforeach
-                <p style="font-size:11px;color:#a0aec0;margin-top:10px">+ 114 autres partenaires confirmés</p>
-            </div>
+           
 
         </div>
     </div>

@@ -83,16 +83,16 @@ class AProposController extends Controller
     private function timeline(): array
     {
         return [
-            [
-                'annee'  => '2023',
-                'titre'  => 'Naissance du projet',
-                'desc'   => "Un groupe d'entrepreneurs de la diaspora gabonaise réuni à Paris initie l'idée d'un forum international dédié à l'innovation africaine.",
-                'couleur' => '#f5a623',
+             [
+                'annee'  => '2026',
+                'titre'  => '1ère édition — Succès historique',
+                'desc'   => "La première édition - du 27 au 28 Novembre au CNIT FOREST LA DÉFENSE, 2 place de la défense , 92800 Puteaux, France",
+                'couleur' => '#1565c0',
             ],
             [
                 'annee'  => '2026',
                 'titre'  => '1ère édition — Succès historique',
-                'desc'   => "La première édition - du 27 au 28 Novembre à Paris.",
+                'desc'   => "La première édition - du 27 au 28 Novembre au CNIT FOREST LA DÉFENSE, 2 place de la défense , 92800 Puteaux, France",
                 'couleur' => '#1565c0',
             ],
             
@@ -105,7 +105,7 @@ class AProposController extends Controller
             ['nom' => 'Jacqueline ILOGUE Eps BIGNOUMBA', 'poste' => 'Ministre du travail,du Emploi, du Dialogue Social et de la formation Professionelle', 'photo' => 'Jacqueline Ilogué épouse Bignoumba.jpg'],
             ['nom' => 'Thierry MINKO',  'poste' => "Ministre de l'Ecomomie, des Finances, de la Dette et des Participations, chargé de la Lutte contre la Vie chère",    'photo' => 'Thierry Minko.jpg'],
             ['nom' => 'Marie-Edith Tassyla-YE-DOUMBENENY',   'poste' => "Ministre des Affaires étrangères et de la Coopération, chargés de l'intégration et de la Diaspora Gabonaise",     'photo' => 'Marie-Edith Tassyla-Ye-Doumbeneny.jpg'],
-            ['nom' => 'Pascal Franck Nze Ndong Nze',         'poste' => "Directeur Géneral du Pôle National de Promotion de l'Emploi (PNPE)",                'photo' => 'Pascal Franck Nze Ndong Nze.jpg'],
+            ['nom' => 'Pascal Franck NZE NDONG NZE',         'poste' => "Directeur Géneral du Pôle National de Promotion de l'Emploi (PNPE)",                'photo' => 'Pascal Franck Nze Ndong Nze.jpg'],
             ['nom' => 'Ghislain MOANDZA MBOMA',             'poste' => "Directeur Géneral de l'Agence National de Promotion des investissements du Gabon (ANPI)",        'photo' => 'Ghislain Moandza Mboma.jpg'],
             ['nom' => 'Alfred NGUIA BANDA',            'poste' => 'Ambassadeur Haut représentant du Gabon en France',               'photo' => 'Alfred NGUIA BANDA.jpg'],
         ];
@@ -118,34 +118,31 @@ class AProposController extends Controller
             ['nom' => "Ministère des Affaires étrangères et de la Coopération, Chargé de l'Integration",                'logo' => '17.png', 'initiale' => 'MA'],
             ['nom' => 'Pôle National de Promotion de lEmploi',                'logo' => 'Pnp.jpg', 'initiale' => 'PNPE'],
             ['nom' => "Ministère de l'Economie, des Finances, de la Dette et des Participations, Chargé de la Lutte contre la vie chère",   'logo' => '18.png', 'initiale' => 'MEF'],
-            ['nom' => 'Ambassade Huat Représentation du Gabon en France',             'logo' => '19.png', 'initiale' => 'A'],
            
         ];
     }
 
-    private function faqItems(): array
+     private function faqItems(): array
     {
         return [
             [
-                'q' => 'Qui peut participer au Forum ?',
+                'q' => 'Qui peut participer aux JEFIE ?',
                 'r' => 'Le Forum est ouvert à tous : entrepreneurs, investisseurs, décideurs, chercheurs, représentants institutionnels et membres de la diaspora africaine. Toute personne intéressée par l\'innovation et le développement de l\'Afrique est la bienvenue.'
             ],
             [
-                'q' => 'Où et quand aura lieu le Forum 2026 ?',
-                'r' => 'La 2ème édition du Forum International de l\'Innovation se tiendra du 15 au 18 juin 2026 à Paris, France. Le lieu exact sera communiqué prochainement.'
+                'q' => 'Où et quand aura lieu les JEFIE 2026 ?',
+                'r' => " Les JOURNÉES ÉCONOMIQUES ET FORUM INTERNATIONAL DE L’EMPLOI DE LA DIASPORA GABONAISE se dérouleront les 27 et 28 Novembre 2026 au CNIT FOREST LA DÉFENSE, 2 place de la défense , 92800 Puteaux, France. ",
+                [
+                    'q' => 'Comment s\'inscrire aux JEFIE ?',
+                    'r' => " L’inscription se fait en ligne sur notre plateforme. Rendez-vous sur la page « s’inscrire », choisissez votre profil « participant ou acteur économique », choisissez votre package (si vous êtes acteur économique), remplissez le formulaire en suivant les étapes, puis procédez à la validation. Vous recevrez 
+                immédiatement un email de confirmation avec votre badge QR Code.",
+                ],
+                [
+                    'q' => 'Comment devenir partenaire Officiel des JEFIE ?',
+                    'r' => '  Pour devenir partenaire officiel des JEFIE, il vous faudra choisir le package « Officiel » ou « Platine » et contacter nos équipes pour une rencontre de confirmation.'
+                ],
             ],
-            [
-                'q' => 'Comment s\'inscrire ?',
-                'r' => 'L\'inscription se fait en ligne sur notre plateforme. Plusieurs passes sont disponibles : Gratuit, Standard et Premium. Rendez-vous sur la page Inscriptions & Billetterie pour réserver votre place.'
-            ],
-            [
-                'q' => 'Comment devenir partenaire du Forum ?',
-                'r' => 'Remplissez le formulaire de demande de partenariat en ligne. Notre équipe vous contactera sous 48h pour discuter des modalités et trouver le niveau de partenariat adapté à vos objectifs.'
-            ],
-            [
-                'q' => 'Y a-t-il des opportunités pour les entrepreneurs de la diaspora ?',
-                'r' => 'Absolument ! La diaspora africaine est au cœur du Forum. Un espace dédié "Entrepreneurs Diaspora" est disponible avec un annuaire, des rendez-vous B2B et des sessions de pitchs spécifiques.'
-            ],
+
         ];
     }
 }
