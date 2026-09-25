@@ -1685,26 +1685,8 @@
     @endphp
 
     {{-- NETTOYÉ : Un seul bloc d'accès rapides avec une seule boucle propre --}}
-    <div class="accès-rapides-block">
-        <div class="ar-label">Accès Rapides</div>
-        <div class="ar-list">
-            @foreach ($accesRapides as $ar)
-            @php
-            $arIconBg = ($ar['color'] ?? '#0f284e') . '18';
-            $arColor = $ar['color'] ?? '#0f284e';
-            $slugActivite = $ar['slug'] ?? $ar['type'] ?? strtolower($ar['label'] ?? 'activite');
-            @endphp
 
-            {{-- ✅ Le href utilise désormais la variable correctement initialisée --}}
-            <a href="{{ route('programme.activite', $slugActivite) }}" class="ar-item" aria-label="{{ $ar['label'] ?? '' }}">
-                <div class="ar-icon" style="background: {{ $arIconBg }}; color: {{ $arColor }};">
-                    <svg viewBox="0 0 24 24" style="stroke: currentColor;" aria-hidden="true">{!! $ar['icon'] ?? '' !!}</svg>
-                </div>
-                <span class="ar-lbl">{{ $ar['label'] ?? '' }}</span>
-            </a>
-            @endforeach
-        </div>
-    </div>
+</div>
 </div>
 
 {{-- ══ FILTRES ══ --}}
